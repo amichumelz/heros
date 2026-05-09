@@ -115,6 +115,24 @@
             gap: clamp(0.75rem, 1.8vw, 1.35rem);
             min-height: 430px;
         }
+        #luxury-fleet .fleet-shell {
+            position: relative;
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 66px;
+        }
+        #luxury-fleet .fleet-side-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 14;
+            pointer-events: none;
+        }
+        #luxury-fleet .fleet-side-nav-left { left: 66px; }
+        #luxury-fleet .fleet-side-nav-right { right: 66px; }
+        #luxury-fleet .fleet-side-nav .fleet-arrow-btn {
+            pointer-events: auto;
+        }
         @media (min-width: 1024px) {
             #luxury-fleet .fleet-row {
                 width: min(1240px, 100%);
@@ -210,6 +228,16 @@
             to { opacity: 1; transform: translate(-50%, 0); }
         }
         @media (max-width: 1023px) {
+            #luxury-fleet .fleet-shell {
+                padding: 0;
+            }
+            #luxury-fleet .fleet-side-nav {
+                top: auto;
+                bottom: -18px;
+                transform: none;
+            }
+            #luxury-fleet .fleet-side-nav-left { left: 16px; }
+            #luxury-fleet .fleet-side-nav-right { right: 16px; }
             #luxury-fleet .fleet-row {
                 justify-content: flex-start;
                 overflow-x: auto;
@@ -803,8 +831,11 @@
             <a href="#testimonials-section" class="nav-link hover:text-gold transition">Blog</a>
             <a href="#main-footer" class="nav-link hover:text-gold transition">Contact</a>
         </div>
-        <div class="flex items-center gap-6">
-            <i class="fa-solid fa-cart-shopping text-sm"></i>
+        <div class="flex items-center gap-4 md:gap-6">
+            <button type="button" id="mobileNavToggle" class="md:hidden w-10 h-10 border border-gold rounded-full flex items-center justify-center text-gold" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNavMenu">
+                <i class="fa-solid fa-bars text-sm"></i>
+            </button>
+            <i class="fa-solid fa-cart-shopping text-sm hidden md:inline-block"></i>
             <div class="flex items-center gap-3">
                 <div class="w-10 h-10 border border-gold rounded-full flex items-center justify-center">
                     <i class="fa-solid fa-phone text-xs text-gold"></i>
@@ -816,6 +847,18 @@
             </div>
         </div>
     </nav>
+    <div id="mobileNavMenu" class="fixed top-[72px] left-4 right-4 z-40 bg-[#1c1c1f]/95 backdrop-blur-md border border-white/10 rounded-2xl p-4 hidden md:hidden">
+        <div class="grid grid-cols-2 gap-3 text-xs uppercase font-semibold tracking-wide">
+            <a href="#heroSection" class="mobile-nav-link px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-gold">Home</a>
+            <a href="#about-section" class="mobile-nav-link px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10">About</a>
+            <a href="#car-types-section" class="mobile-nav-link px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10">Services</a>
+            <a href="#luxury-fleet" class="mobile-nav-link px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10">Cars</a>
+            <a href="#car-types-section" class="mobile-nav-link px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10">Car Types</a>
+            <a href="#rental-process" class="mobile-nav-link px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10">Process</a>
+            <a href="#testimonials-section" class="mobile-nav-link px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10">Blog</a>
+            <a href="#main-footer" class="mobile-nav-link px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10">Contact</a>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section id="heroSection" class="relative h-screen hero-gradient flex items-center px-12 lg:px-24">
@@ -837,29 +880,6 @@
             <button type="button" class="hero-dot" data-hero-slide="2" aria-label="Hero slide 3"></button>
         </div>
     </section>
-
-    <!-- Booking Bar -->
-    <div class="px-8 -mt-12 relative z-10">
-        <div class="bg-[#1b1b1b] rounded-full p-4 flex flex-wrap lg:flex-nowrap items-center gap-4 border border-white/5 shadow-2xl">
-            <div class="flex-1 px-6 border-r border-white/10 flex justify-between items-center cursor-pointer">
-                <span class="text-gray-400 text-sm">Choose Car Type</span>
-                <i class="fa-solid fa-chevron-down text-gold text-xs"></i>
-            </div>
-            <div class="flex-1 px-6 border-r border-white/10 flex justify-between items-center cursor-pointer">
-                <span class="text-gray-400 text-sm">Pick Up Location (Kedah)</span>
-                <i class="fa-solid fa-chevron-down text-gold text-xs"></i>
-            </div>
-            <div class="flex-1 px-6 border-r border-white/10 flex justify-between items-center cursor-pointer">
-                <span class="text-gray-400 text-sm">Pick Up Date</span>
-                <i class="fa-solid fa-calendar-days text-gold text-xs"></i>
-            </div>
-            <div class="flex-1 px-6 border-r border-white/10 flex justify-between items-center cursor-pointer">
-                <span class="text-gray-400 text-sm">Return Date</span>
-                <i class="fa-solid fa-calendar-days text-gold text-xs"></i>
-            </div>
-            <a href="car-listing.html" class="bg-gold text-black btn-round hover:bg-white transition flex-shrink-0 inline-flex items-center">Rent Now</a>
-        </div>
-    </div>
 
     <!-- About Section -->
     <section id="about-section" class="py-24 px-12 lg:px-24 grid md:grid-cols-2 gap-16 items-center">
@@ -896,6 +916,20 @@
             <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight">Luxury <span class="fleet-gold">Car Fleet</span></h2>
         </div>
 
+        <div class="fleet-shell">
+            <div class="fleet-side-nav fleet-side-nav-left">
+                <button type="button" id="fleetPrev" aria-label="Previous"
+                    class="fleet-arrow-btn w-11 h-11 md:w-12 md:h-12 rounded-full flex items-center justify-center cursor-pointer transition shadow-lg border-0">
+                    <i class="fa-solid fa-chevron-left text-black text-xs"></i>
+                </button>
+            </div>
+            <div class="fleet-side-nav fleet-side-nav-right">
+                <button type="button" id="fleetNext" aria-label="Next"
+                    class="fleet-arrow-btn w-11 h-11 md:w-12 md:h-12 rounded-full flex items-center justify-center cursor-pointer transition shadow-lg border-0">
+                    <i class="fa-solid fa-chevron-right text-black text-xs"></i>
+                </button>
+            </div>
+
         <div id="fleetScroll" class="fleet-row no-scrollbar scroll-smooth snap-x snap-mandatory lg:snap-none">
 
             <!-- Side card — smaller, no overlay (desktop: scaled; mobile: snap scroll) -->
@@ -907,19 +941,6 @@
             <div id="fleetCenterCard" class="fleet-center-wrap shrink-0 relative w-full lg:w-auto snap-center">
                 <div class="fleet-center-inner relative group">
                     <img id="fleetCenterImg" src="https://images.unsplash.com/photo-1563720360172-67b8f3dce741?auto=format&fit=crop&q=85&w=1400" class="w-full h-[360px] md:h-[430px] lg:h-[430px] object-cover" alt="Lamborghini Urus">
-
-                    <div class="fleet-nav-wrap absolute inset-y-0 left-4 md:left-6 flex items-center z-10 pointer-events-auto">
-                        <button type="button" id="fleetPrev" aria-label="Previous"
-                            class="fleet-arrow-btn w-11 h-11 md:w-12 md:h-12 rounded-full flex items-center justify-center cursor-pointer transition shadow-lg border-0">
-                            <i class="fa-solid fa-chevron-left text-black text-xs"></i>
-                        </button>
-                    </div>
-                    <div class="fleet-nav-wrap absolute inset-y-0 right-4 md:right-6 flex items-center z-10 pointer-events-auto">
-                        <button type="button" id="fleetNext" aria-label="Next"
-                            class="fleet-arrow-btn w-11 h-11 md:w-12 md:h-12 rounded-full flex items-center justify-center cursor-pointer transition shadow-lg border-0">
-                            <i class="fa-solid fa-chevron-right text-black text-xs"></i>
-                        </button>
-                    </div>
 
                     <!-- Bottom overlay — reference layout -->
                     <div id="fleetInfoPanel" class="absolute bottom-4 md:bottom-5 left-1/2 -translate-x-1/2 w-[95%] md:w-[94%] bg-[#212125]/95 rounded-[18px] md:rounded-[20px] px-5 py-4 md:px-6 md:py-5 flex flex-row flex-wrap justify-between items-center gap-4 border border-white/[0.05]">
@@ -946,6 +967,7 @@
             <div id="fleetRightCard" class="fleet-side shrink-0 snap-center rounded-[22px] overflow-hidden">
                 <img id="fleetRightImg" src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&q=80&w=900" class="w-full h-[360px] md:h-[420px] lg:h-[420px] object-cover" alt="Luxury car">
             </div>
+        </div>
         </div>
     </section>
 
@@ -1038,7 +1060,7 @@
         <div class="relative z-10 text-center">
             <p class="text-gold tracking-[0.4em] uppercase text-xs mb-4">EXPLORE</p>
             <h2 class="text-5xl font-bold mb-8">Car <span class="text-gold">Promo</span> Video</h2>
-            <div class="w-20 h-20 border border-gold rounded-full flex items-center justify-center cursor-pointer hover:bg-gold transition group">
+            <div class="w-20 h-20 border border-gold rounded-full flex items-center justify-center cursor-pointer hover:bg-gold transition group mx-auto">
                 <i class="fa-solid fa-play text-gold group-hover:text-black"></i>
             </div>
         </div>
@@ -1463,6 +1485,29 @@
             navLinks.forEach(function (l) { l.classList.remove('text-gold'); });
             link.classList.add('text-gold');
           });
+        });
+      })();
+
+      (function () {
+        var toggle = document.getElementById('mobileNavToggle');
+        var menu = document.getElementById('mobileNavMenu');
+        if (!toggle || !menu) return;
+        var links = Array.prototype.slice.call(menu.querySelectorAll('.mobile-nav-link'));
+        var closeMenu = function () {
+          menu.classList.add('hidden');
+          toggle.setAttribute('aria-expanded', 'false');
+        };
+        toggle.addEventListener('click', function () {
+          var isHidden = menu.classList.contains('hidden');
+          if (isHidden) {
+            menu.classList.remove('hidden');
+            toggle.setAttribute('aria-expanded', 'true');
+          } else {
+            closeMenu();
+          }
+        });
+        links.forEach(function (link) {
+          link.addEventListener('click', closeMenu);
         });
       })();
     </script>
