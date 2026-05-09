@@ -1,1594 +1,1471 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Heros — Car Rental Alor Setar, Kedah</title>
-<meta name="description" content="Heros — Premium car rental in Alor Setar, Kedah. 200+ vehicles, daily/weekly/monthly rental, free delivery within Kedah. Call +60 10-811 8968." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#ffffff; --ink:#0b1020; --ink-2:#1a2138; --muted:#6b7280;
-    --line:#eef0f4; --accent:#2563ff; --accent-2:#3b82f6;
-    --dark:#0a1024; --soft:#f4f6fb; --soft-2:#eef0f4;
-    --star:#f5b301; --green:#16a34a; --radius:28px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  html,body{background:var(--bg);color:var(--ink);font-family:'Manrope',-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
-  body{overflow-x:hidden}
-  a{color:inherit;text-decoration:none}
-  img{max-width:100%;display:block}
-  button{font-family:inherit}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heros - Kedah Car Rental</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@300;400;500;600&family=Montserrat:wght@600;700&family=Outfit:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Outfit', sans-serif; background-color: #111111; color: #ffffff; position: relative; }
+        img:not(.ts-avatar):not(.mf-brand-logo) {
+            filter: brightness(0.72) contrast(1.04) saturate(0.9);
+            transition: filter 0.35s ease;
+        }
+        @media (max-width: 900px) {
+            img:not(.ts-avatar):not(.mf-brand-logo) {
+                /* Slightly lighter on phone so details stay visible */
+                filter: brightness(0.8) contrast(1.03) saturate(0.92);
+            }
+        }
+        @media (max-width: 480px) {
+            img:not(.ts-avatar):not(.mf-brand-logo) {
+                filter: brightness(0.84) contrast(1.02) saturate(0.95);
+            }
+        }
+        #centerTimelineLayer {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        #centerTimelineLayer .timeline-segment {
+            position: absolute;
+            left: 50%;
+            width: 1.5px;
+            transform: translateX(-50%);
+            border-radius: 999px;
+            background: linear-gradient(to bottom, rgba(228, 161, 90, 0.04), rgba(228, 161, 90, 0.65), rgba(228, 161, 90, 0.04));
+            box-shadow: 0 0 12px rgba(228, 161, 90, 0.18);
+        }
+        nav,
+        section,
+        #main-footer,
+        body > .px-8.-mt-12 {
+            position: relative;
+            z-index: 2;
+        }
+        .text-gold { color: #e4a15a; }
+        .bg-gold { background-color: #e4a15a; }
+        .border-gold { border-color: #e4a15a; }
+        .hero-gradient {
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-bg,
+        .hero-bg-next {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+        }
+        .hero-bg {
+            opacity: 1;
+            transition: opacity 0.85s ease;
+        }
+        .hero-bg-next {
+            opacity: 0;
+            transition: opacity 0.85s ease;
+        }
+        .hero-gradient.hero-is-animating .hero-bg-next {
+            opacity: 1;
+        }
+        .hero-gradient .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            background: transparent;
+            cursor: pointer;
+            transition: transform 0.25s ease, background 0.3s ease, border-color 0.3s ease;
+        }
+        .hero-dot:hover {
+            transform: scale(1.14);
+        }
+        .hero-dot.is-active {
+            background: #e4a15a;
+            border-color: #e4a15a;
+            transform: scale(1.1);
+        }
+        .card-dark { background-color: #1b1b1b; border-radius: 36px; transition: 0.3s; }
+        .btn-round { border-radius: 50px; padding: 12px 28px; font-weight: 600; transition: 0.3s; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        /* Luxury fleet — center focus */
+        #luxury-fleet { background: #171717; }
+        .fleet-gold { color: #c5a059; }
+        .fleet-gold-bg { background-color: #c5a059; }
+        .fleet-arrow-btn {
+            background-color: rgba(197, 160, 89, 0.92);
+        }
+        .fleet-arrow-btn:hover {
+            background-color: #c5a059;
+        }
+        #luxury-fleet .fleet-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(0.75rem, 1.8vw, 1.35rem);
+            min-height: 430px;
+        }
+        @media (min-width: 1024px) {
+            #luxury-fleet .fleet-row {
+                width: min(1240px, 100%);
+                margin-left: auto;
+                margin-right: auto;
+                overflow: visible;
+                justify-content: center;
+                scroll-snap-type: none;
+            }
+            #luxury-fleet .fleet-side {
+                flex: 0 0 min(27vw, 360px);
+                opacity: 0.82;
+                transform: none;
+                transition: opacity 0.45s ease, transform 0.45s ease;
+                filter: brightness(0.9);
+            }
+            #luxury-fleet .fleet-side:hover {
+                opacity: 0.95;
+                transform: translateY(-2px);
+            }
+            #luxury-fleet .fleet-center-wrap {
+                flex: 0 0 min(56vw, 820px);
+                width: min(56vw, 820px);
+                z-index: 2;
+                transition: transform 0.45s ease, filter 0.45s ease;
+            }
+            #luxury-fleet .fleet-center-inner {
+                border-radius: 22px;
+                overflow: hidden;
+                box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+            }
+        }
+        #luxury-fleet .fleet-side,
+        #luxury-fleet .fleet-center-wrap {
+            will-change: transform, opacity;
+        }
+        #luxury-fleet .fleet-motion-next #fleetLeftCard {
+            animation: fleetLeftOut 0.42s ease both;
+        }
+        #luxury-fleet .fleet-motion-next #fleetCenterCard {
+            animation: fleetCenterToLeft 0.42s ease both;
+        }
+        #luxury-fleet .fleet-motion-next #fleetRightCard {
+            animation: fleetRightToCenter 0.42s ease both;
+        }
+        #luxury-fleet .fleet-motion-prev #fleetRightCard {
+            animation: fleetRightOut 0.42s ease both;
+        }
+        #luxury-fleet .fleet-motion-prev #fleetCenterCard {
+            animation: fleetCenterToRight 0.42s ease both;
+        }
+        #luxury-fleet .fleet-motion-prev #fleetLeftCard {
+            animation: fleetLeftToCenter 0.42s ease both;
+        }
+        #luxury-fleet .fleet-refresh #fleetLeftCard,
+        #luxury-fleet .fleet-refresh #fleetCenterCard,
+        #luxury-fleet .fleet-refresh #fleetRightCard {
+            animation: fleetFadeIn 0.22s ease both;
+        }
+        #luxury-fleet .fleet-refresh #fleetInfoPanel {
+            animation: fleetInfoRise 0.3s ease both;
+        }
+        @keyframes fleetLeftOut {
+            from { transform: translateX(0); opacity: 0.82; }
+            to { transform: translateX(-34px) scale(0.97); opacity: 0.3; }
+        }
+        @keyframes fleetCenterToLeft {
+            from { transform: translateX(0) scale(1); opacity: 1; }
+            to { transform: translateX(-28px) scale(0.985); opacity: 0.82; }
+        }
+        @keyframes fleetRightToCenter {
+            from { transform: translateX(0) scale(1); opacity: 0.82; }
+            to { transform: translateX(-24px) scale(1.015); opacity: 1; }
+        }
+        @keyframes fleetRightOut {
+            from { transform: translateX(0); opacity: 0.82; }
+            to { transform: translateX(34px) scale(0.97); opacity: 0.3; }
+        }
+        @keyframes fleetCenterToRight {
+            from { transform: translateX(0) scale(1); opacity: 1; }
+            to { transform: translateX(28px) scale(0.985); opacity: 0.82; }
+        }
+        @keyframes fleetLeftToCenter {
+            from { transform: translateX(0) scale(1); opacity: 0.82; }
+            to { transform: translateX(24px) scale(1.015); opacity: 1; }
+        }
+        @keyframes fleetFadeIn {
+            from { opacity: 0.62; transform: scale(0.992); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes fleetInfoRise {
+            from { opacity: 0.6; transform: translate(-50%, 10px); }
+            to { opacity: 1; transform: translate(-50%, 0); }
+        }
+        @media (max-width: 1023px) {
+            #luxury-fleet .fleet-row {
+                justify-content: flex-start;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                scroll-padding-inline: 1.25rem;
+                -webkit-overflow-scrolling: touch;
+                min-height: unset;
+                padding-bottom: 0.5rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            #luxury-fleet .fleet-side,
+            #luxury-fleet .fleet-center-wrap {
+                flex: 0 0 min(92vw, 420px);
+                scroll-snap-align: center;
+                opacity: 1;
+                transform: none;
+                filter: none;
+            }
+            #luxury-fleet .fleet-side {
+                opacity: 0.72;
+            }
+            #luxury-fleet .fleet-center-wrap {
+                flex-basis: min(94vw, 520px);
+            }
+            #luxury-fleet .fleet-center-inner {
+                border-radius: 24px;
+                overflow: hidden;
+            }
+        }
+        /* ── Car Types (same card design as previous Our Services) ── */
+        #car-types-section {
+            --ct-bg: #181716;
+            --ct-gold: #caa45f;
+            --ct-cream: #f0ede6;
+            background: var(--ct-bg);
+            font-family: 'Outfit', sans-serif;
+            color: var(--ct-cream);
+            padding: 100px 20px 120px;
+            text-align: center;
+        }
+        #car-types-section .ct-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        #car-types-section .ct-section-header {
+            text-align: center;
+            margin-bottom: 0;
+        }
+        #car-types-section .ct-eyebrow {
+            color: var(--ct-gold);
+            letter-spacing: 5px;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        #car-types-section .ct-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: -0.02em;
+        }
+        #car-types-section .ct-title em {
+            font-style: normal;
+            color: var(--ct-gold);
+        }
+        #car-types-section .ct-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 60px;
+            padding-bottom: 48px;
+        }
+        #car-types-section .ct-card {
+            position: relative;
+            overflow: visible;
+            cursor: pointer;
+            transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        #car-types-section .ct-card:hover {
+            transform: translateY(-6px);
+        }
+        #car-types-section .ct-card-body {
+            position: relative;
+            height: 350px;
+            border-radius: 40px;
+            overflow: visible;
+        }
+        #car-types-section .ct-card-body img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 40px;
+            transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        #car-types-section .ct-card:hover .ct-card-body img {
+            transform: scale(1.06);
+        }
+        #car-types-section .ct-overlay {
+            position: absolute;
+            inset: 0;
+            border-radius: 40px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.25) 45%, transparent 100%);
+            pointer-events: none;
+            transition: opacity 0.45s ease;
+        }
+        #car-types-section .ct-card-content {
+            position: absolute;
+            bottom: 26px;
+            left: 86px;
+            right: 20px;
+            z-index: 2;
+            font-size: 18px;
+            font-weight: 600;
+            text-align: left;
+            line-height: 1.35;
+            text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+            transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        #car-types-section .ct-card:hover .ct-card-content {
+            transform: translateY(-2px);
+        }
+        #car-types-section .ct-card-body::after {
+            content: '';
+            position: absolute;
+            bottom: -38px;
+            left: -38px;
+            width: 96px;
+            height: 96px;
+            background: var(--ct-bg);
+            z-index: 3;
+            pointer-events: none;
+            transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+            border-radius: 50%;
+        }
+        #car-types-section .ct-card:hover .ct-card-body::after {
+            transform: translate(3px, -3px);
+        }
+        #car-types-section .ct-arrow-btn {
+            position: absolute;
+            bottom: -18px;
+            left: -18px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: 1.5px solid var(--ct-gold);
+            background: var(--ct-bg);
+            display: grid;
+            place-items: center;
+            z-index: 10;
+            cursor: pointer;
+            transition: background 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.4s ease;
+        }
+        #car-types-section .ct-card:hover .ct-arrow-btn {
+            background: var(--ct-gold);
+            box-shadow: 0 12px 28px rgba(201, 147, 42, 0.28);
+        }
+        #car-types-section .ct-arrow-btn svg {
+            transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), stroke 0.35s ease;
+        }
+        #car-types-section .ct-card:hover .ct-arrow-btn svg {
+            transform: rotate(45deg);
+            stroke: #181716;
+        }
+        #car-types-section .ct-dots {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 48px;
+        }
+        #car-types-section .ct-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            transition: background 0.35s ease, border-color 0.35s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        #car-types-section .ct-dot:hover {
+            border-color: #ffffff;
+            transform: scale(1.15);
+        }
+        #car-types-section .ct-dot.ct-active {
+            background: var(--ct-gold);
+            border-color: var(--ct-gold);
+            transform: scale(1.3);
+        }
+        @media (max-width: 900px) {
+            #car-types-section .ct-title {
+                font-size: 36px;
+            }
+            #car-types-section .ct-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
 
-  @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
-  @keyframes fadeDown{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
-  @keyframes titleReveal{from{opacity:0;transform:translateY(60px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
-  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-  @keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(34,197,94,.25)}50%{box-shadow:0 0 0 8px rgba(34,197,94,0)}}
-  @keyframes heroZoom{to{transform:scale(1)}}
-  @keyframes wave{0%,100%{transform:rotate(0)}25%{transform:rotate(20deg)}50%{transform:rotate(-10deg)}75%{transform:rotate(15deg)}}
-  @keyframes pulseFab{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.5);opacity:0}}
-  @keyframes modalPop{from{opacity:0;transform:scale(.92) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+        /* Testimonials (bite/notch design) */
+        #testimonials-section {
+            background: #171717;
+            padding: 92px 0 78px;
+            overflow: hidden;
+        }
+        #testimonials-section .ts-inner {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        #testimonials-section .ts-eyebrow {
+            color: #c5a059;
+            letter-spacing: 0.42em;
+            text-transform: uppercase;
+            font-size: 11px;
+            margin-bottom: 14px;
+        }
+        #testimonials-section .ts-title {
+            font-size: clamp(2rem, 4vw, 3.15rem);
+            line-height: 1.06;
+            margin: 0;
+            font-weight: 700;
+        }
+        #testimonials-section .ts-track-wrap {
+            margin-top: 56px;
+            overflow: hidden;
+            mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+        }
+        #testimonials-section .ts-track {
+            width: max-content;
+            display: flex;
+            gap: 24px;
+            animation: tsMarquee 32s linear infinite;
+            will-change: transform;
+        }
+        #testimonials-section .ts-track-wrap:hover .ts-track {
+            animation-play-state: paused;
+        }
+        #testimonials-section .ts-card {
+            width: min(86vw, 360px);
+            background: #212126;
+            border-radius: 22px;
+            padding: 28px 30px 16px;
+            text-align: left;
+            border: 0;
+            box-shadow: none;
+            position: relative;
+            overflow: visible;
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+            display: flex;
+            flex-direction: column;
+            min-height: 318px;
+        }
+        #testimonials-section .ts-card::before {
+            content: "❝";
+            position: absolute;
+            top: 18px;
+            left: 30px;
+            color: #e4a15a;
+            font-size: 52px;
+            line-height: 1;
+            font-weight: 700;
+            opacity: 0.95;
+        }
+        #testimonials-section .ts-card::after {
+            content: '';
+            position: absolute;
+            right: 20px;
+            top: -2px;
+            width: 98px;
+            height: 34px;
+            border-radius: 0 0 14px 14px;
+            background: #171717;
+            z-index: 1;
+        }
+        #testimonials-section .ts-stars {
+            color: #c5a059;
+            letter-spacing: 2px;
+            font-size: 13px;
+            position: absolute;
+            top: 0;
+            right: 24px;
+            z-index: 2;
+            margin: 0;
+            background: #171717;
+            padding: 8px 12px 10px;
+            border-radius: 0 0 12px 12px;
+        }
+        #testimonials-section .ts-quote {
+            color: #c8c8cc;
+            font-size: 14px;
+            line-height: 1.9;
+            margin: 0;
+            min-height: 138px;
+            padding-top: 54px;
+        }
+        #testimonials-section .ts-user {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 12px;
+            margin-top: auto;
+            position: relative;
+            z-index: 2;
+            padding-bottom: 10px;
+            padding-left: 4px;
+        }
+        #testimonials-section .ts-user::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            bottom: -24px;
+            width: 235px;
+            height: 86px;
+            background: #171717;
+            border-radius: 0 18px 0 0;
+            z-index: -1;
+        }
+        #testimonials-section .ts-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        #testimonials-section .ts-name {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        #testimonials-section .ts-user-meta {
+            background: transparent;
+            padding: 8px 0 0;
+            border-radius: 0;
+            margin-left: 0;
+            min-width: 104px;
+        }
+        #testimonials-section .ts-role {
+            margin: 2px 0 0;
+            color: #9b9ba1;
+            font-size: 12px;
+        }
+        #testimonials-section .ts-bottom-accent {
+            width: 2px;
+            height: 32px;
+            background: #c5a059;
+            margin: 46px auto 0;
+            border-radius: 2px;
+            opacity: 0.9;
+        }
+        @keyframes tsMarquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-50% - 11px)); }
+        }
+        @media (max-width: 900px) {
+            #testimonials-section {
+                padding: 78px 0 64px;
+            }
+            #testimonials-section .ts-track-wrap {
+                margin-top: 44px;
+            }
+            #testimonials-section .ts-card {
+                width: min(88vw, 320px);
+                padding: 24px 22px 20px;
+            }
+            #testimonials-section .ts-quote {
+                min-height: 118px;
+                padding-top: 48px;
+            }
+        }
 
-  .reveal{opacity:0}
-  .reveal.in{animation:fadeUp .9s cubic-bezier(.2,.7,.2,1) forwards}
-  .reveal.in.delay-1{animation-delay:.08s}
-  .reveal.in.delay-2{animation-delay:.16s}
-  .reveal.in.delay-3{animation-delay:.24s}
-  .reveal.in.delay-4{animation-delay:.32s}
-  .reveal.in.delay-5{animation-delay:.40s}
-  .reveal.in.delay-6{animation-delay:.48s}
-
-  /* TOP BAR */
-  .topbar{background:var(--dark);color:#cbd5e1;font-size:13px;padding:10px 28px;display:flex;justify-content:space-between;align-items:center;gap:18px}
-  .topbar .left, .topbar .right{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
-  .topbar a{display:inline-flex;align-items:center;gap:6px;transition:color .2s}
-  .topbar a:hover{color:#fff}
-  .topbar svg{width:14px;height:14px;flex-shrink:0}
-
-  /* NAV */
-  .nav-shell{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 28px;background:#fff;border-bottom:1px solid transparent;transition:box-shadow .3s, border-color .3s, padding .3s;animation:fadeDown .8s .1s cubic-bezier(.2,.7,.2,1) backwards}
-  .nav-shell.scrolled{box-shadow:0 6px 24px rgba(11,16,32,.06);border-color:var(--line);padding:10px 28px}
-  .logo{font-family:'Instrument Serif',serif;font-size:32px;letter-spacing:-.5px;font-style:italic;color:var(--ink);display:flex;align-items:center;gap:8px}
-  .logo::after{content:".";color:var(--accent)}
-  .logo .badge-mini{background:var(--accent);color:#fff;font-family:'Manrope';font-style:normal;font-size:10px;font-weight:800;padding:3px 7px;border-radius:6px;letter-spacing:.05em}
-  .nav-links{display:flex;gap:32px;list-style:none;font-size:15px;font-weight:500;color:var(--ink);margin-left:auto;margin-right:auto}
-  .nav-links a{position:relative;padding-bottom:6px;opacity:.78;transition:opacity .2s}
-  .nav-links a:hover, .nav-links a.active{opacity:1}
-  .nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:currentColor;border-radius:2px}
-  .cta-app{background:var(--ink);color:#fff;border-radius:999px;padding:12px 20px 12px 22px;display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:15px;border:none;cursor:pointer;box-shadow:0 6px 18px rgba(11,16,32,.10);transition:transform .25s, box-shadow .25s, background .25s;white-space:nowrap}
-  .cta-app:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(11,16,32,.18);background:var(--accent)}
-  .cta-app .arr{width:22px;height:22px;border-radius:50%;background:#fff;color:var(--ink);display:inline-grid;place-items:center;font-size:12px;transition:transform .3s}
-  .cta-app:hover .arr{transform:rotate(45deg)}
-  .menu-btn{display:none;width:46px;height:46px;border-radius:50%;background:#fff;border:1.5px solid var(--line);cursor:pointer;align-items:center;justify-content:center}
-  .menu-btn span{display:block;width:18px;height:2px;background:var(--ink);position:relative}
-  .menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--ink);transition:transform .25s}
-  .menu-btn span::before{top:-6px}
-  .menu-btn span::after{top:6px}
-  .menu-btn.open span{background:transparent}
-  .menu-btn.open span::before{transform:translateY(6px) rotate(45deg)}
-  .menu-btn.open span::after{transform:translateY(-6px) rotate(-45deg)}
-  .mobile-menu{position:fixed;inset:0;z-index:40;background:rgba(11,16,32,.97);backdrop-filter:blur(20px);display:none;flex-direction:column;align-items:center;justify-content:center;gap:30px;opacity:0;pointer-events:none;transition:opacity .3s}
-  .mobile-menu.show{opacity:1;pointer-events:auto}
-  .mobile-menu a{color:#fff;font-size:24px;font-weight:600;font-family:'Instrument Serif',serif;font-style:italic}
-  .mobile-menu a:hover{color:var(--accent-2)}
-
-  /* HERO */
-  .hero{position:relative;margin:14px 28px 0;border-radius:var(--radius);overflow:hidden;height:clamp(520px,76vh,760px);background:#cbd5e1;isolation:isolate}
-  .hero-photo{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1502877338535-766e1452684a?w=2000&q=85');background-size:cover;background-position:center 35%;transform:scale(1.05);animation:heroZoom 1.6s cubic-bezier(.2,.7,.2,1) forwards}
-  .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(11,16,32,.18) 0%, rgba(11,16,32,0) 30%, rgba(11,16,32,0) 60%, rgba(255,255,255,.06) 100%)}
-  .hero-title{position:absolute;left:0;right:0;bottom:-1.5%;text-align:center;font-weight:800;font-size:clamp(72px,17vw,280px);color:rgba(255,255,255,.92);letter-spacing:-.05em;line-height:.85;pointer-events:none;text-shadow:0 12px 50px rgba(0,0,0,.10);animation:titleReveal 1.4s .35s cubic-bezier(.2,.7,.2,1) backwards;z-index:1;mix-blend-mode:screen}
-  .hero-title.solid{mix-blend-mode:normal;color:rgba(255,255,255,.85);z-index:0}
-  .hero-chip{position:absolute;top:24px;right:24px;color:#fff;font-size:13px;background:rgba(11,16,32,.55);backdrop-filter:blur(10px);padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.18);z-index:3;animation:fadeUp 1s .9s cubic-bezier(.2,.7,.2,1) backwards;display:flex;align-items:center;gap:10px;font-weight:500}
-  .hero-chip .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite}
-
-  /* BRANDS */
-  .brands{display:grid;grid-template-columns:repeat(7,1fr);align-items:center;gap:24px;padding:72px 28px;max-width:1280px;margin:0 auto}
-  .brand{height:54px;display:grid;place-items:center;color:var(--ink);opacity:.45;filter:grayscale(1);transition:opacity .3s, filter .3s, transform .3s}
-  .brand:hover{opacity:.85;filter:grayscale(.2);transform:translateY(-2px)}
-  .brand svg{width:auto;height:38px;color:inherit}
-  .brand-name{font-weight:800;font-size:22px;letter-spacing:-.5px}
-
-  /* SERVICES */
-  .services{margin:8px 28px 0;border-radius:var(--radius);background:var(--dark);color:#fff;padding:88px 64px;position:relative;overflow:hidden}
-  .services::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 500px at 75% 0%, rgba(59,130,246,.14), transparent 60%),radial-gradient(800px 600px at 100% 100%, rgba(37,99,255,.10), transparent 70%);pointer-events:none}
-  .services::after{content:"";position:absolute;inset:0;background-image:radial-gradient(ellipse 1200px 800px at 90% 50%, transparent 60%, rgba(255,255,255,.025) 60%, transparent 61%),radial-gradient(ellipse 1100px 700px at 90% 50%, transparent 62%, rgba(255,255,255,.025) 62%, transparent 63%),radial-gradient(ellipse 1000px 600px at 90% 50%, transparent 64%, rgba(255,255,255,.025) 64%, transparent 65%),radial-gradient(ellipse 900px 500px at 90% 50%, transparent 66%, rgba(255,255,255,.025) 66%, transparent 67%);pointer-events:none}
-  .svc-head{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:end;margin-bottom:56px;position:relative;z-index:1}
-  .eyebrow{color:var(--accent-2);font-weight:700;font-size:15px;margin-bottom:16px}
-  .svc-head h2{font-size:clamp(30px,3.2vw,52px);font-weight:700;letter-spacing:-.02em;line-height:1.06}
-  .svc-head .desc{color:#a3a8b8;font-size:15.5px;line-height:1.7;max-width:460px;justify-self:end}
-  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;position:relative;z-index:1}
-  .svc-card{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:28px;transition:transform .35s cubic-bezier(.2,.7,.2,1), border-color .35s, background .35s, box-shadow .35s;position:relative;overflow:hidden}
-  .svc-card::before{content:"";position:absolute;inset:0;background:radial-gradient(400px 200px at var(--mx,50%) var(--my,0%), rgba(59,130,246,.18), transparent 60%);opacity:0;transition:opacity .3s}
-  .svc-card:hover::before{opacity:1}
-  .svc-card:hover{transform:translateY(-6px);border-color:rgba(59,130,246,.4);background:rgba(59,130,246,.04);box-shadow:0 22px 40px rgba(0,0,0,.25)}
-  .svc-icon{width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.06);display:grid;place-items:center;margin-bottom:84px;color:#cbd5e1;position:relative;z-index:1;transition:background .3s, transform .3s}
-  .svc-card:hover .svc-icon{background:rgba(59,130,246,.18);transform:scale(1.06) rotate(-4deg)}
-  .svc-card h3{font-size:21px;font-weight:700;margin-bottom:10px;position:relative;z-index:1}
-  .svc-card p{color:#a3a8b8;font-size:14px;line-height:1.65;position:relative;z-index:1}
-
-  /* HOW IT WORKS */
-  .how{padding:130px 28px 60px;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-  .how-head .eyebrow{color:var(--accent)}
-  .how-head h2{font-size:clamp(30px,3vw,48px);font-weight:700;letter-spacing:-.02em;line-height:1.1;margin-bottom:48px;color:var(--ink)}
-  .steps{display:flex;flex-direction:column;gap:0}
-  .step{display:grid;grid-template-columns:auto 1fr;gap:20px;padding:22px 28px;border-radius:18px;align-items:start;position:relative;cursor:pointer;transition:background .35s}
-  .step.active{background:var(--soft)}
-  .step .num{width:46px;height:46px;border-radius:50%;background:#fff;border:1.5px solid #e5e7eb;display:grid;place-items:center;font-weight:700;color:var(--ink);font-size:14px;transition:background .3s, color .3s, border-color .3s;flex-shrink:0}
-  .step.active .num{background:var(--ink);color:#fff;border-color:var(--ink)}
-  .step h4{font-size:20px;font-weight:700;color:var(--ink);margin-bottom:6px}
-  .step p{color:var(--muted);font-size:14.5px;line-height:1.6;max-width:340px;max-height:0;overflow:hidden;opacity:0;transition:max-height .45s ease, opacity .35s ease, margin-top .35s}
-  .step.active p{max-height:140px;opacity:1;margin-top:6px}
-  .step:not(:last-child)::before{content:"";position:absolute;left:50px;top:68px;height:calc(100% - 50px);width:1px;border-left:1.5px dashed #d1d5db}
-  .step.active:not(:last-child)::before{display:none}
-  .step-body{overflow:hidden}
-  .mockup{position:relative;display:flex;flex-direction:column;gap:18px;animation:float 5s ease-in-out infinite}
-  .mockup .badge{position:absolute;top:-18px;right:-10px;width:64px;height:64px;background:var(--ink);color:#fff;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:18px;z-index:3;box-shadow:0 8px 22px rgba(11,16,32,.25)}
-  .panel{background:#fff;border-radius:20px;padding:22px;box-shadow:0 10px 32px rgba(11,16,32,.06);border:1px solid #f1f3f8}
-  .panel h5{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:16px}
-  .car-types{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-  .car-type{display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer}
-  .car-type .thumb{width:100%;aspect-ratio:1;border-radius:14px;background:#e5e7eb;background-size:cover;background-position:center;transition:transform .35s}
-  .car-type:hover .thumb{transform:scale(1.04)}
-  .car-type span{font-size:13px;color:var(--ink);font-weight:500}
-  .car-list{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}
-  .car-mini{background:#fff;border:1px solid #f1f3f8;border-radius:16px;overflow:hidden;box-shadow:0 4px 12px rgba(11,16,32,.04);transition:transform .35s, box-shadow .35s}
-  .car-mini:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(11,16,32,.10)}
-  .car-mini .img{height:110px;background:#f4f4f7;background-size:cover;background-position:center;position:relative}
-  .car-mini .bookmark{position:absolute;top:10px;right:10px;width:30px;height:30px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 2px 6px rgba(0,0,0,.06)}
-  .car-mini .info{padding:12px 14px}
-  .car-mini .name{font-weight:700;font-size:14.5px;color:var(--ink)}
-  .car-mini .price{font-weight:700;font-size:14px;color:var(--ink);margin-top:2px}
-  .car-mini .price small{color:#9ca3af;font-weight:500}
-  .car-mini .meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:12px;color:var(--muted)}
-  .meta .rating{color:var(--ink);font-weight:600}
-  .meta .star{color:var(--star)}
-
-  /* COLLECTION / FLEET */
-  .collection{padding:80px 28px 100px;max-width:1280px;margin:0 auto;text-align:center}
-  .collection .eyebrow{color:var(--accent)}
-  .collection h2{font-size:clamp(30px,3vw,48px);font-weight:700;letter-spacing:-.02em;color:var(--ink);margin-bottom:14px}
-  .collection .lead{color:var(--muted);max-width:560px;margin:0 auto 36px;font-size:15px;line-height:1.6}
-  .filters{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:8px;padding-bottom:30px;border-bottom:1px solid var(--line)}
-  .pill{padding:12px 28px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--ink);font-weight:600;font-size:14.5px;cursor:pointer;transition:all .25s cubic-bezier(.2,.7,.2,1);font-family:inherit}
-  .pill:hover{border-color:var(--ink);transform:translateY(-2px)}
-  .pill.active{background:var(--ink);color:#fff;border-color:var(--ink)}
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;text-align:left}
-  .card{background:#fff;border:1px solid #f1f3f8;border-radius:20px;overflow:hidden;transition:transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s;display:flex;flex-direction:column}
-  .card:hover{transform:translateY(-6px);box-shadow:0 22px 40px rgba(11,16,32,.10)}
-  .card .photo-wrap{aspect-ratio:16/10;overflow:hidden;background:#e5e7eb;position:relative}
-  .card .photo{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .6s}
-  .card:hover .photo{transform:scale(1.06)}
-  .card .tag{position:absolute;top:12px;left:12px;background:rgba(11,16,32,.85);color:#fff;font-size:11px;font-weight:700;padding:5px 10px;border-radius:6px;backdrop-filter:blur(8px);letter-spacing:.04em}
-  .card .body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
-  .card .row1{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
-  .card .name{font-weight:700;font-size:18px;color:var(--ink)}
-  .card .price{font-weight:700;font-size:18px;color:var(--ink);white-space:nowrap}
-  .card .price small{color:#9ca3af;font-weight:500;font-size:14px}
-  .card .row2{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:14px}
-  .card .loc{display:flex;align-items:center;gap:6px}
-  .card .rating{display:flex;align-items:center;gap:4px;color:var(--ink);font-weight:600}
-  .card .view-btn{
-    margin-top:8px;width:100%;padding:12px;border-radius:12px;
-    background:var(--soft);color:var(--ink);border:none;
-    font-family:inherit;font-weight:700;font-size:14px;cursor:pointer;
-    display:flex;align-items:center;justify-content:center;gap:8px;
-    transition:background .25s, color .25s, transform .25s;
-  }
-  .card .view-btn:hover{background:var(--ink);color:#fff;transform:translateY(-1px)}
-  .card .view-btn .arr{transition:transform .3s}
-  .card .view-btn:hover .arr{transform:translateX(3px)}
-
-  /* MODAL */
-  .modal-backdrop{
-    position:fixed;inset:0;z-index:100;
-    background:rgba(11,16,32,.78);backdrop-filter:blur(8px);
-    display:none;align-items:center;justify-content:center;padding:28px;
-    opacity:0;transition:opacity .3s;overflow-y:auto;
-  }
-  .modal-backdrop.show{display:flex;opacity:1}
-  .modal{
-    background:#fff;border-radius:24px;width:100%;max-width:760px;max-height:92vh;
-    overflow-y:auto;overflow-x:hidden;display:flex;flex-direction:column;
-    position:relative;box-shadow:0 30px 80px rgba(0,0,0,.4);
-    animation:modalPop .4s cubic-bezier(.2,.7,.2,1);
-    scrollbar-width:thin;
-  }
-  .modal::-webkit-scrollbar{width:8px}
-  .modal::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:4px}
-  .modal::-webkit-scrollbar-track{background:transparent}
-  .modal-close{
-    position:sticky;top:14px;align-self:flex-end;
-    margin:14px 14px -54px 0;width:40px;height:40px;border-radius:50%;
-    background:rgba(255,255,255,.96);border:none;cursor:pointer;
-    display:grid;place-items:center;color:var(--ink);
-    box-shadow:0 6px 16px rgba(0,0,0,.18);z-index:20;
-    transition:transform .25s, background .25s;
-    flex-shrink:0;
-  }
-  .modal-close:hover{transform:scale(1.08) rotate(90deg);background:#fff}
-
-  .modal-left{position:relative;background:#0e1430;display:flex;flex-direction:column;width:100%;flex-shrink:0}
-  .modal-tabs{
-    position:absolute;top:18px;left:18px;z-index:5;
-    display:flex;gap:6px;background:rgba(11,16,32,.6);backdrop-filter:blur(10px);
-    padding:5px;border-radius:12px;border:1px solid rgba(255,255,255,.10);
-  }
-  .modal-tabs button{
-    background:transparent;border:none;padding:8px 16px;border-radius:8px;
-    color:rgba(255,255,255,.65);font-weight:600;font-size:13px;cursor:pointer;
-    font-family:inherit;transition:background .25s, color .25s;
-  }
-  .modal-tabs button.active{background:#fff;color:var(--ink)}
-
-  .modal-slider{position:relative;width:100%;aspect-ratio:16/10;max-height:55vh;overflow:hidden;background:#0e1430}
-  .modal-slides{position:absolute;inset:0;display:flex;transition:transform .55s cubic-bezier(.65,0,.35,1)}
-  .modal-slides .slide{flex:0 0 100%;width:100%;height:100%;background-size:cover;background-position:center}
-  .modal-counter{position:absolute;top:18px;right:18px;background:rgba(11,16,32,.6);backdrop-filter:blur(10px);color:#fff;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:600;z-index:5;border:1px solid rgba(255,255,255,.10)}
-  .modal-nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.94);border:none;cursor:pointer;display:grid;place-items:center;color:var(--ink);box-shadow:0 6px 18px rgba(0,0,0,.25);z-index:5;transition:transform .25s, background .25s}
-  .modal-nav:hover{transform:translateY(-50%) scale(1.1);background:#fff}
-  .modal-nav.prev{left:14px}
-  .modal-nav.next{right:14px}
-  .modal-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:5}
-  .modal-dots span{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:width .3s, background .3s}
-  .modal-dots span.active{width:24px;border-radius:6px;background:#fff}
-  .modal-thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:10px;background:#0a1024}
-  .modal-thumbs .thumb{aspect-ratio:16/10;border-radius:8px;background-size:cover;background-position:center;cursor:pointer;opacity:.55;transition:opacity .25s;border:2px solid transparent}
-  .modal-thumbs .thumb:hover{opacity:.85}
-  .modal-thumbs .thumb.active{opacity:1;border-color:#fff}
-
-  .modal-right{padding:28px 28px 0;display:flex;flex-direction:column;min-width:0;overflow-wrap:break-word;word-wrap:break-word}
-  .cat-tag{display:inline-block;background:var(--soft);color:var(--accent);font-size:11px;font-weight:800;letter-spacing:.08em;padding:4px 10px;border-radius:6px;align-self:flex-start;margin-bottom:14px}
-  .modal-right h2{font-size:28px;font-weight:800;letter-spacing:-.02em;color:var(--ink);margin-bottom:6px;overflow-wrap:break-word}
-  .modal-meta{display:flex;align-items:center;gap:14px;color:var(--muted);font-size:13.5px;margin-bottom:14px;flex-wrap:wrap}
-  .modal-meta .star{color:var(--star)}
-  .modal-meta strong{color:var(--ink);font-weight:700}
-  .modal-desc{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:18px}
-
-  /* BOOKING FORM */
-  .booking-card{
-    background:linear-gradient(180deg, var(--soft) 0%, #fff 100%);
-    border:1.5px solid var(--line);border-radius:16px;padding:6px 16px 14px;
-    margin-bottom:20px;
-  }
-  .form-row{
-    display:grid;grid-template-columns:90px 1fr;align-items:center;gap:12px;
-    padding:12px 0;border-bottom:1px solid rgba(11,16,32,.06);
-  }
-  .form-row:last-of-type{border-bottom:none}
-  .form-row label{
-    font-size:11px;font-weight:800;color:var(--muted);
-    letter-spacing:.06em;text-transform:uppercase;
-  }
-  .form-row input{
-    padding:9px 12px;border-radius:10px;border:1.5px solid var(--line);
-    background:#fff;font-family:inherit;font-size:13.5px;font-weight:600;
-    color:var(--ink);width:100%;transition:border-color .2s, box-shadow .2s;min-width:0;
-  }
-  .form-row input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(37,99,255,.10)}
-  .form-row input::-webkit-calendar-picker-indicator{cursor:pointer;opacity:.5}
-  .form-row input:hover::-webkit-calendar-picker-indicator{opacity:1}
-  .pax-row{display:flex;align-items:center;gap:8px}
-  .pax-btn{
-    width:30px;height:30px;border-radius:8px;border:1.5px solid var(--line);background:#fff;
-    cursor:pointer;font-weight:800;color:var(--ink);font-size:16px;line-height:1;
-    transition:background .2s, border-color .2s;flex-shrink:0;
-  }
-  .pax-btn:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
-  .pax-btn:disabled{opacity:.4;cursor:not-allowed}
-  .pax-row input{text-align:center;width:60px;padding:9px 0}
-  .total-card{
-    margin-top:14px;padding-top:14px;border-top:1.5px dashed #d1d5db;
-  }
-  .total-row{
-    display:flex;justify-content:space-between;align-items:center;
-    font-size:13px;color:var(--muted);margin-bottom:6px;
-  }
-  .total-row strong{color:var(--ink);font-weight:700}
-  .total-final{
-    display:flex;justify-content:space-between;align-items:baseline;
-    margin-top:10px;padding-top:10px;border-top:1px solid var(--line);
-  }
-  .total-final .lbl{
-    font-size:11px;font-weight:800;letter-spacing:.08em;
-    text-transform:uppercase;color:var(--muted);
-  }
-  .total-final .amt{
-    font-size:30px;font-weight:800;color:var(--ink);letter-spacing:-.02em;
-    transition:transform .25s;
-  }
-  .total-final .amt.bump{animation:bump .3s ease}
-  @keyframes bump{0%,100%{transform:scale(1)}50%{transform:scale(1.08);color:var(--accent)}}
-  .warn{
-    background:#fef3c7;border:1px solid #fde68a;color:#92400e;
-    padding:9px 12px;border-radius:8px;font-size:12.5px;font-weight:600;
-    margin-top:10px;display:none;align-items:center;gap:6px;
-  }
-  .warn.show{display:flex}
-
-  .modal-h4{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);margin-bottom:12px}
-  .specs-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;margin-bottom:22px}
-  .spec-item{display:flex;align-items:center;gap:10px;min-width:0}
-  .spec-item .ic{width:34px;height:34px;border-radius:9px;background:var(--soft);display:grid;place-items:center;color:var(--ink);flex-shrink:0}
-  .spec-item-text{min-width:0;flex:1}
-  .spec-item .lbl{font-size:10.5px;color:var(--muted);font-weight:700;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .spec-item .val{font-size:13.5px;font-weight:700;color:var(--ink);margin-top:1px;overflow-wrap:break-word}
-
-  .feat-list{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}
-  .feat-list span{background:var(--soft);color:var(--ink);font-size:12px;font-weight:600;padding:5px 10px;border-radius:7px;white-space:nowrap}
-
-  .incl-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
-  .incl-list li{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink);overflow-wrap:break-word}
-  .incl-list li svg{width:14px;height:14px;color:var(--green);flex-shrink:0}
-
-  .modal-cta{position:sticky;bottom:0;background:#fff;padding:14px 0 18px;display:flex;gap:8px;border-top:1px solid var(--line);margin-top:auto;z-index:5}
-  .modal-cta button{flex:1;padding:13px 10px;border-radius:11px;font-family:inherit;font-weight:700;font-size:13.5px;cursor:pointer;border:none;display:flex;align-items:center;justify-content:center;gap:7px;transition:transform .25s, background .25s;min-width:0;white-space:nowrap}
-  .modal-cta button:disabled{opacity:.5;cursor:not-allowed}
-  .btn-wa-modal{background:#22c55e;color:#fff}
-  .btn-wa-modal:hover:not(:disabled){background:#16a34a;transform:translateY(-2px)}
-  .btn-call-modal{background:var(--ink);color:#fff;flex:0 0 auto;padding:13px 16px}
-  .btn-call-modal:hover{background:var(--accent);transform:translateY(-2px)}
-
-  /* PRICING */
-  .pricing{padding:80px 28px;max-width:1280px;margin:0 auto}
-  .pricing .head{text-align:center;margin-bottom:48px}
-  .pricing .head .eyebrow{color:var(--accent)}
-  .pricing .head h2{font-size:clamp(30px,3vw,48px);font-weight:700;letter-spacing:-.02em;color:var(--ink)}
-  .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .price-card{background:#fff;border:1.5px solid var(--line);border-radius:22px;padding:32px 28px;transition:transform .3s, box-shadow .3s, border-color .3s}
-  .price-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(11,16,32,.07)}
-  .price-card.featured{border-color:var(--ink);background:var(--ink);color:#fff;position:relative}
-  .price-card.featured::before{content:"Popular";position:absolute;top:-12px;right:24px;background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px;letter-spacing:.05em}
-  .price-card h3{font-size:22px;font-weight:700;margin-bottom:6px}
-  .price-card .sub{color:var(--muted);font-size:14px;margin-bottom:20px}
-  .price-card.featured .sub{color:#a3a8b8}
-  .price-card .amt{font-size:42px;font-weight:800;letter-spacing:-.02em;margin-bottom:4px}
-  .price-card .amt small{font-size:15px;font-weight:500;color:var(--muted)}
-  .price-card.featured .amt small{color:#a3a8b8}
-  .price-card .saving{color:var(--green);font-size:13px;font-weight:600;margin-bottom:24px}
-  .price-card.featured .saving{color:#86efac}
-  .price-card ul{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:24px}
-  .price-card li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink)}
-  .price-card.featured li{color:#e2e8f0}
-  .price-card li svg{width:18px;height:18px;flex-shrink:0;color:var(--green);margin-top:2px}
-  .price-card .pick{width:100%;padding:13px;border-radius:12px;background:var(--ink);color:#fff;border:none;font-weight:600;font-size:14.5px;cursor:pointer;transition:background .25s, transform .25s;font-family:inherit}
-  .price-card .pick:hover{background:var(--accent);transform:translateY(-2px)}
-  .price-card.featured .pick{background:#fff;color:var(--ink)}
-  .price-card.featured .pick:hover{background:var(--accent);color:#fff}
-
-  .inclusions{margin-top:32px;background:var(--soft);border-radius:18px;padding:24px 28px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-  .inc{display:flex;align-items:center;gap:12px}
-  .inc .ic{width:42px;height:42px;border-radius:12px;background:#fff;display:grid;place-items:center;color:var(--accent);flex-shrink:0;box-shadow:0 4px 10px rgba(11,16,32,.04)}
-  .inc .lbl{font-weight:700;font-size:14.5px;color:var(--ink);line-height:1.3}
-  .inc .sub{font-size:12.5px;color:var(--muted);margin-top:2px}
-
-  /* REQUIREMENTS */
-  .reqs{padding:60px 28px;max-width:1280px;margin:0 auto}
-  .reqs .head{text-align:center;margin-bottom:40px}
-  .reqs .head h2{font-size:clamp(28px,2.6vw,40px);font-weight:700;letter-spacing:-.02em;color:var(--ink)}
-  .reqs .head .eyebrow{color:var(--accent)}
-  .reqs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-  .req{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:24px;transition:border-color .25s, transform .25s}
-  .req:hover{border-color:var(--ink);transform:translateY(-3px)}
-  .req .ic{width:46px;height:46px;border-radius:12px;background:var(--soft);display:grid;place-items:center;color:var(--ink);margin-bottom:14px}
-  .req h4{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:6px}
-  .req p{font-size:13.5px;color:var(--muted);line-height:1.55}
-
-  /* FAQ */
-  .faq{padding:80px 28px;max-width:920px;margin:0 auto}
-  .faq .head{text-align:center;margin-bottom:40px}
-  .faq .head h2{font-size:clamp(30px,3vw,48px);font-weight:700;letter-spacing:-.02em;color:var(--ink)}
-  .faq .head .eyebrow{color:var(--accent)}
-  .faq-item{border-bottom:1px solid var(--line);padding:6px 0}
-  .faq-q{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:20px 4px;width:100%;background:none;border:none;cursor:pointer;text-align:left;font-family:inherit}
-  .faq-q span{font-weight:700;font-size:16.5px;color:var(--ink)}
-  .faq-q .icon{width:28px;height:28px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--ink);transition:background .25s, transform .35s;flex-shrink:0}
-  .faq-item.open .faq-q .icon{transform:rotate(45deg);background:var(--ink);color:#fff}
-  .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;color:var(--muted);font-size:14.5px;line-height:1.65}
-  .faq-item.open .faq-a{max-height:340px;padding-bottom:18px;padding-right:46px}
-
-  /* CONTACT */
-  .contact{padding:60px 28px 90px;max-width:1280px;margin:0 auto}
-  .contact-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:36px;background:var(--ink);border-radius:var(--radius);padding:60px;color:#fff;position:relative;overflow:hidden}
-  .contact-grid::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 400px at 110% 20%, rgba(59,130,246,.18), transparent 60%);pointer-events:none}
-  .contact-left, .contact-right{position:relative;z-index:1}
-  .contact .eyebrow{color:#7aa9ff}
-  .contact h2{font-size:clamp(28px,2.8vw,42px);font-weight:700;letter-spacing:-.02em;line-height:1.1;margin-bottom:14px}
-  .contact .lead{color:#a3a8b8;font-size:15.5px;line-height:1.65;margin-bottom:28px;max-width:440px}
-  .contact-list{display:flex;flex-direction:column;gap:14px}
-  .contact-item{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px 18px;transition:background .25s, border-color .25s}
-  .contact-item:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.18)}
-  .contact-item .ic{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.08);display:grid;place-items:center;color:#cbd5e1;flex-shrink:0}
-  .contact-item .lbl{font-size:12.5px;color:#a3a8b8;margin-bottom:2px}
-  .contact-item .val{font-weight:700;color:#fff;font-size:15px}
-  .contact-item.wa .ic{background:#22c55e;color:#fff}
-  .contact-item .ic .wave{display:inline-block;animation:wave 2s ease-in-out infinite;transform-origin:70% 70%}
-  .contact-cta{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
-  .btn-primary{background:#fff;color:var(--ink);border:none;border-radius:999px;padding:13px 22px;font-weight:700;font-size:14.5px;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:transform .25s, background .25s;font-family:inherit}
-  .btn-primary:hover{transform:translateY(-2px);background:var(--accent);color:#fff}
-  .btn-wa{background:#22c55e;color:#fff;border:none;border-radius:999px;padding:13px 22px;font-weight:700;font-size:14.5px;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:transform .25s, background .25s;font-family:inherit}
-  .btn-wa:hover{transform:translateY(-2px);background:#16a34a}
-  .map-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);border-radius:20px;overflow:hidden;height:100%;min-height:380px;display:flex;flex-direction:column}
-  .map-img{flex:1;background:linear-gradient(135deg, #1a2a52 0%, #0e1430 100%);background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3Cpattern id='g' width='30' height='30' patternUnits='userSpaceOnUse'%3E%3Cpath d='M30 0H0V30' fill='none' stroke='%231e2a55' stroke-width='1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23g)'/%3E%3Cpath d='M0 180 Q100 160 200 175 T400 170' stroke='%232c3e6f' stroke-width='3' fill='none'/%3E%3Cpath d='M120 0 V300' stroke='%232c3e6f' stroke-width='2' fill='none'/%3E%3Cpath d='M0 90 H400' stroke='%232c3e6f' stroke-width='2' fill='none'/%3E%3Ccircle cx='200' cy='150' r='10' fill='%233b82f6'/%3E%3Ccircle cx='200' cy='150' r='20' fill='%233b82f6' fill-opacity='.3'/%3E%3Ccircle cx='200' cy='150' r='32' fill='%233b82f6' fill-opacity='.15'/%3E%3C/svg%3E");background-size:cover;background-position:center;position:relative}
-  .map-pin{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:42px;height:42px;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--ink);box-shadow:0 8px 24px rgba(0,0,0,.4)}
-  .map-info{padding:20px;background:rgba(11,16,32,.6);backdrop-filter:blur(10px)}
-  .map-info h4{font-size:16px;font-weight:700;color:#fff;margin-bottom:4px}
-  .map-info p{font-size:13.5px;color:#a3a8b8;line-height:1.5}
-  .map-info .hours{margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);display:flex;justify-content:space-between;font-size:13px}
-  .map-info .hours strong{color:#fff}
-  .map-info .hours .open{color:#86efac;font-weight:700}
-
-  /* COVERAGE */
-  .coverage{padding:0 28px 30px;max-width:1280px;margin:0 auto}
-  .cov-card{background:var(--soft);border-radius:18px;padding:28px 32px;display:flex;flex-direction:column;gap:14px}
-  .cov-title{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink);font-size:16px}
-  .cov-title svg{color:var(--accent)}
-  .cov-list{display:flex;flex-wrap:wrap;gap:8px}
-  .cov-list span{background:#fff;border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-size:13.5px;color:var(--ink);font-weight:500;transition:background .2s, color .2s}
-  .cov-list span:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
-
-  /* FOOTER */
-  footer{background:var(--dark);color:#a3a8b8;padding:70px 28px 30px;margin:30px 28px;border-radius:var(--radius)}
-  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;max-width:1280px;margin:0 auto 40px}
-  .foot-col h5{color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px}
-  .foot-col a, .foot-col p{display:block;color:#a3a8b8;font-size:14px;line-height:1.9;transition:color .2s}
-  .foot-col a:hover{color:#fff}
-  .foot-brand .foot-logo{font-family:'Instrument Serif',serif;font-style:italic;color:#fff;font-size:34px;margin-bottom:10px}
-  .foot-brand p{max-width:330px;font-size:14px;line-height:1.7}
-  .foot-socials{display:flex;gap:10px;margin-top:18px}
-  .foot-socials a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);display:grid;place-items:center;transition:background .25s}
-  .foot-socials a:hover{background:var(--accent)}
-  .foot-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:20px;text-align:center;font-size:13px;color:#6b7280;max-width:1280px;margin:0 auto}
-
-  /* WhatsApp FAB */
-  .wa-fab{position:fixed;bottom:24px;right:24px;z-index:60;width:60px;height:60px;border-radius:50%;background:#22c55e;display:grid;place-items:center;color:#fff;box-shadow:0 12px 28px rgba(34,197,94,.45);transition:transform .25s}
-  .wa-fab:hover{transform:scale(1.08) rotate(-6deg)}
-  .wa-fab::before{content:"";position:absolute;inset:-4px;border-radius:50%;background:rgba(34,197,94,.35);z-index:-1;animation:pulseFab 2s infinite}
-
-  /* RESPONSIVE */
-  @media (max-width:1024px){
-    .services{padding:64px 36px}
-    .how{grid-template-columns:1fr;gap:48px;padding:90px 28px 40px}
-    .grid{grid-template-columns:repeat(2,1fr)}
-    .brands{grid-template-columns:repeat(4,1fr);row-gap:32px}
-    .svc-head{grid-template-columns:1fr;gap:14px}
-    .svc-head .desc{justify-self:start}
-    .pricing-grid{grid-template-columns:1fr 1fr}
-    .price-card.featured{grid-column:1/-1}
-    .reqs-grid{grid-template-columns:1fr 1fr}
-    .inclusions{grid-template-columns:1fr 1fr}
-    .contact-grid{grid-template-columns:1fr;padding:40px}
-    .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
-    .modal{max-width:680px}
-    .modal-slider{aspect-ratio:16/10;max-height:50vh}
-  }
-  @media (max-width:768px){
-    .topbar{font-size:12px;padding:8px 14px;flex-direction:column;gap:6px}
-    .topbar .left, .topbar .right{gap:14px}
-    .nav-links{display:none}
-    .menu-btn{display:inline-flex}
-    .mobile-menu{display:flex}
-    .cta-app{display:none}
-    .nav-shell{padding:12px 18px}
-    .hero{margin:14px 14px 0;height:clamp(420px,68vh,620px);border-radius:22px}
-    .hero-chip{top:16px;right:16px;font-size:12px;padding:8px 12px}
-    .services{margin:8px 14px 0;padding:54px 24px;border-radius:22px}
-    .svc-grid{grid-template-columns:1fr;gap:14px}
-    .svc-icon{margin-bottom:36px}
-    .svc-head{margin-bottom:36px}
-    .how{padding:80px 18px 30px}
-    .grid{grid-template-columns:1fr;gap:18px}
-    .brands{grid-template-columns:repeat(3,1fr);row-gap:36px;padding:56px 18px}
-    .filters{gap:8px}
-    .pill{padding:10px 18px;font-size:13px}
-    .collection{padding:60px 18px 80px}
-    .pricing{padding:60px 18px}
-    .pricing-grid{grid-template-columns:1fr}
-    .price-card.featured{grid-column:auto}
-    .inclusions{grid-template-columns:1fr;padding:20px}
-    .reqs-grid{grid-template-columns:1fr 1fr}
-    .reqs{padding:50px 18px}
-    .faq{padding:60px 18px}
-    .contact{padding:50px 18px 70px}
-    .contact-grid{padding:32px 22px}
-    .map-card{min-height:300px}
-    .coverage{padding:0 18px 30px}
-    .cov-card{padding:22px}
-    footer{margin:14px;padding:48px 22px 24px;border-radius:22px}
-    .foot-grid{grid-template-columns:1fr;gap:28px;text-align:center}
-    .foot-brand p{max-width:none}
-    .foot-socials{justify-content:center}
-    .mockup .badge{width:54px;height:54px;font-size:15px}
-    .modal-backdrop{padding:0}
-    .modal{border-radius:0;max-height:100vh;height:100vh;max-width:100%}
-    .modal-slider{aspect-ratio:16/10;max-height:42vh;min-height:240px}
-    .modal-close{margin:10px 10px -50px 0}
-    .modal-right{padding:22px 22px 0}
-    .modal-right h2{font-size:24px}
-    .specs-grid{grid-template-columns:1fr 1fr;gap:12px}
-    .form-row{grid-template-columns:80px 1fr}
-  }
-  @media (max-width:480px){
-    .hero-title{font-size:clamp(56px,17vw,120px)}
-    .topbar .left{display:none}
-    .reqs-grid{grid-template-columns:1fr}
-    .price-row .amt{font-size:28px}
-  }
-
-  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-</style>
+        /* Footer */
+        #main-footer {
+            background: #151515;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 34px 0 22px;
+        }
+        #main-footer .mf-inner {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        #main-footer .mf-brand-row {
+            display: grid;
+            grid-template-columns: repeat(6, minmax(70px, 1fr));
+            gap: 28px;
+            align-items: center;
+            justify-items: center;
+            padding: 8px 0 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        #main-footer .mf-brand-row img {
+            height: 54px;
+            width: auto;
+            object-fit: contain;
+            filter: grayscale(1) brightness(0.95);
+            opacity: 0.92;
+        }
+        #main-footer .mf-contact-grid {
+            margin-top: 28px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+        #main-footer .mf-contact-card {
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 16px 18px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        #main-footer .mf-contact-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: #c5a059;
+            color: #111;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+        #main-footer .mf-contact-label {
+            margin: 0;
+            color: #f7f7f8;
+            font-size: 17px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        #main-footer .mf-contact-value {
+            margin: 4px 0 0;
+            color: #9d9da2;
+            font-size: 14px;
+        }
+        #main-footer .mf-main {
+            margin-top: 34px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr 1fr;
+            gap: 38px;
+        }
+        #main-footer .mf-logo {
+            font-size: 2rem;
+            letter-spacing: -0.03em;
+            font-weight: 700;
+            margin: 0;
+        }
+        #main-footer .mf-logo span {
+            color: #c5a059;
+        }
+        #main-footer .mf-text {
+            margin: 12px 0 0;
+            color: #a3a3a7;
+            line-height: 1.75;
+            max-width: 380px;
+            font-size: 14px;
+        }
+        #main-footer .mf-social {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        #main-footer .mf-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(197, 160, 89, 0.75);
+            color: #f2f2f2;
+            display: grid;
+            place-items: center;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+        #main-footer .mf-social a:hover {
+            background: #c5a059;
+            color: #131313;
+        }
+        #main-footer .mf-heading {
+            margin: 2px 0 16px;
+            font-size: 34px;
+            line-height: 1;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            color: #fff;
+        }
+        #main-footer .mf-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 10px;
+        }
+        #main-footer .mf-links a {
+            color: #c5c5ca;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.25s ease;
+        }
+        #main-footer .mf-links a::before {
+            content: '•';
+            margin-right: 8px;
+            color: #c5a059;
+        }
+        #main-footer .mf-links a:hover {
+            color: #fff;
+        }
+        #main-footer .mf-subtext {
+            margin: 0 0 18px;
+            color: #a3a3a7;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+        #main-footer .mf-subscribe {
+            position: relative;
+            max-width: 360px;
+        }
+        #main-footer .mf-subscribe input {
+            width: 100%;
+            height: 52px;
+            border-radius: 999px;
+            border: 1px solid rgba(197, 160, 89, 0.65);
+            background: transparent;
+            color: #fff;
+            padding: 0 58px 0 18px;
+            outline: none;
+            font-size: 14px;
+        }
+        #main-footer .mf-subscribe input::placeholder {
+            color: #89898f;
+        }
+        #main-footer .mf-subscribe button {
+            position: absolute;
+            right: 4px;
+            top: 4px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 0;
+            background: #c5a059;
+            color: #111;
+            cursor: pointer;
+            font-size: 15px;
+            transition: transform 0.25s ease;
+        }
+        #main-footer .mf-subscribe button:hover {
+            transform: translateY(-1px);
+        }
+        #main-footer .mf-bottom {
+            margin-top: 36px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            color: #77777d;
+            font-size: 12px;
+        }
+        @media (max-width: 1024px) {
+            #main-footer .mf-brand-row {
+                grid-template-columns: repeat(3, minmax(70px, 1fr));
+            }
+            #main-footer .mf-contact-grid {
+                grid-template-columns: 1fr;
+            }
+            #main-footer .mf-main {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div id="centerTimelineLayer" aria-hidden="true"></div>
 
-<!-- TOP BAR -->
-<div class="topbar">
-  <div class="left">
-    <a href="#location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Alor Setar, Kedah</a>
-    <a href="#location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Open 8:00 AM – 11:00 PM</a>
-  </div>
-  <div class="right">
-    <a href="tel:+60108118968"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a1 1 0 0 1-1.1 1A19 19 0 0 1 2 4.1 1 1 0 0 1 3 3h4.1a1 1 0 0 1 1 .8 12 12 0 0 0 .6 2.4 1 1 0 0 1-.2 1L7 8.7a16 16 0 0 0 6 6l1.5-1.5a1 1 0 0 1 1-.2 12 12 0 0 0 2.4.6 1 1 0 0 1 .8 1z"/></svg> +60 10‑811 8968</a>
-    <a href="mailto:hello@heros.my"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> hello@heros.my</a>
-  </div>
-</div>
-
-<!-- NAV -->
-<header class="nav-shell" id="navShell">
-  <a href="#" class="logo">Heros <span class="badge-mini">KEDAH</span></a>
-  <ul class="nav-links">
-    <li><a href="#" class="active">Home</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#how">How it Works</a></li>
-    <li><a href="#fleet">Fleet</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#faq">FAQ</a></li>
-  </ul>
-  <button class="cta-app" type="button" onclick="window.location.href='https://wa.me/60108118968'">Book Now <span class="arr">↗</span></button>
-  <button class="menu-btn" id="menuBtn" aria-label="Menu"><span></span></button>
-</header>
-
-<nav class="mobile-menu" id="mobileMenu">
-  <a href="#" data-close>Home</a>
-  <a href="#services" data-close>Services</a>
-  <a href="#how" data-close>How it Works</a>
-  <a href="#fleet" data-close>Fleet</a>
-  <a href="#pricing" data-close>Pricing</a>
-  <a href="#faq" data-close>FAQ</a>
-  <a href="#location" data-close>Contact</a>
-  <button class="cta-app" type="button" style="display:inline-flex;margin-top:10px" onclick="window.location.href='https://wa.me/60108118968'">Book via WhatsApp <span class="arr">↗</span></button>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-photo"></div>
-  <div class="hero-title solid">Car Rental</div>
-  <div class="hero-title">Car Rental</div>
-  <div class="hero-chip"><span class="dot"></span> 200+ cars available today</div>
-</section>
-
-<!-- BRANDS -->
-<section class="brands" aria-label="Brands">
-  <div class="brand reveal" data-anim>
-    <svg viewBox="0 0 100 40" fill="currentColor"><ellipse cx="50" cy="20" rx="46" ry="14" fill="none" stroke="currentColor" stroke-width="2"/><text x="50" y="25" font-size="11" font-weight="900" font-family="Manrope" text-anchor="middle" fill="currentColor">MAZDA</text></svg>
-  </div>
-  <div class="brand reveal delay-1" data-anim><span class="brand-name" style="font-style:italic;font-weight:900;letter-spacing:-1px">Jeep</span></div>
-  <div class="brand reveal delay-2" data-anim>
-    <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="27" stroke="currentColor" stroke-width="2.5"/><path d="M30 4 V56" stroke="currentColor" stroke-width="2.5"/><path d="M4 30 H56" stroke="currentColor" stroke-width="2.5"/><circle cx="30" cy="30" r="22" fill="none" stroke="currentColor" stroke-width="1"/></svg>
-  </div>
-  <div class="brand reveal delay-3" data-anim>
-    <svg viewBox="0 0 160 40" fill="none"><circle cx="22" cy="20" r="14" stroke="currentColor" stroke-width="2.4"/><circle cx="52" cy="20" r="14" stroke="currentColor" stroke-width="2.4"/><circle cx="82" cy="20" r="14" stroke="currentColor" stroke-width="2.4"/><circle cx="112" cy="20" r="14" stroke="currentColor" stroke-width="2.4"/></svg>
-  </div>
-  <div class="brand reveal delay-4" data-anim><span class="brand-name" style="font-weight:900;letter-spacing:.18em;font-size:18px">NISSAN</span></div>
-  <div class="brand reveal delay-5" data-anim><span class="brand-name" style="font-style:italic;font-weight:900;font-size:22px">Perodua</span></div>
-  <div class="brand reveal delay-6" data-anim><span class="brand-name" style="font-weight:900;letter-spacing:-.5px;font-size:22px">PROTON</span></div>
-</section>
-
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="svc-head">
-    <div>
-      <div class="eyebrow reveal" data-anim>Our Services</div>
-      <h2 class="reveal delay-1" data-anim>Premier services for<br>your car rental needs</h2>
-    </div>
-    <p class="desc reveal delay-2" data-anim>Heros provides complete car rental services in Alor Setar, Kedah. A wide selection of quality vehicles for work trips, family vacations, or official travel — all at transparent rates.</p>
-  </div>
-  <div class="svc-grid">
-    <div class="svc-card reveal delay-3" data-anim data-tilt>
-      <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14"/><path d="M3 17l2-7a2 2 0 0 1 2-1.5h10a2 2 0 0 1 2 1.5l2 7"/><circle cx="7.5" cy="17.5" r="1.6"/><circle cx="16.5" cy="17.5" r="1.6"/></svg></div>
-      <h3>Well-Maintained Cars</h3>
-      <p>Every vehicle is serviced and detailed before each rental. All cars carry valid road tax and comprehensive insurance for your safety.</p>
-    </div>
-    <div class="svc-card reveal delay-4" data-anim data-tilt>
-      <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
-      <h3>Secure Payments</h3>
-      <p>Pay easily via DuitNow, FPX, credit/debit card, or cash. Receipts and rental agreements provided every booking. No hidden charges.</p>
-    </div>
-    <div class="svc-card reveal delay-5" data-anim data-tilt>
-      <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a1 1 0 0 1-1.1 1 19 19 0 0 1-8.3-3 19 19 0 0 1-6-6A19 19 0 0 1 3.6 4.1 1 1 0 0 1 4.6 3h4.1a1 1 0 0 1 1 .8 12 12 0 0 0 .6 2.4 1 1 0 0 1-.2 1l-1.7 1.7a16 16 0 0 0 6 6l1.7-1.7a1 1 0 0 1 1-.2 12 12 0 0 0 2.4.6 1 1 0 0 1 .8 1z"/></svg></div>
-      <h3>24/7 Support</h3>
-      <p>Roadside assistance and customer service around the clock — call or WhatsApp +60 10‑811 8968. We're always here for you.</p>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="how" id="how">
-  <div class="how-head">
-    <div class="eyebrow reveal" data-anim>How it works</div>
-    <h2 class="reveal delay-1" data-anim>4 simple steps<br>to rent a car</h2>
-    <div class="steps">
-      <div class="step active reveal delay-2" data-anim>
-        <div class="num">01</div>
-        <div class="step-body"><h4>Choose Your Car</h4><p>Browse our 200+ vehicle collection. Filter by budget, type (sedan, SUV, sport, EV), and your travel dates.</p></div>
-      </div>
-      <div class="step reveal delay-3" data-anim>
-        <div class="num">02</div>
-        <div class="step-body"><h4>Reserve Your Booking</h4><p>WhatsApp, call, or fill in the online form. Confirmation within 5 minutes during operating hours.</p></div>
-      </div>
-      <div class="step reveal delay-4" data-anim>
-        <div class="num">03</div>
-        <div class="step-body"><h4>Pay Deposit & Rental</h4><p>RM 300 refundable deposit. Pay your rental via DuitNow, FPX, card, or cash. Receipt sent instantly.</p></div>
-      </div>
-      <div class="step reveal delay-5" data-anim>
-        <div class="num">04</div>
-        <div class="step-body"><h4>Pick Up or Get Delivery</h4><p>Self-pickup at our Alor Setar office or request delivery (FREE within a 15km radius). Off you go!</p></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="mockup reveal delay-2" data-anim>
-    <div class="badge">01</div>
-    <div class="panel">
-      <h5>Car Type</h5>
-      <div class="car-types">
-        <div class="car-type"><div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1555215695-3004980ad54e?w=400&q=80')"></div><span>Sedan</span></div>
-        <div class="car-type"><div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=400&q=80')"></div><span>SUV</span></div>
-        <div class="car-type"><div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=400&q=80')"></div><span>Sport</span></div>
-        <div class="car-type"><div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=400&q=80')"></div><span>Electric</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FLEET -->
-<section class="collection" id="fleet">
-  <div class="eyebrow reveal" data-anim>Our Fleet</div>
-  <h2 class="reveal delay-1" data-anim>Explore Our Collection Cars</h2>
-  <p class="lead reveal delay-2" data-anim>Tap "View Car" on any vehicle to see exterior &amp; interior photos, full specifications, features, and what's included.</p>
-  <div class="filters reveal delay-2" data-anim>
-    <button class="pill active" data-cat="all">All Type</button>
-    <button class="pill" data-cat="sedan">Sedan</button>
-    <button class="pill" data-cat="suv">SUV</button>
-    <button class="pill" data-cat="sport">Sport</button>
-    <button class="pill" data-cat="electric">Electric</button>
-  </div>
-
-  <div class="grid" id="grid">
-    <article class="card reveal" data-anim data-cat="sedan">
-      <div class="photo-wrap"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?w=900&q=80')"></div><span class="tag">PREMIUM</span></div>
-      <div class="body">
-        <div class="row1"><span class="name">Toyota Camry 2.5</span><span class="price">RM 320<small>/Day</small></span></div>
-        <div class="row2"><span class="loc">📍 Alor Setar</span><span class="rating">4.8 <span style="color:var(--star)">★</span></span></div>
-        <button class="view-btn" onclick="openModal('camry')">View Car <span class="arr">→</span></button>
-      </div>
-    </article>
-
-    <article class="card reveal delay-1" data-anim data-cat="sedan">
-      <div class="photo-wrap"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=900&q=80')"></div></div>
-      <div class="body">
-        <div class="row1"><span class="name">Toyota Vios</span><span class="price">RM 160<small>/Day</small></span></div>
-        <div class="row2"><span class="loc">📍 Alor Setar</span><span class="rating">4.7 <span style="color:var(--star)">★</span></span></div>
-        <button class="view-btn" onclick="openModal('vios')">View Car <span class="arr">→</span></button>
-      </div>
-    </article>
-
-    <article class="card reveal delay-2" data-anim data-cat="sedan">
-      <div class="photo-wrap"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1617469767053-d3b523a0b982?w=900&q=80')"></div><span class="tag">POPULAR</span></div>
-      <div class="body">
-        <div class="row1"><span class="name">Perodua Myvi</span><span class="price">RM 120<small>/Day</small></span></div>
-        <div class="row2"><span class="loc">📍 Jitra</span><span class="rating">4.9 <span style="color:var(--star)">★</span></span></div>
-        <button class="view-btn" onclick="openModal('myvi')">View Car <span class="arr">→</span></button>
-      </div>
-    </article>
-
-    <article class="card reveal delay-3" data-anim data-cat="suv">
-      <div class="photo-wrap"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=900&q=80')"></div></div>
-      <div class="body">
-        <div class="row1"><span class="name">Proton X70</span><span class="price">RM 250<small>/Day</small></span></div>
-        <div class="row2"><span class="loc">📍 Sungai Petani</span><span class="rating">4.6 <span style="color:var(--star)">★</span></span></div>
-        <button class="view-btn" onclick="openModal('x70')">View Car <span class="arr">→</span></button>
-      </div>
-    </article>
-
-    <article class="card reveal delay-4" data-anim data-cat="sport">
-      <div class="photo-wrap"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=900&q=80')"></div><span class="tag">SPORT</span></div>
-      <div class="body">
-        <div class="row1"><span class="name">Honda Civic Type-R</span><span class="price">RM 380<small>/Day</small></span></div>
-        <div class="row2"><span class="loc">📍 Alor Setar</span><span class="rating">4.7 <span style="color:var(--star)">★</span></span></div>
-        <button class="view-btn" onclick="openModal('civic')">View Car <span class="arr">→</span></button>
-      </div>
-    </article>
-
-    <article class="card reveal delay-5" data-anim data-cat="electric">
-      <div class="photo-wrap"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=900&q=80')"></div><span class="tag">EV</span></div>
-      <div class="body">
-        <div class="row1"><span class="name">BYD Atto 3</span><span class="price">RM 280<small>/Day</small></span></div>
-        <div class="row2"><span class="loc">📍 Alor Setar</span><span class="rating">4.8 <span style="color:var(--star)">★</span></span></div>
-        <button class="view-btn" onclick="openModal('atto3')">View Car <span class="arr">→</span></button>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- CAR DETAIL MODAL -->
-<div class="modal-backdrop" id="modalBackdrop">
-  <div class="modal" id="modal">
-    <button class="modal-close" id="modalClose" aria-label="Close">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
-    </button>
-
-    <div class="modal-left">
-      <div class="modal-tabs">
-        <button class="active" data-tab="exterior">Exterior</button>
-        <button data-tab="interior">Interior</button>
-      </div>
-      <div class="modal-counter"><span id="mIdx">1</span> / <span id="mTotal">5</span></div>
-      <div class="modal-slider" id="mSlider">
-        <div class="modal-slides" id="mTrack"></div>
-        <button class="modal-nav prev" id="mPrev" aria-label="Previous">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-        </button>
-        <button class="modal-nav next" id="mNext" aria-label="Next">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </button>
-        <div class="modal-dots" id="mDots"></div>
-      </div>
-      <div class="modal-thumbs" id="mThumbs"></div>
-    </div>
-
-    <div class="modal-right">
-      <span class="cat-tag" id="mCat">PREMIUM SEDAN</span>
-      <h2 id="mName">Toyota Camry 2.5</h2>
-      <div class="modal-meta">
-        <span><strong id="mRating">4.8</strong> <span class="star">★</span> <span id="mReviews">(127 reviews)</span></span>
-        <span>📍 <span id="mLoc">Alor Setar, Kedah</span></span>
-        <span>🚗 <span id="mYear">2024</span></span>
-      </div>
-      <p class="modal-desc" id="mDesc"></p>
-
-      <h4 class="modal-h4">Book This Car</h4>
-      <div class="booking-card">
-        <div class="form-row">
-          <label>Pickup</label>
-          <input type="datetime-local" id="pickupDt">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-black/50 backdrop-blur-md border-b border-white/10 py-4 px-8 flex justify-between items-center">
+        <a href="#heroSection" class="text-2xl font-bold tracking-tighter">HE<span class="text-gold">ROS</span></a>
+        <div class="hidden md:flex gap-8 text-sm uppercase font-medium tracking-wide">
+            <a href="#heroSection" class="nav-link text-gold">Home</a>
+            <a href="#about-section" class="nav-link hover:text-gold transition">About</a>
+            <a href="#car-types-section" class="nav-link hover:text-gold transition">Services</a>
+            <a href="#luxury-fleet" class="nav-link hover:text-gold transition">Cars</a>
+            <a href="#car-types-section" class="nav-link hover:text-gold transition">Car Types</a>
+            <a href="#rental-process" class="nav-link hover:text-gold transition">Process</a>
+            <a href="#testimonials-section" class="nav-link hover:text-gold transition">Blog</a>
+            <a href="#main-footer" class="nav-link hover:text-gold transition">Contact</a>
         </div>
-        <div class="form-row">
-          <label>Return</label>
-          <input type="datetime-local" id="returnDt">
+        <div class="flex items-center gap-6">
+            <i class="fa-solid fa-cart-shopping text-sm"></i>
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 border border-gold rounded-full flex items-center justify-center">
+                    <i class="fa-solid fa-phone text-xs text-gold"></i>
+                </div>
+                <div>
+                    <p class="text-[10px] text-gray-400 uppercase">Call us</p>
+                    <p class="text-sm font-bold">0108118968</p>
+                </div>
+            </div>
         </div>
-        <div class="form-row">
-          <label>Passengers</label>
-          <div class="pax-row">
-            <button class="pax-btn" type="button" id="paxMinus">−</button>
-            <input type="number" id="pax" min="1" value="2" readonly>
-            <button class="pax-btn" type="button" id="paxPlus">+</button>
-            <span style="font-size:12px;color:var(--muted);margin-left:6px">Max <span id="paxMax">5</span></span>
-          </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="heroSection" class="relative h-screen hero-gradient flex items-center px-12 lg:px-24">
+        <div id="heroBg" class="hero-bg"></div>
+        <div id="heroBgNext" class="hero-bg-next"></div>
+        <div class="hero-content max-w-2xl">
+            <p class="text-gold tracking-[0.3em] uppercase text-xs mb-4 font-bold">✦ Premium</p>
+            <h1 id="heroHeading" class="text-7xl md:text-8xl font-bold mb-6">Kedah Car Rental</h1>
+            <div class="flex items-center gap-4">
+                <p id="heroModel" class="text-xl text-gray-300">Bentley Bentayga</p>
+                <div class="h-[1px] w-12 bg-gold"></div>
+                <p class="text-xl font-bold"><span id="heroPrice" class="text-gold">$600</span> <span class="text-sm font-normal text-gray-400">/ DAY</span></p>
+            </div>
         </div>
-        <div class="warn" id="dateWarn">⚠️ <span id="warnMsg">Return must be after pickup</span></div>
-        <div class="total-card">
-          <div class="total-row"><span>Daily rate</span><strong id="rateText">RM 320</strong></div>
-          <div class="total-row"><span id="durText">1 day</span><span id="calcText">1 × RM 320</span></div>
-          <div class="total-final">
-            <span class="lbl">Total Amount</span>
-            <span class="amt" id="totalAmt">RM 320</span>
-          </div>
+        <!-- Slider Dots -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-[3]">
+            <button type="button" class="hero-dot is-active" data-hero-slide="0" aria-label="Hero slide 1" aria-current="true"></button>
+            <button type="button" class="hero-dot" data-hero-slide="1" aria-label="Hero slide 2"></button>
+            <button type="button" class="hero-dot" data-hero-slide="2" aria-label="Hero slide 3"></button>
         </div>
-      </div>
+    </section>
 
-      <h4 class="modal-h4">Specifications</h4>
-      <div class="specs-grid" id="mSpecs"></div>
-
-      <h4 class="modal-h4">Features</h4>
-      <div class="feat-list" id="mFeats"></div>
-
-      <h4 class="modal-h4">What's Included</h4>
-      <ul class="incl-list" id="mIncl"></ul>
-
-      <div class="modal-cta">
-        <button class="btn-wa-modal" id="mBookWa">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A8 8 0 0 0 4.4 17.5L3.5 21l3.7-1a8 8 0 0 0 10.4-13.7zm-5.6 12c-1.3 0-2.6-.4-3.7-1.1l-.3-.2-2.1.6.6-2.1-.2-.3a6.5 6.5 0 1 1 5.7 3.1zm3.5-4.8c-.2-.1-1.1-.6-1.3-.6-.2-.1-.3-.1-.4.1l-.5.7c-.1.1-.2.1-.4 0-.5-.2-1-.4-1.4-.8-.4-.4-.7-.8-1-1.3-.1-.2 0-.3.1-.4l.3-.3.1-.3v-.3c0-.1-.4-.9-.5-1.3-.1-.3-.3-.3-.4-.3h-.4c-.1 0-.4 0-.5.2-.2.2-.7.7-.7 1.7s.8 2 .9 2.1c.1.1 1.5 2.4 3.7 3.4l1.2.4c.5.2 1 .1 1.4.1.4-.1 1.1-.5 1.3-.9.2-.4.2-.8.1-.9 0-.1-.2-.2-.4-.3z"/></svg>
-          Book via WhatsApp
-        </button>
-        <button class="btn-call-modal" onclick="window.location.href='tel:+60108118968'" aria-label="Call">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a1 1 0 0 1-1.1 1A19 19 0 0 1 2 4.1 1 1 0 0 1 3 3h4.1a1 1 0 0 1 1 .8 12 12 0 0 0 .6 2.4 1 1 0 0 1-.2 1L7 8.7a16 16 0 0 0 6 6l1.5-1.5a1 1 0 0 1 1-.2 12 12 0 0 0 2.4.6 1 1 0 0 1 .8 1z"/></svg>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- PRICING -->
-<section class="pricing" id="pricing">
-  <div class="head">
-    <div class="eyebrow reveal" data-anim>Pricing</div>
-    <h2 class="reveal delay-1" data-anim>Affordable, transparent rates</h2>
-  </div>
-  <div class="pricing-grid">
-    <div class="price-card reveal delay-2" data-anim>
-      <h3>Daily</h3>
-      <p class="sub">Perfect for short trips</p>
-      <div class="amt">RM 120<small>/day</small></div>
-      <div class="saving">Starting from Perodua Axia</div>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Comprehensive insurance</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> 200km/day mileage</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> 24/7 roadside assistance</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Pickup at Alor Setar</li>
-      </ul>
-      <button class="pick" onclick="window.location.href='https://wa.me/60108118968?text=Hi,%20I%20want%20to%20book%20the%20Daily%20package'">Choose Daily</button>
-    </div>
-    <div class="price-card featured reveal delay-3" data-anim>
-      <h3>Weekly</h3>
-      <p class="sub">Best value for longer holidays</p>
-      <div class="amt">RM 750<small>/week</small></div>
-      <div class="saving">Save up to RM 90</div>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Everything in Daily</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Unlimited mileage</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Free delivery within Kedah</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Free additional driver</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Complimentary child seat</li>
-      </ul>
-      <button class="pick" onclick="window.location.href='https://wa.me/60108118968?text=Hi,%20I%20want%20to%20book%20the%20Weekly%20package'">Choose Weekly</button>
-    </div>
-    <div class="price-card reveal delay-4" data-anim>
-      <h3>Monthly</h3>
-      <p class="sub">For long-term needs</p>
-      <div class="amt">RM 2,500<small>/month</small></div>
-      <div class="saving">Save up to RM 1,100</div>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Everything in Weekly</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Free service &amp; cleaning</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Replacement car included</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Priority support</li>
-      </ul>
-      <button class="pick" onclick="window.location.href='https://wa.me/60108118968?text=Hi,%20I%20want%20to%20book%20the%20Monthly%20package'">Choose Monthly</button>
-    </div>
-  </div>
-
-  <div class="inclusions reveal" data-anim>
-    <div class="inc">
-      <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-      <div><div class="lbl">Full Insurance</div><div class="sub">Comprehensive &amp; 3rd party</div></div>
-    </div>
-    <div class="inc">
-      <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h3l3-9 6 18 3-9h3"/></svg></div>
-      <div><div class="lbl">Free Delivery</div><div class="sub">Within 15km of Alor Setar</div></div>
-    </div>
-    <div class="inc">
-      <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-      <div><div class="lbl">24/7 Support</div><div class="sub">Phone &amp; WhatsApp</div></div>
-    </div>
-    <div class="inc">
-      <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
-      <div><div class="lbl">No Hidden Fees</div><div class="sub">Transparent pricing</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- REQUIREMENTS -->
-<section class="reqs">
-  <div class="head">
-    <div class="eyebrow reveal" data-anim>Requirements</div>
-    <h2 class="reveal delay-1" data-anim>What you'll need</h2>
-  </div>
-  <div class="reqs-grid">
-    <div class="req reveal delay-2" data-anim>
-      <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M15 8h2M15 12h2M7 16h10"/></svg></div>
-      <h4>Driving License</h4>
-      <p>Valid Malaysian (D) license, or international driving permit for foreign visitors.</p>
-    </div>
-    <div class="req reveal delay-3" data-anim>
-      <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M7 18c1-2 3-3 5-3s4 1 5 3"/></svg></div>
-      <h4>IC / Passport</h4>
-      <p>Original IC for Malaysian residents, or original passport for foreign nationals. Both will be verified.</p>
-    </div>
-    <div class="req reveal delay-4" data-anim>
-      <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-      <h4>Minimum Age</h4>
-      <p>21 years and above. Sport / luxury cars require minimum age 25 with at least 3 years driving experience.</p>
-    </div>
-    <div class="req reveal delay-5" data-anim>
-      <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M2 10h20M6 14h2M12 14h6"/></svg></div>
-      <h4>Deposit</h4>
-      <p>RM 300 for standard cars, RM 500–1,500 for premium. 100% refundable when the car is returned in good condition.</p>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq" id="faq">
-  <div class="head">
-    <div class="eyebrow reveal" data-anim>FAQ</div>
-    <h2 class="reveal delay-1" data-anim>Frequently asked questions</h2>
-  </div>
-
-  <div class="faq-item reveal delay-2" data-anim>
-    <button class="faq-q"><span>How do I book a car?</span><span class="icon">+</span></button>
-    <div class="faq-a">The fastest way is via WhatsApp at +60 10‑811 8968. Just tell us your dates, the car you want, and pickup location. We'll confirm within 5 minutes during operating hours (8 AM – 11 PM). You can also tap the "Book Now" button at the top of this page.</div>
-  </div>
-
-  <div class="faq-item reveal delay-2" data-anim>
-    <button class="faq-q"><span>Can you deliver / pick up the car from my hotel?</span><span class="icon">+</span></button>
-    <div class="faq-a">Yes! We offer FREE delivery and pickup within a 15km radius of our Alor Setar office (including Anak Bukit, Kuala Kedah, Pekan Rabu, Pokok Sena). Locations beyond that (Jitra, Sungai Petani, Kulim, Kuala Kedah ferry terminal for Langkawi) incur a minimum charge of RM 30.</div>
-  </div>
-
-  <div class="faq-item reveal delay-3" data-anim>
-    <button class="faq-q"><span>What documents should I bring?</span><span class="icon">+</span></button>
-    <div class="faq-a">Just three things: (1) A valid driving license — Malaysian or international, (2) Original IC or passport, and (3) Your deposit (credit card, debit card, cash, or DuitNow). We'll prepare a simple agreement on the spot and you can drive off.</div>
-  </div>
-
-  <div class="faq-item reveal delay-3" data-anim>
-    <button class="faq-q"><span>What's the fuel policy?</span><span class="icon">+</span></button>
-    <div class="faq-a">Cars are handed over with a full tank (full-to-full). You only need to return it with the same full tank. If it's not full, we charge the current fuel price plus an RM 20 service fee. Simple and fair.</div>
-  </div>
-
-  <div class="faq-item reveal delay-4" data-anim>
-    <button class="faq-q"><span>What if there's an accident or breakdown?</span><span class="icon">+</span></button>
-    <div class="faq-a">Call us immediately at +60 10‑811 8968. All cars are fully insured. For minor damage, the excess is RM 500. For total loss, you're fully covered by the insurance. We'll dispatch a replacement car as fast as possible (within 2 hours anywhere in Kedah).</div>
-  </div>
-
-  <div class="faq-item reveal delay-4" data-anim>
-    <button class="faq-q"><span>Can I take the car out of Kedah / to Langkawi?</span><span class="icon">+</span></button>
-    <div class="faq-a">Absolutely! You can drive across Peninsular Malaysia. For Langkawi, you can take the ferry from Kuala Kedah (ferry charges are paid by you). Please notify us in advance if you plan to cross into Thailand or Singapore — we'll arrange cross-border insurance.</div>
-  </div>
-
-  <div class="faq-item reveal delay-5" data-anim>
-    <button class="faq-q"><span>Can I cancel my booking?</span><span class="icon">+</span></button>
-    <div class="faq-a">Yes. Free cancellation up to 24 hours before pickup — full refund. Cancel within 24 hours: 50% refund. No-show: no refund (deposit forfeited). One free reschedule allowed, subject to car availability.</div>
-  </div>
-
-  <div class="faq-item reveal delay-5" data-anim>
-    <button class="faq-q"><span>Is there a mileage limit?</span><span class="icon">+</span></button>
-    <div class="faq-a">Daily package: 200km/day, additional km charged at RM 0.30/km. Weekly &amp; Monthly packages: <strong>unlimited mileage</strong>. If you're planning a long road trip (e.g. KL–Penang–Kedah), the Weekly package is the most cost-effective.</div>
-  </div>
-
-  <div class="faq-item reveal delay-6" data-anim>
-    <button class="faq-q"><span>What about traffic fines?</span><span class="icon">+</span></button>
-    <div class="faq-a">The renter is responsible for all traffic fines incurred during the rental period. We will email you the fine plus an RM 20 admin fee when the car is returned or when the fine is issued. You can pay JPJ / PDRM directly, or we can deduct it from your deposit.</div>
-  </div>
-</section>
-
-<!-- COVERAGE -->
-<section class="coverage">
-  <div class="cov-card">
-    <div class="cov-title">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      Free Delivery Coverage (within 15km)
-    </div>
-    <div class="cov-list">
-      <span>Alor Setar</span><span>Anak Bukit</span><span>Kuala Kedah</span><span>Pekan Rabu</span><span>Pokok Sena</span><span>Tikam Batu</span><span>Kepala Batas</span><span>Bukit Kayu Hitam</span>
-    </div>
-    <div class="cov-title" style="margin-top:6px">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M6 12h12"/></svg>
-      Paid Delivery (from RM 30)
-    </div>
-    <div class="cov-list">
-      <span>Jitra</span><span>Changlun</span><span>Sungai Petani</span><span>Kulim</span><span>Baling</span><span>Sik</span><span>Kuala Nerang</span><span>Padang Besar</span>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="location">
-  <div class="contact-grid">
-    <div class="contact-left">
-      <div class="eyebrow reveal" data-anim>Get in Touch</div>
-      <h2 class="reveal delay-1" data-anim>Ready for your journey?</h2>
-      <p class="lead reveal delay-2" data-anim>Contact Heros now for bookings, enquiries, or emergency assistance. We're open 7 days a week — including public holidays.</p>
-
-      <div class="contact-list">
-        <a class="contact-item wa reveal delay-3" data-anim href="https://wa.me/60108118968" target="_blank">
-          <div class="ic"><span class="wave">👋</span></div>
-          <div><div class="lbl">WhatsApp (fastest)</div><div class="val">+60 10‑811 8968</div></div>
-        </a>
-        <a class="contact-item reveal delay-3" data-anim href="tel:+60108118968">
-          <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92V21a1 1 0 0 1-1.1 1A19 19 0 0 1 2 4.1 1 1 0 0 1 3 3h4.1a1 1 0 0 1 1 .8 12 12 0 0 0 .6 2.4 1 1 0 0 1-.2 1L7 8.7a16 16 0 0 0 6 6l1.5-1.5a1 1 0 0 1 1-.2 12 12 0 0 0 2.4.6 1 1 0 0 1 .8 1z"/></svg></div>
-          <div><div class="lbl">Phone</div><div class="val">+60 10‑811 8968</div></div>
-        </a>
-        <a class="contact-item reveal delay-4" data-anim href="mailto:hello@heros.my">
-          <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          <div><div class="lbl">Email</div><div class="val">hello@heros.my</div></div>
-        </a>
-        <div class="contact-item reveal delay-4" data-anim style="cursor:default">
-          <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div><div class="lbl">Office Address</div><div class="val">Lot 12, Jalan Raja, Pekan Rabu,<br>05300 Alor Setar, Kedah</div></div>
+    <!-- Booking Bar -->
+    <div class="px-8 -mt-12 relative z-10">
+        <div class="bg-[#1b1b1b] rounded-full p-4 flex flex-wrap lg:flex-nowrap items-center gap-4 border border-white/5 shadow-2xl">
+            <div class="flex-1 px-6 border-r border-white/10 flex justify-between items-center cursor-pointer">
+                <span class="text-gray-400 text-sm">Choose Car Type</span>
+                <i class="fa-solid fa-chevron-down text-gold text-xs"></i>
+            </div>
+            <div class="flex-1 px-6 border-r border-white/10 flex justify-between items-center cursor-pointer">
+                <span class="text-gray-400 text-sm">Pick Up Location (Kedah)</span>
+                <i class="fa-solid fa-chevron-down text-gold text-xs"></i>
+            </div>
+            <div class="flex-1 px-6 border-r border-white/10 flex justify-between items-center cursor-pointer">
+                <span class="text-gray-400 text-sm">Pick Up Date</span>
+                <i class="fa-solid fa-calendar-days text-gold text-xs"></i>
+            </div>
+            <div class="flex-1 px-6 border-r border-white/10 flex justify-between items-center cursor-pointer">
+                <span class="text-gray-400 text-sm">Return Date</span>
+                <i class="fa-solid fa-calendar-days text-gold text-xs"></i>
+            </div>
+            <a href="car-listing.html" class="bg-gold text-black btn-round hover:bg-white transition flex-shrink-0 inline-flex items-center">Rent Now</a>
         </div>
-      </div>
-
-      <div class="contact-cta">
-        <button class="btn-wa" onclick="window.location.href='https://wa.me/60108118968'">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A8 8 0 0 0 4.4 17.5L3.5 21l3.7-1a8 8 0 0 0 10.4-13.7zm-5.6 12c-1.3 0-2.6-.4-3.7-1.1l-.3-.2-2.1.6.6-2.1-.2-.3a6.5 6.5 0 1 1 5.7 3.1zm3.5-4.8c-.2-.1-1.1-.6-1.3-.6-.2-.1-.3-.1-.4.1l-.5.7c-.1.1-.2.1-.4 0-.5-.2-1-.4-1.4-.8-.4-.4-.7-.8-1-1.3-.1-.2 0-.3.1-.4l.3-.3.1-.3v-.3c0-.1-.4-.9-.5-1.3-.1-.3-.3-.3-.4-.3h-.4c-.1 0-.4 0-.5.2-.2.2-.7.7-.7 1.7s.8 2 .9 2.1c.1.1 1.5 2.4 3.7 3.4l1.2.4c.5.2 1 .1 1.4.1.4-.1 1.1-.5 1.3-.9.2-.4.2-.8.1-.9 0-.1-.2-.2-.4-.3z"/></svg>
-          WhatsApp Now
-        </button>
-        <button class="btn-primary" onclick="window.location.href='tel:+60108118968'">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92V21a1 1 0 0 1-1.1 1A19 19 0 0 1 2 4.1 1 1 0 0 1 3 3h4.1a1 1 0 0 1 1 .8 12 12 0 0 0 .6 2.4 1 1 0 0 1-.2 1L7 8.7a16 16 0 0 0 6 6l1.5-1.5a1 1 0 0 1 1-.2 12 12 0 0 0 2.4.6 1 1 0 0 1 .8 1z"/></svg>
-          Call Direct
-        </button>
-      </div>
     </div>
 
-    <div class="contact-right">
-      <div class="map-card">
-        <div class="map-img"><div class="map-pin"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg></div></div>
-        <div class="map-info">
-          <h4>Heros — Pekan Rabu, Alor Setar</h4>
-          <p>Lot 12, Jalan Raja, 05300 Alor Setar, Kedah</p>
-          <div class="hours">
-            <span><strong>Mon – Sun</strong> 8:00 AM – 11:00 PM</span>
-            <span class="open">● OPEN</span>
-          </div>
+    <!-- About Section -->
+    <section id="about-section" class="py-24 px-12 lg:px-24 grid md:grid-cols-2 gap-16 items-center">
+        <div>
+            <p class="text-gold tracking-widest uppercase text-xs mb-4 font-bold">HEROS</p>
+            <h2 class="text-5xl font-bold mb-8 leading-tight">We Are More Than <br><span class="text-gold">A Kedah Car Rental Company</span></h2>
+            <p class="text-gray-400 mb-8 leading-relaxed">Heros provides trusted car rental services across Kedah, including daily rentals, airport transfers, and chauffeur options. We focus on clean vehicles, fair pricing, and fast support to make every trip smooth.</p>
+            
+            <div class="space-y-4 mb-10">
+                <div class="flex items-center gap-4">
+                    <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center"><i class="fa-solid fa-check text-gold text-xs"></i></div>
+                    <p class="text-sm font-medium">Sports and Luxury Cars</p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center"><i class="fa-solid fa-check text-gold text-xs"></i></div>
+                    <p class="text-sm font-medium">Economy Cars</p>
+                </div>
+            </div>
+
+            <button class="bg-gold text-black btn-round flex items-center gap-2">Read More <i class="fa-solid fa-arrow-right-long -rotate-45"></i></button>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="relative">
+            <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&q=80&w=1000" class="rounded-[40px]" alt="Manager">
+            <div class="absolute -bottom-8 -left-8 w-16 h-16 bg-gold rounded-full flex items-center justify-center text-black">
+                <i class="fa-solid fa-play"></i>
+            </div>
+        </div>
+    </section>
 
-<footer>
-  <div class="foot-grid">
-    <div class="foot-col foot-brand">
-      <div class="foot-logo">Heros.</div>
-      <p>Premium car rental in Alor Setar, Kedah. 200+ vehicles, transparent pricing, and 24/7 customer service. Your journey, our priority.</p>
-      <div class="foot-socials">
-        <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9V14.9H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5H15c-1.2 0-1.6.7-1.6 1.5V12h2.7l-.4 2.9h-2.3v6.9A10 10 0 0 0 22 12z"/></svg></a>
-        <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
-        <a href="https://wa.me/60108118968" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A8 8 0 0 0 4.4 17.5L3.5 21l3.7-1a8 8 0 0 0 10.4-13.7zM12 19a6.5 6.5 0 1 1 5.7-9.7l-.5.4-.5-.4A6.5 6.5 0 1 1 12 19z"/></svg></a>
-        <a href="#" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.5 8.5a6 6 0 0 1-3.7-1.3v7.3a5.5 5.5 0 1 1-5.5-5.5h.7v2.7H10a3 3 0 1 0 3 3V2h2.5a3.7 3.7 0 0 0 4 4z"/></svg></a>
-      </div>
-    </div>
-    <div class="foot-col">
-      <h5>Quick Links</h5>
-      <a href="#">Home</a>
-      <a href="#services">Services</a>
-      <a href="#how">How it Works</a>
-      <a href="#fleet">Our Fleet</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
-    </div>
-    <div class="foot-col">
-      <h5>Contact</h5>
-      <a href="tel:+60108118968">+60 10‑811 8968</a>
-      <a href="https://wa.me/60108118968">WhatsApp</a>
-      <a href="mailto:hello@heros.my">hello@heros.my</a>
-      <p style="margin-top:8px">Lot 12, Jalan Raja,<br>Pekan Rabu, 05300<br>Alor Setar, Kedah</p>
-    </div>
-    <div class="foot-col">
-      <h5>Hours</h5>
-      <p>Mon – Sun<br>8:00 AM – 11:00 PM</p>
-      <p style="margin-top:10px"><strong style="color:#86efac">● 24/7 Roadside Assistance</strong></p>
-    </div>
-  </div>
-  <div class="foot-bottom">
-    © 2026 Heros Sdn Bhd. All rights reserved. · Reg. No: 1234567-A · SSM Verified
-  </div>
-</footer>
+    <!-- Luxury Car Fleet Section -->
+    <section class="py-20 md:py-28 overflow-hidden" id="luxury-fleet">
+        <div class="text-center mb-12 md:mb-16 px-4">
+            <p class="fleet-gold tracking-[0.35em] uppercase text-[11px] md:text-xs mb-4 font-bold">SELECT YOUR CAR</p>
+            <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight">Luxury <span class="fleet-gold">Car Fleet</span></h2>
+        </div>
 
-<a href="https://wa.me/60108118968" class="wa-fab" aria-label="WhatsApp Heros">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A8 8 0 0 0 4.4 17.5L3.5 21l3.7-1a8 8 0 0 0 10.4-13.7zm-5.6 12c-1.3 0-2.6-.4-3.7-1.1l-.3-.2-2.1.6.6-2.1-.2-.3a6.5 6.5 0 1 1 5.7 3.1zm3.5-4.8c-.2-.1-1.1-.6-1.3-.6-.2-.1-.3-.1-.4.1l-.5.7c-.1.1-.2.1-.4 0-.5-.2-1-.4-1.4-.8-.4-.4-.7-.8-1-1.3-.1-.2 0-.3.1-.4l.3-.3.1-.3v-.3c0-.1-.4-.9-.5-1.3-.1-.3-.3-.3-.4-.3h-.4c-.1 0-.4 0-.5.2-.2.2-.7.7-.7 1.7s.8 2 .9 2.1c.1.1 1.5 2.4 3.7 3.4l1.2.4c.5.2 1 .1 1.4.1.4-.1 1.1-.5 1.3-.9.2-.4.2-.8.1-.9 0-.1-.2-.2-.4-.3z"/></svg>
-</a>
+        <div id="fleetScroll" class="fleet-row no-scrollbar scroll-smooth snap-x snap-mandatory lg:snap-none">
 
-<script>
-  // ====== FLEET DATA ======
-  const FLEET = {
-    camry: {
-      name:'Toyota Camry 2.5', cat:'PREMIUM SEDAN', year:'2024', rating:4.8, reviews:127,
-      location:'Alor Setar, Kedah', price:'RM 320', period:'/Day', save:'Save 12% weekly',
-      desc:'Executive comfort with refined performance. The Camry delivers a smooth ride, premium interior, and excellent fuel economy — perfect for business trips, airport runs, or long-distance journeys.',
-      specs:[
-        {ic:'engine', lbl:'Engine', val:'2.5L Petrol'},
-        {ic:'auto', lbl:'Transmission', val:'Automatic'},
-        {ic:'seats', lbl:'Seats', val:'5 seats'},
-        {ic:'bag', lbl:'Luggage', val:'4 large bags'},
-        {ic:'fuel', lbl:'Fuel Type', val:'Petrol RON95'},
-        {ic:'consump', lbl:'Consumption', val:'~12 km/L'}
-      ],
-      features:['Cruise Control','Apple CarPlay','Android Auto','Leather Seats','Reverse Camera','Sunroof','Keyless Entry','Push Start','Climate Control','7 Airbags'],
-      includes:['Comprehensive insurance','24/7 roadside assistance','Free delivery within 15km','Unlimited support via WhatsApp','Sanitised &amp; serviced before pickup'],
-      images:{
-        exterior:[
-          'https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?w=1400&q=85',
-          'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1400&q=85',
-          'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=1400&q=85'
-        ],
-        interior:[
-          'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1400&q=85',
-          'https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=1400&q=85',
-          'https://images.unsplash.com/photo-1611821064430-0d40291922d2?w=1400&q=85'
-        ]
-      }
-    },
-    vios: {
-      name:'Toyota Vios', cat:'COMPACT SEDAN', year:'2023', rating:4.7, reviews:89,
-      location:'Alor Setar, Kedah', price:'RM 160', period:'/Day', save:'Save 10% weekly',
-      desc:'Reliable and fuel-efficient — the Vios is the most popular sedan in Malaysia. Spacious cabin, easy to park, and friendly on petrol. A great pick for everyday drives or weekend trips.',
-      specs:[
-        {ic:'engine', lbl:'Engine', val:'1.5L Petrol'},
-        {ic:'auto', lbl:'Transmission', val:'Automatic CVT'},
-        {ic:'seats', lbl:'Seats', val:'5 seats'},
-        {ic:'bag', lbl:'Luggage', val:'2 large bags'},
-        {ic:'fuel', lbl:'Fuel Type', val:'Petrol RON95'},
-        {ic:'consump', lbl:'Consumption', val:'~16 km/L'}
-      ],
-      features:['Bluetooth','USB Charging','Reverse Camera','Push Start','Air Cond Auto','Power Windows','ABS','Dual Airbags'],
-      includes:['Comprehensive insurance','24/7 roadside assistance','Free delivery within 15km','Sanitised cabin','Full tank petrol on pickup'],
-      images:{
-        exterior:[
-          'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=1400&q=85',
-          'https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=1400&q=85',
-          'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1400&q=85'
-        ],
-        interior:[
-          'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1400&q=85',
-          'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1400&q=85',
-          'https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=1400&q=85'
-        ]
-      }
-    },
-    myvi: {
-      name:'Perodua Myvi', cat:'COMPACT HATCHBACK', year:'2024', rating:4.9, reviews:214,
-      location:'Jitra, Kedah', price:'RM 120', period:'/Day', save:'Best for short trips',
-      desc:'Malaysia\'s favourite hatchback. Compact, nimble in traffic, and incredibly fuel-efficient. Easy to park anywhere — ideal for city trips, food runs, and short getaways.',
-      specs:[
-        {ic:'engine', lbl:'Engine', val:'1.5L DVVT'},
-        {ic:'auto', lbl:'Transmission', val:'Automatic'},
-        {ic:'seats', lbl:'Seats', val:'5 seats'},
-        {ic:'bag', lbl:'Luggage', val:'2 medium bags'},
-        {ic:'fuel', lbl:'Fuel Type', val:'Petrol RON95'},
-        {ic:'consump', lbl:'Consumption', val:'~18 km/L'}
-      ],
-      features:['Bluetooth','USB Port','Reverse Sensor','Eco Mode','Power Windows','ABS','VSC','Dual Airbags','LED DRL'],
-      includes:['Comprehensive insurance','24/7 roadside assistance','Free delivery within 15km','Sanitised cabin','Easy pickup at Jitra or Alor Setar'],
-      images:{
-        exterior:[
-          'https://images.unsplash.com/photo-1617469767053-d3b523a0b982?w=1400&q=85',
-          'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=1400&q=85',
-          'https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?w=1400&q=85'
-        ],
-        interior:[
-          'https://images.unsplash.com/photo-1611821064430-0d40291922d2?w=1400&q=85',
-          'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=1400&q=85',
-          'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1400&q=85'
-        ]
-      }
-    },
-    x70: {
-      name:'Proton X70', cat:'PREMIUM SUV', year:'2024', rating:4.6, reviews:73,
-      location:'Sungai Petani, Kedah', price:'RM 250', period:'/Day', save:'Save 15% weekly',
-      desc:'Spacious 5-seater SUV built for family adventures. Premium interior, advanced safety features, and excellent road presence. Perfect for road trips, beach getaways, or hauling lots of luggage.',
-      specs:[
-        {ic:'engine', lbl:'Engine', val:'1.8L Turbo'},
-        {ic:'auto', lbl:'Transmission', val:'7-Speed DCT'},
-        {ic:'seats', lbl:'Seats', val:'5 seats'},
-        {ic:'bag', lbl:'Luggage', val:'5 large bags'},
-        {ic:'fuel', lbl:'Fuel Type', val:'Petrol RON95'},
-        {ic:'consump', lbl:'Consumption', val:'~10 km/L'}
-      ],
-      features:['Panoramic Sunroof','360° Camera','Cruise Control','Leather Seats','Apple CarPlay','Powered Tailgate','Lane Assist','Auto Parking','Voice Control','6 Airbags'],
-      includes:['Comprehensive insurance','24/7 roadside assistance','Free delivery within Kedah','Child seat available on request','Sanitised &amp; detailed before pickup'],
-      images:{
-        exterior:[
-          'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1400&q=85',
-          'https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1400&q=85',
-          'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=1400&q=85'
-        ],
-        interior:[
-          'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1400&q=85',
-          'https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=1400&q=85',
-          'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=1400&q=85'
-        ]
-      }
-    },
-    civic: {
-      name:'Honda Civic Type-R', cat:'PERFORMANCE SPORT', year:'2024', rating:4.7, reviews:42,
-      location:'Alor Setar, Kedah', price:'RM 380', period:'/Day', save:'Save RM 200 weekly',
-      desc:'Track-bred performance for the road. The Civic Type-R combines rally-tuned chassis with a 2.0L VTEC turbo. For drivers who want a real driving experience — not just transport.',
-      specs:[
-        {ic:'engine', lbl:'Engine', val:'2.0L VTEC Turbo'},
-        {ic:'auto', lbl:'Transmission', val:'6-Speed Manual'},
-        {ic:'seats', lbl:'Seats', val:'4 seats'},
-        {ic:'bag', lbl:'Luggage', val:'2 medium bags'},
-        {ic:'fuel', lbl:'Fuel Type', val:'Petrol RON97'},
-        {ic:'consump', lbl:'Consumption', val:'~9 km/L'}
-      ],
-      features:['Sport Seats (Bucket)','Adaptive Suspension','Sport / +R Mode','LSD Differential','Brembo Brakes','Bose Audio','Apple CarPlay','LaunchControl','Carbon Trim'],
-      includes:['Comprehensive insurance (RM 1,500 deposit)','24/7 roadside assistance','Free delivery within 15km','Min age 25 + 3 yrs experience required','Track day usage NOT permitted'],
-      images:{
-        exterior:[
-          'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1400&q=85',
-          'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1400&q=85',
-          'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=1400&q=85'
-        ],
-        interior:[
-          'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1400&q=85',
-          'https://images.unsplash.com/photo-1611821064430-0d40291922d2?w=1400&q=85',
-          'https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=1400&q=85'
-        ]
-      }
-    },
-    atto3: {
-      name:'BYD Atto 3', cat:'ELECTRIC SUV', year:'2024', rating:4.8, reviews:56,
-      location:'Alor Setar, Kedah', price:'RM 280', period:'/Day', save:'Save 12% weekly',
-      desc:'Zero emissions, smooth electric drive, and zero fuel cost. The Atto 3 offers ~420km on a full charge — more than enough for Kedah/Penang trips. Charge-ready hotels &amp; stations available.',
-      specs:[
-        {ic:'engine', lbl:'Motor', val:'EV 150kW'},
-        {ic:'auto', lbl:'Drive', val:'Single-Speed Auto'},
-        {ic:'seats', lbl:'Seats', val:'5 seats'},
-        {ic:'bag', lbl:'Luggage', val:'4 large bags'},
-        {ic:'fuel', lbl:'Energy', val:'60 kWh battery'},
-        {ic:'consump', lbl:'Range', val:'~420 km/charge'}
-      ],
-      features:['Rotating 12.8" Display','Panoramic Sunroof','Vegan Leather','Wireless Charging','360° Camera','Adaptive Cruise','Lane Keep','Heat Pump','Dual-Zone Climate','7 Airbags'],
-      includes:['Comprehensive insurance','24/7 roadside assistance','Free delivery within 15km','Charging cable Type 2 included','First charge included'],
-      images:{
-        exterior:[
-          'https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=1400&q=85',
-          'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1400&q=85',
-          'https://images.unsplash.com/photo-1542362567-b07e54358753?w=1400&q=85'
-        ],
-        interior:[
-          'https://images.unsplash.com/photo-1611821064430-0d40291922d2?w=1400&q=85',
-          'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=1400&q=85',
-          'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1400&q=85'
-        ]
-      }
-    }
-  };
+            <!-- Side card — smaller, no overlay (desktop: scaled; mobile: snap scroll) -->
+            <div id="fleetLeftCard" class="fleet-side shrink-0 snap-center rounded-[22px] overflow-hidden">
+                <img id="fleetLeftImg" src="https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&fit=crop&q=80&w=900" class="w-full h-[360px] md:h-[420px] lg:h-[420px] object-cover" alt="Luxury car">
+            </div>
 
-  // spec icons
-  const SPEC_ICONS = {
-    engine:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 4h-4l-1 2H5v12h14V6h-4l-1-2zM7 18v2M17 18v2"/></svg>',
-    auto:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4v16M5 8h6M5 14h6M19 4v16M19 12h-3"/></svg>',
-    seats:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 18v-6a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v6M5 22h14M9 9V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4"/></svg>',
-    bag:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7V4a3 3 0 0 1 6 0v3"/></svg>',
-    fuel:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 22h12V8H3zM3 12h12M15 8l4 4v6a2 2 0 0 1-4 0M19 4l2 2"/></svg>',
-    consump:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>'
-  };
+            <!-- Center / active card -->
+            <div id="fleetCenterCard" class="fleet-center-wrap shrink-0 relative w-full lg:w-auto snap-center">
+                <div class="fleet-center-inner relative group">
+                    <img id="fleetCenterImg" src="https://images.unsplash.com/photo-1563720360172-67b8f3dce741?auto=format&fit=crop&q=85&w=1400" class="w-full h-[360px] md:h-[430px] lg:h-[430px] object-cover" alt="Lamborghini Urus">
 
-  // ====== STATE & MODAL ======
-  let M = { car:null, tab:'exterior', idx:0 };
+                    <div class="fleet-nav-wrap absolute inset-y-0 left-4 md:left-6 flex items-center z-10 pointer-events-auto">
+                        <button type="button" id="fleetPrev" aria-label="Previous"
+                            class="fleet-arrow-btn w-11 h-11 md:w-12 md:h-12 rounded-full flex items-center justify-center cursor-pointer transition shadow-lg border-0">
+                            <i class="fa-solid fa-chevron-left text-black text-xs"></i>
+                        </button>
+                    </div>
+                    <div class="fleet-nav-wrap absolute inset-y-0 right-4 md:right-6 flex items-center z-10 pointer-events-auto">
+                        <button type="button" id="fleetNext" aria-label="Next"
+                            class="fleet-arrow-btn w-11 h-11 md:w-12 md:h-12 rounded-full flex items-center justify-center cursor-pointer transition shadow-lg border-0">
+                            <i class="fa-solid fa-chevron-right text-black text-xs"></i>
+                        </button>
+                    </div>
 
-  function openModal(carId){
-    const car = FLEET[carId]; if (!car) return;
-    M.car = car; M.tab = 'exterior'; M.idx = 0;
+                    <!-- Bottom overlay — reference layout -->
+                    <div id="fleetInfoPanel" class="absolute bottom-4 md:bottom-5 left-1/2 -translate-x-1/2 w-[95%] md:w-[94%] bg-[#212125]/95 rounded-[18px] md:rounded-[20px] px-5 py-4 md:px-6 md:py-5 flex flex-row flex-wrap justify-between items-center gap-4 border border-white/[0.05]">
+                        <div>
+                            <h3 id="fleetTitle" class="text-[28px] md:text-[32px] leading-none font-semibold text-white mb-2">Lamborghini Urus</h3>
+                            <div class="flex flex-wrap gap-x-4 gap-y-1.5 text-[11px] md:text-xs text-gray-400">
+                                <span id="fleetSeats" class="flex items-center gap-2"><i class="fa-solid fa-user fleet-gold text-[13px]"></i> 5</span>
+                                <span id="fleetTransmission" class="flex items-center gap-2"><i class="fa-solid fa-gear fleet-gold text-[13px]"></i> Auto</span>
+                                <span id="fleetBags" class="flex items-center gap-2"><i class="fa-solid fa-suitcase fleet-gold text-[13px]"></i> 2 Bags</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 md:gap-6 w-full sm:w-auto justify-between sm:justify-end">
+                            <a id="fleetDetailsLink" href="car-details.html" class="fleet-gold-bg text-black px-6 py-2.5 rounded-full font-semibold text-xs hover:bg-white transition inline-flex items-center">Details</a>
+                            <div class="text-right shrink-0">
+                                <p id="fleetPrice" class="text-[30px] md:text-[34px] font-semibold fleet-gold leading-none">$750</p>
+                                <p class="text-[10px] text-gray-500 uppercase tracking-wider mt-1">/ day</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    // text content
-    document.getElementById('mCat').textContent = car.cat;
-    document.getElementById('mName').textContent = car.name;
-    document.getElementById('mYear').textContent = car.year;
-    document.getElementById('mRating').textContent = car.rating;
-    document.getElementById('mReviews').textContent = `(${car.reviews} reviews)`;
-    document.getElementById('mLoc').textContent = car.location;
-    document.getElementById('mDesc').innerHTML = car.desc;
+            <!-- Side card -->
+            <div id="fleetRightCard" class="fleet-side shrink-0 snap-center rounded-[22px] overflow-hidden">
+                <img id="fleetRightImg" src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&q=80&w=900" class="w-full h-[360px] md:h-[420px] lg:h-[420px] object-cover" alt="Luxury car">
+            </div>
+        </div>
+    </section>
 
-    // specs
-    document.getElementById('mSpecs').innerHTML = car.specs.map(s => `
-      <div class="spec-item">
-        <div class="ic">${SPEC_ICONS[s.ic] || ''}</div>
-        <div class="spec-item-text"><div class="lbl">${s.lbl}</div><div class="val">${s.val}</div></div>
-      </div>
-    `).join('');
+    <!-- Car Types (style bite + smooth) -->
+    <section id="car-types-section" aria-labelledby="car-types-heading">
+        <div class="ct-inner">
+            <div class="ct-section-header">
+                <p class="ct-eyebrow">Categories</p>
+                <h2 id="car-types-heading" class="ct-title">Rental <em>Car Types</em></h2>
+            </div>
 
-    // features
-    document.getElementById('mFeats').innerHTML = car.features.map(f => `<span>${f}</span>`).join('');
+            <div class="ct-grid">
+                <div class="ct-card">
+                    <div class="ct-card-body">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=900" alt="Convertible">
+                        <div class="ct-overlay"></div>
+                        <div class="ct-card-content">Convertible</div>
+                    </div>
+                    <a href="car-listing.html?type=convertible" class="ct-arrow-btn inline-grid" aria-label="View convertibles">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9932a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/>
+                        </svg>
+                    </a>
+                </div>
 
-    // includes
-    document.getElementById('mIncl').innerHTML = car.includes.map(i => `
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>${i}</li>
-    `).join('');
+                <div class="ct-card">
+                    <div class="ct-card-body">
+                        <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&q=80&w=900" alt="Luxury Cars">
+                        <div class="ct-overlay"></div>
+                        <div class="ct-card-content">Luxury Cars</div>
+                    </div>
+                    <a href="car-listing.html?type=luxury" class="ct-arrow-btn inline-grid" aria-label="View luxury cars">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9932a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/>
+                        </svg>
+                    </a>
+                </div>
 
-    // tabs reset
-    document.querySelectorAll('.modal-tabs button').forEach(b => b.classList.toggle('active', b.dataset.tab === 'exterior'));
+                <div class="ct-card">
+                    <div class="ct-card-body">
+                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&q=80&w=900" alt="Sedan">
+                        <div class="ct-overlay"></div>
+                        <div class="ct-card-content">Sedan</div>
+                    </div>
+                    <a href="car-listing.html?type=sedan" class="ct-arrow-btn inline-grid" aria-label="View sedans">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9932a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
 
-    // initialise booking form
-    initBookingForm(car);
+            <div class="ct-dots" role="tablist" aria-label="Carousel pages">
+                <button type="button" class="ct-dot ct-active" aria-label="Page 1" aria-current="true"></button>
+                <button type="button" class="ct-dot" aria-label="Page 2"></button>
+            </div>
+        </div>
+    </section>
 
-    renderSlides();
+    <!-- Rental Process Section -->
+    <section id="rental-process" class="py-24 px-12 lg:px-24">
+        <div class="text-center mb-16">
+            <p class="text-gold tracking-widest uppercase text-xs mb-4">STEPS</p>
+            <h2 class="text-5xl font-bold">Car Rental <span class="text-gold">Process</span></h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="card-dark p-12 relative">
+                <h3 class="text-2xl font-bold mb-4">Choose A Car</h3>
+                <p class="text-gray-400">View our range of cars, find your perfect car for the coming days.</p>
+                <div class="mt-8 text-4xl font-bold text-white/5">01.</div>
+            </div>
+            <div class="card-dark p-12 relative border border-gold/30">
+                <h3 class="text-2xl font-bold mb-4">Come In Contact</h3>
+                <p class="text-gray-400">Our advisor team is ready to help you with the booking process.</p>
+                <div class="mt-8 text-4xl font-bold text-white/5">02.</div>
+            </div>
+            <div class="card-dark p-12 relative">
+                <h3 class="text-2xl font-bold mb-4">Enjoy Driving</h3>
+                <p class="text-gray-400">Receive the key and enjoy your car. We treat all our cars with respect.</p>
+                <div class="mt-8 text-4xl font-bold text-white/5">03.</div>
+            </div>
+        </div>
+    </section>
 
-    document.getElementById('modalBackdrop').classList.add('show');
-    document.body.style.overflow = 'hidden';
-  }
+    <!-- Promo Section -->
+    <section class="h-[60vh] relative flex flex-col items-center justify-center">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=2070" class="w-full h-full object-cover opacity-40" alt="Car Promo">
+        </div>
+        <div class="relative z-10 text-center">
+            <p class="text-gold tracking-[0.4em] uppercase text-xs mb-4">EXPLORE</p>
+            <h2 class="text-5xl font-bold mb-8">Car <span class="text-gold">Promo</span> Video</h2>
+            <div class="w-20 h-20 border border-gold rounded-full flex items-center justify-center cursor-pointer hover:bg-gold transition group">
+                <i class="fa-solid fa-play text-gold group-hover:text-black"></i>
+            </div>
+        </div>
+    </section>
 
-  // ====== BOOKING FORM ======
-  function pad(n){ return n < 10 ? '0' + n : n; }
-  function toLocalISO(d){
-    return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
-  }
-  function getMaxSeats(car){
-    const s = car.specs.find(x => x.lbl === 'Seats');
-    if (!s) return 8;
-    const m = s.val.match(/(\d+)/);
-    return m ? parseInt(m[1]) : 8;
-  }
-  function parseRate(priceStr){
-    const m = priceStr.replace(/,/g,'').match(/(\d+)/);
-    return m ? parseInt(m[1]) : 0;
-  }
+    <!-- Testimonials Section -->
+    <section id="testimonials-section" aria-labelledby="testimonials-heading">
+        <div class="ts-inner">
+            <p class="ts-eyebrow">Testimonials</p>
+            <h2 id="testimonials-heading" class="ts-title">What Clients Say</h2>
+        </div>
 
-  function initBookingForm(car){
-    const rate = parseRate(car.price);
-    const pickup = document.getElementById('pickupDt');
-    const ret = document.getElementById('returnDt');
-    const pax = document.getElementById('pax');
-    const paxMax = document.getElementById('paxMax');
+        <div class="ts-track-wrap">
+            <div class="ts-track">
+                <article class="ts-card">
+                    <div class="ts-stars">★★★★★</div>
+                    <p class="ts-quote">Come in for walk-in inspection and oil change. Brown is delight to deal with. He took my car right in, and completed work in a short time. Highly recommend the shop.</p>
+                    <div class="ts-user">
+                        <img class="ts-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200" alt="Emily Martin">
+                        <div class="ts-user-meta">
+                            <p class="ts-name">Emily Martin</p>
+                            <p class="ts-role">Customer</p>
+                        </div>
+                    </div>
+                </article>
 
-    // defaults: tomorrow 10:00 → next day 10:00 (1 day)
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    tomorrow.setHours(10, 0, 0, 0);
-    const dayAfter = new Date(tomorrow);
-    dayAfter.setDate(dayAfter.getDate() + 1);
+                <article class="ts-card">
+                    <div class="ts-stars">★★★★★</div>
+                    <p class="ts-quote">From booking to return, everything was very smooth. The car was spotless, the pickup was on time, and customer support stayed responsive throughout our whole trip.</p>
+                    <div class="ts-user">
+                        <img class="ts-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200" alt="Olivia Brown">
+                        <div class="ts-user-meta">
+                            <p class="ts-name">Olivia Brown</p>
+                            <p class="ts-role">Customer</p>
+                        </div>
+                    </div>
+                </article>
 
-    pickup.value = toLocalISO(tomorrow);
-    ret.value = toLocalISO(dayAfter);
-    const today = new Date(); today.setHours(0,0,0,0);
-    pickup.min = toLocalISO(today);
+                <article class="ts-card">
+                    <div class="ts-stars">★★★★★</div>
+                    <p class="ts-quote">Excellent service and premium vehicles. The team explained all options clearly and made sure I got the perfect model for my family weekend getaway.</p>
+                    <div class="ts-user">
+                        <img class="ts-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200" alt="Dan Martin">
+                        <div class="ts-user-meta">
+                            <p class="ts-name">Dan Martin</p>
+                            <p class="ts-role">Customer</p>
+                        </div>
+                    </div>
+                </article>
 
-    const maxSeats = getMaxSeats(car);
-    pax.max = maxSeats;
-    paxMax.textContent = maxSeats;
-    if (parseInt(pax.value) > maxSeats) pax.value = maxSeats;
+                <article class="ts-card" aria-hidden="true">
+                    <div class="ts-stars">★★★★★</div>
+                    <p class="ts-quote">Come in for walk-in inspection and oil change. Brown is delight to deal with. He took my car right in, and completed work in a short time. Highly recommend the shop.</p>
+                    <div class="ts-user">
+                        <img class="ts-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200" alt="">
+                        <div class="ts-user-meta">
+                            <p class="ts-name">Emily Martin</p>
+                            <p class="ts-role">Customer</p>
+                        </div>
+                    </div>
+                </article>
 
-    document.getElementById('rateText').textContent = car.price + car.period;
+                <article class="ts-card" aria-hidden="true">
+                    <div class="ts-stars">★★★★★</div>
+                    <p class="ts-quote">From booking to return, everything was very smooth. The car was spotless, the pickup was on time, and customer support stayed responsive throughout our whole trip.</p>
+                    <div class="ts-user">
+                        <img class="ts-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200" alt="">
+                        <div class="ts-user-meta">
+                            <p class="ts-name">Olivia Brown</p>
+                            <p class="ts-role">Customer</p>
+                        </div>
+                    </div>
+                </article>
 
-    const update = () => recalcTotal(rate);
-    pickup.removeEventListener('change', pickup._h || (()=>{}));
-    pickup._h = update; pickup.addEventListener('change', update);
-    ret.removeEventListener('change', ret._h || (()=>{}));
-    ret._h = update; ret.addEventListener('change', update);
+                <article class="ts-card" aria-hidden="true">
+                    <div class="ts-stars">★★★★★</div>
+                    <p class="ts-quote">Excellent service and premium vehicles. The team explained all options clearly and made sure I got the perfect model for my family weekend getaway.</p>
+                    <div class="ts-user">
+                        <img class="ts-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200" alt="">
+                        <div class="ts-user-meta">
+                            <p class="ts-name">Dan Martin</p>
+                            <p class="ts-role">Customer</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
 
-    // pax buttons
-    const minus = document.getElementById('paxMinus');
-    const plus = document.getElementById('paxPlus');
-    minus.onclick = () => {
-      const v = parseInt(pax.value) || 1;
-      if (v > 1) pax.value = v - 1;
-      updatePaxState();
-    };
-    plus.onclick = () => {
-      const v = parseInt(pax.value) || 1;
-      if (v < maxSeats) pax.value = v + 1;
-      updatePaxState();
-    };
-    function updatePaxState(){
-      const v = parseInt(pax.value);
-      minus.disabled = v <= 1;
-      plus.disabled = v >= maxSeats;
-    }
-    updatePaxState();
+        <div class="ts-bottom-accent"></div>
+    </section>
 
-    // book button
-    document.getElementById('mBookWa').onclick = sendBookingToWA;
+    <!-- Footer -->
+    <footer id="main-footer">
+        <div class="mf-inner">
+            <div class="mf-brand-row">
+                <img class="mf-brand-logo" src="assets/logos/proton.jpg" alt="Proton">
+                <img class="mf-brand-logo" src="assets/logos/perodua.svg" alt="Perodua">
+                <img class="mf-brand-logo" src="assets/logos/honda.svg" alt="Honda">
+                <img class="mf-brand-logo" src="assets/logos/toyota.svg" alt="Toyota">
+                <img class="mf-brand-logo" src="assets/logos/nissan.svg" alt="Nissan">
+                <img class="mf-brand-logo" src="assets/logos/bmw.svg" alt="BMW">
+            </div>
 
-    update();
-  }
+            <div class="mf-contact-grid">
+                <div class="mf-contact-card">
+                    <div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div>
+                    <div>
+                        <p class="mf-contact-label">Call us</p>
+                        <p class="mf-contact-value">0108118968</p>
+                    </div>
+                </div>
+                <div class="mf-contact-card">
+                    <div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div>
+                        <p class="mf-contact-label">Write to us</p>
+                        <p class="mf-contact-value">hello@heros.my</p>
+                    </div>
+                </div>
+                <div class="mf-contact-card">
+                    <div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div>
+                        <p class="mf-contact-label">Address</p>
+                        <p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p>
+                    </div>
+                </div>
+            </div>
 
-  function recalcTotal(rate){
-    const pickupVal = document.getElementById('pickupDt').value;
-    const returnVal = document.getElementById('returnDt').value;
-    const warn = document.getElementById('dateWarn');
-    const warnMsg = document.getElementById('warnMsg');
-    const totalEl = document.getElementById('totalAmt');
-    const bookBtn = document.getElementById('mBookWa');
+            <div class="mf-main">
+                <div>
+                    <h3 class="mf-logo">HE<span>ROS</span></h3>
+                    <p class="mf-text">Heros is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
+                    <div class="mf-social">
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
 
-    if (!pickupVal || !returnVal) {
-      warnMsg.textContent = 'Please select pickup and return dates';
-      warn.classList.add('show');
-      bookBtn.disabled = true;
-      return;
-    }
-    const pickup = new Date(pickupVal);
-    const ret = new Date(returnVal);
-    const ms = ret - pickup;
+                <div>
+                    <h4 class="mf-heading">Quick Links</h4>
+                    <ul class="mf-links">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Cars</a></li>
+                        <li><a href="#">Car Types</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
 
-    if (ms <= 0) {
-      warnMsg.textContent = 'Return must be after pickup time';
-      warn.classList.add('show');
-      totalEl.textContent = '—';
-      document.getElementById('durText').textContent = '—';
-      document.getElementById('calcText').textContent = '—';
-      bookBtn.disabled = true;
-      return;
-    }
-    warn.classList.remove('show');
-    bookBtn.disabled = false;
+                <div>
+                    <h4 class="mf-heading">Subscribe</h4>
+                    <p class="mf-subtext">Want to be notified about our services. Just sign up and we will send you a notification by email.</p>
+                    <form class="mf-subscribe" action="#" method="post">
+                        <input type="email" placeholder="Your email address" aria-label="Email address">
+                        <button type="submit" aria-label="Submit"><i class="fa-solid fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
 
-    const days = Math.max(1, Math.ceil(ms / (1000 * 60 * 60 * 24)));
-    const total = days * rate;
+            <p class="mf-bottom">©2026 Heros Car Rental Kedah. All rights reserved.</p>
+        </div>
+    </footer>
 
-    document.getElementById('durText').textContent = days + (days === 1 ? ' day' : ' days');
-    document.getElementById('calcText').textContent = `${days} × RM ${rate.toLocaleString()}`;
-    totalEl.textContent = 'RM ' + total.toLocaleString();
-    totalEl.classList.remove('bump');
-    void totalEl.offsetWidth;
-    totalEl.classList.add('bump');
-  }
+    <script>
+      (function () {
+        var layer = document.getElementById('centerTimelineLayer');
+        if (!layer) return;
 
-  function sendBookingToWA(){
-    const pickupVal = document.getElementById('pickupDt').value;
-    const returnVal = document.getElementById('returnDt').value;
-    const paxVal = document.getElementById('pax').value;
-    const total = document.getElementById('totalAmt').textContent;
-    const dur = document.getElementById('durText').textContent;
-    if (!pickupVal || !returnVal) return;
+        var blockerSelector = [
+          'nav',
+          '#heroSection',
+          'body > .px-8.-mt-12',
+          'body > section',
+          '#main-footer'
+        ].join(', ');
 
-    const pickup = new Date(pickupVal);
-    const ret = new Date(returnVal);
+        var renderTimeline = function () {
+          var doc = document.documentElement;
+          var pageHeight = Math.max(doc.scrollHeight, document.body.scrollHeight);
+          layer.style.height = pageHeight + 'px';
+          layer.innerHTML = '';
 
-    const fmt = d => d.toLocaleString('en-GB', {
-      weekday:'short', day:'numeric', month:'short', year:'numeric',
-      hour:'2-digit', minute:'2-digit', hour12:false
-    });
+          var centerX = window.innerWidth / 2;
+          var blockers = Array.prototype.slice.call(document.querySelectorAll(blockerSelector));
+          var ranges = blockers
+            .map(function (el) {
+              var r = el.getBoundingClientRect();
+              if (r.width <= 0 || r.height <= 0) return null;
+              if (r.left > centerX + 12 || r.right < centerX - 12) return null;
+              var top = window.scrollY + r.top;
+              var bottom = window.scrollY + r.bottom;
+              return [Math.max(0, top), Math.min(pageHeight, bottom)];
+            })
+            .filter(Boolean)
+            .sort(function (a, b) { return a[0] - b[0]; });
 
-    const msg =
-      `Hi Heros! I'd like to book a car.\n\n` +
-      `🚗 *${M.car.name}*\n` +
-      `📅 Pickup: ${fmt(pickup)}\n` +
-      `📅 Return: ${fmt(ret)}\n` +
-      `⏱️ Duration: ${dur}\n` +
-      `👥 Passengers: ${paxVal}\n\n` +
-      `💰 Total: ${total} (${dur} × ${M.car.price})\n\n` +
-      `Please confirm availability. Thank you!`;
+          var merged = [];
+          ranges.forEach(function (r) {
+            if (!merged.length || r[0] > merged[merged.length - 1][1]) merged.push(r);
+            else merged[merged.length - 1][1] = Math.max(merged[merged.length - 1][1], r[1]);
+          });
 
-    window.open(`https://wa.me/60108118968?text=${encodeURIComponent(msg)}`, '_blank');
-  }
+          var cursor = 0;
+          merged.forEach(function (r) {
+            if (r[0] - cursor > 34) {
+              var seg = document.createElement('div');
+              seg.className = 'timeline-segment';
+              seg.style.top = cursor + 'px';
+              seg.style.height = (r[0] - cursor) + 'px';
+              layer.appendChild(seg);
+            }
+            cursor = Math.max(cursor, r[1]);
+          });
 
-  function closeModal(){
-    document.getElementById('modalBackdrop').classList.remove('show');
-    document.body.style.overflow = '';
-  }
+          if (pageHeight - cursor > 34) {
+            var tail = document.createElement('div');
+            tail.className = 'timeline-segment';
+            tail.style.top = cursor + 'px';
+            tail.style.height = (pageHeight - cursor) + 'px';
+            layer.appendChild(tail);
+          }
+        };
 
-  function renderSlides(){
-    const imgs = M.car.images[M.tab];
-    const track = document.getElementById('mTrack');
-    const dots = document.getElementById('mDots');
-    const thumbs = document.getElementById('mThumbs');
-    track.innerHTML = imgs.map(u => `<div class="slide" style="background-image:url('${u}')"></div>`).join('');
-    dots.innerHTML = imgs.map((_,i) => `<span data-i="${i}" class="${i===0?'active':''}"></span>`).join('');
-    thumbs.innerHTML = imgs.map((u,i) => `<div class="thumb ${i===0?'active':''}" data-i="${i}" style="background-image:url('${u}')"></div>`).join('');
-    document.getElementById('mTotal').textContent = imgs.length;
-    M.idx = 0; updateSlide();
-    thumbs.querySelectorAll('.thumb').forEach(t => t.addEventListener('click', () => { M.idx = +t.dataset.i; updateSlide(); }));
-    dots.querySelectorAll('span').forEach(d => d.addEventListener('click', () => { M.idx = +d.dataset.i; updateSlide(); }));
-  }
+        var timer = null;
+        var queueRender = function () {
+          if (timer) window.clearTimeout(timer);
+          timer = window.setTimeout(renderTimeline, 80);
+        };
 
-  function updateSlide(){
-    document.getElementById('mTrack').style.transform = `translateX(-${M.idx * 100}%)`;
-    document.getElementById('mIdx').textContent = M.idx + 1;
-    document.querySelectorAll('#mDots span').forEach((d,i) => d.classList.toggle('active', i===M.idx));
-    document.querySelectorAll('#mThumbs .thumb').forEach((d,i) => d.classList.toggle('active', i===M.idx));
-  }
+        window.addEventListener('load', queueRender);
+        window.addEventListener('resize', queueRender);
+        window.addEventListener('scroll', queueRender, { passive: true });
+        queueRender();
+      })();
 
-  document.getElementById('mPrev').addEventListener('click', () => {
-    const total = M.car.images[M.tab].length;
-    M.idx = (M.idx - 1 + total) % total; updateSlide();
-  });
-  document.getElementById('mNext').addEventListener('click', () => {
-    const total = M.car.images[M.tab].length;
-    M.idx = (M.idx + 1) % total; updateSlide();
-  });
-  document.querySelectorAll('.modal-tabs button').forEach(b => {
-    b.addEventListener('click', () => {
-      document.querySelectorAll('.modal-tabs button').forEach(x => x.classList.remove('active'));
-      b.classList.add('active');
-      M.tab = b.dataset.tab;
-      renderSlides();
-    });
-  });
+      (function () {
+        var heroSection = document.getElementById('heroSection');
+        var heroBg = document.getElementById('heroBg');
+        var heroBgNext = document.getElementById('heroBgNext');
+        var heroModel = document.getElementById('heroModel');
+        var heroPrice = document.getElementById('heroPrice');
+        var heroDots = Array.prototype.slice.call(document.querySelectorAll('.hero-dot'));
 
-  document.getElementById('modalClose').addEventListener('click', closeModal);
-  document.getElementById('modalBackdrop').addEventListener('click', e => {
-    if (e.target === document.getElementById('modalBackdrop')) closeModal();
-  });
-  document.addEventListener('keydown', e => {
-    if (!document.getElementById('modalBackdrop').classList.contains('show')) return;
-    if (e.key === 'Escape') closeModal();
-    if (e.key === 'ArrowLeft') document.getElementById('mPrev').click();
-    if (e.key === 'ArrowRight') document.getElementById('mNext').click();
-  });
-  // touch swipe
-  let touchStart = 0;
-  const slider = document.getElementById('mSlider');
-  slider.addEventListener('touchstart', e => { touchStart = e.touches[0].clientX; });
-  slider.addEventListener('touchend', e => {
-    const dx = e.changedTouches[0].clientX - touchStart;
-    if (Math.abs(dx) > 40) {
-      const total = M.car.images[M.tab].length;
-      M.idx = dx > 0 ? (M.idx - 1 + total) % total : (M.idx + 1) % total;
-      updateSlide();
-    }
-  });
+        if (!heroSection || !heroBg || !heroBgNext || !heroModel || !heroPrice || !heroDots.length) return;
 
-  // ====== NAV / PAGE ======
-  const nav = document.getElementById('navShell');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 30) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
-  });
+        var heroSlides = [
+          {
+            image: 'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&q=80&w=2070',
+            model: 'Bentley Bentayga',
+            price: '$600'
+          },
+          {
+            image: 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&q=80&w=2070',
+            model: 'Mercedes S-Class',
+            price: '$520'
+          },
+          {
+            image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=2070',
+            model: 'Porsche Taycan',
+            price: '$560'
+          }
+        ];
 
-  const menuBtn = document.getElementById('menuBtn');
-  const mobile = document.getElementById('mobileMenu');
-  menuBtn.addEventListener('click', () => {
-    menuBtn.classList.toggle('open');
-    mobile.classList.toggle('show');
-    document.body.style.overflow = mobile.classList.contains('show') ? 'hidden' : '';
-  });
-  mobile.querySelectorAll('[data-close]').forEach(a => a.addEventListener('click', () => {
-    menuBtn.classList.remove('open');
-    mobile.classList.remove('show');
-    document.body.style.overflow = '';
-  }));
+        var activeHero = 0;
+        var heroTimer = null;
+        var heroAnimating = false;
 
-  // filter pills
-  const grid = document.getElementById('grid');
-  document.querySelectorAll('.pill').forEach(p => {
-    p.addEventListener('click', () => {
-      document.querySelectorAll('.pill').forEach(x => x.classList.remove('active'));
-      p.classList.add('active');
-      const cat = p.dataset.cat;
-      grid.querySelectorAll('.card').forEach(card => {
-        const match = cat === 'all' || card.dataset.cat === cat;
-        card.style.transition = 'opacity .3s, transform .3s';
-        if (match) {
-          card.style.display = '';
-          requestAnimationFrame(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; });
-        } else {
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(8px)';
-          setTimeout(() => { card.style.display = 'none'; }, 280);
-        }
+        var heroBgString = function (url) {
+          return "linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.52)), url('" + url + "')";
+        };
+
+        var setHeroDots = function (index) {
+          heroDots.forEach(function (dot, i) {
+            var isActive = i === index;
+            dot.classList.toggle('is-active', isActive);
+            if (isActive) dot.setAttribute('aria-current', 'true');
+            else dot.removeAttribute('aria-current');
+          });
+        };
+
+        var setHeroStatic = function (index) {
+          var slide = heroSlides[index];
+          heroBg.style.backgroundImage = heroBgString(slide.image);
+          heroModel.textContent = slide.model;
+          heroPrice.textContent = slide.price;
+          setHeroDots(index);
+        };
+
+        var goHero = function (nextIndex) {
+          if (heroAnimating || nextIndex === activeHero) return;
+          heroAnimating = true;
+          var slide = heroSlides[nextIndex];
+
+          heroBgNext.style.backgroundImage = heroBgString(slide.image);
+          heroSection.classList.add('hero-is-animating');
+
+          window.setTimeout(function () {
+            heroBg.style.backgroundImage = heroBgString(slide.image);
+            heroModel.textContent = slide.model;
+            heroPrice.textContent = slide.price;
+            activeHero = nextIndex;
+            setHeroDots(activeHero);
+            heroSection.classList.remove('hero-is-animating');
+            heroAnimating = false;
+          }, 860);
+        };
+
+        var startHeroAuto = function () {
+          if (heroTimer) window.clearInterval(heroTimer);
+          heroTimer = window.setInterval(function () {
+            goHero((activeHero + 1) % heroSlides.length);
+          }, 4200);
+        };
+
+        heroDots.forEach(function (dot) {
+          dot.addEventListener('click', function () {
+            var idx = Number(dot.getAttribute('data-hero-slide'));
+            if (!Number.isNaN(idx)) {
+              goHero(idx);
+              startHeroAuto();
+            }
+          });
+        });
+
+        setHeroStatic(activeHero);
+        startHeroAuto();
+      })();
+
+      (function () {
+        var row = document.getElementById('fleetScroll');
+        var leftImg = document.getElementById('fleetLeftImg');
+        var centerImg = document.getElementById('fleetCenterImg');
+        var rightImg = document.getElementById('fleetRightImg');
+        var title = document.getElementById('fleetTitle');
+        var seats = document.getElementById('fleetSeats');
+        var transmission = document.getElementById('fleetTransmission');
+        var bags = document.getElementById('fleetBags');
+        var price = document.getElementById('fleetPrice');
+        var detailsLink = document.getElementById('fleetDetailsLink');
+        var prevBtn = document.getElementById('fleetPrev');
+        var nextBtn = document.getElementById('fleetNext');
+
+        if (!row || !leftImg || !centerImg || !rightImg || !title || !seats || !transmission || !bags || !price || !detailsLink) return;
+
+        var fleetCars = [
+          { name: 'Lamborghini Urus', image: 'https://images.unsplash.com/photo-1563720360172-67b8f3dce741?auto=format&fit=crop&q=85&w=1400', seats: '5', transmission: 'Auto', bags: '2 Bags', price: '$750', details: 'car-details.html' },
+          { name: 'Audi RS Q8', image: 'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&fit=crop&q=80&w=900', seats: '5', transmission: 'Auto', bags: '3 Bags', price: '$690', details: 'car-details-audi.html' },
+          { name: 'Range Rover Sport', image: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&q=80&w=900', seats: '5', transmission: 'Auto', bags: '3 Bags', price: '$620', details: 'car-details-rangerover.html' },
+          { name: 'Mercedes S-Class', image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&q=80&w=900', seats: '4', transmission: 'Auto', bags: '2 Bags', price: '$580', details: 'car-details-mercedes.html' },
+          { name: 'Porsche Taycan', image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=900', seats: '4', transmission: 'Auto', bags: '2 Bags', price: '$640', details: 'car-details-porsche.html' }
+        ];
+
+        var active = 0;
+        var animating = false;
+        var mod = function (n) { return (n + fleetCars.length) % fleetCars.length; };
+
+        var renderFleet = function () {
+          var left = fleetCars[mod(active - 1)];
+          var center = fleetCars[active];
+          var right = fleetCars[mod(active + 1)];
+
+          leftImg.src = left.image;
+          leftImg.alt = left.name;
+          centerImg.src = center.image;
+          centerImg.alt = center.name;
+          rightImg.src = right.image;
+          rightImg.alt = right.name;
+
+          title.textContent = center.name;
+          seats.innerHTML = '<i class="fa-solid fa-user fleet-gold text-[13px]"></i> ' + center.seats;
+          transmission.innerHTML = '<i class="fa-solid fa-gear fleet-gold text-[13px]"></i> ' + center.transmission;
+          bags.innerHTML = '<i class="fa-solid fa-suitcase fleet-gold text-[13px]"></i> ' + center.bags;
+          price.textContent = center.price;
+          detailsLink.setAttribute('href', center.details);
+        };
+
+        var changeFleet = function (direction) {
+          if (animating) return;
+          animating = true;
+          var motionClass = direction === 'next' ? 'fleet-motion-next' : 'fleet-motion-prev';
+          row.classList.add(motionClass);
+
+          window.setTimeout(function () {
+            active = direction === 'next' ? mod(active + 1) : mod(active - 1);
+            renderFleet();
+            row.classList.remove(motionClass);
+            row.classList.add('fleet-refresh');
+
+            window.setTimeout(function () {
+              row.classList.remove('fleet-refresh');
+              animating = false;
+            }, 230);
+          }, 220);
+        };
+
+        prevBtn?.addEventListener('click', function () {
+          changeFleet('prev');
+        });
+        nextBtn?.addEventListener('click', function () {
+          changeFleet('next');
+        });
+
+        renderFleet();
+      })();
+
+      document.querySelectorAll('#car-types-section .ct-dot').forEach(function (dot) {
+        dot.addEventListener('click', function () {
+          document.querySelectorAll('#car-types-section .ct-dot').forEach(function (d) {
+            d.classList.remove('ct-active');
+            d.removeAttribute('aria-current');
+          });
+          dot.classList.add('ct-active');
+          dot.setAttribute('aria-current', 'true');
+        });
       });
-    });
-  });
 
-  // step toggle
-  document.querySelectorAll('.step').forEach(s => {
-    s.addEventListener('click', () => {
-      document.querySelectorAll('.step').forEach(x => x.classList.remove('active'));
-      s.classList.add('active');
-    });
-  });
+      (function () {
+        var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-link'));
+        if (!navLinks.length) return;
+        navLinks.forEach(function (link) {
+          link.addEventListener('click', function () {
+            navLinks.forEach(function (l) { l.classList.remove('text-gold'); });
+            link.classList.add('text-gold');
+          });
+        });
+      })();
+    </script>
 
-  // FAQ
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(x => x.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
-    });
-  });
-
-  // scroll reveal
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('[data-anim]').forEach(el => io.observe(el));
-
-  // pointer glow
-  document.querySelectorAll('[data-tilt]').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const r = card.getBoundingClientRect();
-      const x = ((e.clientX - r.left) / r.width) * 100;
-      const y = ((e.clientY - r.top) / r.height) * 100;
-      card.style.setProperty('--mx', x + '%');
-      card.style.setProperty('--my', y + '%');
-    });
-  });
-</script>
 </body>
 </html>

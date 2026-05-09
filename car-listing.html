@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heros - Car Listing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Outfit', sans-serif; background: #171717; color: #fff; }
+    .text-gold { color: #e4a15a; }
+    .bg-gold { background: #e4a15a; }
+    .border-gold { border-color: #e4a15a; }
+    .listing-hero {
+      background: linear-gradient(rgba(0,0,0,.42), rgba(0,0,0,.42)), url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=2200');
+      background-size: cover;
+      background-position: center;
+    }
+    .category-item.is-active { color: #fff; }
+    .category-item.is-active i { color: #e4a15a; }
+  </style>
+</head>
+<body>
+  <nav class="fixed w-full z-50 bg-black/50 backdrop-blur-md border-b border-white/10 py-4 px-8 flex justify-between items-center">
+    <a href="index.html" class="text-2xl font-bold tracking-tighter">HE<span class="text-gold">ROS</span></a>
+    <div class="hidden md:flex gap-8 text-sm uppercase font-medium tracking-wide">
+      <a href="index.html#heroSection" class="hover:text-gold transition">Home</a>
+      <a href="index.html#about-section" class="hover:text-gold transition">About</a>
+      <a href="index.html#our-services" class="hover:text-gold transition">Services</a>
+      <a href="index.html#luxury-fleet" class="text-gold">Cars</a>
+      <a href="index.html#car-types-section" class="hover:text-gold transition">Car Types</a>
+      <a href="index.html#rental-process" class="hover:text-gold transition">Process</a>
+      <a href="index.html#testimonials-section" class="hover:text-gold transition">Blog</a>
+      <a href="index.html#main-footer" class="hover:text-gold transition">Contact</a>
+    </div>
+    <div class="flex items-center gap-6">
+      <i class="fa-solid fa-cart-shopping text-sm"></i>
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 border border-gold rounded-full flex items-center justify-center">
+          <i class="fa-solid fa-phone text-xs text-gold"></i>
+        </div>
+        <div>
+          <p class="text-[10px] text-gray-400 uppercase">Call us</p>
+          <p class="text-sm font-bold">0108118968</p>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="listing-hero h-[64vh] pt-36 px-8 lg:px-24 flex items-center justify-center text-center">
+    <div>
+      <p class="text-gold tracking-[0.4em] uppercase text-xs mb-4">Rent Now</p>
+      <h1 id="listingTitle" class="text-5xl md:text-6xl font-bold"><span class="text-gold">Select</span> Luxury Car</h1>
+      <div class="mt-8">
+        <a href="index.html#heroSection" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition">
+          <i class="fa-solid fa-arrow-left text-xs"></i> Back to Home
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-8 lg:px-24 py-16 bg-[#171717]">
+    <div class="grid lg:grid-cols-[320px_1fr] gap-8 items-start">
+      <aside class="bg-[#202125] rounded-[20px] overflow-hidden border border-white/5">
+        <div class="bg-gold p-4">
+          <div class="bg-[#202125] rounded-full px-4 h-12 flex items-center justify-between gap-3">
+            <input id="listingSearchInput" type="text" placeholder="Search cars..." class="bg-transparent border-0 outline-none w-full text-sm text-white placeholder:text-gray-400">
+            <button id="listingSearchBtn" type="button" class="w-8 h-8 rounded-full bg-gold text-black grid place-items-center shrink-0">
+              <i class="fa-solid fa-magnifying-glass text-xs"></i>
+            </button>
+          </div>
+        </div>
+        <div class="p-6 space-y-8">
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Categories</h3>
+            <ul class="space-y-3 text-gray-400">
+              <li><button type="button" class="category-item w-full text-left" data-category="all"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>All Cars</button></li>
+              <li><button type="button" class="category-item w-full text-left" data-category="convertible"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Convertible</button></li>
+              <li><button type="button" class="category-item w-full text-left" data-category="luxury"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Luxury Cars</button></li>
+              <li><button type="button" class="category-item w-full text-left" data-category="sedan"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Sedan</button></li>
+              <li><button type="button" class="category-item w-full text-left" data-category="small"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Small Cars</button></li>
+              <li><button type="button" class="category-item w-full text-left" data-category="sport"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Sport Cars</button></li>
+              <li><button type="button" class="category-item w-full text-left" data-category="suv"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>SUVs</button></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Pickup Locations</h3>
+            <ul class="space-y-3 text-gray-400">
+              <li><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Alor Setar</li>
+              <li><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Kulim</li>
+              <li><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Sungai Petani</li>
+              <li><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Langkawi</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <div id="listingGrid" class="grid md:grid-cols-2 gap-6">
+        <article class="listing-card bg-[#202125] rounded-[20px] overflow-hidden border border-white/5" data-types="luxury suv" data-name="lamborghini urus">
+          <img src="https://images.unsplash.com/photo-1563720360172-67b8f3dce741?auto=format&fit=crop&q=80&w=1200" class="h-56 w-full object-cover" alt="Lamborghini Urus">
+          <div class="p-6">
+            <h3 class="text-3xl font-semibold mb-4">Lamborghini Urus</h3>
+            <div class="space-y-2 text-sm text-gray-400 mb-6">
+              <p><i class="fa-solid fa-door-open text-gold mr-2"></i>Doors <span class="float-right text-white">4</span></p>
+              <p><i class="fa-solid fa-user text-gold mr-2"></i>Passengers <span class="float-right text-white">5</span></p>
+              <p><i class="fa-solid fa-gear text-gold mr-2"></i>Transmission <span class="float-right text-white">Auto</span></p>
+              <p><i class="fa-solid fa-suitcase text-gold mr-2"></i>Luggage <span class="float-right text-white">2 Bags</span></p>
+            </div>
+            <div class="flex items-center justify-between">
+              <p class="text-4xl font-bold text-gold">RM 750 <span class="text-sm text-gray-500">/day</span></p>
+              <a href="car-details.html" class="bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-white transition">Book</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="listing-card bg-[#202125] rounded-[20px] overflow-hidden border border-white/5" data-types="sport suv luxury" data-name="porsche macan">
+          <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&q=80&w=1200" class="h-56 w-full object-cover" alt="Porsche Macan">
+          <div class="p-6">
+            <h3 class="text-3xl font-semibold mb-4">Porsche Macan</h3>
+            <div class="space-y-2 text-sm text-gray-400 mb-6">
+              <p><i class="fa-solid fa-door-open text-gold mr-2"></i>Doors <span class="float-right text-white">4</span></p>
+              <p><i class="fa-solid fa-user text-gold mr-2"></i>Passengers <span class="float-right text-white">5</span></p>
+              <p><i class="fa-solid fa-gear text-gold mr-2"></i>Transmission <span class="float-right text-white">Auto</span></p>
+              <p><i class="fa-solid fa-suitcase text-gold mr-2"></i>Luggage <span class="float-right text-white">2 Bags</span></p>
+            </div>
+            <div class="flex items-center justify-between">
+              <p class="text-4xl font-bold text-gold">RM 500 <span class="text-sm text-gray-500">/day</span></p>
+              <a href="car-details-porsche.html" class="bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-white transition">Book</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="listing-card bg-[#202125] rounded-[20px] overflow-hidden border border-white/5" data-types="sedan luxury" data-name="mercedes s class">
+          <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&q=80&w=1200" class="h-56 w-full object-cover" alt="Mercedes S-Class">
+          <div class="p-6">
+            <h3 class="text-3xl font-semibold mb-4">Mercedes S-Class</h3>
+            <div class="space-y-2 text-sm text-gray-400 mb-6">
+              <p><i class="fa-solid fa-door-open text-gold mr-2"></i>Doors <span class="float-right text-white">4</span></p>
+              <p><i class="fa-solid fa-user text-gold mr-2"></i>Passengers <span class="float-right text-white">4</span></p>
+              <p><i class="fa-solid fa-gear text-gold mr-2"></i>Transmission <span class="float-right text-white">Auto</span></p>
+              <p><i class="fa-solid fa-suitcase text-gold mr-2"></i>Luggage <span class="float-right text-white">2 Bags</span></p>
+            </div>
+            <div class="flex items-center justify-between">
+              <p class="text-4xl font-bold text-gold">RM 580 <span class="text-sm text-gray-500">/day</span></p>
+              <a href="car-details-mercedes.html" class="bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-white transition">Book</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="listing-card bg-[#202125] rounded-[20px] overflow-hidden border border-white/5" data-types="convertible sport luxury" data-name="porsche 911 cabriolet">
+          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1200" class="h-56 w-full object-cover" alt="Porsche 911 Cabriolet">
+          <div class="p-6">
+            <h3 class="text-3xl font-semibold mb-4">Porsche 911 Cabriolet</h3>
+            <div class="space-y-2 text-sm text-gray-400 mb-6">
+              <p><i class="fa-solid fa-door-open text-gold mr-2"></i>Doors <span class="float-right text-white">2</span></p>
+              <p><i class="fa-solid fa-user text-gold mr-2"></i>Passengers <span class="float-right text-white">2</span></p>
+              <p><i class="fa-solid fa-gear text-gold mr-2"></i>Transmission <span class="float-right text-white">Auto</span></p>
+              <p><i class="fa-solid fa-suitcase text-gold mr-2"></i>Luggage <span class="float-right text-white">1 Bag</span></p>
+            </div>
+            <div class="flex items-center justify-between">
+              <p class="text-4xl font-bold text-gold">RM 680 <span class="text-sm text-gray-500">/day</span></p>
+              <a href="car-details-porsche.html" class="bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-white transition">Book</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var selectedType = (params.get('type') || 'all').toLowerCase();
+      var searchTerm = (params.get('search') || '').toLowerCase().trim();
+      var title = document.getElementById('listingTitle');
+      var cards = Array.prototype.slice.call(document.querySelectorAll('.listing-card'));
+      var categories = Array.prototype.slice.call(document.querySelectorAll('.category-item'));
+      var searchInput = document.getElementById('listingSearchInput');
+      var searchBtn = document.getElementById('listingSearchBtn');
+      var labels = {
+        all: 'Luxury Car',
+        convertible: 'Convertible',
+        luxury: 'Luxury',
+        sedan: 'Sedan',
+        small: 'Small Cars',
+        sport: 'Sport Cars',
+        suv: 'SUVs'
+      };
+
+      var applyFilters = function () {
+        if (title && labels[selectedType]) {
+          title.innerHTML = '<span class="text-gold">Select</span> ' + labels[selectedType];
+        }
+
+        categories.forEach(function (item) {
+          item.classList.toggle('is-active', item.getAttribute('data-category') === selectedType);
+        });
+
+        var visibleCount = 0;
+        cards.forEach(function (card) {
+          var types = (card.getAttribute('data-types') || '').split(/\s+/);
+          var name = (card.getAttribute('data-name') || '').toLowerCase();
+          var matchType = selectedType === 'all' || types.indexOf(selectedType) !== -1;
+          var matchSearch = !searchTerm || name.indexOf(searchTerm) !== -1;
+          var show = matchType && matchSearch;
+          card.style.display = show ? '' : 'none';
+          if (show) visibleCount += 1;
+        });
+
+        if (!visibleCount) {
+          cards.forEach(function (card) { card.style.display = ''; });
+        }
+      };
+
+      var syncUrl = function () {
+        var next = new URLSearchParams();
+        if (selectedType && selectedType !== 'all') next.set('type', selectedType);
+        if (searchTerm) next.set('search', searchTerm);
+        var query = next.toString();
+        var url = query ? ('?' + query) : window.location.pathname.split('/').pop();
+        window.history.replaceState({}, '', url);
+      };
+
+      categories.forEach(function (item) {
+        item.addEventListener('click', function () {
+          selectedType = item.getAttribute('data-category') || 'all';
+          applyFilters();
+          syncUrl();
+        });
+      });
+
+      var runSearch = function () {
+        searchTerm = (searchInput?.value || '').toLowerCase().trim();
+        applyFilters();
+        syncUrl();
+      };
+
+      if (searchInput) searchInput.value = searchTerm;
+      searchBtn?.addEventListener('click', runSearch);
+      searchInput?.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') runSearch();
+      });
+
+      applyFilters();
+    })();
+  </script>
+</body>
+</html>
