@@ -178,12 +178,6 @@
         }
         .fleet-gold { color: #c5a059; }
         .fleet-gold-bg { background-color: #c5a059; }
-        .fleet-arrow-btn {
-            background-color: rgba(197, 160, 89, 0.92);
-        }
-        .fleet-arrow-btn:hover {
-            background-color: #c5a059;
-        }
         #luxury-fleet .fleet-row {
             display: flex;
             align-items: center;
@@ -194,19 +188,7 @@
         #luxury-fleet .fleet-shell {
             max-width: 1320px;
             margin: 0 auto;
-            padding: 0 66px;
-        }
-        #luxury-fleet .fleet-side-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 14;
-            pointer-events: none;
-        }
-        #luxury-fleet .fleet-side-nav-left { left: clamp(10px, 3vw, 30px); }
-        #luxury-fleet .fleet-side-nav-right { right: clamp(10px, 3vw, 30px); }
-        #luxury-fleet .fleet-side-nav .fleet-arrow-btn {
-            pointer-events: auto;
+            padding: 0 24px;
         }
         @media (min-width: 1024px) {
             #luxury-fleet .fleet-row {
@@ -306,13 +288,6 @@
             #luxury-fleet .fleet-shell {
                 padding: 0;
             }
-            #luxury-fleet .fleet-side-nav {
-                top: auto;
-                bottom: 22px;
-                transform: none;
-            }
-            #luxury-fleet .fleet-side-nav-left { left: 16px; }
-            #luxury-fleet .fleet-side-nav-right { right: 16px; }
             #luxury-fleet .fleet-row {
                 justify-content: center;
                 overflow: visible;
@@ -1004,19 +979,6 @@
         </div>
 
         <div class="fleet-shell">
-            <div class="fleet-side-nav fleet-side-nav-left">
-                <button type="button" id="fleetPrev" aria-label="Previous"
-                    class="fleet-arrow-btn w-11 h-11 md:w-12 md:h-12 rounded-full flex items-center justify-center cursor-pointer transition shadow-lg border-0">
-                    <i class="fa-solid fa-chevron-left text-black text-xs"></i>
-                </button>
-            </div>
-            <div class="fleet-side-nav fleet-side-nav-right">
-                <button type="button" id="fleetNext" aria-label="Next"
-                    class="fleet-arrow-btn w-11 h-11 md:w-12 md:h-12 rounded-full flex items-center justify-center cursor-pointer transition shadow-lg border-0">
-                    <i class="fa-solid fa-chevron-right text-black text-xs"></i>
-                </button>
-            </div>
-
         <div id="fleetScroll" class="fleet-row no-scrollbar scroll-smooth snap-x snap-mandatory lg:snap-none">
 
             <!-- Side card — smaller, no overlay (desktop: scaled; mobile: snap scroll) -->
@@ -1494,8 +1456,6 @@
         var bags = document.getElementById('fleetBags');
         var price = document.getElementById('fleetPrice');
         var detailsLink = document.getElementById('fleetDetailsLink');
-        var prevBtn = document.getElementById('fleetPrev');
-        var nextBtn = document.getElementById('fleetNext');
         var mobileDots = Array.prototype.slice.call(document.querySelectorAll('#fleetMobileDots .fleet-mobile-dot'));
 
         if (!row || !leftImg || !centerImg || !rightImg || !title || !seats || !transmission || !bags || !price || !detailsLink) return;
@@ -1510,6 +1470,7 @@
 
         var active = 0;
         var animating = false;
+        var fleetAutoTimer = null;
         var mod = function (n) { return (n + fleetCars.length) % fleetCars.length; };
 
         var renderFleet = function () {
@@ -1556,14 +1517,24 @@
           }, 220);
         };
 
-        prevBtn?.addEventListener('click', function () {
-          changeFleet('prev');
-        });
-        nextBtn?.addEventListener('click', function () {
-          changeFleet('next');
+        var startFleetAuto = function () {
+          if (fleetAutoTimer) window.clearInterval(fleetAutoTimer);
+          fleetAutoTimer = window.setInterval(function () {
+            changeFleet('next');
+          }, 4500);
+        };
+
+        document.addEventListener('visibilitychange', function () {
+          if (document.hidden) {
+            if (fleetAutoTimer) window.clearInterval(fleetAutoTimer);
+            fleetAutoTimer = null;
+          } else {
+            startFleetAuto();
+          }
         });
 
         renderFleet();
+        startFleetAuto();
       })();
 
       document.querySelectorAll('#car-types-section .ct-dot').forEach(function (dot) {
