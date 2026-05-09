@@ -94,12 +94,88 @@
             border-color: #e4a15a;
             transform: scale(1.1);
         }
+        #mobileNavOverlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(6, 6, 7, 0.62);
+            backdrop-filter: blur(2px);
+            z-index: 44;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.28s ease;
+        }
+        #mobileNavOverlay.is-open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        #mobileNavMenu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: min(82vw, 340px);
+            height: 100dvh;
+            z-index: 45;
+            background: rgba(20, 20, 22, 0.97);
+            border-left: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: -18px 0 35px rgba(0, 0, 0, 0.4);
+            transform: translateX(104%);
+            opacity: 0;
+            pointer-events: none;
+            transition: transform 0.34s ease, opacity 0.24s ease;
+        }
+        #mobileNavMenu.is-open {
+            transform: translateX(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+        #mobileNavMenu .mobile-nav-inner {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 92px 20px 28px;
+        }
+        #mobileNavMenu .mobile-nav-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        #mobileNavMenu .mobile-nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 11px 4px 11px 2px;
+            color: rgba(255, 255, 255, 0.92);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            font-size: 1.12rem;
+            letter-spacing: 0.01em;
+            transition: color 0.22s ease, transform 0.22s ease;
+        }
+        #mobileNavMenu .mobile-nav-link:hover {
+            color: #e4a15a;
+            transform: translateX(2px);
+        }
+        #mobileNavMenu .mobile-nav-link.is-active {
+            color: #e4a15a;
+        }
+        #mobileNavMenu .mobile-nav-link i {
+            font-size: 0.9rem;
+            color: rgba(228, 161, 90, 0.92);
+        }
+        @media (min-width: 768px) {
+            #mobileNavMenu,
+            #mobileNavOverlay {
+                display: none !important;
+            }
+        }
         .card-dark { background-color: #1b1b1b; border-radius: 36px; transition: 0.3s; }
         .btn-round { border-radius: 50px; padding: 12px 28px; font-weight: 600; transition: 0.3s; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         /* Luxury fleet — center focus */
-        #luxury-fleet { background: #171717; }
+        #luxury-fleet {
+            background: #171717;
+            position: relative;
+        }
         .fleet-gold { color: #c5a059; }
         .fleet-gold-bg { background-color: #c5a059; }
         .fleet-arrow-btn {
@@ -116,7 +192,6 @@
             min-height: 430px;
         }
         #luxury-fleet .fleet-shell {
-            position: relative;
             max-width: 1320px;
             margin: 0 auto;
             padding: 0 66px;
@@ -128,8 +203,8 @@
             z-index: 14;
             pointer-events: none;
         }
-        #luxury-fleet .fleet-side-nav-left { left: 66px; }
-        #luxury-fleet .fleet-side-nav-right { right: 66px; }
+        #luxury-fleet .fleet-side-nav-left { left: clamp(10px, 3vw, 30px); }
+        #luxury-fleet .fleet-side-nav-right { right: clamp(10px, 3vw, 30px); }
         #luxury-fleet .fleet-side-nav .fleet-arrow-btn {
             pointer-events: auto;
         }
@@ -233,40 +308,51 @@
             }
             #luxury-fleet .fleet-side-nav {
                 top: auto;
-                bottom: -18px;
+                bottom: 22px;
                 transform: none;
             }
             #luxury-fleet .fleet-side-nav-left { left: 16px; }
             #luxury-fleet .fleet-side-nav-right { right: 16px; }
             #luxury-fleet .fleet-row {
-                justify-content: flex-start;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                scroll-padding-inline: 1.25rem;
-                -webkit-overflow-scrolling: touch;
+                justify-content: center;
+                overflow: visible;
                 min-height: unset;
-                padding-bottom: 0.5rem;
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-            #luxury-fleet .fleet-side,
-            #luxury-fleet .fleet-center-wrap {
-                flex: 0 0 min(92vw, 420px);
-                scroll-snap-align: center;
-                opacity: 1;
-                transform: none;
-                filter: none;
-            }
-            #luxury-fleet .fleet-side {
-                opacity: 0.72;
+                padding-bottom: 2.5rem;
+                padding-left: 0;
+                padding-right: 0;
             }
             #luxury-fleet .fleet-center-wrap {
-                flex-basis: min(94vw, 520px);
+                flex: 0 0 min(94vw, 520px);
+                width: min(94vw, 520px);
             }
             #luxury-fleet .fleet-center-inner {
                 border-radius: 24px;
                 overflow: hidden;
             }
+            #luxury-fleet .fleet-side {
+                display: none;
+            }
+            #luxury-fleet .fleet-mobile-dots {
+                display: flex;
+            }
+        }
+        #luxury-fleet .fleet-mobile-dots {
+            display: none;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 14px;
+        }
+        #luxury-fleet .fleet-mobile-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.85);
+            background: transparent;
+            transition: all 0.25s ease;
+        }
+        #luxury-fleet .fleet-mobile-dot.is-active {
+            background: #c5a059;
+            border-color: #c5a059;
         }
         /* ── Car Types (same card design as previous Our Services) ── */
         #car-types-section {
@@ -824,7 +910,6 @@
         <div class="hidden md:flex gap-8 text-sm uppercase font-medium tracking-wide">
             <a href="#heroSection" class="nav-link text-gold">Home</a>
             <a href="#about-section" class="nav-link hover:text-gold transition">About</a>
-            <a href="#car-types-section" class="nav-link hover:text-gold transition">Services</a>
             <a href="#luxury-fleet" class="nav-link hover:text-gold transition">Cars</a>
             <a href="#car-types-section" class="nav-link hover:text-gold transition">Car Types</a>
             <a href="#rental-process" class="nav-link hover:text-gold transition">Process</a>
@@ -847,16 +932,18 @@
             </div>
         </div>
     </nav>
-    <div id="mobileNavMenu" class="fixed top-[72px] left-4 right-4 z-40 bg-[#1c1c1f]/95 backdrop-blur-md border border-white/10 rounded-2xl p-4 hidden md:hidden">
-        <div class="grid grid-cols-2 gap-3 text-xs uppercase font-semibold tracking-wide">
-            <a href="#heroSection" class="mobile-nav-link px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-gold">Home</a>
-            <a href="#about-section" class="mobile-nav-link px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10">About</a>
-            <a href="#car-types-section" class="mobile-nav-link px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10">Services</a>
-            <a href="#luxury-fleet" class="mobile-nav-link px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10">Cars</a>
-            <a href="#car-types-section" class="mobile-nav-link px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10">Car Types</a>
-            <a href="#rental-process" class="mobile-nav-link px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10">Process</a>
-            <a href="#testimonials-section" class="mobile-nav-link px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10">Blog</a>
-            <a href="#main-footer" class="mobile-nav-link px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10">Contact</a>
+    <div id="mobileNavOverlay" class="md:hidden" aria-hidden="true"></div>
+    <div id="mobileNavMenu" class="md:hidden" aria-hidden="true">
+        <div class="mobile-nav-inner">
+            <div class="mobile-nav-list">
+                <a href="#heroSection" class="mobile-nav-link is-active"><span>Home</span><i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#about-section" class="mobile-nav-link"><span>About</span><i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#luxury-fleet" class="mobile-nav-link"><span>Cars</span><i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#car-types-section" class="mobile-nav-link"><span>Car Types</span><i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#rental-process" class="mobile-nav-link"><span>Process</span><i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#testimonials-section" class="mobile-nav-link"><span>Blog</span><i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#main-footer" class="mobile-nav-link"><span>Contact</span><i class="fa-solid fa-arrow-right"></i></a>
+            </div>
         </div>
     </div>
 
@@ -870,7 +957,7 @@
             <div class="flex items-center gap-4">
                 <p id="heroModel" class="text-xl text-gray-300">Bentley Bentayga</p>
                 <div class="h-[1px] w-12 bg-gold"></div>
-                <p class="text-xl font-bold"><span id="heroPrice" class="text-gold">$600</span> <span class="text-sm font-normal text-gray-400">/ DAY</span></p>
+                <p class="text-xl font-bold"><span id="heroPrice" class="text-gold">RM 600</span> <span class="text-sm font-normal text-gray-400">/ DAY</span></p>
             </div>
         </div>
         <!-- Slider Dots -->
@@ -943,7 +1030,7 @@
                     <img id="fleetCenterImg" src="https://images.unsplash.com/photo-1563720360172-67b8f3dce741?auto=format&fit=crop&q=85&w=1400" class="w-full h-[360px] md:h-[430px] lg:h-[430px] object-cover" alt="Lamborghini Urus">
 
                     <!-- Bottom overlay — reference layout -->
-                    <div id="fleetInfoPanel" class="absolute bottom-4 md:bottom-5 left-1/2 -translate-x-1/2 w-[95%] md:w-[94%] bg-[#212125]/95 rounded-[18px] md:rounded-[20px] px-5 py-4 md:px-6 md:py-5 flex flex-row flex-wrap justify-between items-center gap-4 border border-white/[0.05]">
+                    <div id="fleetInfoPanel" class="absolute z-10 bottom-4 md:bottom-5 left-1/2 -translate-x-1/2 w-[95%] md:w-[94%] bg-[#212125]/95 rounded-[18px] md:rounded-[20px] px-5 py-4 md:px-6 md:py-5 flex flex-row flex-wrap justify-between items-center gap-4 border border-white/[0.05] shadow-[0_12px_30px_rgba(0,0,0,0.35)]">
                         <div>
                             <h3 id="fleetTitle" class="text-[28px] md:text-[32px] leading-none font-semibold text-white mb-2">Lamborghini Urus</h3>
                             <div class="flex flex-wrap gap-x-4 gap-y-1.5 text-[11px] md:text-xs text-gray-400">
@@ -955,7 +1042,7 @@
                         <div class="flex items-center gap-4 md:gap-6 w-full sm:w-auto justify-between sm:justify-end">
                             <a id="fleetDetailsLink" href="car-details.html" class="fleet-gold-bg text-black px-6 py-2.5 rounded-full font-semibold text-xs hover:bg-white transition inline-flex items-center">Details</a>
                             <div class="text-right shrink-0">
-                                <p id="fleetPrice" class="text-[30px] md:text-[34px] font-semibold fleet-gold leading-none">$750</p>
+                                <p id="fleetPrice" class="text-[30px] md:text-[34px] font-semibold fleet-gold leading-none">RM 750</p>
                                 <p class="text-[10px] text-gray-500 uppercase tracking-wider mt-1">/ day</p>
                             </div>
                         </div>
@@ -967,6 +1054,13 @@
             <div id="fleetRightCard" class="fleet-side shrink-0 snap-center rounded-[22px] overflow-hidden">
                 <img id="fleetRightImg" src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&q=80&w=900" class="w-full h-[360px] md:h-[420px] lg:h-[420px] object-cover" alt="Luxury car">
             </div>
+        </div>
+        <div class="fleet-mobile-dots" id="fleetMobileDots" aria-hidden="true">
+            <span class="fleet-mobile-dot is-active"></span>
+            <span class="fleet-mobile-dot"></span>
+            <span class="fleet-mobile-dot"></span>
+            <span class="fleet-mobile-dot"></span>
+            <span class="fleet-mobile-dot"></span>
         </div>
         </div>
     </section>
@@ -1310,17 +1404,17 @@
           {
             image: 'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&q=80&w=2070',
             model: 'Bentley Bentayga',
-            price: '$600'
+            price: 'RM 600'
           },
           {
             image: 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&q=80&w=2070',
             model: 'Mercedes S-Class',
-            price: '$520'
+            price: 'RM 520'
           },
           {
             image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=2070',
             model: 'Porsche Taycan',
-            price: '$560'
+            price: 'RM 560'
           }
         ];
 
@@ -1402,15 +1496,16 @@
         var detailsLink = document.getElementById('fleetDetailsLink');
         var prevBtn = document.getElementById('fleetPrev');
         var nextBtn = document.getElementById('fleetNext');
+        var mobileDots = Array.prototype.slice.call(document.querySelectorAll('#fleetMobileDots .fleet-mobile-dot'));
 
         if (!row || !leftImg || !centerImg || !rightImg || !title || !seats || !transmission || !bags || !price || !detailsLink) return;
 
         var fleetCars = [
-          { name: 'Lamborghini Urus', image: 'https://images.unsplash.com/photo-1563720360172-67b8f3dce741?auto=format&fit=crop&q=85&w=1400', seats: '5', transmission: 'Auto', bags: '2 Bags', price: '$750', details: 'car-details.html' },
-          { name: 'Audi RS Q8', image: 'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&fit=crop&q=80&w=900', seats: '5', transmission: 'Auto', bags: '3 Bags', price: '$690', details: 'car-details-audi.html' },
-          { name: 'Range Rover Sport', image: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&q=80&w=900', seats: '5', transmission: 'Auto', bags: '3 Bags', price: '$620', details: 'car-details-rangerover.html' },
-          { name: 'Mercedes S-Class', image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&q=80&w=900', seats: '4', transmission: 'Auto', bags: '2 Bags', price: '$580', details: 'car-details-mercedes.html' },
-          { name: 'Porsche Taycan', image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=900', seats: '4', transmission: 'Auto', bags: '2 Bags', price: '$640', details: 'car-details-porsche.html' }
+          { name: 'Lamborghini Urus', image: 'https://images.unsplash.com/photo-1563720360172-67b8f3dce741?auto=format&fit=crop&q=85&w=1400', seats: '5', transmission: 'Auto', bags: '2 Bags', price: 'RM 750', details: 'car-details.html' },
+          { name: 'Audi RS Q8', image: 'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&fit=crop&q=80&w=900', seats: '5', transmission: 'Auto', bags: '3 Bags', price: 'RM 690', details: 'car-details-audi.html' },
+          { name: 'Range Rover Sport', image: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&q=80&w=900', seats: '5', transmission: 'Auto', bags: '3 Bags', price: 'RM 620', details: 'car-details-rangerover.html' },
+          { name: 'Mercedes S-Class', image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&q=80&w=900', seats: '4', transmission: 'Auto', bags: '2 Bags', price: 'RM 580', details: 'car-details-mercedes.html' },
+          { name: 'Porsche Taycan', image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=900', seats: '4', transmission: 'Auto', bags: '2 Bags', price: 'RM 640', details: 'car-details-porsche.html' }
         ];
 
         var active = 0;
@@ -1435,6 +1530,11 @@
           bags.innerHTML = '<i class="fa-solid fa-suitcase fleet-gold text-[13px]"></i> ' + center.bags;
           price.textContent = center.price;
           detailsLink.setAttribute('href', center.details);
+          if (mobileDots.length) {
+            mobileDots.forEach(function (dot, idx) {
+              dot.classList.toggle('is-active', idx === active);
+            });
+          }
         };
 
         var changeFleet = function (direction) {
@@ -1491,18 +1591,39 @@
       (function () {
         var toggle = document.getElementById('mobileNavToggle');
         var menu = document.getElementById('mobileNavMenu');
-        if (!toggle || !menu) return;
+        var overlay = document.getElementById('mobileNavOverlay');
+        if (!toggle || !menu || !overlay) return;
         var links = Array.prototype.slice.call(menu.querySelectorAll('.mobile-nav-link'));
+        var openMenu = function () {
+          menu.classList.add('is-open');
+          overlay.classList.add('is-open');
+          menu.setAttribute('aria-hidden', 'false');
+          toggle.setAttribute('aria-expanded', 'true');
+          document.body.style.overflow = 'hidden';
+        };
         var closeMenu = function () {
-          menu.classList.add('hidden');
+          menu.classList.remove('is-open');
+          overlay.classList.remove('is-open');
+          menu.setAttribute('aria-hidden', 'true');
           toggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
         };
         toggle.addEventListener('click', function () {
-          var isHidden = menu.classList.contains('hidden');
-          if (isHidden) {
-            menu.classList.remove('hidden');
-            toggle.setAttribute('aria-expanded', 'true');
+          var isOpen = menu.classList.contains('is-open');
+          if (isOpen) {
+            closeMenu();
           } else {
+            openMenu();
+          }
+        });
+        overlay.addEventListener('click', closeMenu);
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && menu.classList.contains('is-open')) {
+            closeMenu();
+          }
+        });
+        window.addEventListener('resize', function () {
+          if (window.innerWidth >= 768 && menu.classList.contains('is-open')) {
             closeMenu();
           }
         });

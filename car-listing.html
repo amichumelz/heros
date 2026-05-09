@@ -61,40 +61,12 @@
   </section>
 
   <section class="px-8 lg:px-24 py-16 bg-[#171717]">
-    <div class="grid lg:grid-cols-[320px_1fr] gap-8 items-start">
-      <aside class="bg-[#202125] rounded-[20px] overflow-hidden border border-white/5">
-        <div class="bg-gold p-4">
-          <div class="bg-[#202125] rounded-full px-4 h-12 flex items-center justify-between gap-3">
-            <input id="listingSearchInput" type="text" placeholder="Search cars..." class="bg-transparent border-0 outline-none w-full text-sm text-white placeholder:text-gray-400">
-            <button id="listingSearchBtn" type="button" class="w-8 h-8 rounded-full bg-gold text-black grid place-items-center shrink-0">
-              <i class="fa-solid fa-magnifying-glass text-xs"></i>
-            </button>
-          </div>
-        </div>
-        <div class="p-6 space-y-8">
-          <div>
-            <h3 class="text-xl font-semibold mb-4">Categories</h3>
-            <ul class="space-y-3 text-gray-400">
-              <li><button type="button" class="category-item w-full text-left" data-category="all"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>All Cars</button></li>
-              <li><button type="button" class="category-item w-full text-left" data-category="convertible"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Convertible</button></li>
-              <li><button type="button" class="category-item w-full text-left" data-category="luxury"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Luxury Cars</button></li>
-              <li><button type="button" class="category-item w-full text-left" data-category="sedan"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Sedan</button></li>
-              <li><button type="button" class="category-item w-full text-left" data-category="small"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Small Cars</button></li>
-              <li><button type="button" class="category-item w-full text-left" data-category="sport"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Sport Cars</button></li>
-              <li><button type="button" class="category-item w-full text-left" data-category="suv"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>SUVs</button></li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="text-xl font-semibold mb-4">Pickup Locations</h3>
-            <ul class="space-y-3 text-gray-400">
-              <li><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Alor Setar</li>
-              <li><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Kulim</li>
-              <li><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Sungai Petani</li>
-              <li><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Langkawi</li>
-            </ul>
-          </div>
-        </div>
-      </aside>
+    <div class="max-w-[1320px] mx-auto">
+      <div class="flex items-center justify-end mb-8">
+        <button id="listingFilterToggle" type="button" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition">
+          <i class="fa-solid fa-sliders text-xs"></i> Filter
+        </button>
+      </div>
 
       <div id="listingGrid" class="grid md:grid-cols-2 gap-6">
         <article class="listing-card bg-[#202125] rounded-[20px] overflow-hidden border border-white/5" data-types="luxury suv" data-name="lamborghini urus">
@@ -165,6 +137,40 @@
           </div>
         </article>
       </div>
+
+      <aside id="listingFilterPanel" class="mt-10 bg-[#202125] rounded-[20px] overflow-hidden border border-white/5">
+        <div class="bg-gold p-4">
+          <div class="bg-[#202125] rounded-full px-4 h-12 flex items-center justify-between gap-3">
+            <input id="listingSearchInput" type="text" placeholder="Search cars..." class="bg-transparent border-0 outline-none w-full text-sm text-white placeholder:text-gray-400">
+            <button id="listingSearchBtn" type="button" class="w-8 h-8 rounded-full bg-gold text-black grid place-items-center shrink-0">
+              <i class="fa-solid fa-magnifying-glass text-xs"></i>
+            </button>
+          </div>
+        </div>
+        <div class="p-6 grid md:grid-cols-2 gap-10">
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Categories</h3>
+            <ul class="space-y-3 text-gray-400">
+              <li><button type="button" class="category-item w-full text-left" data-category="all"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>All Cars</button></li>
+              <li><button type="button" class="category-item w-full text-left" data-category="convertible"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Convertible</button></li>
+              <li><button type="button" class="category-item w-full text-left" data-category="luxury"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Luxury Cars</button></li>
+              <li><button type="button" class="category-item w-full text-left" data-category="sedan"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Sedan</button></li>
+              <li><button type="button" class="category-item w-full text-left" data-category="small"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Small Cars</button></li>
+              <li><button type="button" class="category-item w-full text-left" data-category="sport"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Sport Cars</button></li>
+              <li><button type="button" class="category-item w-full text-left" data-category="suv"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>SUVs</button></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Pickup Locations</h3>
+            <ul class="space-y-3 text-gray-400">
+              <li><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Alor Setar</li>
+              <li><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Kulim</li>
+              <li><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Sungai Petani</li>
+              <li><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Langkawi</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
     </div>
   </section>
   <script>
@@ -177,6 +183,8 @@
       var categories = Array.prototype.slice.call(document.querySelectorAll('.category-item'));
       var searchInput = document.getElementById('listingSearchInput');
       var searchBtn = document.getElementById('listingSearchBtn');
+      var filterToggle = document.getElementById('listingFilterToggle');
+      var filterPanel = document.getElementById('listingFilterPanel');
       var labels = {
         all: 'Luxury Car',
         convertible: 'Convertible',
@@ -239,6 +247,10 @@
       searchBtn?.addEventListener('click', runSearch);
       searchInput?.addEventListener('keydown', function (e) {
         if (e.key === 'Enter') runSearch();
+      });
+
+      filterToggle?.addEventListener('click', function () {
+        filterPanel?.classList.toggle('hidden');
       });
 
       applyFilters();
