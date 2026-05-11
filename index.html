@@ -51,6 +51,21 @@
         .text-gold { color: #e4a15a; }
         .bg-gold { background-color: #e4a15a; }
         .border-gold { border-color: #e4a15a; }
+        .lang-toggle-btn {
+            border: 1px solid rgba(228, 161, 90, 0.6);
+            color: #e4a15a;
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: all 0.25s ease;
+        }
+        .lang-toggle-btn:hover {
+            background: #e4a15a;
+            color: #111111;
+        }
         .hero-gradient {
             position: relative;
             overflow: hidden;
@@ -883,25 +898,25 @@
     <nav class="fixed w-full z-50 bg-black/50 backdrop-blur-md border-b border-white/10 py-4 px-8 flex justify-between items-center">
         <a href="#heroSection" class="text-2xl font-bold tracking-tighter">HE<span class="text-gold">ROS</span></a>
         <div class="hidden md:flex gap-8 text-sm uppercase font-medium tracking-wide">
-            <a href="#heroSection" class="nav-link text-gold">Home</a>
-            <a href="#about-section" class="nav-link hover:text-gold transition">About</a>
-            <a href="#luxury-fleet" class="nav-link hover:text-gold transition">Cars</a>
-            <a href="#car-types-section" class="nav-link hover:text-gold transition">Car Types</a>
-            <a href="#rental-process" class="nav-link hover:text-gold transition">Process</a>
-            <a href="#testimonials-section" class="nav-link hover:text-gold transition">Blog</a>
-            <a href="#main-footer" class="nav-link hover:text-gold transition">Contact</a>
+            <a href="#heroSection" class="nav-link text-gold" data-i18n="nav.home">Home</a>
+            <a href="#about-section" class="nav-link hover:text-gold transition" data-i18n="nav.about">About</a>
+            <a href="#luxury-fleet" class="nav-link hover:text-gold transition" data-i18n="nav.cars">Cars</a>
+            <a href="#car-types-section" class="nav-link hover:text-gold transition" data-i18n="nav.carTypes">Car Types</a>
+            <a href="#rental-process" class="nav-link hover:text-gold transition" data-i18n="nav.process">Process</a>
+            <a href="#testimonials-section" class="nav-link hover:text-gold transition" data-i18n="nav.blog">Blog</a>
+            <a href="#main-footer" class="nav-link hover:text-gold transition" data-i18n="nav.contact">Contact</a>
         </div>
         <div class="flex items-center gap-4 md:gap-6">
             <button type="button" id="mobileNavToggle" class="md:hidden w-10 h-10 border border-gold rounded-full flex items-center justify-center text-gold" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNavMenu">
                 <i class="fa-solid fa-bars text-sm"></i>
             </button>
-            <i class="fa-solid fa-cart-shopping text-sm hidden md:inline-block"></i>
+            <button type="button" id="languageToggle" class="lang-toggle-btn">BM</button>
             <div class="flex items-center gap-3">
                 <div class="w-10 h-10 border border-gold rounded-full flex items-center justify-center">
                     <i class="fa-solid fa-phone text-xs text-gold"></i>
                 </div>
                 <div>
-                    <p class="text-[10px] text-gray-400 uppercase">Call us</p>
+                    <p class="text-[10px] text-gray-400 uppercase" data-i18n="common.callUs">Call us</p>
                     <p class="text-sm font-bold">0108118968</p>
                 </div>
             </div>
@@ -911,13 +926,13 @@
     <div id="mobileNavMenu" class="md:hidden" aria-hidden="true">
         <div class="mobile-nav-inner">
             <div class="mobile-nav-list">
-                <a href="#heroSection" class="mobile-nav-link is-active"><span>Home</span><i class="fa-solid fa-arrow-right"></i></a>
-                <a href="#about-section" class="mobile-nav-link"><span>About</span><i class="fa-solid fa-arrow-right"></i></a>
-                <a href="#luxury-fleet" class="mobile-nav-link"><span>Cars</span><i class="fa-solid fa-arrow-right"></i></a>
-                <a href="#car-types-section" class="mobile-nav-link"><span>Car Types</span><i class="fa-solid fa-arrow-right"></i></a>
-                <a href="#rental-process" class="mobile-nav-link"><span>Process</span><i class="fa-solid fa-arrow-right"></i></a>
-                <a href="#testimonials-section" class="mobile-nav-link"><span>Blog</span><i class="fa-solid fa-arrow-right"></i></a>
-                <a href="#main-footer" class="mobile-nav-link"><span>Contact</span><i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#heroSection" class="mobile-nav-link is-active"><span data-i18n="nav.home">Home</span><i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#about-section" class="mobile-nav-link"><span data-i18n="nav.about">About</span><i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#luxury-fleet" class="mobile-nav-link"><span data-i18n="nav.cars">Cars</span><i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#car-types-section" class="mobile-nav-link"><span data-i18n="nav.carTypes">Car Types</span><i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#rental-process" class="mobile-nav-link"><span data-i18n="nav.process">Process</span><i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#testimonials-section" class="mobile-nav-link"><span data-i18n="nav.blog">Blog</span><i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#main-footer" class="mobile-nav-link"><span data-i18n="nav.contact">Contact</span><i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
     </div>
@@ -928,11 +943,11 @@
         <div id="heroBgNext" class="hero-bg-next"></div>
         <div class="hero-content max-w-2xl">
             <p class="text-gold tracking-[0.3em] uppercase text-xs mb-4 font-bold">✦ Premium</p>
-            <h1 id="heroHeading" class="text-7xl md:text-8xl font-bold mb-6">Kedah Car Rental</h1>
+            <h1 id="heroHeading" class="text-7xl md:text-8xl font-bold mb-6" data-i18n="hero.title">Kedah Car Rental</h1>
             <div class="flex items-center gap-4">
                 <p id="heroModel" class="text-xl text-gray-300">Bentley Bentayga</p>
                 <div class="h-[1px] w-12 bg-gold"></div>
-                <p class="text-xl font-bold"><span id="heroPrice" class="text-gold">RM 600</span> <span class="text-sm font-normal text-gray-400">/ DAY</span></p>
+                <p class="text-xl font-bold"><span id="heroPrice" class="text-gold">RM 600</span> <span id="heroPriceUnit" class="text-sm font-normal text-gray-400">/ DAY</span></p>
             </div>
         </div>
         <!-- Slider Dots -->
@@ -947,27 +962,23 @@
     <section id="about-section" class="py-24 px-12 lg:px-24 grid md:grid-cols-2 gap-16 items-center">
         <div>
             <p class="text-gold tracking-widest uppercase text-xs mb-4 font-bold">HEROS</p>
-            <h2 class="text-5xl font-bold mb-8 leading-tight">We Are More Than <br><span class="text-gold">A Kedah Car Rental Company</span></h2>
-            <p class="text-gray-400 mb-8 leading-relaxed">Heros provides trusted car rental services across Kedah, including daily rentals, airport transfers, and chauffeur options. We focus on clean vehicles, fair pricing, and fast support to make every trip smooth.</p>
+            <h2 class="text-5xl font-bold mb-8 leading-tight" data-i18n-html="about.title">We Are More Than <br><span class="text-gold">A Kedah Car Rental Company</span></h2>
+            <p class="text-gray-400 mb-8 leading-relaxed" data-i18n="about.desc">Heros provides trusted car rental services across Kedah, including daily rentals, airport transfers, and chauffeur options. We focus on clean vehicles, fair pricing, and fast support to make every trip smooth.</p>
             
             <div class="space-y-4 mb-10">
                 <div class="flex items-center gap-4">
                     <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center"><i class="fa-solid fa-check text-gold text-xs"></i></div>
-                    <p class="text-sm font-medium">Sports and Luxury Cars</p>
+                    <p class="text-sm font-medium" data-i18n="about.point1">Sports and Luxury Cars</p>
                 </div>
                 <div class="flex items-center gap-4">
                     <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center"><i class="fa-solid fa-check text-gold text-xs"></i></div>
-                    <p class="text-sm font-medium">Economy Cars</p>
+                    <p class="text-sm font-medium" data-i18n="about.point2">Economy Cars</p>
                 </div>
             </div>
 
-            <button class="bg-gold text-black btn-round flex items-center gap-2">Read More <i class="fa-solid fa-arrow-right-long -rotate-45"></i></button>
         </div>
         <div class="relative">
             <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&q=80&w=1000" class="rounded-[40px]" alt="Manager">
-            <div class="absolute -bottom-8 -left-8 w-16 h-16 bg-gold rounded-full flex items-center justify-center text-black">
-                <i class="fa-solid fa-play"></i>
-            </div>
         </div>
     </section>
 
@@ -1256,7 +1267,7 @@
                 </div>
 
                 <div>
-                    <h4 class="mf-heading">Quick Links</h4>
+                    <h4 class="mf-heading" data-i18n="footer.quickLinks">Quick Links</h4>
                     <ul class="mf-links">
                         <li><a href="#">About</a></li>
                         <li><a href="#">Cars</a></li>
@@ -1267,10 +1278,10 @@
                 </div>
 
                 <div>
-                    <h4 class="mf-heading">Subscribe</h4>
-                    <p class="mf-subtext">Want to be notified about our services. Just sign up and we will send you a notification by email.</p>
+                    <h4 class="mf-heading" data-i18n="footer.subscribe">Subscribe</h4>
+                    <p class="mf-subtext" data-i18n="footer.subscribeDesc">Want to be notified about our services. Just sign up and we will send you a notification by email.</p>
                     <form class="mf-subscribe" action="#" method="post">
-                        <input type="email" placeholder="Your email address" aria-label="Email address">
+                        <input id="footerEmailInput" type="email" placeholder="Your email address" aria-label="Email address">
                         <button type="submit" aria-label="Submit"><i class="fa-solid fa-arrow-right"></i></button>
                     </form>
                 </div>
@@ -1281,6 +1292,88 @@
     </footer>
 
     <script>
+      (function () {
+        var storageKey = 'herosLang';
+        var languageToggle = document.getElementById('languageToggle');
+        var root = document.documentElement;
+        var heroPriceUnit = document.getElementById('heroPriceUnit');
+        var footerEmailInput = document.getElementById('footerEmailInput');
+        var translations = {
+          en: {
+            'nav.home': 'Home',
+            'nav.about': 'About',
+            'nav.cars': 'Cars',
+            'nav.carTypes': 'Car Types',
+            'nav.process': 'Process',
+            'nav.blog': 'Blog',
+            'nav.contact': 'Contact',
+            'common.callUs': 'Call us',
+            'hero.title': 'Kedah Car Rental',
+            'hero.priceUnit': '/ DAY',
+            'about.title': 'We Are More Than <br><span class="text-gold">A Kedah Car Rental Company</span>',
+            'about.desc': 'Heros provides trusted car rental services across Kedah, including daily rentals, airport transfers, and chauffeur options. We focus on clean vehicles, fair pricing, and fast support to make every trip smooth.',
+            'about.point1': 'Sports and Luxury Cars',
+            'about.point2': 'Economy Cars',
+            'about.readMore': 'Read More',
+            'footer.quickLinks': 'Quick Links',
+            'footer.subscribe': 'Subscribe',
+            'footer.subscribeDesc': 'Want to be notified about our services. Just sign up and we will send you a notification by email.',
+            'footer.emailPlaceholder': 'Your email address',
+            'toggle.label': 'BM'
+          },
+          ms: {
+            'nav.home': 'Utama',
+            'nav.about': 'Tentang',
+            'nav.cars': 'Kereta',
+            'nav.carTypes': 'Jenis Kereta',
+            'nav.process': 'Proses',
+            'nav.blog': 'Blog',
+            'nav.contact': 'Hubungi',
+            'common.callUs': 'Hubungi kami',
+            'hero.title': 'Sewa Kereta Kedah',
+            'hero.priceUnit': '/ HARI',
+            'about.title': 'Kami Lebih Daripada <br><span class="text-gold">Syarikat Sewa Kereta Kedah</span>',
+            'about.desc': 'Heros menyediakan perkhidmatan sewa kereta yang dipercayai di seluruh Kedah, termasuk sewaan harian, pemindahan lapangan terbang dan pilihan pemandu. Kami fokus pada kenderaan bersih, harga berpatutan dan sokongan pantas supaya setiap perjalanan lebih lancar.',
+            'about.point1': 'Kereta Sukan dan Mewah',
+            'about.point2': 'Kereta Ekonomi',
+            'about.readMore': 'Baca Lagi',
+            'footer.quickLinks': 'Pautan Pantas',
+            'footer.subscribe': 'Langgan',
+            'footer.subscribeDesc': 'Nak dapatkan makluman tentang servis kami? Daftar sekarang dan kami akan hantar notifikasi melalui emel.',
+            'footer.emailPlaceholder': 'Alamat emel anda',
+            'toggle.label': 'EN'
+          }
+        };
+
+        var setLanguage = function (lang) {
+          var dict = translations[lang] || translations.en;
+          root.setAttribute('lang', lang === 'ms' ? 'ms' : 'en');
+          document.querySelectorAll('[data-i18n]').forEach(function (el) {
+            var key = el.getAttribute('data-i18n');
+            if (dict[key]) el.textContent = dict[key];
+          });
+          document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+            var key = el.getAttribute('data-i18n-html');
+            if (dict[key]) el.innerHTML = dict[key];
+          });
+          if (heroPriceUnit) heroPriceUnit.textContent = dict['hero.priceUnit'] || '/ DAY';
+          if (footerEmailInput) footerEmailInput.placeholder = dict['footer.emailPlaceholder'] || 'Your email address';
+          if (languageToggle) languageToggle.textContent = dict['toggle.label'] || 'BM';
+          window.localStorage.setItem(storageKey, lang);
+        };
+
+        var initialLang = window.localStorage.getItem(storageKey);
+        if (initialLang !== 'ms' && initialLang !== 'en') initialLang = 'en';
+        setLanguage(initialLang);
+
+        if (languageToggle) {
+          languageToggle.addEventListener('click', function () {
+            var current = window.localStorage.getItem(storageKey) || 'en';
+            setLanguage(current === 'en' ? 'ms' : 'en');
+          });
+        }
+      })();
+
       (function () {
         var layer = document.getElementById('centerTimelineLayer');
         if (!layer) return;
