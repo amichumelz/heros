@@ -101,7 +101,7 @@
     #car-types-section .ct-eyebrow { color: var(--ct-gold); letter-spacing: 5px; font-size: 12px; text-transform: uppercase; margin-bottom: 10px; }
     #car-types-section .ct-title { font-size: 48px; font-weight: 700; margin: 0; letter-spacing: -0.02em; }
     #car-types-section .ct-title em { font-style: normal; color: var(--ct-gold); }
-    #car-types-section .ct-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 32px; margin-top: 60px; padding-bottom: 48px; }
+    #car-types-section .ct-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 60px; padding-bottom: 48px; }
     #car-types-section .ct-card { position: relative; overflow: visible; cursor: pointer; transition: transform 0.55s cubic-bezier(0.22,1,0.36,1); }
     #car-types-section .ct-card:hover { transform: translateY(-6px); }
     #car-types-section .ct-card-body { position: relative; height: 350px; border-radius: 40px; overflow: visible; }
@@ -120,7 +120,10 @@
     #car-types-section .ct-dot { width: 9px; height: 9px; border-radius: 50%; background: transparent; border: 1px solid rgba(255,255,255,0.8); cursor: pointer; transition: background 0.35s ease, border-color 0.35s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1); }
     #car-types-section .ct-dot:hover { border-color: #ffffff; transform: scale(1.15); }
     #car-types-section .ct-dot.ct-active { background: var(--ct-gold); border-color: var(--ct-gold); transform: scale(1.3); }
-    @media (max-width: 900px) { #car-types-section .ct-title { font-size: 36px; } #car-types-section .ct-grid { grid-template-columns: 1fr; gap: 40px; } }
+    @media (max-width: 900px) {
+      #car-types-section .ct-title { font-size: 36px; }
+      #car-types-section .ct-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
 
     /* ── Testimonials ── */
     #testimonials-section { background: #171717; padding: 92px 0 78px; overflow: hidden; }
@@ -334,7 +337,7 @@
     <section id="car-types-section" aria-labelledby="car-types-heading">
       <div class="ct-inner">
         <div class="ct-section-header"><p class="ct-eyebrow">Categories</p><h2 id="car-types-heading" class="ct-title">Rental <em>Car Types</em></h2></div>
-        <div class="ct-grid" style="grid-template-columns:repeat(2,1fr)">
+        <div class="ct-grid">
           <div class="ct-card">
             <div class="ct-card-body"><img src="assets/cars/perodua-axia-style.png" alt="Economy Cars"><div class="ct-overlay"></div><div class="ct-card-content">Economy Cars</div></div>
             <a href="#listing-economy" class="ct-arrow-btn inline-grid" aria-label="View economy cars"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9932a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg></a>
