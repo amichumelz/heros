@@ -348,8 +348,8 @@
             <a href="#listing-van" class="ct-arrow-btn inline-grid" aria-label="View vans"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9932a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg></a>
           </div>
           <div class="ct-card">
-            <div class="ct-card-body"><img src="assets/cars/mini-cooper.png" alt="Mini Cooper S 2.0 Turbo Convertible 2023"><div class="ct-overlay"></div><div class="ct-card-content">Mini Cooper S 2.0 Turbo Convertible 2023</div></div>
-            <a href="#car-mini" class="ct-arrow-btn inline-grid" aria-label="View Mini Cooper S 2.0 Turbo Convertible 2023"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9932a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg></a>
+            <div class="ct-card-body"><img src="https://images.unsplash.com/photo-1600712242805-5f78671b24da?auto=format&fit=crop&q=80&w=900" alt="Luxury"><div class="ct-overlay"></div><div class="ct-card-content">Luxury</div></div>
+            <a href="#listing-luxury" class="ct-arrow-btn inline-grid" aria-label="View Luxury cars"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9932a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg></a>
           </div>
         </div>
         <div class="ct-dots" role="tablist">
@@ -457,6 +457,7 @@
                   <li><button type="button" class="category-item w-full text-left" data-category="mpv"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>MPV</button></li>
                   <li><button type="button" class="category-item w-full text-left" data-category="van"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Van</button></li>
                   <li><button type="button" class="category-item w-full text-left" data-category="mini"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Mini Cooper S 2.0 Turbo Convertible 2023</button></li>
+                  <li><button type="button" class="category-item w-full text-left" data-category="luxury"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Luxury</button></li>
                 </ul>
               </div>
               <div>
@@ -488,7 +489,7 @@
             <img src="assets/cars/toyota-veloz.png" class="h-56 w-full object-cover" alt="Toyota Veloz 1.5 2024">
             <div class="p-6"><h3 class="text-3xl font-semibold mb-4">Toyota Veloz 1.5 2024</h3><div class="space-y-2 text-sm text-gray-400 mb-6"><p><i class="fa-solid fa-door-open text-gold mr-2"></i>Doors <span class="float-right text-white">4</span></p><p><i class="fa-solid fa-user text-gold mr-2"></i>Passengers <span class="float-right text-white">7</span></p><p><i class="fa-solid fa-gear text-gold mr-2"></i>Transmission <span class="float-right text-white">Auto</span></p><p><i class="fa-solid fa-suitcase text-gold mr-2"></i>Luggage <span class="float-right text-white">3 Bags</span></p></div><div class="flex items-center justify-between"><p class="text-4xl font-bold text-gold">RM 230 <span class="text-sm text-gray-500">/day</span></p><a href="#car-veloz" class="bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-white transition">Book</a></div></div>
           </article>
-          <article class="listing-card bg-[#202125] rounded-[20px] overflow-hidden border border-white/5" data-types="mini sport" data-name="mini cooper">
+          <article class="listing-card bg-[#202125] rounded-[20px] overflow-hidden border border-white/5" data-types="mini sport luxury" data-name="mini cooper">
             <img src="assets/cars/mini-cooper.png" class="h-56 w-full object-cover" alt="Mini Cooper S 2.0 Turbo Convertible 2023">
             <div class="p-6"><h3 class="text-3xl font-semibold mb-4">Mini Cooper S 2.0 Turbo Convertible 2023</h3><div class="space-y-2 text-sm text-gray-400 mb-6"><p><i class="fa-solid fa-door-open text-gold mr-2"></i>Doors <span class="float-right text-white">2</span></p><p><i class="fa-solid fa-user text-gold mr-2"></i>Passengers <span class="float-right text-white">4</span></p><p><i class="fa-solid fa-gear text-gold mr-2"></i>Transmission <span class="float-right text-white">Auto</span></p><p><i class="fa-solid fa-suitcase text-gold mr-2"></i>Luggage <span class="float-right text-white">1 Bag</span></p></div><div class="flex items-center justify-between"><p class="text-4xl font-bold text-gold">RM 650 <span class="text-sm text-gray-500">/day</span></p><a href="#car-mini" class="bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-white transition">Book</a></div></div>
           </article>
@@ -1092,7 +1093,7 @@
   // CAR LISTING FILTER (exposed globally for router)
   // ─────────────────────────────────────────────
   (function () {
-    var labels = { all:'All Cars', economy:'Economy Cars', sedan:'Sedan', mpv:'MPV', van:'Van', mini:'Mini Cooper S 2.0 Turbo Convertible 2023' };
+    var labels = { all:'All Cars', economy:'Economy Cars', sedan:'Sedan', mpv:'MPV', van:'Van', mini:'Mini Cooper S 2.0 Turbo Convertible 2023', luxury:'Luxury' };
     var currentType = 'all'; var currentSearch = '';
 
     window.applyListingFilter = function (type) {
