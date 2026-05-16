@@ -85,9 +85,9 @@
     @keyframes fleetInfoRise { from { opacity: 0.6; transform: translate(-50%, 10px); } to { opacity: 1; transform: translate(-50%, 0); } }
     @media (max-width: 1023px) {
       #luxury-fleet .fleet-shell { padding: 0; }
-      #luxury-fleet .fleet-row { justify-content: center; overflow: visible; min-height: unset; padding-bottom: 2.5rem; padding-left: 0; padding-right: 0; }
+      #luxury-fleet .fleet-row { justify-content: center; overflow: visible; min-height: unset; padding-bottom: 5rem; padding-left: 0; padding-right: 0; }
       #luxury-fleet .fleet-center-wrap { flex: 0 0 min(94vw, 520px); width: min(94vw, 520px); }
-      #luxury-fleet .fleet-center-inner { border-radius: 24px; overflow: hidden; }
+      #luxury-fleet .fleet-center-inner { border-radius: 24px; overflow: visible; }
       #luxury-fleet .fleet-side { display: none; }
       #luxury-fleet .fleet-mobile-dots { display: flex; }
     }
@@ -302,10 +302,10 @@
           <div id="fleetLeftCard" class="fleet-side shrink-0 snap-center rounded-[22px] overflow-hidden">
             <img id="fleetLeftImg" src="assets/cars/perodua-axia-se.png" class="w-full h-[360px] md:h-[420px] lg:h-[420px] object-cover" alt="Kereta">
           </div>
-          <div id="fleetCenterCard" class="fleet-center-wrap shrink-0 relative w-full lg:w-auto snap-center" style="padding-bottom: 90px;">
+          <div id="fleetCenterCard" class="fleet-center-wrap shrink-0 relative w-full lg:w-auto snap-center" style="padding-bottom: 150px;">
             <div class="fleet-center-inner relative group [&>img]:rounded-[22px]">
-              <img id="fleetCenterImg" src="assets/cars/mini-cooper.png" class="w-full h-[360px] md:h-[430px] lg:h-[430px] object-cover" alt="Mini Cooper S 2.0 Turbo Convertible 2023">
-              <div id="fleetInfoPanel" class="absolute z-10 -bottom-[72px] md:-bottom-[80px] left-1/2 -translate-x-1/2 w-[95%] md:w-[94%] bg-[#212125]/95 rounded-[18px] md:rounded-[20px] px-5 py-4 md:px-6 md:py-5 flex flex-row flex-wrap justify-between items-center gap-4 border border-white/[0.05] shadow-[0_12px_30px_rgba(0,0,0,0.35)]">
+              <img id="fleetCenterImg" src="assets/cars/mini-cooper.png" class="w-full h-[360px] md:h-[430px] lg:h-[430px] object-cover" style="border-radius:22px" alt="Mini Cooper S 2.0 Turbo Convertible 2023">
+              <div id="fleetInfoPanel" class="absolute z-10 -bottom-[130px] md:-bottom-[90px] lg:-bottom-[90px] left-1/2 -translate-x-1/2 w-[95%] md:w-[94%] bg-[#212125]/95 rounded-[18px] md:rounded-[20px] px-5 py-4 md:px-6 md:py-5 flex flex-row flex-wrap justify-between items-center gap-4 border border-white/[0.05] shadow-[0_12px_30px_rgba(0,0,0,0.35)]">
                 <div>
                   <h3 id="fleetTitle" class="text-[28px] md:text-[32px] leading-none font-semibold text-white mb-2">Mini Cooper S 2.0 Turbo Convertible 2023</h3>
                   <div class="flex flex-wrap gap-x-4 gap-y-1.5 text-[11px] md:text-xs text-gray-400">
