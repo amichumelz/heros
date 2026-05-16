@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Heros - Kedah Car Rental</title>
+  <title>JFZ - Kedah Car Rental</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@300;400;500;600&family=Montserrat:wght@600;700&family=Outfit:wght@300;400;500;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -208,6 +208,7 @@
 
     /* ── Car detail pages ── */
     .detail-hero-img { background-size: cover; background-position: center; }
+    #view-car-mini .detail-hero-img { background-image: linear-gradient(rgba(0,0,0,.44),rgba(0,0,0,.44)), url('assets/cars/mini-cooper.png'); }
     #view-car-axia-style .detail-hero-img { background-image: linear-gradient(rgba(0,0,0,.44),rgba(0,0,0,.44)), url('assets/cars/perodua-axia-style.png'); }
     #view-car-axia-se .detail-hero-img { background-image: linear-gradient(rgba(0,0,0,.44),rgba(0,0,0,.44)), url('assets/cars/perodua-axia-se.png'); }
     #view-car-bezza .detail-hero-img { background-image: linear-gradient(rgba(0,0,0,.44),rgba(0,0,0,.44)), url('assets/cars/perodua-bezza.png'); }
@@ -219,7 +220,7 @@
 
   <!-- ═══ SHARED NAV ═══ -->
   <nav id="mainNav" class="fixed w-full z-50 bg-black/50 backdrop-blur-md border-b border-white/10 py-4 px-8 flex justify-between items-center">
-    <a href="#home" class="text-2xl font-bold tracking-tighter">HE<span class="text-gold">ROS</span></a>
+    <a href="#home" class="text-2xl font-bold tracking-tighter">JF<span class="text-gold">Z</span></a>
     <div class="hidden md:flex gap-8 text-sm uppercase font-medium tracking-wide">
       <a href="#heroSection" class="nav-link text-gold" data-i18n="nav.home">Home</a>
       <a href="#about-section" class="nav-link hover:text-gold transition" data-i18n="nav.about">About</a>
@@ -234,10 +235,6 @@
         <i class="fa-solid fa-bars text-sm"></i>
       </button>
       <button type="button" id="languageToggle" class="lang-toggle-btn">BM</button>
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 border border-gold rounded-full flex items-center justify-center"><i class="fa-solid fa-phone text-xs text-gold"></i></div>
-        <div><p class="text-[10px] text-gray-400 uppercase" data-i18n="common.callUs">Call us</p><p class="text-sm font-bold">0108118968</p></div>
-      </div>
     </div>
   </nav>
   <div id="mobileNavOverlay" class="md:hidden" aria-hidden="true"></div>
@@ -267,9 +264,9 @@
         <p class="text-gold tracking-[0.3em] uppercase text-xs mb-4 font-bold">✦ Premium</p>
         <h1 id="heroHeading" class="text-7xl md:text-8xl font-bold mb-6" data-i18n="hero.title">Kedah Car Rental</h1>
         <div class="flex items-center gap-4">
-          <p id="heroModel" class="text-xl text-gray-300">Axia Style 2020 Putih</p>
+          <p id="heroModel" class="text-xl text-gray-300">Mini Cooper S 2.0T Convertible</p>
           <div class="h-[1px] w-12 bg-gold"></div>
-          <p class="text-xl font-bold"><span id="heroPrice" class="text-gold">RM 100</span> <span id="heroPriceUnit" class="text-sm font-normal text-gray-400">/ DAY</span></p>
+          <p class="text-xl font-bold"><span id="heroPrice" class="text-gold">RM 650</span> <span id="heroPriceUnit" class="text-sm font-normal text-gray-400">/ DAY</span></p>
         </div>
       </div>
       <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-[3]">
@@ -281,9 +278,9 @@
 
     <section id="about-section" class="py-24 px-12 lg:px-24 grid md:grid-cols-2 gap-16 items-center">
       <div>
-        <p class="text-gold tracking-widest uppercase text-xs mb-4 font-bold">HEROS</p>
+        <p class="text-gold tracking-widest uppercase text-xs mb-4 font-bold">JFZ</p>
         <h2 class="text-5xl font-bold mb-8 leading-tight" data-i18n-html="about.title">We Are More Than <br><span class="text-gold">A Kedah Car Rental Company</span></h2>
-        <p class="text-gray-400 mb-8 leading-relaxed" data-i18n="about.desc">Heros provides trusted car rental services across Kedah, including daily rentals, airport transfers, and chauffeur options. We focus on clean vehicles, fair pricing, and fast support to make every trip smooth.</p>
+        <p class="text-gray-400 mb-8 leading-relaxed" data-i18n="about.desc">JFZ provides trusted car rental services across Kedah, including daily rentals, airport transfers, and chauffeur options. We focus on clean vehicles, fair pricing, and fast support to make every trip smooth.</p>
         <div class="space-y-4 mb-10">
           <div class="flex items-center gap-4"><div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center"><i class="fa-solid fa-check text-gold text-xs"></i></div><p class="text-sm font-medium" data-i18n="about.point1">Sports and Luxury Cars</p></div>
           <div class="flex items-center gap-4"><div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center"><i class="fa-solid fa-check text-gold text-xs"></i></div><p class="text-sm font-medium" data-i18n="about.point2">Economy Cars</p></div>
@@ -304,20 +301,20 @@
           </div>
           <div id="fleetCenterCard" class="fleet-center-wrap shrink-0 relative w-full lg:w-auto snap-center">
             <div class="fleet-center-inner relative group">
-              <img id="fleetCenterImg" src="assets/cars/perodua-axia-style.png" class="w-full h-[360px] md:h-[430px] lg:h-[430px] object-cover" alt="Axia Style 2020">
+              <img id="fleetCenterImg" src="assets/cars/mini-cooper.png" class="w-full h-[360px] md:h-[430px] lg:h-[430px] object-cover" alt="Mini Cooper S 2.0 Turbo Convertible 2023">
               <div id="fleetInfoPanel" class="absolute z-10 bottom-4 md:bottom-5 left-1/2 -translate-x-1/2 w-[95%] md:w-[94%] bg-[#212125]/95 rounded-[18px] md:rounded-[20px] px-5 py-4 md:px-6 md:py-5 flex flex-row flex-wrap justify-between items-center gap-4 border border-white/[0.05] shadow-[0_12px_30px_rgba(0,0,0,0.35)]">
                 <div>
-                  <h3 id="fleetTitle" class="text-[28px] md:text-[32px] leading-none font-semibold text-white mb-2">Axia Style 2020</h3>
+                  <h3 id="fleetTitle" class="text-[28px] md:text-[32px] leading-none font-semibold text-white mb-2">Mini Cooper S 2.0 Turbo Convertible 2023</h3>
                   <div class="flex flex-wrap gap-x-4 gap-y-1.5 text-[11px] md:text-xs text-gray-400">
-                    <span id="fleetSeats" class="flex items-center gap-2"><i class="fa-solid fa-user fleet-gold text-[13px]"></i> 5</span>
+                    <span id="fleetSeats" class="flex items-center gap-2"><i class="fa-solid fa-user fleet-gold text-[13px]"></i> 4</span>
                     <span id="fleetTransmission" class="flex items-center gap-2"><i class="fa-solid fa-gear fleet-gold text-[13px]"></i> Auto</span>
                     <span id="fleetBags" class="flex items-center gap-2"><i class="fa-solid fa-suitcase fleet-gold text-[13px]"></i> 2 Bags</span>
                   </div>
                 </div>
                 <div class="flex items-center gap-4 md:gap-6 w-full sm:w-auto justify-between sm:justify-end">
-                  <a id="fleetDetailsLink" href="#car-axia-style" class="fleet-gold-bg text-black px-6 py-2.5 rounded-full font-semibold text-xs hover:bg-white transition inline-flex items-center">Details</a>
+                  <a id="fleetDetailsLink" href="#car-mini" class="fleet-gold-bg text-black px-6 py-2.5 rounded-full font-semibold text-xs hover:bg-white transition inline-flex items-center">Details</a>
                   <div class="text-right shrink-0">
-                    <p id="fleetPrice" class="text-[30px] md:text-[34px] font-semibold fleet-gold leading-none">RM 100</p>
+                    <p id="fleetPrice" class="text-[30px] md:text-[34px] font-semibold fleet-gold leading-none">RM 650</p>
                     <p class="text-[10px] text-gray-500 uppercase tracking-wider mt-1">/ day</p>
                   </div>
                 </div>
@@ -329,7 +326,7 @@
           </div>
         </div>
         <div class="fleet-mobile-dots" id="fleetMobileDots" aria-hidden="true">
-          <span class="fleet-mobile-dot is-active"></span><span class="fleet-mobile-dot"></span><span class="fleet-mobile-dot"></span><span class="fleet-mobile-dot"></span><span class="fleet-mobile-dot"></span>
+          <span class="fleet-mobile-dot is-active"></span><span class="fleet-mobile-dot"></span><span class="fleet-mobile-dot"></span><span class="fleet-mobile-dot"></span><span class="fleet-mobile-dot"></span><span class="fleet-mobile-dot"></span>
         </div>
       </div>
     </section>
@@ -337,7 +334,7 @@
     <section id="car-types-section" aria-labelledby="car-types-heading">
       <div class="ct-inner">
         <div class="ct-section-header"><p class="ct-eyebrow">Categories</p><h2 id="car-types-heading" class="ct-title">Rental <em>Car Types</em></h2></div>
-        <div class="ct-grid">
+        <div class="ct-grid" style="grid-template-columns:repeat(2,1fr)">
           <div class="ct-card">
             <div class="ct-card-body"><img src="assets/cars/perodua-axia-style.png" alt="Economy Cars"><div class="ct-overlay"></div><div class="ct-card-content">Economy Cars</div></div>
             <a href="#listing-economy" class="ct-arrow-btn inline-grid" aria-label="View economy cars"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9932a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg></a>
@@ -349,6 +346,10 @@
           <div class="ct-card">
             <div class="ct-card-body"><img src="assets/cars/toyota-hiace.png" alt="Van"><div class="ct-overlay"></div><div class="ct-card-content">Van</div></div>
             <a href="#listing-van" class="ct-arrow-btn inline-grid" aria-label="View vans"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9932a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg></a>
+          </div>
+          <div class="ct-card">
+            <div class="ct-card-body"><img src="assets/cars/mini-cooper.png" alt="Mini Cooper S 2.0 Turbo Convertible 2023"><div class="ct-overlay"></div><div class="ct-card-content">Mini Cooper S 2.0 Turbo Convertible 2023</div></div>
+            <a href="#car-mini" class="ct-arrow-btn inline-grid" aria-label="View Mini Cooper S 2.0 Turbo Convertible 2023"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9932a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg></a>
           </div>
         </div>
         <div class="ct-dots" role="tablist">
@@ -402,8 +403,8 @@
         </div>
         <div class="mf-main">
           <div>
-            <h3 class="mf-logo">HE<span>ROS</span></h3>
-            <p class="mf-text">Heros is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
+            <h3 class="mf-logo">JF<span>Z</span></h3>
+            <p class="mf-text">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
             <div class="mf-social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div>
           </div>
           <div>
@@ -416,7 +417,7 @@
             <form class="mf-subscribe" action="#" method="post"><input id="footerEmailInput" type="email" placeholder="Your email address" aria-label="Email address"><button type="submit" aria-label="Submit"><i class="fa-solid fa-arrow-right"></i></button></form>
           </div>
         </div>
-        <p class="mf-bottom">©2026 Heros Car Rental Kedah. All rights reserved.</p>
+        <p class="mf-bottom">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
       </div>
     </footer>
   </div><!-- /view-home -->
@@ -455,6 +456,7 @@
                   <li><button type="button" class="category-item w-full text-left" data-category="sedan"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Sedan</button></li>
                   <li><button type="button" class="category-item w-full text-left" data-category="mpv"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>MPV</button></li>
                   <li><button type="button" class="category-item w-full text-left" data-category="van"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Van</button></li>
+                  <li><button type="button" class="category-item w-full text-left" data-category="mini"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Mini Cooper S 2.0 Turbo Convertible 2023</button></li>
                 </ul>
               </div>
               <div>
@@ -470,25 +472,29 @@
           </div>
         </details>
         <div id="listingGrid" class="grid md:grid-cols-2 gap-6">
-          <article class="listing-card bg-[#202125] rounded-[20px] overflow-hidden border border-white/5" data-types="economy hatchback" data-name="axia style 2020 putih">
-            <img src="assets/cars/perodua-axia-style.png" class="h-56 w-full object-cover" alt="Axia Style 2020 Putih">
-            <div class="p-6"><h3 class="text-3xl font-semibold mb-4">Axia Style 2020 <span class="text-sm text-gray-400 font-normal">White</span></h3><div class="space-y-2 text-sm text-gray-400 mb-6"><p><i class="fa-solid fa-door-open text-gold mr-2"></i>Doors <span class="float-right text-white">4</span></p><p><i class="fa-solid fa-user text-gold mr-2"></i>Passengers <span class="float-right text-white">5</span></p><p><i class="fa-solid fa-gear text-gold mr-2"></i>Transmission <span class="float-right text-white">Auto</span></p><p><i class="fa-solid fa-suitcase text-gold mr-2"></i>Luggage <span class="float-right text-white">2 Bags</span></p></div><div class="flex items-center justify-between"><p class="text-4xl font-bold text-gold">RM 100 <span class="text-sm text-gray-500">/day</span></p><a href="#car-axia-style" class="bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-white transition">Book</a></div></div>
+          <article class="listing-card bg-[#202125] rounded-[20px] overflow-hidden border border-white/5" data-types="economy hatchback" data-name="axia style 2020">
+            <img src="assets/cars/perodua-axia-style.png" class="h-56 w-full object-cover" alt="Perodua Axia 1.0 Style 2020">
+            <div class="p-6"><h3 class="text-3xl font-semibold mb-4">Perodua Axia 1.0 Style 2020</h3><div class="space-y-2 text-sm text-gray-400 mb-6"><p><i class="fa-solid fa-door-open text-gold mr-2"></i>Doors <span class="float-right text-white">4</span></p><p><i class="fa-solid fa-user text-gold mr-2"></i>Passengers <span class="float-right text-white">5</span></p><p><i class="fa-solid fa-gear text-gold mr-2"></i>Transmission <span class="float-right text-white">Auto</span></p><p><i class="fa-solid fa-suitcase text-gold mr-2"></i>Luggage <span class="float-right text-white">2 Bags</span></p></div><div class="flex items-center justify-between"><p class="text-4xl font-bold text-gold">RM 90 <span class="text-sm text-gray-500">/day</span></p><a href="#car-axia-style" class="bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-white transition">Book</a></div></div>
           </article>
-          <article class="listing-card bg-[#202125] rounded-[20px] overflow-hidden border border-white/5" data-types="economy hatchback" data-name="axia se putih baru">
-            <img src="assets/cars/perodua-axia-se.png" class="h-56 w-full object-cover" alt="New Axia SE Putih">
-            <div class="p-6"><h3 class="text-3xl font-semibold mb-4">New Axia SE <span class="text-sm text-gray-400 font-normal">White</span></h3><div class="space-y-2 text-sm text-gray-400 mb-6"><p><i class="fa-solid fa-door-open text-gold mr-2"></i>Doors <span class="float-right text-white">4</span></p><p><i class="fa-solid fa-user text-gold mr-2"></i>Passengers <span class="float-right text-white">5</span></p><p><i class="fa-solid fa-gear text-gold mr-2"></i>Transmission <span class="float-right text-white">Auto</span></p><p><i class="fa-solid fa-suitcase text-gold mr-2"></i>Luggage <span class="float-right text-white">2 Bags</span></p></div><div class="flex items-center justify-between"><p class="text-4xl font-bold text-gold">RM 110 <span class="text-sm text-gray-500">/day</span></p><a href="#car-axia-se" class="bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-white transition">Book</a></div></div>
+          <article class="listing-card bg-[#202125] rounded-[20px] overflow-hidden border border-white/5" data-types="economy hatchback" data-name="axia se baru">
+            <img src="assets/cars/perodua-axia-se.png" class="h-56 w-full object-cover" alt="Perodua Axia 1.0 SE 2023">
+            <div class="p-6"><h3 class="text-3xl font-semibold mb-4">Perodua Axia 1.0 SE 2023</h3><div class="space-y-2 text-sm text-gray-400 mb-6"><p><i class="fa-solid fa-door-open text-gold mr-2"></i>Doors <span class="float-right text-white">4</span></p><p><i class="fa-solid fa-user text-gold mr-2"></i>Passengers <span class="float-right text-white">5</span></p><p><i class="fa-solid fa-gear text-gold mr-2"></i>Transmission <span class="float-right text-white">Auto</span></p><p><i class="fa-solid fa-suitcase text-gold mr-2"></i>Luggage <span class="float-right text-white">2 Bags</span></p></div><div class="flex items-center justify-between"><p class="text-4xl font-bold text-gold">RM 100 <span class="text-sm text-gray-500">/day</span></p><a href="#car-axia-se" class="bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-white transition">Book</a></div></div>
           </article>
-          <article class="listing-card bg-[#202125] rounded-[20px] overflow-hidden border border-white/5" data-types="sedan economy" data-name="bezza x merah baru">
-            <img src="assets/cars/perodua-bezza.png" class="h-56 w-full object-cover" alt="New Bezza X Merah">
-            <div class="p-6"><h3 class="text-3xl font-semibold mb-4">New Bezza X <span class="text-sm text-gray-400 font-normal">Red</span></h3><div class="space-y-2 text-sm text-gray-400 mb-6"><p><i class="fa-solid fa-door-open text-gold mr-2"></i>Doors <span class="float-right text-white">4</span></p><p><i class="fa-solid fa-user text-gold mr-2"></i>Passengers <span class="float-right text-white">5</span></p><p><i class="fa-solid fa-gear text-gold mr-2"></i>Transmission <span class="float-right text-white">Auto</span></p><p><i class="fa-solid fa-suitcase text-gold mr-2"></i>Luggage <span class="float-right text-white">2 Bags</span></p></div><div class="flex items-center justify-between"><p class="text-4xl font-bold text-gold">RM 130 <span class="text-sm text-gray-500">/day</span></p><a href="#car-bezza" class="bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-white transition">Book</a></div></div>
+          <article class="listing-card bg-[#202125] rounded-[20px] overflow-hidden border border-white/5" data-types="sedan economy" data-name="bezza x baru">
+            <img src="assets/cars/perodua-bezza.png" class="h-56 w-full object-cover" alt="Perodua Bezza 1.3X 2023">
+            <div class="p-6"><h3 class="text-3xl font-semibold mb-4">Perodua Bezza 1.3X 2023</h3><div class="space-y-2 text-sm text-gray-400 mb-6"><p><i class="fa-solid fa-door-open text-gold mr-2"></i>Doors <span class="float-right text-white">4</span></p><p><i class="fa-solid fa-user text-gold mr-2"></i>Passengers <span class="float-right text-white">5</span></p><p><i class="fa-solid fa-gear text-gold mr-2"></i>Transmission <span class="float-right text-white">Auto</span></p><p><i class="fa-solid fa-suitcase text-gold mr-2"></i>Luggage <span class="float-right text-white">2 Bags</span></p></div><div class="flex items-center justify-between"><p class="text-4xl font-bold text-gold">RM 120 <span class="text-sm text-gray-500">/day</span></p><a href="#car-bezza" class="bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-white transition">Book</a></div></div>
           </article>
           <article class="listing-card bg-[#202125] rounded-[20px] overflow-hidden border border-white/5" data-types="mpv" data-name="toyota veloz">
-            <img src="assets/cars/toyota-veloz.png" class="h-56 w-full object-cover" alt="Toyota Veloz">
-            <div class="p-6"><h3 class="text-3xl font-semibold mb-4">Toyota Veloz</h3><div class="space-y-2 text-sm text-gray-400 mb-6"><p><i class="fa-solid fa-door-open text-gold mr-2"></i>Doors <span class="float-right text-white">4</span></p><p><i class="fa-solid fa-user text-gold mr-2"></i>Passengers <span class="float-right text-white">7</span></p><p><i class="fa-solid fa-gear text-gold mr-2"></i>Transmission <span class="float-right text-white">Auto</span></p><p><i class="fa-solid fa-suitcase text-gold mr-2"></i>Luggage <span class="float-right text-white">3 Bags</span></p></div><div class="flex items-center justify-between"><p class="text-4xl font-bold text-gold">RM 180 <span class="text-sm text-gray-500">/day</span></p><a href="#car-veloz" class="bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-white transition">Book</a></div></div>
+            <img src="assets/cars/toyota-veloz.png" class="h-56 w-full object-cover" alt="Toyota Veloz 1.5 2024">
+            <div class="p-6"><h3 class="text-3xl font-semibold mb-4">Toyota Veloz 1.5 2024</h3><div class="space-y-2 text-sm text-gray-400 mb-6"><p><i class="fa-solid fa-door-open text-gold mr-2"></i>Doors <span class="float-right text-white">4</span></p><p><i class="fa-solid fa-user text-gold mr-2"></i>Passengers <span class="float-right text-white">7</span></p><p><i class="fa-solid fa-gear text-gold mr-2"></i>Transmission <span class="float-right text-white">Auto</span></p><p><i class="fa-solid fa-suitcase text-gold mr-2"></i>Luggage <span class="float-right text-white">3 Bags</span></p></div><div class="flex items-center justify-between"><p class="text-4xl font-bold text-gold">RM 230 <span class="text-sm text-gray-500">/day</span></p><a href="#car-veloz" class="bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-white transition">Book</a></div></div>
+          </article>
+          <article class="listing-card bg-[#202125] rounded-[20px] overflow-hidden border border-white/5" data-types="mini sport" data-name="mini cooper">
+            <img src="assets/cars/mini-cooper.png" class="h-56 w-full object-cover" alt="Mini Cooper S 2.0 Turbo Convertible 2023">
+            <div class="p-6"><h3 class="text-3xl font-semibold mb-4">Mini Cooper S 2.0 Turbo Convertible 2023</h3><div class="space-y-2 text-sm text-gray-400 mb-6"><p><i class="fa-solid fa-door-open text-gold mr-2"></i>Doors <span class="float-right text-white">2</span></p><p><i class="fa-solid fa-user text-gold mr-2"></i>Passengers <span class="float-right text-white">4</span></p><p><i class="fa-solid fa-gear text-gold mr-2"></i>Transmission <span class="float-right text-white">Auto</span></p><p><i class="fa-solid fa-suitcase text-gold mr-2"></i>Luggage <span class="float-right text-white">1 Bag</span></p></div><div class="flex items-center justify-between"><p class="text-4xl font-bold text-gold">RM 650 <span class="text-sm text-gray-500">/day</span></p><a href="#car-mini" class="bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-white transition">Book</a></div></div>
           </article>
           <article class="listing-card bg-[#202125] rounded-[20px] overflow-hidden border border-white/5 md:col-span-2" data-types="van" data-name="hiace van baru">
-            <img src="assets/cars/toyota-hiace.png" class="h-56 w-full object-cover" alt="Van Hiace Baru">
-            <div class="p-6"><h3 class="text-3xl font-semibold mb-4">Van Hiace Baru</h3><div class="space-y-2 text-sm text-gray-400 mb-6"><p><i class="fa-solid fa-door-open text-gold mr-2"></i>Doors <span class="float-right text-white">4</span></p><p><i class="fa-solid fa-user text-gold mr-2"></i>Passengers <span class="float-right text-white">12</span></p><p><i class="fa-solid fa-gear text-gold mr-2"></i>Transmission <span class="float-right text-white">Manual</span></p><p><i class="fa-solid fa-suitcase text-gold mr-2"></i>Luggage <span class="float-right text-white">Large</span></p></div><div class="flex items-center justify-between"><p class="text-4xl font-bold text-gold">RM 280 <span class="text-sm text-gray-500">/day</span></p><a href="#car-hiace" class="bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-white transition">Book</a></div></div>
+            <img src="assets/cars/toyota-hiace.png" class="h-56 w-full object-cover" alt="New Toyota Hiace 2.8 (A) 15 Seater">
+            <div class="p-6"><h3 class="text-3xl font-semibold mb-4">New Toyota Hiace 2.8 (A) 15 Seater</h3><div class="space-y-2 text-sm text-gray-400 mb-6"><p><i class="fa-solid fa-door-open text-gold mr-2"></i>Doors <span class="float-right text-white">4</span></p><p><i class="fa-solid fa-user text-gold mr-2"></i>Passengers <span class="float-right text-white">15</span></p><p><i class="fa-solid fa-gear text-gold mr-2"></i>Transmission <span class="float-right text-white">Manual</span></p><p><i class="fa-solid fa-suitcase text-gold mr-2"></i>Luggage <span class="float-right text-white">Spacious</span></p></div><div class="flex items-center justify-between"><p class="text-4xl font-bold text-gold">RM 550-650 <span class="text-sm text-gray-500">/day</span></p><a href="#car-hiace" class="bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-white transition">Book</a></div></div>
           </article>
         </div>
       </div>
@@ -506,8 +512,8 @@
         </div>
         <div class="mf-main">
           <div>
-            <h3 class="mf-logo">HE<span>ROS</span></h3>
-            <p class="mf-text">Heros is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
+            <h3 class="mf-logo">JF<span>Z</span></h3>
+            <p class="mf-text">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
             <div class="mf-social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div>
           </div>
           <div>
@@ -520,7 +526,7 @@
             <form class="mf-subscribe" action="#" method="post"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit" aria-label="Submit"><i class="fa-solid fa-arrow-right"></i></button></form>
           </div>
         </div>
-        <p class="mf-bottom">©2026 Heros Car Rental Kedah. All rights reserved.</p>
+        <p class="mf-bottom">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
       </div>
     </footer>
   </div><!-- /view-listing -->
@@ -528,15 +534,81 @@
   <!-- ═══════════════════════════════════════════ -->
   <!-- VIEW: AXIA STYLE 2020 PUTIH                 -->
   <!-- ═══════════════════════════════════════════ -->
-  <div id="view-car-axia-style" style="display:none">
-    <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">Economy Cars</p><h1 class="text-5xl md:text-6xl font-bold">Axia Style 2020 <span class="text-gold">White</span></h1></div></section>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- VIEW: MINI COOPER                           -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div id="view-car-mini" style="display:none">
+    <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">Sport &amp; Lifestyle</p><h1 class="text-5xl md:text-6xl font-bold">Mini Cooper S 2.0 Turbo Convertible 2023</h1></div></section>
     <section class="relative px-8 lg:px-24 pb-24 bg-[#161616]"><div class="grid lg:grid-cols-[1.6fr_0.8fr] gap-10"><div class="pt-14">
       <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold">General Information</h2><a href="#luxury-fleet" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> Back</a></div>
-      <p class="text-gray-400 leading-8 mb-8">Perodua Axia Style 2020 in white — a fuel-efficient economy pick perfect for daily drives around Kedah. Comfortable, easy to drive, and easy to park.</p>
+      <p class="text-gray-400 leading-8 mb-8">The iconic Mini Cooper S 2.0 Turbo Convertible 2023 — a stylish, fun-to-drive hatchback that turns heads everywhere it goes. Perfect for weekend getaways, special occasions, or anyone who wants to cruise around Kedah in style. A unique experience you won't find anywhere else.</p>
+      <div class="space-y-4 mb-12">
+        <div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">24/7 roadside assistance in Kedah</p></div>
+        <div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Free cancellation &amp; return support</p></div>
+        <div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Pay on pickup available</p></div>
+      </div>
+      <h3 class="text-3xl font-bold mb-5">Image Gallery</h3>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <img src="assets/cars/mini-cooper.png" class="h-56 w-full object-cover rounded-[20px]" alt="Mini Cooper S 2.0 Turbo Convertible 2023 exterior">
+        <img src="assets/cars/mini-cooper-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Mini Cooper S 2.0 Turbo Convertible 2023 interior">
+      </div>
+    </div>
+    <div class="lg:-mt-24 pt-8">
+      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 650</p><p class="text-sm uppercase tracking-wider mt-1">/ rent per day</p></div>
+      <div class="bg-[#1f1f1f] border border-white/5 rounded-b-[20px] p-7 space-y-5" id="bookingPanel-mini">
+        <div>
+          <label class="text-sm text-gray-300">Pick Up Location</label>
+          <select id="pickup-mini" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
+            <option value="Alor Setar" selected>Alor Setar</option><option value="Sungai Petani">Sungai Petani</option><option value="Kulim">Kulim</option><option value="Jitra">Jitra</option><option value="Langkawi Jetty">Langkawi Jetty</option><option value="Kuala Kedah">Kuala Kedah</option><option value="Pendang">Pendang</option><option value="Pokok Sena">Pokok Sena</option><option value="Baling">Baling</option><option value="Yan">Yan</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-sm text-gray-300">Drop Off Location</label>
+          <select id="dropoff-mini" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
+            <option value="Alor Setar">Alor Setar</option><option value="Sungai Petani" selected>Sungai Petani</option><option value="Kulim">Kulim</option><option value="Jitra">Jitra</option><option value="Langkawi Jetty">Langkawi Jetty</option><option value="Kuala Kedah">Kuala Kedah</option><option value="Pendang">Pendang</option><option value="Pokok Sena">Pokok Sena</option><option value="Baling">Baling</option><option value="Yan">Yan</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-sm text-gray-300">Pick Up Date</label>
+          <input type="date" id="pickdate-mini" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
+        </div>
+        <div>
+          <label class="text-sm text-gray-300">Return Date</label>
+          <input type="date" id="retdate-mini" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
+        </div>
+        <button type="button" onclick="sendBookingWA('mini','Mini%20Cooper%20S%202.0%20Turbo%20Convertible%202023')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
+      </div>
+    </div></div></section>
+    <footer class="shared-footer" id="main-footer">
+      <div class="mf-inner">
+        <div class="mf-brand-row">
+          <img class="mf-brand-logo" src="assets/logos/perodua.png" alt="Perodua">
+          <img class="mf-brand-logo" src="assets/logos/toyota.png" alt="Toyota">
+        </div>
+        <div class="mf-contact-grid">
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label">Write to us</p><p class="mf-contact-value">hello@heros.my</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
+        </div>
+        <div class="mf-main">
+          <div><h3 class="mf-logo">HE<span>ROS</span></h3><p class="mf-text">Heros is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p><div class="mf-social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div></div>
+          <div><h4 class="mf-heading">Quick Links</h4><ul class="mf-links"><li><a href="#about-section">About</a></li><li><a href="#luxury-fleet">Cars</a></li><li><a href="#car-types-section">Car Types</a></li><li><a href="#rental-process">Process</a></li><li><a href="#main-footer">Contact</a></li></ul></div>
+          <div><h4 class="mf-heading">Subscribe</h4><p class="mf-subtext">Want to be notified about our services. Just sign up and we will send you a notification by email.</p><form class="mf-subscribe" action="#" method="post"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit" aria-label="Submit"><i class="fa-solid fa-arrow-right"></i></button></form></div>
+        </div>
+        <p class="mf-bottom">©2026 Heros Car Rental Kedah. All rights reserved.</p>
+      </div>
+    </footer>
+  </div><!-- /view-car-mini -->
+  <div id="view-car-axia-style" style="display:none">
+    <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">Economy Cars</p><h1 class="text-5xl md:text-6xl font-bold">Perodua Axia 1.0 Style 2020</h1></div></section>
+    <section class="relative px-8 lg:px-24 pb-24 bg-[#161616]"><div class="grid lg:grid-cols-[1.6fr_0.8fr] gap-10"><div class="pt-14">
+      <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold">General Information</h2><a href="#luxury-fleet" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> Back</a></div>
+      <p class="text-gray-400 leading-8 mb-8">Perodua Perodua Axia 1.0 Style 2020 — a fuel-efficient economy pick perfect for daily drives around Kedah. Comfortable, easy to drive, and easy to park.</p>
       <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Free cancellation & return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Pay on pickup available</p></div></div>
       <h3 class="text-3xl font-bold mb-5">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/perodua-axia-style.png" class="h-56 w-full object-cover rounded-[20px]" alt="Axia exterior"><img src="assets/cars/perodua-axia-style-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Axia interior"></div>
     </div><div class="lg:-mt-24 pt-8">
-      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 100</p><p class="text-sm uppercase tracking-wider mt-1">/ rent per day</p></div>
+      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 90</p><p class="text-sm uppercase tracking-wider mt-1">/ rent per day</p></div>
       <div class="bg-[#1f1f1f] border border-white/5 rounded-b-[20px] p-7 space-y-5" id="bookingPanel-axia-style">
         <div>
           <label class="text-sm text-gray-300">Pick Up Location</label>
@@ -558,7 +630,7 @@
           <label class="text-sm text-gray-300">Return Date</label>
           <input type="date" id="retdate-axia-style" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
-        <button type="button" onclick="sendBookingWA('axia-style','Axia%20Style%202020%20White')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
+        <button type="button" onclick="sendBookingWA('axia-style','Axia%20Style%202020')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
       </div>
     </div></div></section>
   <footer class="shared-footer" id="main-footer">
@@ -574,8 +646,8 @@
         </div>
         <div class="mf-main">
           <div>
-            <h3 class="mf-logo">HE<span>ROS</span></h3>
-            <p class="mf-text">Heros is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
+            <h3 class="mf-logo">JF<span>Z</span></h3>
+            <p class="mf-text">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
             <div class="mf-social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div>
           </div>
           <div>
@@ -588,7 +660,7 @@
             <form class="mf-subscribe" action="#" method="post"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit" aria-label="Submit"><i class="fa-solid fa-arrow-right"></i></button></form>
           </div>
         </div>
-        <p class="mf-bottom">©2026 Heros Car Rental Kedah. All rights reserved.</p>
+        <p class="mf-bottom">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
       </div>
     </footer>
   </div><!-- /view-car-axia-style -->
@@ -597,14 +669,14 @@
   <!-- VIEW: NEW AXIA SE PUTIH                     -->
   <!-- ═══════════════════════════════════════════ -->
   <div id="view-car-axia-se" style="display:none">
-    <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">Economy Cars</p><h1 class="text-5xl md:text-6xl font-bold">New Axia SE <span class="text-gold">White</span></h1></div></section>
+    <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">Economy Cars</p><h1 class="text-5xl md:text-6xl font-bold">Perodua Axia 1.0 SE 2023</h1></div></section>
     <section class="relative px-8 lg:px-24 pb-24 bg-[#161616]"><div class="grid lg:grid-cols-[1.6fr_0.8fr] gap-10"><div class="pt-14">
       <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold">General Information</h2><a href="#luxury-fleet" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> Back</a></div>
-      <p class="text-gray-400 leading-8 mb-8">The latest generation New Perodua Axia SE in white — packed with updated safety features, a more efficient engine, and a modern interior. Great for both city drives and outstation trips.</p>
+      <p class="text-gray-400 leading-8 mb-8">The latest generation New Perodua Axia SE — packed with updated safety features, a more efficient engine, and a modern interior. Great for both city drives and outstation trips.</p>
       <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Free cancellation & return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Pay on pickup available</p></div></div>
       <h3 class="text-3xl font-bold mb-5">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/perodua-axia-se.png" class="h-56 w-full object-cover rounded-[20px]" alt="Axia SE exterior"><img src="assets/cars/perodua-axia-se-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Axia SE interior"></div>
     </div><div class="lg:-mt-24 pt-8">
-      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 110</p><p class="text-sm uppercase tracking-wider mt-1">/ rent per day</p></div>
+      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 100</p><p class="text-sm uppercase tracking-wider mt-1">/ rent per day</p></div>
       <div class="bg-[#1f1f1f] border border-white/5 rounded-b-[20px] p-7 space-y-5" id="bookingPanel-axia-se">
         <div>
           <label class="text-sm text-gray-300">Pick Up Location</label>
@@ -626,7 +698,7 @@
           <label class="text-sm text-gray-300">Return Date</label>
           <input type="date" id="retdate-axia-se" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
-        <button type="button" onclick="sendBookingWA('axia-se','New%20Axia%20SE%20White')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
+        <button type="button" onclick="sendBookingWA('axia-se','New%20Axia%20SE')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
       </div>
     </div></div></section>
   <footer class="shared-footer" id="main-footer">
@@ -642,8 +714,8 @@
         </div>
         <div class="mf-main">
           <div>
-            <h3 class="mf-logo">HE<span>ROS</span></h3>
-            <p class="mf-text">Heros is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
+            <h3 class="mf-logo">JF<span>Z</span></h3>
+            <p class="mf-text">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
             <div class="mf-social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div>
           </div>
           <div>
@@ -656,7 +728,7 @@
             <form class="mf-subscribe" action="#" method="post"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit" aria-label="Submit"><i class="fa-solid fa-arrow-right"></i></button></form>
           </div>
         </div>
-        <p class="mf-bottom">©2026 Heros Car Rental Kedah. All rights reserved.</p>
+        <p class="mf-bottom">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
       </div>
     </footer>
   </div><!-- /view-car-axia-se -->
@@ -665,14 +737,14 @@
   <!-- VIEW: NEW BEZZA X MERAH                     -->
   <!-- ═══════════════════════════════════════════ -->
   <div id="view-car-bezza" style="display:none">
-    <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">Economy Sedan</p><h1 class="text-5xl md:text-6xl font-bold">New Bezza X <span class="text-gold">Red</span></h1></div></section>
+    <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">Economy Sedan</p><h1 class="text-5xl md:text-6xl font-bold">Perodua Bezza 1.3X 2023</h1></div></section>
     <section class="relative px-8 lg:px-24 pb-24 bg-[#161616]"><div class="grid lg:grid-cols-[1.6fr_0.8fr] gap-10"><div class="pt-14">
       <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold">General Information</h2><a href="#luxury-fleet" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> Back</a></div>
-      <p class="text-gray-400 leading-8 mb-8">New Perodua Bezza X in red — a stylish compact sedan with a more powerful 1.3L engine. Spacious boot and a modern infotainment system make it a top choice for family trips around Kedah.</p>
+      <p class="text-gray-400 leading-8 mb-8">New Perodua Bezza X — a stylish compact sedan with a more powerful 1.3L engine. Spacious boot and a modern infotainment system make it a top choice for family trips around Kedah.</p>
       <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Free cancellation & return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Pay on pickup available</p></div></div>
       <h3 class="text-3xl font-bold mb-5">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/perodua-bezza.png" class="h-56 w-full object-cover rounded-[20px]" alt="Bezza exterior"><img src="assets/cars/perodua-bezza-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Bezza interior"></div>
     </div><div class="lg:-mt-24 pt-8">
-      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 130</p><p class="text-sm uppercase tracking-wider mt-1">/ rent per day</p></div>
+      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 120</p><p class="text-sm uppercase tracking-wider mt-1">/ rent per day</p></div>
       <div class="bg-[#1f1f1f] border border-white/5 rounded-b-[20px] p-7 space-y-5" id="bookingPanel-bezza">
         <div>
           <label class="text-sm text-gray-300">Pick Up Location</label>
@@ -694,7 +766,7 @@
           <label class="text-sm text-gray-300">Return Date</label>
           <input type="date" id="retdate-bezza" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
-        <button type="button" onclick="sendBookingWA('bezza','New%20Bezza%20X%20Red')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
+        <button type="button" onclick="sendBookingWA('bezza','New%20Bezza%20X')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
       </div>
     </div></div></section>
   <footer class="shared-footer" id="main-footer">
@@ -710,8 +782,8 @@
         </div>
         <div class="mf-main">
           <div>
-            <h3 class="mf-logo">HE<span>ROS</span></h3>
-            <p class="mf-text">Heros is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
+            <h3 class="mf-logo">JF<span>Z</span></h3>
+            <p class="mf-text">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
             <div class="mf-social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div>
           </div>
           <div>
@@ -724,7 +796,7 @@
             <form class="mf-subscribe" action="#" method="post"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit" aria-label="Submit"><i class="fa-solid fa-arrow-right"></i></button></form>
           </div>
         </div>
-        <p class="mf-bottom">©2026 Heros Car Rental Kedah. All rights reserved.</p>
+        <p class="mf-bottom">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
       </div>
     </footer>
   </div><!-- /view-car-bezza -->
@@ -733,14 +805,14 @@
   <!-- VIEW: TOYOTA VELOZ                          -->
   <!-- ═══════════════════════════════════════════ -->
   <div id="view-car-veloz" style="display:none">
-    <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">MPV</p><h1 class="text-5xl md:text-6xl font-bold">Toyota Veloz</h1></div></section>
+    <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">MPV</p><h1 class="text-5xl md:text-6xl font-bold">Toyota Veloz 1.5 2024</h1></div></section>
     <section class="relative px-8 lg:px-24 pb-24 bg-[#161616]"><div class="grid lg:grid-cols-[1.6fr_0.8fr] gap-10"><div class="pt-14">
       <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold">General Information</h2><a href="#luxury-fleet" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> Back</a></div>
-      <p class="text-gray-400 leading-8 mb-8">Toyota Veloz — a stylish 7-seater crossover MPV. Perfect for family outings, road trips to Langkawi, or business needs across Kedah. Smooth 1.5L CVT engine for a relaxed ride.</p>
+      <p class="text-gray-400 leading-8 mb-8">Toyota Veloz 1.5 2024 — a stylish 7-seater crossover MPV. Perfect for family outings, road trips to Langkawi, or business needs across Kedah. Smooth 1.5L CVT engine for a relaxed ride.</p>
       <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Free cancellation & return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Pay on pickup available</p></div></div>
       <h3 class="text-3xl font-bold mb-5">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/toyota-veloz.png" class="h-56 w-full object-cover rounded-[20px]" alt="Veloz exterior"><img src="assets/cars/toyota-veloz-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Veloz interior"></div>
     </div><div class="lg:-mt-24 pt-8">
-      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 180</p><p class="text-sm uppercase tracking-wider mt-1">/ rent per day</p></div>
+      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 230</p><p class="text-sm uppercase tracking-wider mt-1">/ rent per day</p></div>
       <div class="bg-[#1f1f1f] border border-white/5 rounded-b-[20px] p-7 space-y-5" id="bookingPanel-veloz">
         <div>
           <label class="text-sm text-gray-300">Pick Up Location</label>
@@ -762,7 +834,7 @@
           <label class="text-sm text-gray-300">Return Date</label>
           <input type="date" id="retdate-veloz" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
-        <button type="button" onclick="sendBookingWA('veloz','Toyota%20Veloz')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
+        <button type="button" onclick="sendBookingWA('veloz','Toyota%20Veloz%201.5%202024')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
       </div>
     </div></div></section>
   <footer class="shared-footer" id="main-footer">
@@ -778,8 +850,8 @@
         </div>
         <div class="mf-main">
           <div>
-            <h3 class="mf-logo">HE<span>ROS</span></h3>
-            <p class="mf-text">Heros is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
+            <h3 class="mf-logo">JF<span>Z</span></h3>
+            <p class="mf-text">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
             <div class="mf-social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div>
           </div>
           <div>
@@ -792,7 +864,7 @@
             <form class="mf-subscribe" action="#" method="post"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit" aria-label="Submit"><i class="fa-solid fa-arrow-right"></i></button></form>
           </div>
         </div>
-        <p class="mf-bottom">©2026 Heros Car Rental Kedah. All rights reserved.</p>
+        <p class="mf-bottom">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
       </div>
     </footer>
   </div><!-- /view-car-veloz -->
@@ -801,14 +873,14 @@
   <!-- VIEW: VAN HIACE BARU                        -->
   <!-- ═══════════════════════════════════════════ -->
   <div id="view-car-hiace" style="display:none">
-    <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">Van</p><h1 class="text-5xl md:text-6xl font-bold">Van Hiace Baru</h1></div></section>
+    <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">Van</p><h1 class="text-5xl md:text-6xl font-bold">New Toyota Hiace 2.8 (A) 15 Seater</h1></div></section>
     <section class="relative px-8 lg:px-24 pb-24 bg-[#161616]"><div class="grid lg:grid-cols-[1.6fr_0.8fr] gap-10"><div class="pt-14">
       <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold">General Information</h2><a href="#luxury-fleet" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> Back</a></div>
       <p class="text-gray-400 leading-8 mb-8">The latest Toyota HiAce — a spacious and comfortable 12-passenger van. Ideal for group trips, tours, events, or staff transport. Large luggage space and powerful air conditioning throughout.</p>
       <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Free cancellation & return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Pay on pickup available</p></div></div>
       <h3 class="text-3xl font-bold mb-5">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/toyota-hiace.png" class="h-56 w-full object-cover rounded-[20px]" alt="HiAce exterior"><img src="assets/cars/toyota-hiace-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="HiAce interior"></div>
     </div><div class="lg:-mt-24 pt-8">
-      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 280</p><p class="text-sm uppercase tracking-wider mt-1">/ rent per day</p></div>
+      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 550-650</p><p class="text-sm uppercase tracking-wider mt-1">/ rent per day</p></div>
       <div class="bg-[#1f1f1f] border border-white/5 rounded-b-[20px] p-7 space-y-5" id="bookingPanel-hiace">
         <div>
           <label class="text-sm text-gray-300">Pick Up Location</label>
@@ -830,7 +902,7 @@
           <label class="text-sm text-gray-300">Return Date</label>
           <input type="date" id="retdate-hiace" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
-        <button type="button" onclick="sendBookingWA('hiace','New%20HiAce%20Van')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
+        <button type="button" onclick="sendBookingWA('hiace','New%20Toyota%20Hiace%202.8%20(A)%2015%20Seater')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
       </div>
     </div></div></section>
   <footer class="shared-footer" id="main-footer">
@@ -846,8 +918,8 @@
         </div>
         <div class="mf-main">
           <div>
-            <h3 class="mf-logo">HE<span>ROS</span></h3>
-            <p class="mf-text">Heros is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
+            <h3 class="mf-logo">JF<span>Z</span></h3>
+            <p class="mf-text">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
             <div class="mf-social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div>
           </div>
           <div>
@@ -860,7 +932,7 @@
             <form class="mf-subscribe" action="#" method="post"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit" aria-label="Submit"><i class="fa-solid fa-arrow-right"></i></button></form>
           </div>
         </div>
-        <p class="mf-bottom">©2026 Heros Car Rental Kedah. All rights reserved.</p>
+        <p class="mf-bottom">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
       </div>
     </footer>
   </div><!-- /view-car-hiace -->
@@ -873,7 +945,7 @@
   // ROUTER
   // ─────────────────────────────────────────────
   (function () {
-    var ALL_VIEWS = ['home', 'listing', 'car-axia-style', 'car-axia-se', 'car-bezza', 'car-veloz', 'car-hiace'];
+    var ALL_VIEWS = ['home', 'listing', 'car-mini', 'car-axia-style', 'car-axia-se', 'car-bezza', 'car-veloz', 'car-hiace'];
     var HOME_SECTIONS = ['heroSection', 'about-section', 'luxury-fleet', 'car-types-section', 'rental-process', 'testimonials-section', 'main-footer', 'our-services'];
 
     function showView(id) {
@@ -948,8 +1020,8 @@
     var heroPriceUnit = document.getElementById('heroPriceUnit');
     var footerEmailInput = document.getElementById('footerEmailInput');
     var translations = {
-      en: { 'nav.home':'Home','nav.about':'About','nav.cars':'Cars','nav.carTypes':'Car Types','nav.process':'Process','nav.blog':'Blog','nav.contact':'Contact','common.callUs':'Call us','hero.title':'Kedah Car Rental','hero.priceUnit':'/ DAY','about.title':'We Are More Than <br><span class="text-gold">A Kedah Car Rental Company</span>','about.desc':'Heros provides trusted car rental services across Kedah, including daily rentals, airport transfers, and chauffeur options. We focus on clean vehicles, fair pricing, and fast support to make every trip smooth.','about.point1':'Sports and Luxury Cars','about.point2':'Economy Cars','footer.quickLinks':'Quick Links','footer.subscribe':'Subscribe','footer.subscribeDesc':'Want to be notified about our services. Just sign up and we will send you a notification by email.','footer.emailPlaceholder':'Your email address','toggle.label':'BM' },
-      ms: { 'nav.home':'Utama','nav.about':'Tentang','nav.cars':'Kereta','nav.carTypes':'Jenis Kereta','nav.process':'Proses','nav.blog':'Blog','nav.contact':'Hubungi','common.callUs':'Hubungi kami','hero.title':'Sewa Kereta Kedah','hero.priceUnit':'/ HARI','about.title':'Kami Lebih Daripada <br><span class="text-gold">Syarikat Sewa Kereta Kedah</span>','about.desc':'Heros menyediakan perkhidmatan sewa kereta yang dipercayai di seluruh Kedah, termasuk sewaan harian, pemindahan lapangan terbang dan pilihan pemandu.','about.point1':'Kereta Sukan dan Mewah','about.point2':'Kereta Ekonomi','footer.quickLinks':'Pautan Pantas','footer.subscribe':'Langgan','footer.subscribeDesc':'Nak dapatkan makluman tentang servis kami? Daftar sekarang dan kami akan hantar notifikasi melalui emel.','footer.emailPlaceholder':'Alamat emel anda','toggle.label':'EN' }
+      en: { 'nav.home':'Home','nav.about':'About','nav.cars':'Cars','nav.carTypes':'Car Types','nav.process':'Process','nav.blog':'Blog','nav.contact':'Contact','common.callUs':'Call us','hero.title':'Kedah Car Rental','hero.priceUnit':'/ DAY','about.title':'We Are More Than <br><span class="text-gold">A Kedah Car Rental Company</span>','about.desc':'JFZ provides trusted car rental services across Kedah, including daily rentals, airport transfers, and chauffeur options. We focus on clean vehicles, fair pricing, and fast support to make every trip smooth.','about.point1':'Sports and Luxury Cars','about.point2':'Economy Cars','footer.quickLinks':'Quick Links','footer.subscribe':'Subscribe','footer.subscribeDesc':'Want to be notified about our services. Just sign up and we will send you a notification by email.','footer.emailPlaceholder':'Your email address','toggle.label':'BM' },
+      ms: { 'nav.home':'Utama','nav.about':'Tentang','nav.cars':'Kereta','nav.carTypes':'Jenis Kereta','nav.process':'Proses','nav.blog':'Blog','nav.contact':'Hubungi','common.callUs':'Hubungi kami','hero.title':'Sewa Kereta Kedah','hero.priceUnit':'/ HARI','about.title':'Kami Lebih Daripada <br><span class="text-gold">Syarikat Sewa Kereta Kedah</span>','about.desc':'JFZ menyediakan perkhidmatan sewa kereta yang dipercayai di seluruh Kedah, termasuk sewaan harian, pemindahan lapangan terbang dan pilihan pemandu.','about.point1':'Kereta Sukan dan Mewah','about.point2':'Kereta Ekonomi','footer.quickLinks':'Pautan Pantas','footer.subscribe':'Langgan','footer.subscribeDesc':'Nak dapatkan makluman tentang servis kami? Daftar sekarang dan kami akan hantar notifikasi melalui emel.','footer.emailPlaceholder':'Alamat emel anda','toggle.label':'EN' }
     };
     var setLanguage = function (lang) {
       var dict = translations[lang] || translations.en;
@@ -973,7 +1045,7 @@
   (function () {
     var heroSection = document.getElementById('heroSection'); var heroBg = document.getElementById('heroBg'); var heroBgNext = document.getElementById('heroBgNext'); var heroModel = document.getElementById('heroModel'); var heroPrice = document.getElementById('heroPrice'); var heroDots = Array.prototype.slice.call(document.querySelectorAll('.hero-dot'));
     if (!heroSection || !heroBg || !heroBgNext) return;
-    var heroSlides = [{ image:'assets/cars/perodua-axia-style.png', model:'Axia Style 2020 Putih', price:'RM 100' },{ image:'assets/cars/toyota-veloz.png', model:'Toyota Veloz', price:'RM 180' },{ image:'assets/cars/toyota-hiace.png', model:'Van Hiace Baru', price:'RM 280' }];
+    var heroSlides = [{ image:'assets/cars/mini-cooper.png', model:'Mini Cooper S 2.0T Convertible', price:'RM 650' },{ image:'assets/cars/toyota-veloz.png', model:'Toyota Veloz 1.5 2024', price:'RM 230' },{ image:'assets/cars/toyota-hiace.png', model:'New Toyota Hiace 2.8 (A) 15 Seater', price:'RM 550' }];
     var activeHero = 0; var heroTimer = null; var heroAnimating = false;
     var heroBgStr = function (url) { return "linear-gradient(rgba(0,0,0,0.52),rgba(0,0,0,0.52)),url('" + url + "')"; };
     var setHeroDots = function (i) { heroDots.forEach(function (d, j) { d.classList.toggle('is-active', j === i); if (j === i) d.setAttribute('aria-current','true'); else d.removeAttribute('aria-current'); }); };
@@ -991,11 +1063,12 @@
     var row = document.getElementById('fleetScroll'); var leftImg = document.getElementById('fleetLeftImg'); var centerImg = document.getElementById('fleetCenterImg'); var rightImg = document.getElementById('fleetRightImg'); var title = document.getElementById('fleetTitle'); var seats = document.getElementById('fleetSeats'); var transmission = document.getElementById('fleetTransmission'); var bags = document.getElementById('fleetBags'); var price = document.getElementById('fleetPrice'); var detailsLink = document.getElementById('fleetDetailsLink'); var mobileDots = Array.prototype.slice.call(document.querySelectorAll('#fleetMobileDots .fleet-mobile-dot'));
     if (!row || !leftImg || !centerImg || !rightImg) return;
     var fleetCars = [
-      { name:'Axia Style 2020 Putih', image:'assets/cars/perodua-axia-style.png', seats:'5', transmission:'Auto', bags:'2 Bags', price:'RM 100', details:'#car-axia-style' },
-      { name:'New Axia SE Putih', image:'assets/cars/perodua-axia-se.png', seats:'5', transmission:'Auto', bags:'2 Bags', price:'RM 110', details:'#car-axia-se' },
-      { name:'New Bezza X Merah', image:'assets/cars/perodua-bezza.png', seats:'5', transmission:'Auto', bags:'2 Bags', price:'RM 130', details:'#car-bezza' },
-      { name:'Toyota Veloz', image:'assets/cars/toyota-veloz.png', seats:'7', transmission:'Auto', bags:'3 Bags', price:'RM 180', details:'#car-veloz' },
-      { name:'Van Hiace Baru', image:'assets/cars/toyota-hiace.png', seats:'12', transmission:'Manual', bags:'Large', price:'RM 280', details:'#car-hiace' }
+      { name:'Mini Cooper S 2.0 Turbo Convertible 2023', image:'assets/cars/mini-cooper.png', seats:'4', transmission:'Auto', bags:'2 Bags', price:'RM 650', details:'#car-mini' },
+      { name:'Perodua Axia 1.0 Style 2020', image:'assets/cars/perodua-axia-style.png', seats:'5', transmission:'Auto', bags:'2 Bags', price:'RM 90', details:'#car-axia-style' },
+      { name:'Perodua Axia 1.0 SE 2023', image:'assets/cars/perodua-axia-se.png', seats:'5', transmission:'Auto', bags:'2 Bags', price:'RM 100', details:'#car-axia-se' },
+      { name:'Perodua Bezza 1.3X 2023', image:'assets/cars/perodua-bezza.png', seats:'5', transmission:'Auto', bags:'2 Bags', price:'RM 120', details:'#car-bezza' },
+      { name:'Toyota Veloz 1.5 2024', image:'assets/cars/toyota-veloz.png', seats:'7', transmission:'Auto', bags:'3 Bags', price:'RM 230', details:'#car-veloz' },
+      { name:'New Toyota Hiace 2.8 (A) 15 Seater', image:'assets/cars/toyota-hiace.png', seats:'12', transmission:'Manual', bags:'Large', price:'RM 550', details:'#car-hiace' }
     ];
     var active = 0; var animating = false; var fleetAutoTimer = null; var mod = function (n) { return (n + fleetCars.length) % fleetCars.length; };
     var renderFleet = function () {
@@ -1019,7 +1092,7 @@
   // CAR LISTING FILTER (exposed globally for router)
   // ─────────────────────────────────────────────
   (function () {
-    var labels = { all:'All Cars', economy:'Economy Cars', sedan:'Sedan', mpv:'MPV', van:'Van' };
+    var labels = { all:'All Cars', economy:'Economy Cars', sedan:'Sedan', mpv:'MPV', van:'Van', mini:'Mini Cooper S 2.0 Turbo Convertible 2023' };
     var currentType = 'all'; var currentSearch = '';
 
     window.applyListingFilter = function (type) {
@@ -1111,7 +1184,7 @@
       return parts[2] + '/' + parts[1] + '/' + parts[0];
     };
 
-    var msg = 'Hi Heros, I would like to book the ' + decodeURIComponent(carName) + '.' +
+    var msg = 'Hi JFZ, I would like to book the ' + decodeURIComponent(carName) + '.' +
               '\nPick Up: ' + pickupVal +
               '\nDrop Off: ' + dropoffVal +
               '\nPick Up Date: ' + fmt(pickdateVal) +
@@ -1122,5 +1195,50 @@
     window.open(url, '_blank', 'noopener,noreferrer');
   }
 </script>
+
+  <!-- ── Floating WhatsApp Button ── -->
+  <a href="https://wa.me/60108118968?text=Hi%20Heros%2C%20I%20would%20like%20to%20enquire%20about%20car%20rental." 
+     target="_blank" rel="noopener noreferrer"
+     id="floatingWA"
+     aria-label="Chat on WhatsApp"
+     style="
+       position: fixed;
+       bottom: 28px;
+       right: 28px;
+       z-index: 9999;
+       width: 60px;
+       height: 60px;
+       border-radius: 50%;
+       background: #25D366;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       box-shadow: 0 6px 28px rgba(37,211,102,0.45), 0 2px 8px rgba(0,0,0,0.3);
+       transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease;
+       text-decoration: none;
+     "
+     onmouseover="this.style.transform='scale(1.12)';this.style.boxShadow='0 10px 36px rgba(37,211,102,0.55), 0 4px 12px rgba(0,0,0,0.35)';"
+     onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 6px 28px rgba(37,211,102,0.45), 0 2px 8px rgba(0,0,0,0.3)';"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    <!-- Pulse ring -->
+    <span style="
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 2px solid #25D366;
+      animation: waPulse 2s ease-out infinite;
+      pointer-events: none;
+    "></span>
+  </a>
+  <style>
+    @keyframes waPulse {
+      0%   { transform: scale(1);   opacity: 0.8; }
+      70%  { transform: scale(1.55); opacity: 0; }
+      100% { transform: scale(1.55); opacity: 0; }
+    }
+  </style>
 </body>
 </html>
