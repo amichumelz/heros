@@ -26,6 +26,76 @@
     .lang-toggle-btn { border: 1px solid rgba(228,161,90,0.6); color: #e4a15a; border-radius: 999px; padding: 6px 12px; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.25s ease; }
     .lang-toggle-btn:hover { background: #e4a15a; color: #111111; }
 
+    /* ── RENAX-style Nav ── */
+    #mainNav { background: rgba(10,10,10,0.96) !important; backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.06) !important; padding: 0 52px; height: 80px; }
+    .rnx-logo { font-size: 2rem; font-weight: 900; letter-spacing: -0.05em; color: #fff; text-decoration: none; font-family: 'Outfit', sans-serif; }
+    .rnx-logo span { color: #e4a15a; }
+    .rnx-nav-link { color: rgba(255,255,255,0.82); font-size: 14px; font-weight: 500; letter-spacing: 0.01em; text-transform: none; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: color 0.22s ease; white-space: nowrap; }
+    .rnx-nav-link:hover, .rnx-nav-link.is-active { color: #e4a15a; }
+    .rnx-nav-link i { font-size: 9px; opacity: 0.7; }
+    .rnx-divider { width: 1px; height: 22px; background: rgba(255,255,255,0.15); }
+    .rnx-cart { color: rgba(255,255,255,0.75); font-size: 18px; transition: color 0.22s ease; }
+    .rnx-cart:hover { color: #e4a15a; }
+    .rnx-phone-wrap { position: relative; display: flex; align-items: center; }
+    .rnx-phone-btn { width: 48px; height: 48px; border-radius: 50%; border: 2px solid #e4a15a; background: transparent; display: grid; place-items: center; color: #e4a15a; font-size: 16px; transition: all 0.25s ease; flex-shrink: 0; cursor: pointer; position: relative; z-index: 1; }
+    .rnx-phone-btn:hover { background: #e4a15a; color: #000; }
+    .rnx-phone-pulse { position: absolute; inset: -6px; border-radius: 50%; border: 2px solid rgba(228,161,90,0.4); animation: rnxPulse 2s ease-out infinite; pointer-events: none; }
+    @keyframes rnxPulse { 0% { transform: scale(1); opacity: 0.7; } 100% { transform: scale(1.5); opacity: 0; } }
+    .rnx-help-label { font-size: 11px; color: rgba(255,255,255,0.45); letter-spacing: 0.03em; margin: 0; line-height: 1; }
+    .rnx-help-num { font-size: 16px; font-weight: 700; color: #fff; margin: 3px 0 0; letter-spacing: 0.01em; }
+
+    /* ── RENAX Listing Page ── */
+    #view-listing { background: #131313; }
+    .rnx-listing-hero { position: relative; background: linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55)), url('assets/cars/mini-cooper.png') center/cover no-repeat; height: 82vh; min-height: 520px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-top: 76px; overflow: visible; }
+    .rnx-hero-eyebrow { letter-spacing: 0.38em; text-transform: uppercase; font-size: 11px; color: #e4a15a; font-weight: 600; margin-bottom: 14px; }
+    .rnx-hero-title { font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 800; color: #fff; text-align: center; letter-spacing: -0.02em; line-height: 1.05; }
+
+    /* Search card — bottom-left, overlapping hero into content */
+    .rnx-search-card { position: absolute; bottom: -28px; left: clamp(24px, 5%, 160px); width: min(400px, 88vw); background: #e4a15a; border-radius: 18px; padding: 14px 14px 14px 14px; box-shadow: 0 24px 64px rgba(0,0,0,0.5); z-index: 10; }
+    .rnx-search-inner { background: #1e1e22; border-radius: 12px; display: flex; align-items: center; overflow: hidden; height: 56px; padding-right: 8px; gap: 0; }
+    .rnx-search-inner input { flex: 1; border: 0; outline: none; padding: 0 18px; font-size: 14px; color: rgba(255,255,255,0.85); background: transparent; min-width: 0; font-family: 'Outfit', sans-serif; }
+    .rnx-search-inner input::placeholder { color: rgba(255,255,255,0.38); }
+    .rnx-search-inner button { width: 40px; height: 40px; background: #e4a15a; border: 0; cursor: pointer; display: grid; place-items: center; font-size: 14px; color: #fff; border-radius: 50%; flex-shrink: 0; transition: background 0.22s ease; }
+    .rnx-search-inner button:hover { background: #c98a3a; }
+
+    /* sidebar */
+    .rnx-listing-body { display: grid; grid-template-columns: 260px 1fr; gap: 36px; max-width: 1320px; margin: 0 auto; padding: 72px 32px 80px; align-items: start; }
+    @media (max-width: 1023px) { .rnx-listing-body { grid-template-columns: 1fr; } }
+    .rnx-sidebar { position: sticky; top: 96px; }
+    .rnx-sidebar-block { background: #1c1c1c; border-radius: 16px; padding: 22px 20px 18px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.06); }
+    .rnx-sidebar-heading { font-size: 15px; font-weight: 700; color: #fff; margin: 0 0 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.07); letter-spacing: 0.01em; text-align: left; }
+    .rnx-sidebar-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 2px; }
+    /* Category buttons */
+    .rnx-cat-btn { display: block; width: 100%; text-align: left; padding: 8px 0 8px 16px; font-size: 13.5px; color: rgba(255,255,255,0.55); background: none; border: 0; border-left: 2px solid transparent; cursor: pointer; transition: color 0.22s ease, border-color 0.22s ease; font-family: 'Outfit', sans-serif; line-height: 1.4; }
+    .rnx-cat-btn:hover { color: #e4a15a; border-left-color: rgba(228,161,90,0.35); }
+    .rnx-cat-btn.is-active { color: #e4a15a; border-left-color: #e4a15a; font-weight: 600; }
+    /* Location items */
+    .rnx-loc-item { display: block; padding: 7px 0 7px 16px; font-size: 13.5px; color: rgba(255,255,255,0.55); border-left: 2px solid rgba(255,255,255,0.1); text-align: left; }
+
+    /* result bar */
+    .rnx-result-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; }
+    .rnx-result-count { font-size: 13px; color: rgba(255,255,255,0.5); }
+    .rnx-sort-select { background: #1c1c1c; border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); border-radius: 8px; padding: 8px 14px; font-size: 13px; outline: none; cursor: pointer; }
+
+    /* car cards */
+    .rnx-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+    @media (max-width: 700px) { .rnx-grid { grid-template-columns: 1fr; } }
+    .rnx-card { background: #1c1c1c; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; }
+    .rnx-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+    .rnx-card-img { width: 100%; height: 220px; object-fit: cover; display: block; }
+    .rnx-card-body { padding: 22px 22px 20px; flex: 1; display: flex; flex-direction: column; }
+    .rnx-card-name { font-size: 1.25rem; font-weight: 700; color: #fff; margin: 0 0 18px; line-height: 1.25; }
+    .rnx-specs { list-style: none; padding: 0; margin: 0 0 20px; display: flex; flex-direction: column; gap: 10px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 16px; }
+    .rnx-spec-row { display: flex; align-items: center; justify-content: space-between; font-size: 13px; }
+    .rnx-spec-label { display: flex; align-items: center; gap: 9px; color: rgba(255,255,255,0.48); }
+    .rnx-spec-label i { width: 16px; text-align: center; color: #c5973e; font-size: 13px; }
+    .rnx-spec-val { color: rgba(255,255,255,0.85); font-weight: 500; }
+    .rnx-card-foot { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .rnx-price { font-size: 1.6rem; font-weight: 800; color: #e4a15a; line-height: 1; }
+    .rnx-price span { font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.4); margin-left: 3px; }
+    .rnx-book-btn { background: #e4a15a; color: #000; font-size: 13px; font-weight: 700; padding: 11px 26px; border-radius: 999px; text-decoration: none; transition: all 0.25s ease; white-space: nowrap; }
+    .rnx-book-btn:hover { background: #fff; color: #000; }
+
     /* ── Mobile nav ── */
     #mobileNavOverlay { position: fixed; inset: 0; background: rgba(6,6,7,0.62); backdrop-filter: blur(2px); z-index: 44; opacity: 0; pointer-events: none; transition: opacity 0.28s ease; }
     #mobileNavOverlay.is-open { opacity: 1; pointer-events: auto; }
@@ -95,35 +165,121 @@
     #luxury-fleet .fleet-mobile-dot { width: 12px; height: 12px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.85); background: transparent; transition: all 0.25s ease; }
     #luxury-fleet .fleet-mobile-dot.is-active { background: #c5a059; border-color: #c5a059; }
 
-    /* ── Car Types ── */
-    #car-types-section { --ct-bg: #181716; --ct-gold: #caa45f; --ct-cream: #f0ede6; background: var(--ct-bg); font-family: 'Outfit', sans-serif; color: var(--ct-cream); padding: 100px 20px 120px; text-align: center; }
-    #car-types-section .ct-inner { max-width: 1200px; margin: 0 auto; }
-    #car-types-section .ct-eyebrow { color: var(--ct-gold); letter-spacing: 5px; font-size: 12px; text-transform: uppercase; margin-bottom: 10px; }
-    #car-types-section .ct-title { font-size: 48px; font-weight: 700; margin: 0; letter-spacing: -0.02em; }
-    #car-types-section .ct-title em { font-style: normal; color: var(--ct-gold); }
-    #car-types-section .ct-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 60px; padding-bottom: 48px; }
-    #car-types-section .ct-card { position: relative; overflow: visible; cursor: pointer; transition: transform 0.55s cubic-bezier(0.22,1,0.36,1); }
-    #car-types-section .ct-card:hover { transform: translateY(-6px); }
-    #car-types-section .ct-card-body { position: relative; height: 350px; border-radius: 40px; overflow: visible; }
-    #car-types-section .ct-card-body img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 40px; transition: transform 0.65s cubic-bezier(0.22,1,0.36,1); }
-    #car-types-section .ct-card:hover .ct-card-body img { transform: scale(1.06); }
-    #car-types-section .ct-overlay { position: absolute; inset: 0; border-radius: 40px; background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.25) 45%, transparent 100%); pointer-events: none; }
-    #car-types-section .ct-card-content { position: absolute; bottom: 26px; left: 86px; right: 20px; z-index: 2; font-size: 18px; font-weight: 600; text-align: left; line-height: 1.35; text-shadow: 0 2px 14px rgba(0,0,0,0.5); transition: transform 0.5s cubic-bezier(0.22,1,0.36,1); }
-    #car-types-section .ct-card:hover .ct-card-content { transform: translateY(-2px); }
-    #car-types-section .ct-card-body::after { content: ''; position: absolute; bottom: -38px; left: -38px; width: 96px; height: 96px; background: var(--ct-bg); z-index: 3; pointer-events: none; transition: transform 0.55s cubic-bezier(0.22,1,0.36,1); border-radius: 50%; }
-    #car-types-section .ct-card:hover .ct-card-body::after { transform: translate(3px,-3px); }
-    #car-types-section .ct-arrow-btn { position: absolute; bottom: -18px; left: -18px; width: 56px; height: 56px; border-radius: 50%; border: 1.5px solid var(--ct-gold); background: var(--ct-bg); display: grid; place-items: center; z-index: 10; cursor: pointer; transition: background 0.4s cubic-bezier(0.22,1,0.36,1), transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease; }
-    #car-types-section .ct-card:hover .ct-arrow-btn { background: var(--ct-gold); box-shadow: 0 12px 28px rgba(201,147,42,0.28); }
-    #car-types-section .ct-arrow-btn svg { transition: transform 0.5s cubic-bezier(0.22,1,0.36,1), stroke 0.35s ease; }
-    #car-types-section .ct-card:hover .ct-arrow-btn svg { transform: rotate(45deg); stroke: #181716; }
-    #car-types-section .ct-dots { display: flex; gap: 10px; justify-content: center; margin-top: 48px; }
-    #car-types-section .ct-dot { width: 9px; height: 9px; border-radius: 50%; background: transparent; border: 1px solid rgba(255,255,255,0.8); cursor: pointer; transition: background 0.35s ease, border-color 0.35s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1); }
-    #car-types-section .ct-dot:hover { border-color: #ffffff; transform: scale(1.15); }
-    #car-types-section .ct-dot.ct-active { background: var(--ct-gold); border-color: var(--ct-gold); transform: scale(1.3); }
-    @media (max-width: 900px) {
-      #car-types-section .ct-title { font-size: 36px; }
-      #car-types-section .ct-grid { grid-template-columns: 1fr; gap: 32px; }
+    /* ── Car Types (RENAX style) ── */
+    #car-types-section {
+      --ct-bg: #181818;
+      --ct-gold: #caa45f;
+      background: var(--ct-bg);
+      font-family: 'Outfit', sans-serif;
+      padding: 100px 0 120px;
+      text-align: center;
     }
+    #car-types-section .ct-inner { max-width: 1260px; margin: 0 auto; padding: 0 40px; }
+    #car-types-section .ct-eyebrow {
+      color: var(--ct-gold);
+      letter-spacing: 6px;
+      font-size: 11px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    #car-types-section .ct-title {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 800;
+      color: #fff;
+      margin: 0 0 56px;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+    #car-types-section .ct-title em { font-style: normal; color: var(--ct-gold); }
+
+    /* 2-col grid, landscape cards */
+    #car-types-section .ct-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-bottom: 48px;
+    }
+    @media (max-width: 700px) {
+      #car-types-section .ct-grid { grid-template-columns: 1fr; }
+      #car-types-section .ct-inner { padding: 0 20px; }
+    }
+
+    /* Card wrapper */
+    #car-types-section .ct-card {
+      position: relative;
+      cursor: pointer;
+      transition: transform .45s cubic-bezier(.22,1,.36,1);
+    }
+    #car-types-section .ct-card:hover { transform: translateY(-6px); }
+
+    /* Image container — landscape, bite cut bottom-left */
+    #car-types-section .ct-card-body {
+      position: relative;
+      border-radius: 22px;
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+      box-shadow: 0 16px 48px rgba(0,0,0,.55);
+      transition: box-shadow .45s ease;
+      /* bite cut at bottom-left for the arrow button */
+      -webkit-mask-image: radial-gradient(circle 72px at 0% 100%, transparent 70px, white 71px);
+      mask-image:         radial-gradient(circle 72px at 0% 100%, transparent 70px, white 71px);
+    }
+    #car-types-section .ct-card:hover .ct-card-body {
+      box-shadow: 0 28px 64px rgba(0,0,0,.65);
+    }
+
+    /* Background image */
+    #car-types-section .ct-card-body img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform .65s cubic-bezier(.22,1,.36,1);
+    }
+    #car-types-section .ct-card:hover .ct-card-body img { transform: scale(1.07); }
+
+    /* Dark gradient overlay — stronger at bottom for text legibility */
+    #car-types-section .ct-overlay {
+      position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background: linear-gradient(to top, rgba(0,0,0,.72) 0%, rgba(0,0,0,.18) 50%, transparent 100%);
+    }
+
+    /* Category label overlaid inside image, bottom-left */
+    #car-types-section .ct-card-content {
+      position: absolute;
+      bottom: 22px;
+      left: 88px; /* clear of arrow button */
+      z-index: 3;
+      color: #fff;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-shadow: 0 2px 12px rgba(0,0,0,.6);
+      pointer-events: none;
+    }
+
+    /* Gold arrow button — sits in bite space, bottom-left */
+    #car-types-section .ct-arrow-btn {
+      position: absolute;
+      bottom: 14px; left: 14px;
+      width: 56px; height: 56px;
+      border-radius: 50%; border: none;
+      background: var(--ct-gold);
+      display: grid; place-items: center;
+      z-index: 10; cursor: pointer;
+      box-shadow: 0 4px 18px rgba(202,164,79,.55);
+      transition: background .26s ease, transform .36s cubic-bezier(.22,1,.36,1);
+      text-decoration: none;
+    }
+    #car-types-section .ct-card:hover .ct-arrow-btn { background: #fff; transform: scale(1.1); }
+    #car-types-section .ct-arrow-btn svg { transition: transform .42s cubic-bezier(.22,1,.36,1); }
+    #car-types-section .ct-card:hover .ct-arrow-btn svg { transform: rotate(45deg); }
+
+    /* Dots */
+    #car-types-section .ct-dots { display: flex; gap: 10px; justify-content: center; margin-top: 8px; }
+    #car-types-section .ct-dot { width: 12px; height: 12px; border-radius: 50%; background: transparent; border: 1.5px solid rgba(255,255,255,.4); cursor: pointer; transition: all .28s ease; }
+    #car-types-section .ct-dot:hover { border-color: #fff; }
+    #car-types-section .ct-dot.ct-active { background: var(--ct-gold); border-color: var(--ct-gold); transform: scale(1.25); }
 
     /* ── Testimonials ── */
     #testimonials-section { background: #171717; padding: 92px 0 78px; overflow: hidden; }
@@ -217,27 +373,77 @@
     #view-car-bezza .detail-hero-img { background-image: linear-gradient(rgba(0,0,0,.44),rgba(0,0,0,.44)), url('assets/cars/perodua-bezza.png'); }
     #view-car-veloz .detail-hero-img { background-image: linear-gradient(rgba(0,0,0,.44),rgba(0,0,0,.44)), url('assets/cars/toyota-veloz.png'); }
     #view-car-hiace .detail-hero-img { background-image: linear-gradient(rgba(0,0,0,.44),rgba(0,0,0,.44)), url('assets/cars/toyota-hiace.png'); }
+    #view-car-vellfire .detail-hero-img { background-image: linear-gradient(rgba(0,0,0,.44),rgba(0,0,0,.44)), url('assets/cars/toyota-veloz.png'); }
+    #view-car-staria .detail-hero-img { background-image: linear-gradient(rgba(0,0,0,.44),rgba(0,0,0,.44)), url('assets/cars/toyota-hiace.png'); }
   </style>
 </head>
 <body>
 
+  <!-- ── SVG clip-path: card shape with smooth concave bite at bottom-left ── -->
+  <svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+    <defs>
+      <!--
+        objectBoundingBox: all coords 0-1, mapped to actual element W×H.
+        Card aspect-ratio = 1 / 1.06  → H ≈ 1.06W
+
+        Arrow btn: 58px, bottom:14px left:14px inside ct-card.
+        Button occupies: left=14→72px, bottom=14→72px.
+        Bite must clear at least 80px in both x and y (with margin).
+
+        For W≈330px H≈350px:
+          80/330 = 0.242 (x)  80/350 = 0.229 (y)
+        Corner radius 26px: 26/330=0.079
+
+        Arc: from (0.31, 1) sweeping to (0, 0.74) — large concave quarter
+      -->
+      <clipPath id="ctCardBite" clipPathUnits="objectBoundingBox">
+        <path d="M 0.079,0
+                 H 0.921 Q 1,0 1,0.079
+                 V 0.921 Q 1,1 0.921,1
+                 H 0.31
+                 A 0.31,0.293 0 0,0 0,0.74
+                 V 0.079 Q 0,0 0.079,0 Z"/>
+      </clipPath>
+    </defs>
+  </svg>
+
   <!-- ═══ SHARED NAV ═══ -->
-  <nav id="mainNav" class="fixed w-full z-50 bg-black/50 backdrop-blur-md border-b border-white/10 py-4 px-8 flex justify-between items-center">
-    <a href="#home" class="text-2xl font-bold tracking-tighter">JF<span class="text-gold">Z</span></a>
-    <div class="hidden md:flex gap-8 text-sm uppercase font-medium tracking-wide">
-      <a href="#heroSection" class="nav-link text-gold" data-i18n="nav.home">Home</a>
-      <a href="#about-section" class="nav-link hover:text-gold transition" data-i18n="nav.about">About</a>
-      <a href="#luxury-fleet" class="nav-link hover:text-gold transition" data-i18n="nav.cars">Cars</a>
-      <a href="#car-types-section" class="nav-link hover:text-gold transition" data-i18n="nav.carTypes">Car Types</a>
-      <a href="#rental-process" class="nav-link hover:text-gold transition" data-i18n="nav.process">Process</a>
-      <a href="#testimonials-section" class="nav-link hover:text-gold transition" data-i18n="nav.blog">Blog</a>
-      <a href="#main-footer" class="nav-link hover:text-gold transition" data-i18n="nav.contact">Contact</a>
+  <nav id="mainNav" class="fixed w-full z-50 flex items-center justify-between gap-6">
+    <!-- Logo -->
+    <a href="#heroSection" class="rnx-logo shrink-0">JF<span>Z</span></a>
+
+    <!-- Desktop links -->
+    <div class="hidden md:flex items-center gap-7">
+      <a href="#heroSection" class="rnx-nav-link is-active" data-i18n="nav.home">Home <i class="fa-solid fa-chevron-down"></i></a>
+      <a href="#about-section" class="rnx-nav-link" data-i18n="nav.about">About</a>
+      <a href="#luxury-fleet" class="rnx-nav-link" data-i18n="nav.cars">Cars <i class="fa-solid fa-chevron-down"></i></a>
+      <a href="#car-types-section" class="rnx-nav-link" data-i18n="nav.carTypes">Car Types</a>
+      <a href="#rental-process" class="rnx-nav-link" data-i18n="nav.process">Process</a>
+      <a href="#testimonials-section" class="rnx-nav-link" data-i18n="nav.blog">Blog</a>
+      <a href="#main-footer" class="rnx-nav-link" data-i18n="nav.contact">Contact</a>
+      <div class="rnx-divider"></div>
+      <a href="#listing" class="rnx-cart" aria-label="View all cars"><i class="fa-solid fa-car-side"></i></a>
     </div>
-    <div class="flex items-center gap-4 md:gap-6">
+
+    <!-- Right: phone + mobile toggle -->
+    <div class="flex items-center gap-4 shrink-0">
+      <!-- Phone info (desktop only) -->
+      <div class="hidden lg:flex items-center gap-3">
+        <div class="rnx-phone-wrap">
+          <button class="rnx-phone-btn" aria-label="Call us"><i class="fa-solid fa-phone"></i></button>
+          <span class="rnx-phone-pulse"></span>
+        </div>
+        <div>
+          <p class="rnx-help-label">Need help?</p>
+          <p class="rnx-help-num">0108118968</p>
+        </div>
+      </div>
+      <!-- Language toggle -->
+      <button type="button" id="languageToggle" class="lang-toggle-btn hidden md:inline-flex">BM</button>
+      <!-- Hamburger -->
       <button type="button" id="mobileNavToggle" class="md:hidden w-10 h-10 border border-gold rounded-full flex items-center justify-center text-gold" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNavMenu">
         <i class="fa-solid fa-bars text-sm"></i>
       </button>
-      <button type="button" id="languageToggle" class="lang-toggle-btn">BM</button>
     </div>
   </nav>
   <div id="mobileNavOverlay" class="md:hidden" aria-hidden="true"></div>
@@ -336,25 +542,86 @@
 
     <section id="car-types-section" aria-labelledby="car-types-heading">
       <div class="ct-inner">
-        <div class="ct-section-header"><p class="ct-eyebrow">Categories</p><h2 id="car-types-heading" class="ct-title">Rental <em>Car Types</em></h2></div>
-        <div class="ct-grid">
-          <div class="ct-card">
-            <div class="ct-card-body"><img src="assets/cars/car-type-economy.png" alt="Economy Cars"><div class="ct-overlay"></div><div class="ct-card-content">Economy Cars</div></div>
-            <a href="#listing-economy" class="ct-arrow-btn inline-grid" aria-label="View economy cars"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9932a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg></a>
-          </div>
-          <div class="ct-card">
-            <div class="ct-card-body"><img src="assets/cars/car-type-mpv.png" alt="MPV"><div class="ct-overlay"></div><div class="ct-card-content">MPV</div></div>
-            <a href="#listing-mpv" class="ct-arrow-btn inline-grid" aria-label="View MPV"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9932a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg></a>
-          </div>
-          <div class="ct-card">
-            <div class="ct-card-body"><img src="assets/cars/car-type-van.png" alt="Van"><div class="ct-overlay"></div><div class="ct-card-content">Van</div></div>
-            <a href="#listing-van" class="ct-arrow-btn inline-grid" aria-label="View vans"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9932a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg></a>
-          </div>
-          <div class="ct-card">
-            <div class="ct-card-body"><img src="assets/cars/car-type-luxury.png" alt="Luxury"><div class="ct-overlay"></div><div class="ct-card-content">Luxury</div></div>
-            <a href="#listing-luxury" class="ct-arrow-btn inline-grid" aria-label="View Luxury cars"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9932a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg></a>
-          </div>
+        <div class="ct-section-header">
+          <p class="ct-eyebrow">Categories</p>
+          <h2 id="car-types-heading" class="ct-title">Rental <em>Car Types</em></h2>
         </div>
+        <div class="ct-grid">
+
+          <!-- Economy Cars -->
+          <div class="ct-card">
+            <div class="ct-card-body">
+              <img src="assets/cars/perodua-axia-se.png" alt="Economy Cars">
+              <div class="ct-overlay"></div>
+            </div>
+            <div class="ct-card-content">Economy Cars</div>
+            <a href="#listing-economy" class="ct-arrow-btn" aria-label="View Economy Cars">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg>
+            </a>
+          </div>
+
+          <!-- MPV -->
+          <div class="ct-card">
+            <div class="ct-card-body">
+              <img src="assets/cars/toyota-veloz.png" alt="MPV">
+              <div class="ct-overlay"></div>
+            </div>
+            <div class="ct-card-content">MPV</div>
+            <a href="#listing-mpv" class="ct-arrow-btn" aria-label="View MPV">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg>
+            </a>
+          </div>
+
+          <!-- Van -->
+          <div class="ct-card">
+            <div class="ct-card-body">
+              <img src="assets/cars/toyota-hiace.png" alt="Van">
+              <div class="ct-overlay"></div>
+            </div>
+            <div class="ct-card-content">Van</div>
+            <a href="#listing-van" class="ct-arrow-btn" aria-label="View Van">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg>
+            </a>
+          </div>
+
+          <!-- SUV -->
+          <div class="ct-card">
+            <div class="ct-card-body">
+              <img src="assets/cars/car-type-luxury.png" alt="SUV">
+              <div class="ct-overlay"></div>
+            </div>
+            <div class="ct-card-content">SUV</div>
+            <a href="#listing-suv" class="ct-arrow-btn" aria-label="View SUV">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg>
+            </a>
+          </div>
+
+          <!-- Luxury -->
+          <div class="ct-card">
+            <div class="ct-card-body">
+              <img src="assets/cars/mini-cooper.png" alt="Luxury">
+              <div class="ct-overlay"></div>
+            </div>
+            <div class="ct-card-content">Luxury</div>
+            <a href="#listing-luxury" class="ct-arrow-btn" aria-label="View Luxury">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg>
+            </a>
+          </div>
+
+          <!-- Sport & Lifestyle -->
+          <div class="ct-card">
+            <div class="ct-card-body">
+              <img src="assets/cars/car-type-economy.png" alt="Sport & Lifestyle">
+              <div class="ct-overlay"></div>
+            </div>
+            <div class="ct-card-content">Sport &amp; Lifestyle</div>
+            <a href="#listing-mini" class="ct-arrow-btn" aria-label="View Sport & Lifestyle">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg>
+            </a>
+          </div>
+
+        </div><!-- /ct-grid -->
+
         <div class="ct-dots" role="tablist">
           <button type="button" class="ct-dot ct-active" aria-label="Page 1" aria-current="true"></button>
           <button type="button" class="ct-dot" aria-label="Page 2"></button>
@@ -429,80 +696,264 @@
   <!-- VIEW: CAR LISTING                           -->
   <!-- ═══════════════════════════════════════════ -->
   <div id="view-listing" style="display:none">
-    <section class="listing-hero h-[64vh] pt-36 px-8 lg:px-24 flex items-center justify-center text-center">
-      <div>
-        <p class="text-gold tracking-[0.4em] uppercase text-xs mb-4">Rent Now</p>
-        <h1 id="listingTitle" class="text-5xl md:text-6xl font-bold"><span class="text-gold">Select</span> Luxury Car</h1>
-        <div class="mt-8"><a href="#luxury-fleet" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> Back to Home</a></div>
-      </div>
-    </section>
-    <section class="px-8 lg:px-24 py-16 bg-[#171717]">
-      <div class="max-w-[1320px] mx-auto">
-        <details id="listingFilterDetails" class="mb-8 bg-[#202125] rounded-[20px] overflow-hidden border border-white/5">
-          <summary class="flex cursor-pointer items-center justify-between gap-4 px-5 py-4 hover:bg-white/[0.04] transition-colors select-none">
-            <span class="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-gold"><i class="fa-solid fa-sliders text-xs"></i> Filters</span>
-            <i class="fa-solid fa-chevron-down text-gold text-xs listing-filter-chevron transition-transform duration-200"></i>
-          </summary>
-          <div id="listingFilterPanel" class="border-t border-white/10">
-            <div class="bg-gold p-4">
-              <div class="bg-[#202125] rounded-full px-4 h-12 flex items-center justify-between gap-3">
-                <input id="listingSearchInput" type="text" placeholder="Search cars..." class="bg-transparent border-0 outline-none w-full text-sm text-white placeholder:text-gray-400">
-                <button id="listingSearchBtn" type="button" class="w-8 h-8 rounded-full bg-gold text-black grid place-items-center shrink-0"><i class="fa-solid fa-magnifying-glass text-xs"></i></button>
-              </div>
-            </div>
-            <div class="p-6 grid md:grid-cols-2 gap-10">
-              <div>
-                <h3 class="text-xl font-semibold mb-4">Categories</h3>
-                <ul class="space-y-3 text-gray-400">
-                  <li><button type="button" class="category-item w-full text-left" data-category="all"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>All Cars</button></li>
-                  <li><button type="button" class="category-item w-full text-left" data-category="economy"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Economy Cars</button></li>
-                  <li><button type="button" class="category-item w-full text-left" data-category="sedan"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Sedan</button></li>
-                  <li><button type="button" class="category-item w-full text-left" data-category="mpv"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>MPV</button></li>
-                  <li><button type="button" class="category-item w-full text-left" data-category="van"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Van</button></li>
-                  <li><button type="button" class="category-item w-full text-left" data-category="mini"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Mini Cooper S 2.0 Turbo Convertible 2023</button></li>
-                  <li><button type="button" class="category-item w-full text-left" data-category="luxury"><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Luxury</button></li>
-                </ul>
-              </div>
-              <div>
-                <h3 class="text-xl font-semibold mb-4">Pickup Locations</h3>
-                <ul class="space-y-3 text-gray-400">
-                  <li><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Alor Setar</li>
-                  <li><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Kulim</li>
-                  <li><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Sungai Petani</li>
-                  <li><i class="fa-regular fa-circle text-[10px] text-gold mr-2"></i>Langkawi</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </details>
-        <div id="listingGrid" class="grid md:grid-cols-2 gap-6">
-          <article class="listing-card bg-[#202125] rounded-[20px] overflow-hidden border border-white/5" data-types="economy hatchback" data-name="axia style 2020">
-            <img src="assets/cars/perodua-axia-style.png" class="h-56 w-full object-cover" alt="Perodua Axia 1.0 Style 2020">
-            <div class="p-6"><h3 class="text-3xl font-semibold mb-4">Perodua Axia 1.0 Style 2020</h3><div class="space-y-2 text-sm text-gray-400 mb-6"><p><i class="fa-solid fa-door-open text-gold mr-2"></i>Doors <span class="float-right text-white">4</span></p><p><i class="fa-solid fa-user text-gold mr-2"></i>Passengers <span class="float-right text-white">5</span></p><p><i class="fa-solid fa-gear text-gold mr-2"></i>Transmission <span class="float-right text-white">Auto</span></p><p><i class="fa-solid fa-suitcase text-gold mr-2"></i>Luggage <span class="float-right text-white">2 Bags</span></p></div><div class="flex items-center justify-between"><p class="text-4xl font-bold text-gold">RM 90 <span class="text-sm text-gray-500">/day</span></p><a href="#car-axia-style" class="bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-white transition">Book</a></div></div>
-          </article>
-          <article class="listing-card bg-[#202125] rounded-[20px] overflow-hidden border border-white/5" data-types="economy hatchback" data-name="axia se baru">
-            <img src="assets/cars/perodua-axia-se.png" class="h-56 w-full object-cover" alt="Perodua Axia 1.0 SE 2023">
-            <div class="p-6"><h3 class="text-3xl font-semibold mb-4">Perodua Axia 1.0 SE 2023</h3><div class="space-y-2 text-sm text-gray-400 mb-6"><p><i class="fa-solid fa-door-open text-gold mr-2"></i>Doors <span class="float-right text-white">4</span></p><p><i class="fa-solid fa-user text-gold mr-2"></i>Passengers <span class="float-right text-white">5</span></p><p><i class="fa-solid fa-gear text-gold mr-2"></i>Transmission <span class="float-right text-white">Auto</span></p><p><i class="fa-solid fa-suitcase text-gold mr-2"></i>Luggage <span class="float-right text-white">2 Bags</span></p></div><div class="flex items-center justify-between"><p class="text-4xl font-bold text-gold">RM 100 <span class="text-sm text-gray-500">/day</span></p><a href="#car-axia-se" class="bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-white transition">Book</a></div></div>
-          </article>
-          <article class="listing-card bg-[#202125] rounded-[20px] overflow-hidden border border-white/5" data-types="sedan economy" data-name="bezza x baru">
-            <img src="assets/cars/perodua-bezza.png" class="h-56 w-full object-cover" alt="Perodua Bezza 1.3X 2023">
-            <div class="p-6"><h3 class="text-3xl font-semibold mb-4">Perodua Bezza 1.3X 2023</h3><div class="space-y-2 text-sm text-gray-400 mb-6"><p><i class="fa-solid fa-door-open text-gold mr-2"></i>Doors <span class="float-right text-white">4</span></p><p><i class="fa-solid fa-user text-gold mr-2"></i>Passengers <span class="float-right text-white">5</span></p><p><i class="fa-solid fa-gear text-gold mr-2"></i>Transmission <span class="float-right text-white">Auto</span></p><p><i class="fa-solid fa-suitcase text-gold mr-2"></i>Luggage <span class="float-right text-white">2 Bags</span></p></div><div class="flex items-center justify-between"><p class="text-4xl font-bold text-gold">RM 120 <span class="text-sm text-gray-500">/day</span></p><a href="#car-bezza" class="bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-white transition">Book</a></div></div>
-          </article>
-          <article class="listing-card bg-[#202125] rounded-[20px] overflow-hidden border border-white/5" data-types="mpv" data-name="toyota veloz">
-            <img src="assets/cars/toyota-veloz.png" class="h-56 w-full object-cover" alt="Toyota Veloz 1.5 2024">
-            <div class="p-6"><h3 class="text-3xl font-semibold mb-4">Toyota Veloz 1.5 2024</h3><div class="space-y-2 text-sm text-gray-400 mb-6"><p><i class="fa-solid fa-door-open text-gold mr-2"></i>Doors <span class="float-right text-white">4</span></p><p><i class="fa-solid fa-user text-gold mr-2"></i>Passengers <span class="float-right text-white">7</span></p><p><i class="fa-solid fa-gear text-gold mr-2"></i>Transmission <span class="float-right text-white">Auto</span></p><p><i class="fa-solid fa-suitcase text-gold mr-2"></i>Luggage <span class="float-right text-white">3 Bags</span></p></div><div class="flex items-center justify-between"><p class="text-4xl font-bold text-gold">RM 230 <span class="text-sm text-gray-500">/day</span></p><a href="#car-veloz" class="bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-white transition">Book</a></div></div>
-          </article>
-          <article class="listing-card bg-[#202125] rounded-[20px] overflow-hidden border border-white/5" data-types="mini sport luxury" data-name="mini cooper">
-            <img src="assets/cars/mini-cooper.png" class="h-56 w-full object-cover" alt="Mini Cooper S 2.0 Turbo Convertible 2023">
-            <div class="p-6"><h3 class="text-3xl font-semibold mb-4">Mini Cooper S 2.0 Turbo Convertible 2023</h3><div class="space-y-2 text-sm text-gray-400 mb-6"><p><i class="fa-solid fa-door-open text-gold mr-2"></i>Doors <span class="float-right text-white">2</span></p><p><i class="fa-solid fa-user text-gold mr-2"></i>Passengers <span class="float-right text-white">4</span></p><p><i class="fa-solid fa-gear text-gold mr-2"></i>Transmission <span class="float-right text-white">Auto</span></p><p><i class="fa-solid fa-suitcase text-gold mr-2"></i>Luggage <span class="float-right text-white">1 Bag</span></p></div><div class="flex items-center justify-between"><p class="text-4xl font-bold text-gold">RM 650 <span class="text-sm text-gray-500">/day</span></p><a href="#car-mini" class="bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-white transition">Book</a></div></div>
-          </article>
-          <article class="listing-card bg-[#202125] rounded-[20px] overflow-hidden border border-white/5 md:col-span-2" data-types="van" data-name="hiace van baru">
-            <img src="assets/cars/toyota-hiace.png" class="h-56 w-full object-cover" alt="New Toyota Hiace 2.8 (A) 15 Seater">
-            <div class="p-6"><h3 class="text-3xl font-semibold mb-4">New Toyota Hiace 2.8 (A) 15 Seater</h3><div class="space-y-2 text-sm text-gray-400 mb-6"><p><i class="fa-solid fa-door-open text-gold mr-2"></i>Doors <span class="float-right text-white">4</span></p><p><i class="fa-solid fa-user text-gold mr-2"></i>Passengers <span class="float-right text-white">15</span></p><p><i class="fa-solid fa-gear text-gold mr-2"></i>Transmission <span class="float-right text-white">Manual</span></p><p><i class="fa-solid fa-suitcase text-gold mr-2"></i>Luggage <span class="float-right text-white">Spacious</span></p></div><div class="flex items-center justify-between"><p class="text-4xl font-bold text-gold">RM 550-650 <span class="text-sm text-gray-500">/day</span></p><a href="#car-hiace" class="bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-white transition">Book</a></div></div>
-          </article>
+
+    <!-- Hero -->
+    <div class="rnx-listing-hero">
+      <p class="rnx-hero-eyebrow">Rent A Car</p>
+      <h1 id="listingTitle" class="rnx-hero-title">Select Your Car</h1>
+      <!-- Search card overlapping hero -->
+      <div class="rnx-search-card">
+        <div class="rnx-search-inner">
+          <input id="listingSearchInput" type="text" placeholder="Search cars...">
+          <button id="listingSearchBtn" type="button" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
       </div>
-    </section>
+    </div>
+
+    <!-- Body: sidebar + grid -->
+    <div class="rnx-listing-body">
+
+      <!-- ── Sidebar ── -->
+      <aside class="rnx-sidebar">
+
+        <!-- Categories -->
+        <div class="rnx-sidebar-block">
+          <h3 class="rnx-sidebar-heading">Categories</h3>
+          <ul class="rnx-sidebar-list">
+            <li><button type="button" class="rnx-cat-btn category-item is-active" data-category="all">All Cars</button></li>
+            <li><button type="button" class="rnx-cat-btn category-item" data-category="economy">Economy Cars</button></li>
+            <li><button type="button" class="rnx-cat-btn category-item" data-category="sedan">Sedan</button></li>
+            <li><button type="button" class="rnx-cat-btn category-item" data-category="mpv">MPV</button></li>
+            <li><button type="button" class="rnx-cat-btn category-item" data-category="van">Van</button></li>
+            <li><button type="button" class="rnx-cat-btn category-item" data-category="suv">SUV</button></li>
+            <li><button type="button" class="rnx-cat-btn category-item" data-category="luxury">Luxury</button></li>
+            <li><button type="button" class="rnx-cat-btn category-item" data-category="mini">Sport &amp; Lifestyle</button></li>
+          </ul>
+        </div>
+
+        <!-- Pickup Locations -->
+        <div class="rnx-sidebar-block">
+          <h3 class="rnx-sidebar-heading">Pickup Locations</h3>
+          <ul class="rnx-sidebar-list">
+            <li><span class="rnx-loc-item">Alor Setar</span></li>
+            <li><span class="rnx-loc-item">Kuala Kedah</span></li>
+          </ul>
+        </div>
+
+        <!-- Dropoff Locations -->
+        <div class="rnx-sidebar-block">
+          <h3 class="rnx-sidebar-heading">Dropoff Locations</h3>
+          <ul class="rnx-sidebar-list">
+            <li><span class="rnx-loc-item">Alor Setar</span></li>
+            <li><span class="rnx-loc-item">Kuala Kedah</span></li>
+          </ul>
+        </div>
+
+        <!-- Back link -->
+        <a href="#luxury-fleet" class="inline-flex items-center gap-2 text-sm text-gold hover:text-white transition mt-2">
+          <i class="fa-solid fa-arrow-left text-xs"></i> Back to Home
+        </a>
+      </aside>
+
+      <!-- ── Main content ── -->
+      <main>
+        <!-- Result bar -->
+        <div class="rnx-result-bar">
+          <p id="rnxResultCount" class="rnx-result-count">Showing all results</p>
+          <select class="rnx-sort-select" aria-label="Sort">
+            <option>Default sorting</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+          </select>
+        </div>
+
+        <!-- Grid -->
+        <div id="listingGrid" class="rnx-grid">
+
+          <!-- Axia Style -->
+          <article class="rnx-card listing-card" data-types="economy hatchback" data-name="axia style 2020">
+            <img src="assets/cars/perodua-axia-style.png" class="rnx-card-img" alt="Perodua Axia 1.0 Style 2020">
+            <div class="rnx-card-body">
+              <h3 class="rnx-card-name">Perodua Axia 1.0 Style 2020</h3>
+              <ul class="rnx-specs">
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-door-open"></i>Doors</span><span class="rnx-spec-val">4</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i>Passengers</span><span class="rnx-spec-val">5</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i>Transmission</span><span class="rnx-spec-val">Auto</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i>Luggage</span><span class="rnx-spec-val">2 Bags</span></li>
+              </ul>
+              <div class="rnx-card-foot">
+                <p class="rnx-price">RM 90<span>/ day</span></p>
+                <a href="#car-axia-style" class="rnx-book-btn">Book</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Axia SE -->
+          <article class="rnx-card listing-card" data-types="economy hatchback" data-name="axia se baru">
+            <img src="assets/cars/perodua-axia-se.png" class="rnx-card-img" alt="Perodua Axia 1.0 SE 2023">
+            <div class="rnx-card-body">
+              <h3 class="rnx-card-name">Perodua Axia 1.0 SE 2023</h3>
+              <ul class="rnx-specs">
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-door-open"></i>Doors</span><span class="rnx-spec-val">4</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i>Passengers</span><span class="rnx-spec-val">5</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i>Transmission</span><span class="rnx-spec-val">Auto</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i>Luggage</span><span class="rnx-spec-val">2 Bags</span></li>
+              </ul>
+              <div class="rnx-card-foot">
+                <p class="rnx-price">RM 100<span>/ day</span></p>
+                <a href="#car-axia-se" class="rnx-book-btn">Book</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bezza -->
+          <article class="rnx-card listing-card" data-types="sedan economy" data-name="bezza x baru">
+            <img src="assets/cars/perodua-bezza.png" class="rnx-card-img" alt="Perodua Bezza 1.3X 2023">
+            <div class="rnx-card-body">
+              <h3 class="rnx-card-name">Perodua Bezza 1.3X 2023</h3>
+              <ul class="rnx-specs">
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-door-open"></i>Doors</span><span class="rnx-spec-val">4</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i>Passengers</span><span class="rnx-spec-val">5</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i>Transmission</span><span class="rnx-spec-val">Auto</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i>Luggage</span><span class="rnx-spec-val">2 Bags</span></li>
+              </ul>
+              <div class="rnx-card-foot">
+                <p class="rnx-price">RM 120<span>/ day</span></p>
+                <a href="#car-bezza" class="rnx-book-btn">Book</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Veloz -->
+          <article class="rnx-card listing-card" data-types="mpv" data-name="toyota veloz">
+            <img src="assets/cars/toyota-veloz.png" class="rnx-card-img" alt="Toyota Veloz 1.5 2024">
+            <div class="rnx-card-body">
+              <h3 class="rnx-card-name">Toyota Veloz 1.5 2024</h3>
+              <ul class="rnx-specs">
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-door-open"></i>Doors</span><span class="rnx-spec-val">4</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i>Passengers</span><span class="rnx-spec-val">7</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i>Transmission</span><span class="rnx-spec-val">Auto</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i>Luggage</span><span class="rnx-spec-val">3 Bags</span></li>
+              </ul>
+              <div class="rnx-card-foot">
+                <p class="rnx-price">RM 230<span>/ day</span></p>
+                <a href="#car-veloz" class="rnx-book-btn">Book</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Mini Cooper -->
+          <article class="rnx-card listing-card" data-types="mini sport luxury" data-name="mini cooper">
+            <img src="assets/cars/mini-cooper.png" class="rnx-card-img" alt="Mini Cooper S 2.0 Turbo Convertible 2023">
+            <div class="rnx-card-body">
+              <h3 class="rnx-card-name">Mini Cooper S 2.0T Convertible 2023</h3>
+              <ul class="rnx-specs">
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-door-open"></i>Doors</span><span class="rnx-spec-val">2</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i>Passengers</span><span class="rnx-spec-val">4</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i>Transmission</span><span class="rnx-spec-val">Auto</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i>Luggage</span><span class="rnx-spec-val">1 Bag</span></li>
+              </ul>
+              <div class="rnx-card-foot">
+                <p class="rnx-price">RM 650<span>/ day</span></p>
+                <a href="#car-mini" class="rnx-book-btn">Book</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Hiace -->
+          <article class="rnx-card listing-card" data-types="van" data-name="hiace van baru">
+            <img src="assets/cars/toyota-hiace.png" class="rnx-card-img" alt="New Toyota Hiace 2.8 (A) 15 Seater">
+            <div class="rnx-card-body">
+              <h3 class="rnx-card-name">New Toyota Hiace 2.8 (A) 15 Seater</h3>
+              <ul class="rnx-specs">
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-door-open"></i>Doors</span><span class="rnx-spec-val">4</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i>Passengers</span><span class="rnx-spec-val">15</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i>Transmission</span><span class="rnx-spec-val">Manual</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i>Luggage</span><span class="rnx-spec-val">Spacious</span></li>
+              </ul>
+              <div class="rnx-card-foot">
+                <p class="rnx-price">RM 550–650<span>/ day</span></p>
+                <a href="#car-hiace" class="rnx-book-btn">Book</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Vellfire / Alphard -->
+          <article class="rnx-card listing-card" data-types="van mpv" data-name="vellfire alphard pilot seat">
+            <img src="assets/cars/toyota-veloz.png" class="rnx-card-img" alt="Vellfire / Alphard 2.5 Pilot Seat 7 Seater">
+            <div class="rnx-card-body">
+              <h3 class="rnx-card-name">Vellfire / Alphard 2.5 Pilot Seat</h3>
+              <ul class="rnx-specs">
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-door-open"></i>Doors</span><span class="rnx-spec-val">4</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i>Passengers</span><span class="rnx-spec-val">7</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i>Transmission</span><span class="rnx-spec-val">Auto</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i>Luggage</span><span class="rnx-spec-val">4 Bags</span></li>
+              </ul>
+              <div class="rnx-card-foot">
+                <p class="rnx-price">RM —<span>/ day</span></p>
+                <a href="#car-vellfire" class="rnx-book-btn">Book</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Staria -->
+          <article class="rnx-card listing-card" data-types="van mpv" data-name="staria hyundai 10seater">
+            <img src="assets/cars/toyota-hiace.png" class="rnx-card-img" alt="Hyundai Staria 2.2T 10 Seater">
+            <div class="rnx-card-body">
+              <h3 class="rnx-card-name">Hyundai Staria 2.2T 10 Seater</h3>
+              <ul class="rnx-specs">
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-door-open"></i>Doors</span><span class="rnx-spec-val">4</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i>Passengers</span><span class="rnx-spec-val">10</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i>Transmission</span><span class="rnx-spec-val">Auto</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i>Luggage</span><span class="rnx-spec-val">Spacious</span></li>
+              </ul>
+              <div class="rnx-card-foot">
+                <p class="rnx-price">RM —<span>/ day</span></p>
+                <a href="#car-staria" class="rnx-book-btn">Book</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- SUV Hazard Card Experience -->
+          <article class="rnx-card listing-card" data-types="suv" data-name="suv hazard card">
+            <img src="assets/cars/perodua-axia-se.png" class="rnx-card-img" alt="SUV — Hazard Card Experience">
+            <div class="rnx-card-body">
+              <h3 class="rnx-card-name">SUV — Hazard Card Experience</h3>
+              <ul class="rnx-specs">
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-triangle-exclamation"></i>Hazard Cards</span><span class="rnx-spec-val">Included</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i>Passengers</span><span class="rnx-spec-val">5–7</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i>Transmission</span><span class="rnx-spec-val">Auto</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i>Luggage</span><span class="rnx-spec-val">4 Bags</span></li>
+              </ul>
+              <div class="rnx-card-foot">
+                <p class="rnx-price">RM —<span>/ day</span></p>
+                <a href="#listing-suv" class="rnx-book-btn">Book</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- SUV Hazard Card Premium -->
+          <article class="rnx-card listing-card" data-types="suv" data-name="suv hazard premium">
+            <img src="assets/cars/mini-cooper.png" class="rnx-card-img" alt="SUV — Hazard Card Premium">
+            <div class="rnx-card-body">
+              <h3 class="rnx-card-name">SUV — Hazard Card Premium</h3>
+              <ul class="rnx-specs">
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-triangle-exclamation"></i>Hazard Cards</span><span class="rnx-spec-val">Included</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i>Passengers</span><span class="rnx-spec-val">5–7</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i>Transmission</span><span class="rnx-spec-val">Auto</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i>Luggage</span><span class="rnx-spec-val">4 Bags</span></li>
+              </ul>
+              <div class="rnx-card-foot">
+                <p class="rnx-price">RM —<span>/ day</span></p>
+                <a href="#listing-suv" class="rnx-book-btn">Book</a>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /rnx-grid -->
+      </main>
+    </div><!-- /rnx-listing-body -->
+
   <footer class="shared-footer" id="main-footer">
       <div class="mf-inner">
         <div class="mf-brand-row">
@@ -564,13 +1015,13 @@
         <div>
           <label class="text-sm text-gray-300">Pick Up Location</label>
           <select id="pickup-mini" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
-            <option value="Alor Setar" selected>Alor Setar</option><option value="Sungai Petani">Sungai Petani</option><option value="Kulim">Kulim</option><option value="Jitra">Jitra</option><option value="Langkawi Jetty">Langkawi Jetty</option><option value="Kuala Kedah">Kuala Kedah</option><option value="Pendang">Pendang</option><option value="Pokok Sena">Pokok Sena</option><option value="Baling">Baling</option><option value="Yan">Yan</option>
+            <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
         <div>
           <label class="text-sm text-gray-300">Drop Off Location</label>
           <select id="dropoff-mini" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
-            <option value="Alor Setar">Alor Setar</option><option value="Sungai Petani" selected>Sungai Petani</option><option value="Kulim">Kulim</option><option value="Jitra">Jitra</option><option value="Langkawi Jetty">Langkawi Jetty</option><option value="Kuala Kedah">Kuala Kedah</option><option value="Pendang">Pendang</option><option value="Pokok Sena">Pokok Sena</option><option value="Baling">Baling</option><option value="Yan">Yan</option>
+            <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
         <div>
@@ -617,13 +1068,13 @@
         <div>
           <label class="text-sm text-gray-300">Pick Up Location</label>
           <select id="pickup-axia-style" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
-            <option value="Alor Setar" selected>Alor Setar</option><option value="Sungai Petani">Sungai Petani</option><option value="Kulim">Kulim</option><option value="Jitra">Jitra</option><option value="Langkawi Jetty">Langkawi Jetty</option><option value="Kuala Kedah">Kuala Kedah</option><option value="Pendang">Pendang</option><option value="Pokok Sena">Pokok Sena</option><option value="Baling">Baling</option><option value="Yan">Yan</option>
+            <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
         <div>
           <label class="text-sm text-gray-300">Drop Off Location</label>
           <select id="dropoff-axia-style" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
-            <option value="Alor Setar">Alor Setar</option><option value="Sungai Petani" selected>Sungai Petani</option><option value="Kulim">Kulim</option><option value="Jitra">Jitra</option><option value="Langkawi Jetty">Langkawi Jetty</option><option value="Kuala Kedah">Kuala Kedah</option><option value="Pendang">Pendang</option><option value="Pokok Sena">Pokok Sena</option><option value="Baling">Baling</option><option value="Yan">Yan</option>
+            <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
         <div>
@@ -685,13 +1136,13 @@
         <div>
           <label class="text-sm text-gray-300">Pick Up Location</label>
           <select id="pickup-axia-se" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
-            <option value="Alor Setar" selected>Alor Setar</option><option value="Sungai Petani">Sungai Petani</option><option value="Kulim">Kulim</option><option value="Jitra">Jitra</option><option value="Langkawi Jetty">Langkawi Jetty</option><option value="Kuala Kedah">Kuala Kedah</option><option value="Pendang">Pendang</option><option value="Pokok Sena">Pokok Sena</option><option value="Baling">Baling</option><option value="Yan">Yan</option>
+            <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
         <div>
           <label class="text-sm text-gray-300">Drop Off Location</label>
           <select id="dropoff-axia-se" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
-            <option value="Alor Setar">Alor Setar</option><option value="Sungai Petani">Sungai Petani</option><option value="Kulim" selected>Kulim</option><option value="Jitra">Jitra</option><option value="Langkawi Jetty">Langkawi Jetty</option><option value="Kuala Kedah">Kuala Kedah</option><option value="Pendang">Pendang</option><option value="Pokok Sena">Pokok Sena</option><option value="Baling">Baling</option><option value="Yan">Yan</option>
+            <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
         <div>
@@ -753,13 +1204,13 @@
         <div>
           <label class="text-sm text-gray-300">Pick Up Location</label>
           <select id="pickup-bezza" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
-            <option value="Alor Setar" selected>Alor Setar</option><option value="Sungai Petani">Sungai Petani</option><option value="Kulim">Kulim</option><option value="Jitra">Jitra</option><option value="Langkawi Jetty">Langkawi Jetty</option><option value="Kuala Kedah">Kuala Kedah</option><option value="Pendang">Pendang</option><option value="Pokok Sena">Pokok Sena</option><option value="Baling">Baling</option><option value="Yan">Yan</option>
+            <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
         <div>
           <label class="text-sm text-gray-300">Drop Off Location</label>
           <select id="dropoff-bezza" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
-            <option value="Alor Setar">Alor Setar</option><option value="Sungai Petani">Sungai Petani</option><option value="Kulim">Kulim</option><option value="Jitra">Jitra</option><option value="Langkawi Jetty" selected>Langkawi Jetty</option><option value="Kuala Kedah">Kuala Kedah</option><option value="Pendang">Pendang</option><option value="Pokok Sena">Pokok Sena</option><option value="Baling">Baling</option><option value="Yan">Yan</option>
+            <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
         <div>
@@ -821,13 +1272,13 @@
         <div>
           <label class="text-sm text-gray-300">Pick Up Location</label>
           <select id="pickup-veloz" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
-            <option value="Alor Setar" selected>Alor Setar</option><option value="Sungai Petani">Sungai Petani</option><option value="Kulim">Kulim</option><option value="Jitra">Jitra</option><option value="Langkawi Jetty">Langkawi Jetty</option><option value="Kuala Kedah">Kuala Kedah</option><option value="Pendang">Pendang</option><option value="Pokok Sena">Pokok Sena</option><option value="Baling">Baling</option><option value="Yan">Yan</option>
+            <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
         <div>
           <label class="text-sm text-gray-300">Drop Off Location</label>
           <select id="dropoff-veloz" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
-            <option value="Alor Setar">Alor Setar</option><option value="Sungai Petani">Sungai Petani</option><option value="Kulim">Kulim</option><option value="Jitra">Jitra</option><option value="Langkawi Jetty">Langkawi Jetty</option><option value="Kuala Kedah" selected>Kuala Kedah</option><option value="Pendang">Pendang</option><option value="Pokok Sena">Pokok Sena</option><option value="Baling">Baling</option><option value="Yan">Yan</option>
+            <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
         <div>
@@ -889,13 +1340,13 @@
         <div>
           <label class="text-sm text-gray-300">Pick Up Location</label>
           <select id="pickup-hiace" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
-            <option value="Alor Setar" selected>Alor Setar</option><option value="Sungai Petani">Sungai Petani</option><option value="Kulim">Kulim</option><option value="Jitra">Jitra</option><option value="Langkawi Jetty">Langkawi Jetty</option><option value="Kuala Kedah">Kuala Kedah</option><option value="Pendang">Pendang</option><option value="Pokok Sena">Pokok Sena</option><option value="Baling">Baling</option><option value="Yan">Yan</option>
+            <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
         <div>
           <label class="text-sm text-gray-300">Drop Off Location</label>
           <select id="dropoff-hiace" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
-            <option value="Alor Setar">Alor Setar</option><option value="Sungai Petani">Sungai Petani</option><option value="Kulim">Kulim</option><option value="Jitra" selected>Jitra</option><option value="Langkawi Jetty">Langkawi Jetty</option><option value="Kuala Kedah">Kuala Kedah</option><option value="Pendang">Pendang</option><option value="Pokok Sena">Pokok Sena</option><option value="Baling">Baling</option><option value="Yan">Yan</option>
+            <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
         <div>
@@ -941,6 +1392,120 @@
     </footer>
   </div><!-- /view-car-hiace -->
 
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- VIEW: VELLFIRE / ALPHARD                    -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div id="view-car-vellfire" style="display:none">
+    <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">Van / Premium MPV</p><h1 class="text-5xl md:text-6xl font-bold">Vellfire / Alphard 2.5 Pilot Seat 7 Seater</h1></div></section>
+    <section class="relative px-8 lg:px-24 pb-24 bg-[#161616]"><div class="grid lg:grid-cols-[1.6fr_0.8fr] gap-10"><div class="pt-14">
+      <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold">General Information</h2><a href="#luxury-fleet" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> Back</a></div>
+      <p class="text-gray-400 leading-8 mb-8">The Toyota Vellfire / Alphard 2.5 with premium pilot seats — the ultimate luxury van for VIP travel, family trips, or corporate transfers across Kedah. Spacious, quiet cabin with first-class seating for 7 passengers.</p>
+      <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Free cancellation &amp; return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Pay on pickup available</p></div></div>
+      <h3 class="text-3xl font-bold mb-5">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/toyota-veloz.png" class="h-56 w-full object-cover rounded-[20px]" alt="Vellfire exterior"><img src="assets/cars/toyota-veloz-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Vellfire interior"></div>
+    </div><div class="lg:-mt-24 pt-8">
+      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM —</p><p class="text-sm uppercase tracking-wider mt-1">/ rent per day</p></div>
+      <div class="bg-[#1f1f1f] border border-white/5 rounded-b-[20px] p-7 space-y-5" id="bookingPanel-vellfire">
+        <div>
+          <label class="text-sm text-gray-300">Pick Up Location</label>
+          <select id="pickup-vellfire" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
+            <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-sm text-gray-300">Drop Off Location</label>
+          <select id="dropoff-vellfire" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
+            <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-sm text-gray-300">Pick Up Date</label>
+          <input type="date" id="pickdate-vellfire" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
+        </div>
+        <div>
+          <label class="text-sm text-gray-300">Return Date</label>
+          <input type="date" id="retdate-vellfire" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
+        </div>
+        <button type="button" onclick="sendBookingWA('vellfire','Vellfire%20%2F%20Alphard%202.5%20Pilot%20Seat%207%20Seater')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
+      </div>
+    </div></div></section>
+  <footer class="shared-footer" id="main-footer">
+      <div class="mf-inner">
+        <div class="mf-brand-row">
+          <img class="mf-brand-logo" src="assets/logos/perodua.png" alt="Perodua">
+          <img class="mf-brand-logo" src="assets/logos/toyota.png" alt="Toyota">
+        </div>
+        <div class="mf-contact-grid">
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label">Write to us</p><p class="mf-contact-value">hello@heros.my</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
+        </div>
+        <div class="mf-main">
+          <div><h3 class="mf-logo">JF<span>Z</span></h3><p class="mf-text">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p><div class="mf-social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div></div>
+          <div><h4 class="mf-heading">Quick Links</h4><ul class="mf-links"><li><a href="#about-section">About</a></li><li><a href="#luxury-fleet">Cars</a></li><li><a href="#car-types-section">Car Types</a></li><li><a href="#rental-process">Process</a></li><li><a href="#main-footer">Contact</a></li></ul></div>
+          <div><h4 class="mf-heading">Subscribe</h4><p class="mf-subtext">Want to be notified about our services. Just sign up and we will send you a notification by email.</p><form class="mf-subscribe" action="#" method="post"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit" aria-label="Submit"><i class="fa-solid fa-arrow-right"></i></button></form></div>
+        </div>
+        <p class="mf-bottom">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
+      </div>
+    </footer>
+  </div><!-- /view-car-vellfire -->
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- VIEW: HYUNDAI STARIA                        -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div id="view-car-staria" style="display:none">
+    <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">Van / Premium MPV</p><h1 class="text-5xl md:text-6xl font-bold">Hyundai Staria 2.2T 10 Seater</h1></div></section>
+    <section class="relative px-8 lg:px-24 pb-24 bg-[#161616]"><div class="grid lg:grid-cols-[1.6fr_0.8fr] gap-10"><div class="pt-14">
+      <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold">General Information</h2><a href="#luxury-fleet" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> Back</a></div>
+      <p class="text-gray-400 leading-8 mb-8">The Hyundai Staria 2.2T — a bold, futuristic 10-seater luxury van. Ideal for group travel, corporate events, or family gatherings. Powerful diesel engine, ultra-modern interior, and premium ride comfort throughout.</p>
+      <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Free cancellation &amp; return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Pay on pickup available</p></div></div>
+      <h3 class="text-3xl font-bold mb-5">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/toyota-hiace.png" class="h-56 w-full object-cover rounded-[20px]" alt="Staria exterior"><img src="assets/cars/toyota-hiace-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Staria interior"></div>
+    </div><div class="lg:-mt-24 pt-8">
+      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM —</p><p class="text-sm uppercase tracking-wider mt-1">/ rent per day</p></div>
+      <div class="bg-[#1f1f1f] border border-white/5 rounded-b-[20px] p-7 space-y-5" id="bookingPanel-staria">
+        <div>
+          <label class="text-sm text-gray-300">Pick Up Location</label>
+          <select id="pickup-staria" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
+            <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-sm text-gray-300">Drop Off Location</label>
+          <select id="dropoff-staria" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
+            <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-sm text-gray-300">Pick Up Date</label>
+          <input type="date" id="pickdate-staria" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
+        </div>
+        <div>
+          <label class="text-sm text-gray-300">Return Date</label>
+          <input type="date" id="retdate-staria" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
+        </div>
+        <button type="button" onclick="sendBookingWA('staria','Hyundai%20Staria%202.2T%2010%20Seater')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
+      </div>
+    </div></div></section>
+  <footer class="shared-footer" id="main-footer">
+      <div class="mf-inner">
+        <div class="mf-brand-row">
+          <img class="mf-brand-logo" src="assets/logos/perodua.png" alt="Perodua">
+          <img class="mf-brand-logo" src="assets/logos/toyota.png" alt="Toyota">
+        </div>
+        <div class="mf-contact-grid">
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label">Write to us</p><p class="mf-contact-value">hello@heros.my</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
+        </div>
+        <div class="mf-main">
+          <div><h3 class="mf-logo">JF<span>Z</span></h3><p class="mf-text">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p><div class="mf-social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div></div>
+          <div><h4 class="mf-heading">Quick Links</h4><ul class="mf-links"><li><a href="#about-section">About</a></li><li><a href="#luxury-fleet">Cars</a></li><li><a href="#car-types-section">Car Types</a></li><li><a href="#rental-process">Process</a></li><li><a href="#main-footer">Contact</a></li></ul></div>
+          <div><h4 class="mf-heading">Subscribe</h4><p class="mf-subtext">Want to be notified about our services. Just sign up and we will send you a notification by email.</p><form class="mf-subscribe" action="#" method="post"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit" aria-label="Submit"><i class="fa-solid fa-arrow-right"></i></button></form></div>
+        </div>
+        <p class="mf-bottom">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
+      </div>
+    </footer>
+  </div><!-- /view-car-staria -->
+
   <!-- ═══════════════════════════════════════════════════════ -->
   <!-- SCRIPTS                                                  -->
   <!-- ═══════════════════════════════════════════════════════ -->
@@ -949,7 +1514,7 @@
   // ROUTER
   // ─────────────────────────────────────────────
   (function () {
-    var ALL_VIEWS = ['home', 'listing', 'car-mini', 'car-axia-style', 'car-axia-se', 'car-bezza', 'car-veloz', 'car-hiace'];
+    var ALL_VIEWS = ['home', 'listing', 'car-mini', 'car-axia-style', 'car-axia-se', 'car-bezza', 'car-veloz', 'car-hiace', 'car-vellfire', 'car-staria'];
     var HOME_SECTIONS = ['heroSection', 'about-section', 'luxury-fleet', 'car-types-section', 'rental-process', 'testimonials-section', 'main-footer', 'our-services'];
 
     function showView(id) {
@@ -1096,16 +1661,20 @@
   // CAR LISTING FILTER (exposed globally for router)
   // ─────────────────────────────────────────────
   (function () {
-    var labels = { all:'All Cars', economy:'Economy Cars', sedan:'Sedan', mpv:'MPV', van:'Van', mini:'Mini Cooper S 2.0 Turbo Convertible 2023', luxury:'Luxury' };
+    var labels = { all:'All Cars', economy:'Economy Cars', sedan:'Sedan', mpv:'MPV', van:'Van', mini:'Sport & Lifestyle', luxury:'Luxury', suv:'SUV' };
     var currentType = 'all'; var currentSearch = '';
 
     window.applyListingFilter = function (type) {
       currentType = type || 'all';
       var titleEl = document.getElementById('listingTitle');
+      var countEl = document.getElementById('rnxResultCount');
       var cards = Array.prototype.slice.call(document.querySelectorAll('.listing-card'));
       var categories = Array.prototype.slice.call(document.querySelectorAll('.category-item'));
-      if (titleEl && labels[currentType]) titleEl.innerHTML = '<span class="text-gold">Select</span> ' + labels[currentType];
-      categories.forEach(function (item) { item.classList.toggle('is-active', item.getAttribute('data-category') === currentType); });
+      if (titleEl) titleEl.textContent = labels[currentType] || 'All Cars';
+      categories.forEach(function (item) {
+        var active = item.getAttribute('data-category') === currentType;
+        item.classList.toggle('is-active', active);
+      });
       var visible = 0;
       cards.forEach(function (card) {
         var types = (card.getAttribute('data-types') || '').split(/\s+/);
@@ -1116,7 +1685,8 @@
         card.style.display = show ? '' : 'none';
         if (show) visible++;
       });
-      if (!visible) cards.forEach(function (c) { c.style.display = ''; });
+      if (!visible) { cards.forEach(function (c) { c.style.display = ''; }); visible = cards.length; }
+      if (countEl) countEl.textContent = 'Showing ' + visible + ' result' + (visible !== 1 ? 's' : '');
     };
 
     document.querySelectorAll('.category-item').forEach(function (item) {
