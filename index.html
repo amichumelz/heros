@@ -28,6 +28,7 @@
 
     /* ── RENAX-style Nav ── */
     #mainNav { background: rgba(10,10,10,0.96) !important; backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.06) !important; padding: 0 52px; height: 80px; }
+    @media (max-width: 767px) { #mainNav { padding: 0 16px; height: 68px; } }
     .rnx-logo { font-size: 2rem; font-weight: 900; letter-spacing: -0.05em; color: #fff; text-decoration: none; font-family: 'Outfit', sans-serif; }
     .rnx-logo span { color: #e4a15a; }
     .rnx-nav-link { color: rgba(255,255,255,0.82); font-size: 14px; font-weight: 500; letter-spacing: 0.01em; text-transform: none; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: color 0.22s ease; white-space: nowrap; }
@@ -46,55 +47,87 @@
 
     /* ── RENAX Listing Page ── */
     #view-listing { background: #131313; }
-    .rnx-listing-hero { position: relative; background: linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55)), url('assets/cars/mini-cooper.png') center/cover no-repeat; height: 82vh; min-height: 520px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-top: 76px; overflow: visible; }
-    .rnx-hero-eyebrow { letter-spacing: 0.38em; text-transform: uppercase; font-size: 11px; color: #e4a15a; font-weight: 600; margin-bottom: 14px; }
-    .rnx-hero-title { font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 800; color: #fff; text-align: center; letter-spacing: -0.02em; line-height: 1.05; }
 
-    /* Search card — bottom-left, overlapping hero into content */
-    .rnx-search-card { position: absolute; bottom: -28px; left: clamp(24px, 5%, 160px); width: min(400px, 88vw); background: #e4a15a; border-radius: 18px; padding: 14px 14px 14px 14px; box-shadow: 0 24px 64px rgba(0,0,0,0.5); z-index: 10; }
-    .rnx-search-inner { background: #1e1e22; border-radius: 12px; display: flex; align-items: center; overflow: hidden; height: 56px; padding-right: 8px; gap: 0; }
+    /* Hero */
+    .rnx-listing-hero { position: relative; background: linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55)), url('assets/cars/mini-cooper.png') center/cover no-repeat; height: 82vh; min-height: 480px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-top: 80px; overflow: visible; }
+    .rnx-hero-eyebrow { letter-spacing: 0.38em; text-transform: uppercase; font-size: 11px; color: #e4a15a; font-weight: 600; margin-bottom: 14px; }
+    .rnx-hero-title { font-size: clamp(2.2rem, 7vw, 5.5rem); font-weight: 800; color: #fff; text-align: center; letter-spacing: -0.02em; line-height: 1.05; padding: 0 20px; }
+
+    /* Search card — bottom-left desktop, full-width centred mobile */
+    .rnx-search-card { position: absolute; bottom: -28px; left: clamp(24px, 5%, 160px); width: min(400px, 88vw); background: #e4a15a; border-radius: 18px; padding: 14px; box-shadow: 0 24px 64px rgba(0,0,0,0.5); z-index: 10; }
+    .rnx-search-inner { background: #1e1e22; border-radius: 12px; display: flex; align-items: center; overflow: hidden; height: 56px; padding-right: 8px; }
     .rnx-search-inner input { flex: 1; border: 0; outline: none; padding: 0 18px; font-size: 14px; color: rgba(255,255,255,0.85); background: transparent; min-width: 0; font-family: 'Outfit', sans-serif; }
     .rnx-search-inner input::placeholder { color: rgba(255,255,255,0.38); }
     .rnx-search-inner button { width: 40px; height: 40px; background: #e4a15a; border: 0; cursor: pointer; display: grid; place-items: center; font-size: 14px; color: #fff; border-radius: 50%; flex-shrink: 0; transition: background 0.22s ease; }
     .rnx-search-inner button:hover { background: #c98a3a; }
 
-    /* sidebar */
+    /* Body layout */
     .rnx-listing-body { display: grid; grid-template-columns: 260px 1fr; gap: 36px; max-width: 1320px; margin: 0 auto; padding: 72px 32px 80px; align-items: start; }
-    @media (max-width: 1023px) { .rnx-listing-body { grid-template-columns: 1fr; } }
+
+    /* Sidebar desktop */
     .rnx-sidebar { position: sticky; top: 96px; }
     .rnx-sidebar-block { background: #1c1c1c; border-radius: 16px; padding: 22px 20px 18px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.06); }
-    .rnx-sidebar-heading { font-size: 15px; font-weight: 700; color: #fff; margin: 0 0 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.07); letter-spacing: 0.01em; text-align: left; }
+    .rnx-sidebar-heading { font-size: 15px; font-weight: 700; color: #fff; margin: 0 0 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.07); text-align: left; }
     .rnx-sidebar-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 2px; }
-    /* Category buttons */
     .rnx-cat-btn { display: block; width: 100%; text-align: left; padding: 8px 0 8px 16px; font-size: 13.5px; color: rgba(255,255,255,0.55); background: none; border: 0; border-left: 2px solid transparent; cursor: pointer; transition: color 0.22s ease, border-color 0.22s ease; font-family: 'Outfit', sans-serif; line-height: 1.4; }
     .rnx-cat-btn:hover { color: #e4a15a; border-left-color: rgba(228,161,90,0.35); }
     .rnx-cat-btn.is-active { color: #e4a15a; border-left-color: #e4a15a; font-weight: 600; }
-    /* Location items */
     .rnx-loc-item { display: block; padding: 7px 0 7px 16px; font-size: 13.5px; color: rgba(255,255,255,0.55); border-left: 2px solid rgba(255,255,255,0.1); text-align: left; }
 
-    /* result bar */
-    .rnx-result-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; }
+    /* Result bar */
+    .rnx-result-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; flex-wrap: wrap; gap: 10px; }
     .rnx-result-count { font-size: 13px; color: rgba(255,255,255,0.5); }
     .rnx-sort-select { background: #1c1c1c; border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); border-radius: 8px; padding: 8px 14px; font-size: 13px; outline: none; cursor: pointer; }
 
-    /* car cards */
-    .rnx-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
-    @media (max-width: 700px) { .rnx-grid { grid-template-columns: 1fr; } }
+    /* Car grid */
+    .rnx-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
     .rnx-card { background: #1c1c1c; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; }
     .rnx-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
-    .rnx-card-img { width: 100%; height: 220px; object-fit: cover; display: block; }
-    .rnx-card-body { padding: 22px 22px 20px; flex: 1; display: flex; flex-direction: column; }
-    .rnx-card-name { font-size: 1.25rem; font-weight: 700; color: #fff; margin: 0 0 18px; line-height: 1.25; }
-    .rnx-specs { list-style: none; padding: 0; margin: 0 0 20px; display: flex; flex-direction: column; gap: 10px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 16px; }
-    .rnx-spec-row { display: flex; align-items: center; justify-content: space-between; font-size: 13px; }
-    .rnx-spec-label { display: flex; align-items: center; gap: 9px; color: rgba(255,255,255,0.48); }
-    .rnx-spec-label i { width: 16px; text-align: center; color: #c5973e; font-size: 13px; }
+    .rnx-card-img { width: 100%; height: 200px; object-fit: cover; display: block; }
+    .rnx-card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+    .rnx-card-name { font-size: 1.1rem; font-weight: 700; color: #fff; margin: 0 0 16px; line-height: 1.3; }
+    .rnx-specs { list-style: none; padding: 0; margin: 0 0 18px; display: flex; flex-direction: column; gap: 9px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 14px; }
+    .rnx-spec-row { display: flex; align-items: center; justify-content: space-between; font-size: 12.5px; }
+    .rnx-spec-label { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.48); }
+    .rnx-spec-label i { width: 15px; text-align: center; color: #c5973e; font-size: 12px; }
     .rnx-spec-val { color: rgba(255,255,255,0.85); font-weight: 500; }
-    .rnx-card-foot { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.06); }
-    .rnx-price { font-size: 1.6rem; font-weight: 800; color: #e4a15a; line-height: 1; }
-    .rnx-price span { font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.4); margin-left: 3px; }
-    .rnx-book-btn { background: #e4a15a; color: #000; font-size: 13px; font-weight: 700; padding: 11px 26px; border-radius: 999px; text-decoration: none; transition: all 0.25s ease; white-space: nowrap; }
+    .rnx-card-foot { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); gap: 10px; }
+    .rnx-price { font-size: 1.45rem; font-weight: 800; color: #e4a15a; line-height: 1; white-space: nowrap; }
+    .rnx-price span { font-size: 12px; font-weight: 400; color: rgba(255,255,255,0.4); margin-left: 2px; }
+    .rnx-book-btn { background: #e4a15a; color: #000; font-size: 12px; font-weight: 700; padding: 10px 20px; border-radius: 999px; text-decoration: none; transition: all 0.25s ease; white-space: nowrap; }
     .rnx-book-btn:hover { background: #fff; color: #000; }
+
+    /* ── MOBILE overrides (≤ 767px) ── */
+    @media (max-width: 767px) {
+      /* Hero */
+      .rnx-listing-hero { height: 60vh; min-height: 360px; }
+      /* Search card — centred, full width on mobile */
+      .rnx-search-card { position: absolute; bottom: -26px; left: 50%; transform: translateX(-50%); width: calc(100% - 40px); max-width: 400px; }
+      /* Body: stack sidebar above grid */
+      .rnx-listing-body { grid-template-columns: 1fr; padding: 56px 16px 60px; gap: 24px; }
+      /* Sidebar: horizontal scroll on mobile */
+      .rnx-sidebar { position: static; display: flex; gap: 12px; overflow-x: auto; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
+      .rnx-sidebar::-webkit-scrollbar { display: none; }
+      .rnx-sidebar-block { margin-bottom: 0; flex-shrink: 0; border-radius: 14px; padding: 16px 16px 14px; min-width: 160px; }
+      .rnx-sidebar-block:last-child { display: none; } /* hide back link on mobile */
+      .rnx-sidebar-heading { font-size: 13px; margin-bottom: 12px; padding-bottom: 10px; }
+      .rnx-cat-btn { font-size: 13px; padding: 6px 0 6px 12px; }
+      .rnx-loc-item { font-size: 13px; padding: 6px 0 6px 12px; }
+      /* Grid: 1-col on mobile */
+      .rnx-grid { grid-template-columns: 1fr; gap: 16px; }
+      .rnx-card-img { height: 180px; }
+      .rnx-card-name { font-size: 1rem; }
+    }
+
+    /* ── Tablet (768–1023px) ── */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .rnx-listing-body { grid-template-columns: 1fr; padding: 64px 24px 64px; }
+      .rnx-sidebar { position: static; display: flex; gap: 16px; overflow-x: auto; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
+      .rnx-sidebar::-webkit-scrollbar { display: none; }
+      .rnx-sidebar-block { margin-bottom: 0; flex-shrink: 0; min-width: 180px; }
+      .rnx-sidebar-block:last-child { display: none; }
+      .rnx-grid { grid-template-columns: repeat(2, 1fr); }
+    }
 
     /* ── Mobile nav ── */
     #mobileNavOverlay { position: fixed; inset: 0; background: rgba(6,6,7,0.62); backdrop-filter: blur(2px); z-index: 44; opacity: 0; pointer-events: none; transition: opacity 0.28s ease; }
@@ -107,6 +140,15 @@
     #mobileNavMenu .mobile-nav-link:hover { color: #e4a15a; transform: translateX(2px); }
     #mobileNavMenu .mobile-nav-link.is-active { color: #e4a15a; }
     #mobileNavMenu .mobile-nav-link i { font-size: 0.9rem; color: rgba(228,161,90,0.92); }
+    /* Mobile nav footer */
+    #mobileNavMenu .mobile-nav-footer { margin-top: auto; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; gap: 18px; }
+    #mobileNavMenu .mobile-nav-footer-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); margin: 0 0 8px; }
+    #mobileNavMenu .mobile-nav-lang, #mobileNavMenu .mobile-nav-contact { display: flex; flex-direction: column; }
+    #mobileNavMenu .mobile-lang-btn { display: inline-flex; align-self: flex-start; border: 1px solid rgba(228,161,90,0.6); color: #e4a15a; border-radius: 999px; padding: 7px 18px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: none; cursor: pointer; transition: all 0.25s ease; font-family: 'Outfit', sans-serif; }
+    #mobileNavMenu .mobile-lang-btn:hover, #mobileNavMenu .mobile-lang-btn.is-bm { background: #e4a15a; color: #111; }
+    #mobileNavMenu .mobile-nav-phone { display: inline-flex; align-items: center; gap: 10px; color: #fff; font-size: 1.15rem; font-weight: 700; text-decoration: none; transition: color 0.22s ease; }
+    #mobileNavMenu .mobile-nav-phone i { color: #e4a15a; font-size: 14px; }
+    #mobileNavMenu .mobile-nav-phone:hover { color: #e4a15a; }
     @media (min-width: 768px) { #mobileNavMenu, #mobileNavOverlay { display: none !important; } }
 
     /* ── Timeline ── */
@@ -165,6 +207,136 @@
     #luxury-fleet .fleet-mobile-dot { width: 12px; height: 12px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.85); background: transparent; transition: all 0.25s ease; }
     #luxury-fleet .fleet-mobile-dot.is-active { background: #c5a059; border-color: #c5a059; }
 
+    /* ── Our Services ── */
+    #our-services {
+      background: #111111;
+      padding: 100px 0 120px;
+      text-align: center;
+      font-family: 'Outfit', sans-serif;
+    }
+    #our-services .svc-inner { max-width: 1260px; margin: 0 auto; padding: 0 40px; }
+    #our-services .svc-eyebrow { letter-spacing: 6px; font-size: 11px; text-transform: uppercase; color: #c9932a; font-weight: 600; margin-bottom: 16px; }
+    #our-services .svc-title { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 800; color: #fff; margin: 0 0 60px; letter-spacing: -0.03em; line-height: 1.1; }
+    #our-services .svc-title em { font-style: normal; color: #c9932a; }
+
+    /* 3-col grid */
+    #our-services .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 860px) {
+      #our-services .svc-grid { grid-template-columns: 1fr; gap: 48px; }
+      #our-services .svc-inner { padding: 0 20px; }
+    }
+    @media (min-width: 861px) and (max-width: 1023px) {
+      #our-services .svc-grid { grid-template-columns: repeat(3,1fr); gap: 16px; }
+    }
+
+    /* Service card */
+    .svc-card {
+      position: relative;
+      cursor: pointer;
+      transition: transform .42s cubic-bezier(.22,1,.36,1);
+    }
+    .svc-card:hover { transform: translateY(-6px); }
+
+    /* Image block — bite cut bottom-LEFT, circle matches arrow button + gap */
+    .svc-card-img {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      box-shadow: 0 14px 42px rgba(0,0,0,.55);
+      transition: box-shadow .42s ease;
+      -webkit-mask-image: radial-gradient(circle 80px at 0% 100%, transparent 78px, white 80px);
+      mask-image:         radial-gradient(circle 80px at 0% 100%, transparent 78px, white 80px);
+    }
+    .svc-card:hover .svc-card-img { box-shadow: 0 26px 60px rgba(0,0,0,.7); }
+    .svc-card-img img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform .62s cubic-bezier(.22,1,.36,1);
+    }
+    .svc-card:hover .svc-card-img img { transform: scale(1.07); }
+    .svc-card-img .svc-overlay {
+      position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background: linear-gradient(to top, rgba(0,0,0,.7) 0%, transparent 65%);
+    }
+
+    /* Label — BOTTOM-RIGHT inside image */
+    .svc-card-label {
+      position: absolute;
+      bottom: 18px;
+      right: 18px;
+      z-index: 3;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-shadow: 0 2px 10px rgba(0,0,0,.8);
+      pointer-events: none;
+      text-align: right;
+    }
+
+    /* Gold arrow — bites BOTTOM-LEFT corner */
+    .svc-arrow-btn {
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: #c9932a;
+      border: none;
+      display: grid; place-items: center;
+      z-index: 10; cursor: pointer;
+      box-shadow: 0 4px 18px rgba(201,147,42,.45);
+      text-decoration: none;
+      transition: background .26s ease, transform .34s cubic-bezier(.22,1,.36,1);
+    }
+    .svc-card:hover .svc-arrow-btn { background: #fff; transform: scale(1.08); }
+    .svc-arrow-btn svg { transition: transform .4s cubic-bezier(.22,1,.36,1); }
+    .svc-card:hover .svc-arrow-btn svg { transform: rotate(45deg); }
+
+    /* Coming Soon popup */
+    #comingSoonPopup {
+      position: fixed; inset: 0; z-index: 9999;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(0,0,0,0.72); backdrop-filter: blur(8px);
+      opacity: 0; pointer-events: none;
+      transition: opacity .3s ease;
+    }
+    #comingSoonPopup.is-open { opacity: 1; pointer-events: all; }
+    .cs-card {
+      background: #1c1c1c; border-radius: 24px;
+      border: 1px solid rgba(201,147,42,0.25);
+      padding: 52px 48px 44px;
+      text-align: center; max-width: 400px; width: 90%;
+      transform: translateY(20px) scale(0.97);
+      transition: transform .3s cubic-bezier(.22,1,.36,1);
+      position: relative;
+    }
+    #comingSoonPopup.is-open .cs-card { transform: translateY(0) scale(1); }
+    .cs-icon { font-size: 2.6rem; margin-bottom: 16px; }
+    .cs-title { font-size: 1.9rem; font-weight: 800; color: #fff; margin: 0 0 10px; letter-spacing: -0.03em; }
+    .cs-title span { color: #c9932a; }
+    .cs-desc { color: rgba(255,255,255,0.5); font-size: 14px; line-height: 1.7; margin: 0 0 30px; }
+    .cs-close {
+      background: #c9932a; color: #000; border: none;
+      padding: 12px 36px; border-radius: 999px;
+      font-size: 14px; font-weight: 700; cursor: pointer;
+      font-family: 'Outfit', sans-serif;
+      transition: background .25s ease;
+    }
+    .cs-close:hover { background: #fff; }
+    .cs-x {
+      position: absolute; top: 16px; right: 18px;
+      background: none; border: none; color: rgba(255,255,255,0.35);
+      font-size: 20px; cursor: pointer; line-height: 1;
+      transition: color .22s ease;
+    }
+    .cs-x:hover { color: #fff; }
+
     /* ── Car Types (RENAX style) ── */
     #car-types-section {
       --ct-bg: #181818;
@@ -203,9 +375,10 @@
     @media (max-width: 700px) {
       #car-types-section .ct-grid { grid-template-columns: 1fr; }
       #car-types-section .ct-inner { padding: 0 20px; }
+      #car-types-section .ct-title { font-size: 2rem; margin-bottom: 36px; }
     }
 
-    /* Card wrapper */
+    /* Card wrapper — no extra padding, arrow stays inside card via mask */
     #car-types-section .ct-card {
       position: relative;
       cursor: pointer;
@@ -213,7 +386,7 @@
     }
     #car-types-section .ct-card:hover { transform: translateY(-6px); }
 
-    /* Image container — landscape, bite cut bottom-left */
+    /* Image container — bite cut bottom-LEFT, circle matches arrow button + gap */
     #car-types-section .ct-card-body {
       position: relative;
       border-radius: 22px;
@@ -221,13 +394,10 @@
       aspect-ratio: 16 / 10;
       box-shadow: 0 16px 48px rgba(0,0,0,.55);
       transition: box-shadow .45s ease;
-      /* bite cut at bottom-left for the arrow button */
-      -webkit-mask-image: radial-gradient(circle 72px at 0% 100%, transparent 70px, white 71px);
-      mask-image:         radial-gradient(circle 72px at 0% 100%, transparent 70px, white 71px);
+      -webkit-mask-image: radial-gradient(circle 84px at 0% 100%, transparent 82px, white 84px);
+      mask-image:         radial-gradient(circle 84px at 0% 100%, transparent 82px, white 84px);
     }
-    #car-types-section .ct-card:hover .ct-card-body {
-      box-shadow: 0 28px 64px rgba(0,0,0,.65);
-    }
+    #car-types-section .ct-card:hover .ct-card-body { box-shadow: 0 28px 64px rgba(0,0,0,.65); }
 
     /* Background image */
     #car-types-section .ct-card-body img {
@@ -238,40 +408,41 @@
     }
     #car-types-section .ct-card:hover .ct-card-body img { transform: scale(1.07); }
 
-    /* Dark gradient overlay — stronger at bottom for text legibility */
+    /* Dark gradient overlay */
     #car-types-section .ct-overlay {
       position: absolute; inset: 0; z-index: 1; pointer-events: none;
-      background: linear-gradient(to top, rgba(0,0,0,.72) 0%, rgba(0,0,0,.18) 50%, transparent 100%);
+      background: linear-gradient(to top, rgba(0,0,0,.75) 0%, rgba(0,0,0,.12) 55%, transparent 100%);
     }
 
-    /* Category label overlaid inside image, bottom-left */
+    /* Label — BOTTOM-RIGHT inside image */
     #car-types-section .ct-card-content {
       position: absolute;
-      bottom: 22px;
-      left: 88px; /* clear of arrow button */
+      bottom: 18px;
+      right: 20px;
       z-index: 3;
       color: #fff;
-      font-size: 1.35rem;
+      font-size: 1.25rem;
       font-weight: 700;
       letter-spacing: -0.01em;
-      text-shadow: 0 2px 12px rgba(0,0,0,.6);
+      text-shadow: 0 2px 12px rgba(0,0,0,.8);
       pointer-events: none;
+      text-align: right;
     }
 
-    /* Gold arrow button — sits in bite space, bottom-left */
+    /* Gold arrow — bites bottom-LEFT corner */
     #car-types-section .ct-arrow-btn {
       position: absolute;
-      bottom: 14px; left: 14px;
+      bottom: 0; left: 0;
       width: 56px; height: 56px;
       border-radius: 50%; border: none;
       background: var(--ct-gold);
       display: grid; place-items: center;
       z-index: 10; cursor: pointer;
-      box-shadow: 0 4px 18px rgba(202,164,79,.55);
+      box-shadow: 0 4px 18px rgba(202,164,79,.5);
       transition: background .26s ease, transform .36s cubic-bezier(.22,1,.36,1);
       text-decoration: none;
     }
-    #car-types-section .ct-card:hover .ct-arrow-btn { background: #fff; transform: scale(1.1); }
+    #car-types-section .ct-card:hover .ct-arrow-btn { background: #fff; transform: scale(1.08); }
     #car-types-section .ct-arrow-btn svg { transition: transform .42s cubic-bezier(.22,1,.36,1); }
     #car-types-section .ct-card:hover .ct-arrow-btn svg { transform: rotate(45deg); }
 
@@ -426,7 +597,7 @@
     </div>
 
     <!-- Right: phone + mobile toggle -->
-    <div class="flex items-center gap-4 shrink-0">
+    <div class="flex items-center gap-3 shrink-0">
       <!-- Phone info (desktop only) -->
       <div class="hidden lg:flex items-center gap-3">
         <div class="rnx-phone-wrap">
@@ -438,8 +609,10 @@
           <p class="rnx-help-num">0108118968</p>
         </div>
       </div>
-      <!-- Language toggle -->
-      <button type="button" id="languageToggle" class="lang-toggle-btn hidden md:inline-flex">BM</button>
+      <!-- Phone number (mobile only, compact) -->
+      <a href="tel:0108118968" class="md:hidden flex items-center gap-2 text-gold font-bold text-sm" style="white-space:nowrap"><i class="fa-solid fa-phone text-xs"></i> 011-8968</a>
+      <!-- Language toggle — always visible -->
+      <button type="button" id="languageToggle" class="lang-toggle-btn">BM</button>
       <!-- Hamburger -->
       <button type="button" id="mobileNavToggle" class="md:hidden w-10 h-10 border border-gold rounded-full flex items-center justify-center text-gold" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNavMenu">
         <i class="fa-solid fa-bars text-sm"></i>
@@ -457,6 +630,18 @@
         <a href="#rental-process" class="mobile-nav-link"><span data-i18n="nav.process">Process</span><i class="fa-solid fa-arrow-right"></i></a>
         <a href="#testimonials-section" class="mobile-nav-link"><span data-i18n="nav.blog">Blog</span><i class="fa-solid fa-arrow-right"></i></a>
         <a href="#main-footer" class="mobile-nav-link"><span data-i18n="nav.contact">Contact</span><i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <!-- Language + Phone — bottom of mobile drawer -->
+      <div class="mobile-nav-footer">
+        <div class="mobile-nav-lang">
+          <p class="mobile-nav-footer-label">Language</p>
+          <button type="button" id="languageToggleMobile" class="mobile-lang-btn">BM</button>
+        </div>
+        <div class="mobile-nav-contact">
+          <p class="mobile-nav-footer-label">Need help?</p>
+          <a href="tel:0108118968" class="mobile-nav-phone"><i class="fa-solid fa-phone"></i> 0108118968</a>
+        </div>
       </div>
     </div>
   </div>
@@ -497,6 +682,64 @@
       </div>
       <div class="relative"><img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&q=80&w=1000" class="rounded-[40px]" alt="Manager"></div>
     </section>
+
+    <!-- ═══ OUR SERVICES ═══ -->
+    <section id="our-services">
+      <div class="svc-inner">
+        <p class="svc-eyebrow">What We Do</p>
+        <h2 class="svc-title">Our <em>Services</em></h2>
+        <div class="svc-grid">
+
+          <!-- Corporate Car Rental -->
+          <div class="svc-card">
+            <div class="svc-card-img">
+              <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800" alt="Corporate Car Rental">
+              <div class="svc-overlay"></div>
+            </div>
+            <span class="svc-card-label">Corporate Car Rental</span>
+            <button type="button" class="svc-arrow-btn" onclick="openComingSoon()" aria-label="Corporate Car Rental">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg>
+            </button>
+          </div>
+
+          <!-- Car Rental with Driver -->
+          <div class="svc-card">
+            <div class="svc-card-img">
+              <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=800" alt="Car Rental with Driver">
+              <div class="svc-overlay"></div>
+            </div>
+            <span class="svc-card-label">Car Rental with Driver</span>
+            <button type="button" class="svc-arrow-btn" onclick="openComingSoon()" aria-label="Car Rental with Driver">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg>
+            </button>
+          </div>
+
+          <!-- Airport Transfer -->
+          <div class="svc-card">
+            <div class="svc-card-img">
+              <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=800" alt="Airport Transfer">
+              <div class="svc-overlay"></div>
+            </div>
+            <span class="svc-card-label">Airport Transfer</span>
+            <button type="button" class="svc-arrow-btn" onclick="openComingSoon()" aria-label="Airport Transfer">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Coming Soon Popup -->
+    <div id="comingSoonPopup" role="dialog" aria-modal="true" aria-label="Coming Soon">
+      <div class="cs-card">
+        <button type="button" class="cs-x" onclick="closeComingSoon()" aria-label="Close">✕</button>
+        <div class="cs-icon">🚀</div>
+        <h2 class="cs-title">Coming <span>Soon</span></h2>
+        <p class="cs-desc">We're working hard to bring you this service. Stay tuned — it'll be worth the wait!</p>
+        <button type="button" class="cs-close" onclick="closeComingSoon()">Got it</button>
+      </div>
+    </div>
 
     <section class="py-20 md:py-28 overflow-hidden" id="luxury-fleet">
       <div class="text-center mb-12 md:mb-16 px-4">
@@ -1515,7 +1758,7 @@
   // ─────────────────────────────────────────────
   (function () {
     var ALL_VIEWS = ['home', 'listing', 'car-mini', 'car-axia-style', 'car-axia-se', 'car-bezza', 'car-veloz', 'car-hiace', 'car-vellfire', 'car-staria'];
-    var HOME_SECTIONS = ['heroSection', 'about-section', 'luxury-fleet', 'car-types-section', 'rental-process', 'testimonials-section', 'main-footer', 'our-services'];
+    var HOME_SECTIONS = ['heroSection', 'about-section', 'our-services', 'luxury-fleet', 'car-types-section', 'rental-process', 'testimonials-section', 'main-footer'];
 
     function showView(id) {
       ALL_VIEWS.forEach(function (v) {
@@ -1585,6 +1828,7 @@
   (function () {
     var storageKey = 'herosLang';
     var languageToggle = document.getElementById('languageToggle');
+    var languageToggleMobile = document.getElementById('languageToggleMobile');
     var root = document.documentElement;
     var heroPriceUnit = document.getElementById('heroPriceUnit');
     var footerEmailInput = document.getElementById('footerEmailInput');
@@ -1600,12 +1844,14 @@
       if (heroPriceUnit) heroPriceUnit.textContent = dict['hero.priceUnit'] || '/ DAY';
       if (footerEmailInput) footerEmailInput.placeholder = dict['footer.emailPlaceholder'] || 'Your email address';
       if (languageToggle) languageToggle.textContent = dict['toggle.label'] || 'BM';
+      if (languageToggleMobile) { languageToggleMobile.textContent = dict['toggle.label'] || 'BM'; languageToggleMobile.classList.toggle('is-bm', (window.localStorage.getItem(storageKey) || 'en') === 'ms'); }
       window.localStorage.setItem(storageKey, lang);
     };
     var initialLang = window.localStorage.getItem(storageKey);
     if (initialLang !== 'ms' && initialLang !== 'en') initialLang = 'en';
     setLanguage(initialLang);
     if (languageToggle) languageToggle.addEventListener('click', function () { setLanguage((window.localStorage.getItem(storageKey) || 'en') === 'en' ? 'ms' : 'en'); });
+    if (languageToggleMobile) languageToggleMobile.addEventListener('click', function () { setLanguage((window.localStorage.getItem(storageKey) || 'en') === 'en' ? 'ms' : 'en'); });
   })();
 
   // ─────────────────────────────────────────────
@@ -1768,6 +2014,23 @@
     var url = 'https://wa.me/60108118968?text=' + encodeURIComponent(msg);
     window.open(url, '_blank', 'noopener,noreferrer');
   }
+
+  // ── Coming Soon Popup ──
+  function openComingSoon() {
+    var p = document.getElementById('comingSoonPopup');
+    if (p) { p.classList.add('is-open'); document.body.style.overflow = 'hidden'; }
+  }
+  function closeComingSoon() {
+    var p = document.getElementById('comingSoonPopup');
+    if (p) { p.classList.remove('is-open'); document.body.style.overflow = ''; }
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    var popup = document.getElementById('comingSoonPopup');
+    if (popup) {
+      popup.addEventListener('click', function(e) { if (e.target === popup) closeComingSoon(); });
+    }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeComingSoon(); });
+  });
 </script>
 
   <!-- ── Floating WhatsApp Button ── -->
