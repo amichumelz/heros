@@ -49,7 +49,7 @@
     #view-listing { background: #131313; }
 
     /* Hero */
-    .rnx-listing-hero { position: relative; background: linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55)), url('assets/cars/mini-cooper.png') center/cover no-repeat; height: 82vh; min-height: 480px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-top: 80px; overflow: visible; }
+    .rnx-listing-hero { position: relative; background: linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55)), url('assets/cars/toyota-veloz.png') center/cover no-repeat; height: 82vh; min-height: 480px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-top: 80px; overflow: visible; }
     .rnx-hero-eyebrow { letter-spacing: 0.38em; text-transform: uppercase; font-size: 11px; color: #e4a15a; font-weight: 600; margin-bottom: 14px; }
     .rnx-hero-title { font-size: clamp(2.2rem, 7vw, 5.5rem); font-weight: 800; color: #fff; text-align: center; letter-spacing: -0.02em; line-height: 1.05; padding: 0 20px; }
 
@@ -480,7 +480,7 @@
     #main-footer .mf-brand-row,
     .shared-footer .mf-brand-row {
       display: grid;
-      grid-template-columns: repeat(2, minmax(120px, 200px));
+      grid-template-columns: repeat(4, minmax(90px, 160px));
       justify-content: center;
       gap: 28px;
       align-items: center;
@@ -493,8 +493,8 @@
       height: 70px;
       width: auto;
       object-fit: contain;
-      filter: grayscale(1) brightness(0.95);
-      opacity: 0.92;
+      filter: brightness(0) invert(1);
+      opacity: 0.65;
     }
     #main-footer .mf-contact-grid { margin-top: 28px; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; }
     #main-footer .mf-contact-card { border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 16px 18px; display: flex; align-items: center; gap: 14px; background: rgba(255,255,255,0.01); }
@@ -522,7 +522,7 @@
     #main-footer .mf-bottom { margin-top: 36px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.06); color: #77777d; font-size: 12px; }
     @media (max-width: 1024px) {
       #main-footer .mf-brand-row,
-      .shared-footer .mf-brand-row { grid-template-columns: repeat(2, minmax(120px, 200px)); justify-content: center; }
+      .shared-footer .mf-brand-row { grid-template-columns: repeat(2, minmax(90px, 140px)); justify-content: center; }
       #main-footer .mf-contact-grid { grid-template-columns: 1fr; }
       #main-footer .mf-main { grid-template-columns: 1fr; gap: 28px; }
     }
@@ -538,13 +538,15 @@
 
     /* ── Car detail pages ── */
     .detail-hero-img { background-size: cover; background-position: center; }
-    #view-car-mini .detail-hero-img { background-image: linear-gradient(rgba(0,0,0,.44),rgba(0,0,0,.44)), url('assets/cars/mini-cooper.png'); }
     #view-car-axia-style .detail-hero-img { background-image: linear-gradient(rgba(0,0,0,.44),rgba(0,0,0,.44)), url('assets/cars/perodua-axia-style.png'); }
     #view-car-axia-se .detail-hero-img { background-image: linear-gradient(rgba(0,0,0,.44),rgba(0,0,0,.44)), url('assets/cars/perodua-axia-se.png'); }
     #view-car-bezza .detail-hero-img { background-image: linear-gradient(rgba(0,0,0,.44),rgba(0,0,0,.44)), url('assets/cars/perodua-bezza.png'); }
     #view-car-veloz .detail-hero-img { background-image: linear-gradient(rgba(0,0,0,.44),rgba(0,0,0,.44)), url('assets/cars/toyota-veloz.png'); }
     #view-car-hiace .detail-hero-img { background-image: linear-gradient(rgba(0,0,0,.44),rgba(0,0,0,.44)), url('assets/cars/toyota-hiace.png'); }
-    #view-car-vellfire .detail-hero-img { background-image: linear-gradient(rgba(0,0,0,.44),rgba(0,0,0,.44)), url('assets/cars/toyota-veloz.png'); }
+    #view-car-mini .detail-hero-img { background-image: linear-gradient(rgba(0,0,0,.44),rgba(0,0,0,.44)), url('assets/cars/mini-cooper.png'); }
+    #view-car-vellfire .detail-hero-img { background-image: linear-gradient(rgba(0,0,0,.44),rgba(0,0,0,.44)), url('assets/cars/toyota-vellfire.png'); }
+    #view-car-hrv .detail-hero-img { background-image: linear-gradient(rgba(0,0,0,.44),rgba(0,0,0,.44)), url('assets/cars/honda-hrv.png'); }
+    #view-car-crv .detail-hero-img { background-image: linear-gradient(rgba(0,0,0,.44),rgba(0,0,0,.44)), url('assets/cars/honda-crv.png'); }
     #view-car-staria .detail-hero-img { background-image: linear-gradient(rgba(0,0,0,.44),rgba(0,0,0,.44)), url('assets/cars/toyota-hiace.png'); }
   </style>
 </head>
@@ -658,9 +660,9 @@
         <p class="text-gold tracking-[0.3em] uppercase text-xs mb-4 font-bold">✦ Premium</p>
         <h1 id="heroHeading" class="text-7xl md:text-8xl font-bold mb-6" data-i18n="hero.title">Kedah Car Rental</h1>
         <div class="flex items-center gap-4">
-          <p id="heroModel" class="text-xl text-gray-300">Mini Cooper S 2.0T Convertible</p>
+          <p id="heroModel" class="text-xl text-gray-300">Perodua Axia 1.0 Style 2020</p>
           <div class="h-[1px] w-12 bg-gold"></div>
-          <p class="text-xl font-bold"><span id="heroPrice" class="text-gold">RM 650</span> <span id="heroPriceUnit" class="text-sm font-normal text-gray-400">/ DAY</span></p>
+          <p class="text-xl font-bold"><span id="heroPrice" class="text-gold">RM 90</span> <span id="heroPriceUnit" class="text-sm font-normal text-gray-400">/ DAY</span></p>
         </div>
       </div>
       <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-[3]">
@@ -753,20 +755,20 @@
           </div>
           <div id="fleetCenterCard" class="fleet-center-wrap shrink-0 relative w-full lg:w-auto snap-center" style="padding-bottom: 150px;">
             <div class="fleet-center-inner relative group [&>img]:rounded-[22px]">
-              <img id="fleetCenterImg" src="assets/cars/mini-cooper.png" class="w-full h-[360px] md:h-[430px] lg:h-[430px] object-cover" style="border-radius:22px" alt="Mini Cooper S 2.0 Turbo Convertible 2023">
+              <img id="fleetCenterImg" src="assets/cars/perodua-axia-style.png" class="w-full h-[360px] md:h-[430px] lg:h-[430px] object-cover" style="border-radius:22px" alt="Perodua Axia 1.0 Style 2020">
               <div id="fleetInfoPanel" class="absolute z-10 -bottom-[130px] md:-bottom-[90px] lg:-bottom-[90px] left-1/2 -translate-x-1/2 w-[95%] md:w-[94%] bg-[#212125]/95 rounded-[18px] md:rounded-[20px] px-5 py-4 md:px-6 md:py-5 flex flex-row flex-wrap justify-between items-center gap-4 border border-white/[0.05] shadow-[0_12px_30px_rgba(0,0,0,0.35)]">
                 <div>
-                  <h3 id="fleetTitle" class="text-[28px] md:text-[32px] leading-none font-semibold text-white mb-2">Mini Cooper S 2.0 Turbo Convertible 2023</h3>
+                  <h3 id="fleetTitle" class="text-[28px] md:text-[32px] leading-none font-semibold text-white mb-2">Perodua Axia 1.0 Style 2020</h3>
                   <div class="flex flex-wrap gap-x-4 gap-y-1.5 text-[11px] md:text-xs text-gray-400">
-                    <span id="fleetSeats" class="flex items-center gap-2"><i class="fa-solid fa-user fleet-gold text-[13px]"></i> 4</span>
+                    <span id="fleetSeats" class="flex items-center gap-2"><i class="fa-solid fa-user fleet-gold text-[13px]"></i> 5</span>
                     <span id="fleetTransmission" class="flex items-center gap-2"><i class="fa-solid fa-gear fleet-gold text-[13px]"></i> Auto</span>
                     <span id="fleetBags" class="flex items-center gap-2"><i class="fa-solid fa-suitcase fleet-gold text-[13px]"></i> 2 Bags</span>
                   </div>
                 </div>
                 <div class="flex items-center gap-4 md:gap-6 w-full sm:w-auto justify-between sm:justify-end">
-                  <a id="fleetDetailsLink" href="#car-mini" class="fleet-gold-bg text-black px-6 py-2.5 rounded-full font-semibold text-xs hover:bg-white transition inline-flex items-center">Details</a>
+                  <a id="fleetDetailsLink" href="#car-axia-style" class="fleet-gold-bg text-black px-6 py-2.5 rounded-full font-semibold text-xs hover:bg-white transition inline-flex items-center">Details</a>
                   <div class="text-right shrink-0">
-                    <p id="fleetPrice" class="text-[30px] md:text-[34px] font-semibold fleet-gold leading-none">RM 650</p>
+                    <p id="fleetPrice" class="text-[30px] md:text-[34px] font-semibold fleet-gold leading-none">RM 90</p>
                     <p class="text-[10px] text-gray-500 uppercase tracking-wider mt-1">/ day</p>
                   </div>
                 </div>
@@ -778,7 +780,7 @@
           </div>
         </div>
         <div class="fleet-mobile-dots" id="fleetMobileDots" aria-hidden="true">
-          <span class="fleet-mobile-dot is-active"></span><span class="fleet-mobile-dot"></span><span class="fleet-mobile-dot"></span><span class="fleet-mobile-dot"></span><span class="fleet-mobile-dot"></span><span class="fleet-mobile-dot"></span>
+          <span class="fleet-mobile-dot is-active"></span><span class="fleet-mobile-dot"></span><span class="fleet-mobile-dot"></span><span class="fleet-mobile-dot"></span><span class="fleet-mobile-dot"></span>
         </div>
       </div>
     </section>
@@ -830,7 +832,7 @@
           <!-- SUV -->
           <div class="ct-card">
             <div class="ct-card-body">
-              <img src="assets/cars/car-type-luxury.png" alt="SUV">
+              <img src="assets/cars/honda-crv.png" alt="SUV — Honda CRV 1.5 Turbo Black Edition">
               <div class="ct-overlay"></div>
             </div>
             <div class="ct-card-content">SUV</div>
@@ -842,7 +844,7 @@
           <!-- Luxury -->
           <div class="ct-card">
             <div class="ct-card-body">
-              <img src="assets/cars/mini-cooper.png" alt="Luxury">
+              <img src="assets/cars/mini-cooper.png" alt="Luxury — Mini Cooper">
               <div class="ct-overlay"></div>
             </div>
             <div class="ct-card-content">Luxury</div>
@@ -851,24 +853,9 @@
             </a>
           </div>
 
-          <!-- Sport & Lifestyle -->
-          <div class="ct-card">
-            <div class="ct-card-body">
-              <img src="assets/cars/car-type-economy.png" alt="Sport & Lifestyle">
-              <div class="ct-overlay"></div>
-            </div>
-            <div class="ct-card-content">Sport &amp; Lifestyle</div>
-            <a href="#listing-mini" class="ct-arrow-btn" aria-label="View Sport & Lifestyle">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg>
-            </a>
-          </div>
 
         </div><!-- /ct-grid -->
 
-        <div class="ct-dots" role="tablist">
-          <button type="button" class="ct-dot ct-active" aria-label="Page 1" aria-current="true"></button>
-          <button type="button" class="ct-dot" aria-label="Page 2"></button>
-        </div>
       </div>
     </section>
 
@@ -906,8 +893,10 @@
     <footer id="main-footer">
       <div class="mf-inner">
         <div class="mf-brand-row">
-          <img class="mf-brand-logo" src="assets/logos/perodua.png" alt="Perodua">
-          <img class="mf-brand-logo" src="assets/logos/toyota.png" alt="Toyota">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/3/31/Perodua_Logo_(2008_-_Present).svg" alt="Perodua">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Toyota_wordmark.svg" alt="Toyota">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/7/76/Honda_logo.svg" alt="Honda">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/MINI_logo.svg" alt="Mini">
         </div>
         <div class="mf-contact-grid">
           <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
@@ -970,7 +959,6 @@
             <li><button type="button" class="rnx-cat-btn category-item" data-category="van">Van</button></li>
             <li><button type="button" class="rnx-cat-btn category-item" data-category="suv">SUV</button></li>
             <li><button type="button" class="rnx-cat-btn category-item" data-category="luxury">Luxury</button></li>
-            <li><button type="button" class="rnx-cat-btn category-item" data-category="mini">Sport &amp; Lifestyle</button></li>
           </ul>
         </div>
 
@@ -1085,23 +1073,6 @@
             </div>
           </article>
 
-          <!-- Mini Cooper -->
-          <article class="rnx-card listing-card" data-types="mini sport luxury" data-name="mini cooper">
-            <img src="assets/cars/mini-cooper.png" class="rnx-card-img" alt="Mini Cooper S 2.0 Turbo Convertible 2023">
-            <div class="rnx-card-body">
-              <h3 class="rnx-card-name">Mini Cooper S 2.0T Convertible 2023</h3>
-              <ul class="rnx-specs">
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-door-open"></i>Doors</span><span class="rnx-spec-val">2</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i>Passengers</span><span class="rnx-spec-val">4</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i>Transmission</span><span class="rnx-spec-val">Auto</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i>Luggage</span><span class="rnx-spec-val">1 Bag</span></li>
-              </ul>
-              <div class="rnx-card-foot">
-                <p class="rnx-price">RM 650<span>/ day</span></p>
-                <a href="#car-mini" class="rnx-book-btn">Book</a>
-              </div>
-            </div>
-          </article>
 
           <!-- Hiace -->
           <article class="rnx-card listing-card" data-types="van" data-name="hiace van baru">
@@ -1121,11 +1092,29 @@
             </div>
           </article>
 
-          <!-- Vellfire / Alphard -->
-          <article class="rnx-card listing-card" data-types="van mpv" data-name="vellfire alphard pilot seat">
-            <img src="assets/cars/toyota-veloz.png" class="rnx-card-img" alt="Vellfire / Alphard 2.5 Pilot Seat 7 Seater">
+          <!-- Mini Cooper — Luxury only -->
+          <article class="rnx-card listing-card" data-types="luxury" data-name="mini cooper">
+            <img src="assets/cars/mini-cooper.png" class="rnx-card-img" alt="Mini Cooper S 2.0 Turbo Convertible 2023">
             <div class="rnx-card-body">
-              <h3 class="rnx-card-name">Vellfire / Alphard 2.5 Pilot Seat</h3>
+              <h3 class="rnx-card-name">Mini Cooper S 2.0T Convertible 2023</h3>
+              <ul class="rnx-specs">
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-door-open"></i>Doors</span><span class="rnx-spec-val">2</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i>Passengers</span><span class="rnx-spec-val">4</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i>Transmission</span><span class="rnx-spec-val">Auto</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i>Luggage</span><span class="rnx-spec-val">1 Bag</span></li>
+              </ul>
+              <div class="rnx-card-foot">
+                <p class="rnx-price">RM 650<span>/ day</span></p>
+                <a href="#car-mini" class="rnx-book-btn">Book</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Toyota Vellfire 2.5 Pilot Seat -->
+          <article class="rnx-card listing-card" data-types="van mpv luxury" data-name="vellfire alphard pilot seat">
+            <img src="assets/cars/toyota-vellfire.png" class="rnx-card-img" alt="Toyota Vellfire 2.5 Pilot Seat 7 Seater">
+            <div class="rnx-card-body">
+              <h3 class="rnx-card-name">Toyota Vellfire 2.5 Pilot Seat</h3>
               <ul class="rnx-specs">
                 <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-door-open"></i>Doors</span><span class="rnx-spec-val">4</span></li>
                 <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i>Passengers</span><span class="rnx-spec-val">7</span></li>
@@ -1139,56 +1128,38 @@
             </div>
           </article>
 
-          <!-- Staria -->
-          <article class="rnx-card listing-card" data-types="van mpv" data-name="staria hyundai 10seater">
-            <img src="assets/cars/toyota-hiace.png" class="rnx-card-img" alt="Hyundai Staria 2.2T 10 Seater">
+          <!-- HRV 1.5 Hybrid 2022 -->
+          <article class="rnx-card listing-card" data-types="suv" data-name="honda hrv 1.5 hybrid 2022">
+            <img src="assets/cars/honda-hrv.png" class="rnx-card-img" alt="Honda HRV 1.5 Hybrid 2022">
             <div class="rnx-card-body">
-              <h3 class="rnx-card-name">Hyundai Staria 2.2T 10 Seater</h3>
+              <h3 class="rnx-card-name">Honda HRV 1.5 Hybrid 2022</h3>
               <ul class="rnx-specs">
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-door-open"></i>Doors</span><span class="rnx-spec-val">4</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i>Passengers</span><span class="rnx-spec-val">10</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i>Transmission</span><span class="rnx-spec-val">Auto</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i>Luggage</span><span class="rnx-spec-val">Spacious</span></li>
-              </ul>
-              <div class="rnx-card-foot">
-                <p class="rnx-price">RM —<span>/ day</span></p>
-                <a href="#car-staria" class="rnx-book-btn">Book</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- SUV Hazard Card Experience -->
-          <article class="rnx-card listing-card" data-types="suv" data-name="suv hazard card">
-            <img src="assets/cars/perodua-axia-se.png" class="rnx-card-img" alt="SUV — Hazard Card Experience">
-            <div class="rnx-card-body">
-              <h3 class="rnx-card-name">SUV — Hazard Card Experience</h3>
-              <ul class="rnx-specs">
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-triangle-exclamation"></i>Hazard Cards</span><span class="rnx-spec-val">Included</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i>Passengers</span><span class="rnx-spec-val">5–7</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-bolt"></i>Engine</span><span class="rnx-spec-val">1.5 Hybrid</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i>Passengers</span><span class="rnx-spec-val">5</span></li>
                 <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i>Transmission</span><span class="rnx-spec-val">Auto</span></li>
                 <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i>Luggage</span><span class="rnx-spec-val">4 Bags</span></li>
               </ul>
               <div class="rnx-card-foot">
                 <p class="rnx-price">RM —<span>/ day</span></p>
-                <a href="#listing-suv" class="rnx-book-btn">Book</a>
+                <a href="#car-hrv" class="rnx-book-btn">Book</a>
               </div>
             </div>
           </article>
 
-          <!-- SUV Hazard Card Premium -->
-          <article class="rnx-card listing-card" data-types="suv" data-name="suv hazard premium">
-            <img src="assets/cars/mini-cooper.png" class="rnx-card-img" alt="SUV — Hazard Card Premium">
+          <!-- CRV 1.5 Turbo Black Edition 2022 -->
+          <article class="rnx-card listing-card" data-types="suv" data-name="honda crv 1.5 turbo black edition 2022">
+            <img src="assets/cars/honda-crv.png" class="rnx-card-img" alt="Honda CRV 1.5 Turbo Black Edition 2022">
             <div class="rnx-card-body">
-              <h3 class="rnx-card-name">SUV — Hazard Card Premium</h3>
+              <h3 class="rnx-card-name">Honda CRV 1.5 Turbo Black Edition 2022</h3>
               <ul class="rnx-specs">
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-triangle-exclamation"></i>Hazard Cards</span><span class="rnx-spec-val">Included</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i>Passengers</span><span class="rnx-spec-val">5–7</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-bolt"></i>Engine</span><span class="rnx-spec-val">1.5 Turbo</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i>Passengers</span><span class="rnx-spec-val">5</span></li>
                 <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i>Transmission</span><span class="rnx-spec-val">Auto</span></li>
                 <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i>Luggage</span><span class="rnx-spec-val">4 Bags</span></li>
               </ul>
               <div class="rnx-card-foot">
                 <p class="rnx-price">RM —<span>/ day</span></p>
-                <a href="#listing-suv" class="rnx-book-btn">Book</a>
+                <a href="#car-crv" class="rnx-book-btn">Book</a>
               </div>
             </div>
           </article>
@@ -1200,8 +1171,10 @@
   <footer class="shared-footer" id="main-footer">
       <div class="mf-inner">
         <div class="mf-brand-row">
-          <img class="mf-brand-logo" src="assets/logos/perodua.png" alt="Perodua">
-          <img class="mf-brand-logo" src="assets/logos/toyota.png" alt="Toyota">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/3/31/Perodua_Logo_(2008_-_Present).svg" alt="Perodua">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Toyota_wordmark.svg" alt="Toyota">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/7/76/Honda_logo.svg" alt="Honda">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/MINI_logo.svg" alt="Mini">
         </div>
         <div class="mf-contact-grid">
           <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
@@ -1230,74 +1203,57 @@
   </div><!-- /view-listing -->
 
   <!-- ═══════════════════════════════════════════ -->
-  <!-- VIEW: AXIA STYLE 2020 PUTIH                 -->
-  <!-- ═══════════════════════════════════════════ -->
-
-  <!-- ═══════════════════════════════════════════ -->
-  <!-- VIEW: MINI COOPER                           -->
+  <!-- VIEW: MINI COOPER (Luxury)                  -->
   <!-- ═══════════════════════════════════════════ -->
   <div id="view-car-mini" style="display:none">
-    <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">Sport &amp; Lifestyle</p><h1 class="text-5xl md:text-6xl font-bold">Mini Cooper S 2.0 Turbo Convertible 2023</h1></div></section>
+    <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">Luxury</p><h1 class="text-5xl md:text-6xl font-bold">Mini Cooper S 2.0 Turbo Convertible 2023</h1></div></section>
     <section class="relative px-8 lg:px-24 pb-24 bg-[#161616]"><div class="grid lg:grid-cols-[1.6fr_0.8fr] gap-10"><div class="pt-14">
-      <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold">General Information</h2><a href="#luxury-fleet" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> Back</a></div>
-      <p class="text-gray-400 leading-8 mb-8">The iconic Mini Cooper S 2.0 Turbo Convertible 2023 — a stylish, fun-to-drive hatchback that turns heads everywhere it goes. Perfect for weekend getaways, special occasions, or anyone who wants to cruise around Kedah in style. A unique experience you won't find anywhere else.</p>
-      <div class="space-y-4 mb-12">
-        <div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">24/7 roadside assistance in Kedah</p></div>
-        <div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Free cancellation &amp; return support</p></div>
-        <div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Pay on pickup available</p></div>
-      </div>
-      <h3 class="text-3xl font-bold mb-5">Image Gallery</h3>
-      <div class="grid sm:grid-cols-2 gap-4">
-        <img src="assets/cars/mini-cooper.png" class="h-56 w-full object-cover rounded-[20px]" alt="Mini Cooper S 2.0 Turbo Convertible 2023 exterior">
-        <img src="assets/cars/mini-cooper-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Mini Cooper S 2.0 Turbo Convertible 2023 interior">
-      </div>
-    </div>
-    <div class="lg:-mt-24 pt-8">
+      <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold">General Information</h2><a href="#listing-luxury" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> Back</a></div>
+      <p class="text-gray-400 leading-8 mb-8">The iconic Mini Cooper S 2.0 Turbo Convertible 2023 — a stylish, fun-to-drive convertible perfect for weekend getaways and special occasions around Kedah.</p>
+      <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Free cancellation & return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Pay on pickup available</p></div></div>
+      <h3 class="text-3xl font-bold mb-5">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/mini-cooper.png" class="h-56 w-full object-cover rounded-[20px]" alt="Mini Cooper exterior"><img src="assets/cars/mini-cooper-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Mini Cooper interior"></div>
+    </div><div class="lg:-mt-24 pt-8">
       <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 650</p><p class="text-sm uppercase tracking-wider mt-1">/ rent per day</p></div>
       <div class="bg-[#1f1f1f] border border-white/5 rounded-b-[20px] p-7 space-y-5" id="bookingPanel-mini">
-        <div>
-          <label class="text-sm text-gray-300">Pick Up Location</label>
+        <div><label class="text-sm text-gray-300">Pick Up Location</label>
           <select id="pickup-mini" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
             <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
-        <div>
-          <label class="text-sm text-gray-300">Drop Off Location</label>
+        <div><label class="text-sm text-gray-300">Drop Off Location</label>
           <select id="dropoff-mini" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
             <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
-        <div>
-          <label class="text-sm text-gray-300">Pick Up Date</label>
+        <div><label class="text-sm text-gray-300">Pick Up Date</label>
           <input type="date" id="pickdate-mini" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
-        <div>
-          <label class="text-sm text-gray-300">Return Date</label>
+        <div><label class="text-sm text-gray-300">Return Date</label>
           <input type="date" id="retdate-mini" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
         <button type="button" onclick="sendBookingWA('mini','Mini%20Cooper%20S%202.0%20Turbo%20Convertible%202023')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
       </div>
     </div></div></section>
-    <footer class="shared-footer" id="main-footer">
+    <footer class="shared-footer">
       <div class="mf-inner">
-        <div class="mf-brand-row">
-          <img class="mf-brand-logo" src="assets/logos/perodua.png" alt="Perodua">
-          <img class="mf-brand-logo" src="assets/logos/toyota.png" alt="Toyota">
-        </div>
+        <div class="mf-brand-row"><img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/3/31/Perodua_Logo_(2008_-_Present).svg" alt="Perodua"><img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Toyota_wordmark.svg" alt="Toyota"><img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/7/76/Honda_logo.svg" alt="Honda"><img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/MINI_logo.svg" alt="Mini"></div>
         <div class="mf-contact-grid">
           <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
           <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label">Write to us</p><p class="mf-contact-value">hello@heros.my</p></div></div>
           <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
         </div>
         <div class="mf-main">
-          <div><h3 class="mf-logo">HE<span>ROS</span></h3><p class="mf-text">Heros is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p><div class="mf-social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div></div>
+          <div><h3 class="mf-logo">JF<span>Z</span></h3><p class="mf-text">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p><div class="mf-social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div></div>
           <div><h4 class="mf-heading">Quick Links</h4><ul class="mf-links"><li><a href="#about-section">About</a></li><li><a href="#luxury-fleet">Cars</a></li><li><a href="#car-types-section">Car Types</a></li><li><a href="#rental-process">Process</a></li><li><a href="#main-footer">Contact</a></li></ul></div>
           <div><h4 class="mf-heading">Subscribe</h4><p class="mf-subtext">Want to be notified about our services. Just sign up and we will send you a notification by email.</p><form class="mf-subscribe" action="#" method="post"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit" aria-label="Submit"><i class="fa-solid fa-arrow-right"></i></button></form></div>
         </div>
-        <p class="mf-bottom">©2026 Heros Car Rental Kedah. All rights reserved.</p>
+        <p class="mf-bottom">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
       </div>
     </footer>
   </div><!-- /view-car-mini -->
+
+  <!-- VIEW: AXIA STYLE 2020 PUTIH                 -->
+  <!-- ═══════════════════════════════════════════ -->
   <div id="view-car-axia-style" style="display:none">
     <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">Economy Cars</p><h1 class="text-5xl md:text-6xl font-bold">Perodua Axia 1.0 Style 2020</h1></div></section>
     <section class="relative px-8 lg:px-24 pb-24 bg-[#161616]"><div class="grid lg:grid-cols-[1.6fr_0.8fr] gap-10"><div class="pt-14">
@@ -1334,8 +1290,10 @@
   <footer class="shared-footer" id="main-footer">
       <div class="mf-inner">
         <div class="mf-brand-row">
-          <img class="mf-brand-logo" src="assets/logos/perodua.png" alt="Perodua">
-          <img class="mf-brand-logo" src="assets/logos/toyota.png" alt="Toyota">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/3/31/Perodua_Logo_(2008_-_Present).svg" alt="Perodua">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Toyota_wordmark.svg" alt="Toyota">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/7/76/Honda_logo.svg" alt="Honda">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/MINI_logo.svg" alt="Mini">
         </div>
         <div class="mf-contact-grid">
           <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
@@ -1402,8 +1360,10 @@
   <footer class="shared-footer" id="main-footer">
       <div class="mf-inner">
         <div class="mf-brand-row">
-          <img class="mf-brand-logo" src="assets/logos/perodua.png" alt="Perodua">
-          <img class="mf-brand-logo" src="assets/logos/toyota.png" alt="Toyota">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/3/31/Perodua_Logo_(2008_-_Present).svg" alt="Perodua">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Toyota_wordmark.svg" alt="Toyota">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/7/76/Honda_logo.svg" alt="Honda">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/MINI_logo.svg" alt="Mini">
         </div>
         <div class="mf-contact-grid">
           <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
@@ -1470,8 +1430,10 @@
   <footer class="shared-footer" id="main-footer">
       <div class="mf-inner">
         <div class="mf-brand-row">
-          <img class="mf-brand-logo" src="assets/logos/perodua.png" alt="Perodua">
-          <img class="mf-brand-logo" src="assets/logos/toyota.png" alt="Toyota">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/3/31/Perodua_Logo_(2008_-_Present).svg" alt="Perodua">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Toyota_wordmark.svg" alt="Toyota">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/7/76/Honda_logo.svg" alt="Honda">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/MINI_logo.svg" alt="Mini">
         </div>
         <div class="mf-contact-grid">
           <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
@@ -1538,8 +1500,10 @@
   <footer class="shared-footer" id="main-footer">
       <div class="mf-inner">
         <div class="mf-brand-row">
-          <img class="mf-brand-logo" src="assets/logos/perodua.png" alt="Perodua">
-          <img class="mf-brand-logo" src="assets/logos/toyota.png" alt="Toyota">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/3/31/Perodua_Logo_(2008_-_Present).svg" alt="Perodua">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Toyota_wordmark.svg" alt="Toyota">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/7/76/Honda_logo.svg" alt="Honda">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/MINI_logo.svg" alt="Mini">
         </div>
         <div class="mf-contact-grid">
           <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
@@ -1566,6 +1530,106 @@
       </div>
     </footer>
   </div><!-- /view-car-veloz -->
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- VIEW: HONDA HRV 1.5 HYBRID 2022             -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div id="view-car-hrv" style="display:none">
+    <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">SUV</p><h1 class="text-5xl md:text-6xl font-bold">Honda HRV 1.5 Hybrid 2022</h1></div></section>
+    <section class="relative px-8 lg:px-24 pb-24 bg-[#161616]"><div class="grid lg:grid-cols-[1.6fr_0.8fr] gap-10"><div class="pt-14">
+      <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold">General Information</h2><a href="#listing-suv" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> Back</a></div>
+      <p class="text-gray-400 leading-8 mb-8">Honda HRV 1.5 Hybrid 2022 — a stylish compact SUV with e:HEV hybrid efficiency. Ideal for city drives, weekend trips, and comfortable family travel across Kedah and beyond.</p>
+      <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Free cancellation &amp; return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Pay on pickup available</p></div></div>
+      <h3 class="text-3xl font-bold mb-5">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/honda-hrv.png" class="h-56 w-full object-cover rounded-[20px]" alt="Honda HRV exterior"><img src="assets/cars/honda-hrv-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Honda HRV interior"></div>
+    </div><div class="lg:-mt-24 pt-8">
+      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM —</p><p class="text-sm uppercase tracking-wider mt-1">/ rent per day</p></div>
+      <div class="bg-[#1f1f1f] border border-white/5 rounded-b-[20px] p-7 space-y-5" id="bookingPanel-hrv">
+        <div><label class="text-sm text-gray-300">Pick Up Location</label>
+          <select id="pickup-hrv" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
+            <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
+          </select>
+        </div>
+        <div><label class="text-sm text-gray-300">Drop Off Location</label>
+          <select id="dropoff-hrv" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
+            <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
+          </select>
+        </div>
+        <div><label class="text-sm text-gray-300">Pick Up Date</label>
+          <input type="date" id="pickdate-hrv" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
+        </div>
+        <div><label class="text-sm text-gray-300">Return Date</label>
+          <input type="date" id="retdate-hrv" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
+        </div>
+        <button type="button" onclick="sendBookingWA('hrv','Honda%20HRV%201.5%20Hybrid%202022')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
+      </div>
+    </div></div></section>
+    <footer class="shared-footer">
+      <div class="mf-inner">
+        <div class="mf-brand-row"><img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/3/31/Perodua_Logo_(2008_-_Present).svg" alt="Perodua"><img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Toyota_wordmark.svg" alt="Toyota"><img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/7/76/Honda_logo.svg" alt="Honda"><img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/MINI_logo.svg" alt="Mini"></div>
+        <div class="mf-contact-grid">
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label">Write to us</p><p class="mf-contact-value">hello@heros.my</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
+        </div>
+        <div class="mf-main">
+          <div><h3 class="mf-logo">JF<span>Z</span></h3><p class="mf-text">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p><div class="mf-social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div></div>
+          <div><h4 class="mf-heading">Quick Links</h4><ul class="mf-links"><li><a href="#about-section">About</a></li><li><a href="#luxury-fleet">Cars</a></li><li><a href="#car-types-section">Car Types</a></li><li><a href="#rental-process">Process</a></li><li><a href="#main-footer">Contact</a></li></ul></div>
+          <div><h4 class="mf-heading">Subscribe</h4><p class="mf-subtext">Want to be notified about our services. Just sign up and we will send you a notification by email.</p><form class="mf-subscribe" action="#" method="post"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit" aria-label="Submit"><i class="fa-solid fa-arrow-right"></i></button></form></div>
+        </div>
+        <p class="mf-bottom">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
+      </div>
+    </footer>
+  </div><!-- /view-car-hrv -->
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- VIEW: HONDA CRV 1.5 TURBO BLACK EDITION     -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div id="view-car-crv" style="display:none">
+    <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">SUV</p><h1 class="text-5xl md:text-6xl font-bold">Honda CRV 1.5 Turbo Black Edition 2022</h1></div></section>
+    <section class="relative px-8 lg:px-24 pb-24 bg-[#161616]"><div class="grid lg:grid-cols-[1.6fr_0.8fr] gap-10"><div class="pt-14">
+      <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold">General Information</h2><a href="#listing-suv" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> Back</a></div>
+      <p class="text-gray-400 leading-8 mb-8">Honda CRV 1.5 Turbo Black Edition 2022 — a bold black SUV with VTEC turbo power and premium Black Edition styling. Spacious cabin for family trips and comfortable long drives across Kedah.</p>
+      <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Free cancellation &amp; return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Pay on pickup available</p></div></div>
+      <h3 class="text-3xl font-bold mb-5">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/honda-crv.png" class="h-56 w-full object-cover rounded-[20px]" alt="Honda CRV Black Edition exterior"><img src="assets/cars/honda-crv-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Honda CRV Black Edition interior"></div>
+    </div><div class="lg:-mt-24 pt-8">
+      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM —</p><p class="text-sm uppercase tracking-wider mt-1">/ rent per day</p></div>
+      <div class="bg-[#1f1f1f] border border-white/5 rounded-b-[20px] p-7 space-y-5" id="bookingPanel-crv">
+        <div><label class="text-sm text-gray-300">Pick Up Location</label>
+          <select id="pickup-crv" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
+            <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
+          </select>
+        </div>
+        <div><label class="text-sm text-gray-300">Drop Off Location</label>
+          <select id="dropoff-crv" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
+            <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
+          </select>
+        </div>
+        <div><label class="text-sm text-gray-300">Pick Up Date</label>
+          <input type="date" id="pickdate-crv" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
+        </div>
+        <div><label class="text-sm text-gray-300">Return Date</label>
+          <input type="date" id="retdate-crv" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
+        </div>
+        <button type="button" onclick="sendBookingWA('crv','Honda%20CRV%201.5%20Turbo%20Black%20Edition%202022')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
+      </div>
+    </div></div></section>
+    <footer class="shared-footer">
+      <div class="mf-inner">
+        <div class="mf-brand-row"><img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/3/31/Perodua_Logo_(2008_-_Present).svg" alt="Perodua"><img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Toyota_wordmark.svg" alt="Toyota"><img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/7/76/Honda_logo.svg" alt="Honda"><img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/MINI_logo.svg" alt="Mini"></div>
+        <div class="mf-contact-grid">
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label">Write to us</p><p class="mf-contact-value">hello@heros.my</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
+        </div>
+        <div class="mf-main">
+          <div><h3 class="mf-logo">JF<span>Z</span></h3><p class="mf-text">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p><div class="mf-social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div></div>
+          <div><h4 class="mf-heading">Quick Links</h4><ul class="mf-links"><li><a href="#about-section">About</a></li><li><a href="#luxury-fleet">Cars</a></li><li><a href="#car-types-section">Car Types</a></li><li><a href="#rental-process">Process</a></li><li><a href="#main-footer">Contact</a></li></ul></div>
+          <div><h4 class="mf-heading">Subscribe</h4><p class="mf-subtext">Want to be notified about our services. Just sign up and we will send you a notification by email.</p><form class="mf-subscribe" action="#" method="post"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit" aria-label="Submit"><i class="fa-solid fa-arrow-right"></i></button></form></div>
+        </div>
+        <p class="mf-bottom">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
+      </div>
+    </footer>
+  </div><!-- /view-car-crv -->
 
   <!-- ═══════════════════════════════════════════ -->
   <!-- VIEW: VAN HIACE BARU                        -->
@@ -1606,8 +1670,10 @@
   <footer class="shared-footer" id="main-footer">
       <div class="mf-inner">
         <div class="mf-brand-row">
-          <img class="mf-brand-logo" src="assets/logos/perodua.png" alt="Perodua">
-          <img class="mf-brand-logo" src="assets/logos/toyota.png" alt="Toyota">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/3/31/Perodua_Logo_(2008_-_Present).svg" alt="Perodua">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Toyota_wordmark.svg" alt="Toyota">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/7/76/Honda_logo.svg" alt="Honda">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/MINI_logo.svg" alt="Mini">
         </div>
         <div class="mf-contact-grid">
           <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
@@ -1639,12 +1705,12 @@
   <!-- VIEW: VELLFIRE / ALPHARD                    -->
   <!-- ═══════════════════════════════════════════ -->
   <div id="view-car-vellfire" style="display:none">
-    <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">Van / Premium MPV</p><h1 class="text-5xl md:text-6xl font-bold">Vellfire / Alphard 2.5 Pilot Seat 7 Seater</h1></div></section>
+    <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">Premium MPV</p><h1 class="text-5xl md:text-6xl font-bold">Toyota Vellfire 2.5 Pilot Seat</h1></div></section>
     <section class="relative px-8 lg:px-24 pb-24 bg-[#161616]"><div class="grid lg:grid-cols-[1.6fr_0.8fr] gap-10"><div class="pt-14">
       <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold">General Information</h2><a href="#luxury-fleet" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> Back</a></div>
-      <p class="text-gray-400 leading-8 mb-8">The Toyota Vellfire / Alphard 2.5 with premium pilot seats — the ultimate luxury van for VIP travel, family trips, or corporate transfers across Kedah. Spacious, quiet cabin with first-class seating for 7 passengers.</p>
+      <p class="text-gray-400 leading-8 mb-8">The Toyota Vellfire 2.5 with premium pilot seats — the ultimate luxury van for VIP travel, family trips, or corporate transfers across Kedah. Spacious, quiet cabin with first-class seating for 7 passengers.</p>
       <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Free cancellation &amp; return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Pay on pickup available</p></div></div>
-      <h3 class="text-3xl font-bold mb-5">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/toyota-veloz.png" class="h-56 w-full object-cover rounded-[20px]" alt="Vellfire exterior"><img src="assets/cars/toyota-veloz-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Vellfire interior"></div>
+      <h3 class="text-3xl font-bold mb-5">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/toyota-vellfire.png" class="h-56 w-full object-cover rounded-[20px]" alt="Toyota Vellfire 2.5 Pilot Seat exterior"><img src="assets/cars/toyota-vellfire-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Toyota Vellfire 2.5 Pilot Seat interior"></div>
     </div><div class="lg:-mt-24 pt-8">
       <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM —</p><p class="text-sm uppercase tracking-wider mt-1">/ rent per day</p></div>
       <div class="bg-[#1f1f1f] border border-white/5 rounded-b-[20px] p-7 space-y-5" id="bookingPanel-vellfire">
@@ -1668,14 +1734,16 @@
           <label class="text-sm text-gray-300">Return Date</label>
           <input type="date" id="retdate-vellfire" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
-        <button type="button" onclick="sendBookingWA('vellfire','Vellfire%20%2F%20Alphard%202.5%20Pilot%20Seat%207%20Seater')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
+        <button type="button" onclick="sendBookingWA('vellfire','Toyota%20Vellfire%202.5%20Pilot%20Seat')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
       </div>
     </div></div></section>
   <footer class="shared-footer" id="main-footer">
       <div class="mf-inner">
         <div class="mf-brand-row">
-          <img class="mf-brand-logo" src="assets/logos/perodua.png" alt="Perodua">
-          <img class="mf-brand-logo" src="assets/logos/toyota.png" alt="Toyota">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/3/31/Perodua_Logo_(2008_-_Present).svg" alt="Perodua">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Toyota_wordmark.svg" alt="Toyota">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/7/76/Honda_logo.svg" alt="Honda">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/MINI_logo.svg" alt="Mini">
         </div>
         <div class="mf-contact-grid">
           <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
@@ -1731,8 +1799,10 @@
   <footer class="shared-footer" id="main-footer">
       <div class="mf-inner">
         <div class="mf-brand-row">
-          <img class="mf-brand-logo" src="assets/logos/perodua.png" alt="Perodua">
-          <img class="mf-brand-logo" src="assets/logos/toyota.png" alt="Toyota">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/3/31/Perodua_Logo_(2008_-_Present).svg" alt="Perodua">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Toyota_wordmark.svg" alt="Toyota">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/7/76/Honda_logo.svg" alt="Honda">
+          <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/MINI_logo.svg" alt="Mini">
         </div>
         <div class="mf-contact-grid">
           <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
@@ -1757,7 +1827,7 @@
   // ROUTER
   // ─────────────────────────────────────────────
   (function () {
-    var ALL_VIEWS = ['home', 'listing', 'car-mini', 'car-axia-style', 'car-axia-se', 'car-bezza', 'car-veloz', 'car-hiace', 'car-vellfire', 'car-staria'];
+    var ALL_VIEWS = ['home', 'listing', 'car-mini', 'car-axia-style', 'car-axia-se', 'car-bezza', 'car-veloz', 'car-hrv', 'car-crv', 'car-hiace', 'car-vellfire', 'car-staria'];
     var HOME_SECTIONS = ['heroSection', 'about-section', 'our-services', 'luxury-fleet', 'car-types-section', 'rental-process', 'testimonials-section', 'main-footer'];
 
     function showView(id) {
@@ -1860,7 +1930,7 @@
   (function () {
     var heroSection = document.getElementById('heroSection'); var heroBg = document.getElementById('heroBg'); var heroBgNext = document.getElementById('heroBgNext'); var heroModel = document.getElementById('heroModel'); var heroPrice = document.getElementById('heroPrice'); var heroDots = Array.prototype.slice.call(document.querySelectorAll('.hero-dot'));
     if (!heroSection || !heroBg || !heroBgNext) return;
-    var heroSlides = [{ image:'assets/cars/mini-cooper.png', model:'Mini Cooper S 2.0T Convertible', price:'RM 650' },{ image:'assets/cars/toyota-veloz.png', model:'Toyota Veloz 1.5 2024', price:'RM 230' },{ image:'assets/cars/toyota-hiace.png', model:'New Toyota Hiace 2.8 (A) 15 Seater', price:'RM 550' }];
+    var heroSlides = [{ image:'assets/cars/perodua-axia-style.png', model:'Perodua Axia 1.0 Style 2020', price:'RM 90' },{ image:'assets/cars/toyota-veloz.png', model:'Toyota Veloz 1.5 2024', price:'RM 230' },{ image:'assets/cars/toyota-hiace.png', model:'New Toyota Hiace 2.8 (A) 15 Seater', price:'RM 550' }];
     var activeHero = 0; var heroTimer = null; var heroAnimating = false;
     var heroBgStr = function (url) { return "linear-gradient(rgba(0,0,0,0.52),rgba(0,0,0,0.52)),url('" + url + "')"; };
     var setHeroDots = function (i) { heroDots.forEach(function (d, j) { d.classList.toggle('is-active', j === i); if (j === i) d.setAttribute('aria-current','true'); else d.removeAttribute('aria-current'); }); };
@@ -1878,7 +1948,6 @@
     var row = document.getElementById('fleetScroll'); var leftImg = document.getElementById('fleetLeftImg'); var centerImg = document.getElementById('fleetCenterImg'); var rightImg = document.getElementById('fleetRightImg'); var title = document.getElementById('fleetTitle'); var seats = document.getElementById('fleetSeats'); var transmission = document.getElementById('fleetTransmission'); var bags = document.getElementById('fleetBags'); var price = document.getElementById('fleetPrice'); var detailsLink = document.getElementById('fleetDetailsLink'); var mobileDots = Array.prototype.slice.call(document.querySelectorAll('#fleetMobileDots .fleet-mobile-dot'));
     if (!row || !leftImg || !centerImg || !rightImg) return;
     var fleetCars = [
-      { name:'Mini Cooper S 2.0 Turbo Convertible 2023', image:'assets/cars/mini-cooper.png', seats:'4', transmission:'Auto', bags:'2 Bags', price:'RM 650', details:'#car-mini' },
       { name:'Perodua Axia 1.0 Style 2020', image:'assets/cars/perodua-axia-style.png', seats:'5', transmission:'Auto', bags:'2 Bags', price:'RM 90', details:'#car-axia-style' },
       { name:'Perodua Axia 1.0 SE 2023', image:'assets/cars/perodua-axia-se.png', seats:'5', transmission:'Auto', bags:'2 Bags', price:'RM 100', details:'#car-axia-se' },
       { name:'Perodua Bezza 1.3X 2023', image:'assets/cars/perodua-bezza.png', seats:'5', transmission:'Auto', bags:'2 Bags', price:'RM 120', details:'#car-bezza' },
@@ -1907,7 +1976,7 @@
   // CAR LISTING FILTER (exposed globally for router)
   // ─────────────────────────────────────────────
   (function () {
-    var labels = { all:'All Cars', economy:'Economy Cars', sedan:'Sedan', mpv:'MPV', van:'Van', mini:'Sport & Lifestyle', luxury:'Luxury', suv:'SUV' };
+    var labels = { all:'All Cars', economy:'Economy Cars', sedan:'Sedan', mpv:'MPV', van:'Van', luxury:'Luxury', suv:'SUV' };
     var currentType = 'all'; var currentSearch = '';
 
     window.applyListingFilter = function (type) {
