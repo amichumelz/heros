@@ -607,14 +607,14 @@
           <span class="rnx-phone-pulse"></span>
         </div>
         <div>
-          <p class="rnx-help-label">Need help?</p>
+          <p class="rnx-help-label" data-i18n="nav.needHelp">Need help?</p>
           <p class="rnx-help-num">0108118968</p>
         </div>
       </div>
       <!-- Phone number (mobile only, compact) -->
       <a href="tel:0108118968" class="md:hidden flex items-center gap-2 text-gold font-bold text-sm" style="white-space:nowrap"><i class="fa-solid fa-phone text-xs"></i> 011-8968</a>
       <!-- Language toggle — always visible -->
-      <button type="button" id="languageToggle" class="lang-toggle-btn">BM</button>
+      <button type="button" id="languageToggle" class="lang-toggle-btn">EN</button>
       <!-- Hamburger -->
       <button type="button" id="mobileNavToggle" class="md:hidden w-10 h-10 border border-gold rounded-full flex items-center justify-center text-gold" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNavMenu">
         <i class="fa-solid fa-bars text-sm"></i>
@@ -637,11 +637,11 @@
       <!-- Language + Phone — bottom of mobile drawer -->
       <div class="mobile-nav-footer">
         <div class="mobile-nav-lang">
-          <p class="mobile-nav-footer-label">Language</p>
-          <button type="button" id="languageToggleMobile" class="mobile-lang-btn">BM</button>
+          <p class="mobile-nav-footer-label" data-i18n="nav.language">Language</p>
+          <button type="button" id="languageToggleMobile" class="mobile-lang-btn">EN</button>
         </div>
         <div class="mobile-nav-contact">
-          <p class="mobile-nav-footer-label">Need help?</p>
+          <p class="mobile-nav-footer-label" data-i18n="nav.needHelp">Need help?</p>
           <a href="tel:0108118968" class="mobile-nav-phone"><i class="fa-solid fa-phone"></i> 0108118968</a>
         </div>
       </div>
@@ -688,8 +688,8 @@
     <!-- ═══ OUR SERVICES ═══ -->
     <section id="our-services">
       <div class="svc-inner">
-        <p class="svc-eyebrow">What We Do</p>
-        <h2 class="svc-title">Our <em>Services</em></h2>
+        <p class="svc-eyebrow" data-i18n="svc.eyebrow">What We Do</p>
+        <h2 class="svc-title" data-i18n-html="svc.title">Our <em>Services</em></h2>
         <div class="svc-grid">
 
           <!-- Corporate Car Rental -->
@@ -698,7 +698,7 @@
               <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800" alt="Corporate Car Rental">
               <div class="svc-overlay"></div>
             </div>
-            <span class="svc-card-label">Corporate Car Rental</span>
+            <span class="svc-card-label" data-i18n="svc.corporate">Corporate Car Rental</span>
             <button type="button" class="svc-arrow-btn" onclick="openComingSoon()" aria-label="Corporate Car Rental">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg>
             </button>
@@ -710,7 +710,7 @@
               <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=800" alt="Car Rental with Driver">
               <div class="svc-overlay"></div>
             </div>
-            <span class="svc-card-label">Car Rental with Driver</span>
+            <span class="svc-card-label" data-i18n="svc.driver">Car Rental with Driver</span>
             <button type="button" class="svc-arrow-btn" onclick="openComingSoon()" aria-label="Car Rental with Driver">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg>
             </button>
@@ -722,7 +722,7 @@
               <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=800" alt="Airport Transfer">
               <div class="svc-overlay"></div>
             </div>
-            <span class="svc-card-label">Airport Transfer</span>
+            <span class="svc-card-label" data-i18n="svc.airport">Airport Transfer</span>
             <button type="button" class="svc-arrow-btn" onclick="openComingSoon()" aria-label="Airport Transfer">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg>
             </button>
@@ -737,16 +737,16 @@
       <div class="cs-card">
         <button type="button" class="cs-x" onclick="closeComingSoon()" aria-label="Close">✕</button>
         <div class="cs-icon">🚀</div>
-        <h2 class="cs-title">Coming <span>Soon</span></h2>
-        <p class="cs-desc">We're working hard to bring you this service. Stay tuned — it'll be worth the wait!</p>
-        <button type="button" class="cs-close" onclick="closeComingSoon()">Got it</button>
+        <h2 class="cs-title" data-i18n-html="cs.title">Coming <span>Soon</span></h2>
+        <p class="cs-desc" data-i18n="cs.desc">We're working hard to bring you this service. Stay tuned — it'll be worth the wait!</p>
+        <button type="button" class="cs-close" onclick="closeComingSoon()" data-i18n="cs.close">Got it</button>
       </div>
     </div>
 
     <section class="py-20 md:py-28 overflow-hidden" id="luxury-fleet">
       <div class="text-center mb-12 md:mb-16 px-4">
-        <p class="fleet-gold tracking-[0.35em] uppercase text-[11px] md:text-xs mb-4 font-bold">SELECT YOUR CAR</p>
-        <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight">Our <span class="fleet-gold">Car Fleet</span></h2>
+        <p class="fleet-gold tracking-[0.35em] uppercase text-[11px] md:text-xs mb-4 font-bold" data-i18n="fleet.eyebrow">SELECT YOUR CAR</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight" data-i18n-html="fleet.title">Our <span class="fleet-gold">Car Fleet</span></h2>
       </div>
       <div class="fleet-shell">
         <div id="fleetScroll" class="fleet-row no-scrollbar scroll-smooth snap-x snap-mandatory lg:snap-none">
@@ -766,7 +766,7 @@
                   </div>
                 </div>
                 <div class="flex items-center gap-4 md:gap-6 w-full sm:w-auto justify-between sm:justify-end">
-                  <a id="fleetDetailsLink" href="#car-axia-style" class="fleet-gold-bg text-black px-6 py-2.5 rounded-full font-semibold text-xs hover:bg-white transition inline-flex items-center">Details</a>
+                  <a id="fleetDetailsLink" href="#car-axia-style" class="fleet-gold-bg text-black px-6 py-2.5 rounded-full font-semibold text-xs hover:bg-white transition inline-flex items-center" data-i18n="fleet.details">Details</a>
                   <div class="text-right shrink-0">
                     <p id="fleetPrice" class="text-[30px] md:text-[34px] font-semibold fleet-gold leading-none">RM 90</p>
                     <p class="text-[10px] text-gray-500 uppercase tracking-wider mt-1">/ day</p>
@@ -788,8 +788,8 @@
     <section id="car-types-section" aria-labelledby="car-types-heading">
       <div class="ct-inner">
         <div class="ct-section-header">
-          <p class="ct-eyebrow">Categories</p>
-          <h2 id="car-types-heading" class="ct-title">Rental <em>Car Types</em></h2>
+          <p class="ct-eyebrow" data-i18n="carTypes.eyebrow">Categories</p>
+          <h2 id="car-types-heading" class="ct-title" data-i18n-html="carTypes.title">Rental <em>Car Types</em></h2>
         </div>
         <div class="ct-grid">
 
@@ -799,7 +799,7 @@
               <img src="assets/cars/perodua-axia-se.png" alt="Economy Cars">
               <div class="ct-overlay"></div>
             </div>
-            <div class="ct-card-content">Economy Cars</div>
+            <div class="ct-card-content" data-i18n="carTypes.economy">Economy Cars</div>
             <a href="#listing-economy" class="ct-arrow-btn" aria-label="View Economy Cars">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg>
             </a>
@@ -811,7 +811,7 @@
               <img src="assets/cars/toyota-veloz.png" alt="MPV">
               <div class="ct-overlay"></div>
             </div>
-            <div class="ct-card-content">MPV</div>
+            <div class="ct-card-content" data-i18n="carTypes.mpv">MPV</div>
             <a href="#listing-mpv" class="ct-arrow-btn" aria-label="View MPV">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg>
             </a>
@@ -823,7 +823,7 @@
               <img src="assets/cars/toyota-hiace.png" alt="Van">
               <div class="ct-overlay"></div>
             </div>
-            <div class="ct-card-content">Van</div>
+            <div class="ct-card-content" data-i18n="carTypes.van">Van</div>
             <a href="#listing-van" class="ct-arrow-btn" aria-label="View Van">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg>
             </a>
@@ -835,7 +835,7 @@
               <img src="assets/cars/honda-crv.png" alt="SUV — Honda CRV 1.5 Turbo Black Edition">
               <div class="ct-overlay"></div>
             </div>
-            <div class="ct-card-content">SUV</div>
+            <div class="ct-card-content" data-i18n="carTypes.suv">SUV</div>
             <a href="#listing-suv" class="ct-arrow-btn" aria-label="View SUV">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg>
             </a>
@@ -847,7 +847,7 @@
               <img src="assets/cars/mini-cooper.png" alt="Luxury — Mini Cooper">
               <div class="ct-overlay"></div>
             </div>
-            <div class="ct-card-content">Luxury</div>
+            <div class="ct-card-content" data-i18n="carTypes.luxury">Luxury</div>
             <a href="#listing-luxury" class="ct-arrow-btn" aria-label="View Luxury">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="6 5 19 5 19 18"/></svg>
             </a>
@@ -860,25 +860,25 @@
     </section>
 
     <section id="rental-process" class="py-24 px-12 lg:px-24">
-      <div class="text-center mb-16"><p class="text-gold tracking-widest uppercase text-xs mb-4">STEPS</p><h2 class="text-5xl font-bold">Car Rental <span class="text-gold">Process</span></h2></div>
+      <div class="text-center mb-16"><p class="text-gold tracking-widest uppercase text-xs mb-4" data-i18n="process.eyebrow">STEPS</p><h2 class="text-5xl font-bold" data-i18n-html="process.title">Car Rental <span class="text-gold">Process</span></h2></div>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="card-dark p-12 relative"><h3 class="text-2xl font-bold mb-4">Choose A Car</h3><p class="text-gray-400">View our range of cars, find your perfect car for the coming days.</p><div class="mt-8 text-4xl font-bold text-white/5">01.</div></div>
-        <div class="card-dark p-12 relative border border-gold/30"><h3 class="text-2xl font-bold mb-4">Come In Contact</h3><p class="text-gray-400">Our advisor team is ready to help you with the booking process.</p><div class="mt-8 text-4xl font-bold text-white/5">02.</div></div>
-        <div class="card-dark p-12 relative"><h3 class="text-2xl font-bold mb-4">Enjoy Driving</h3><p class="text-gray-400">Receive the key and enjoy your car. We treat all our cars with respect.</p><div class="mt-8 text-4xl font-bold text-white/5">03.</div></div>
+        <div class="card-dark p-12 relative"><h3 class="text-2xl font-bold mb-4" data-i18n="process.step1Title">Choose A Car</h3><p class="text-gray-400" data-i18n="process.step1Desc">View our range of cars, find your perfect car for the coming days.</p><div class="mt-8 text-4xl font-bold text-white/5">01.</div></div>
+        <div class="card-dark p-12 relative border border-gold/30"><h3 class="text-2xl font-bold mb-4" data-i18n="process.step2Title">Come In Contact</h3><p class="text-gray-400" data-i18n="process.step2Desc">Our advisor team is ready to help you with the booking process.</p><div class="mt-8 text-4xl font-bold text-white/5">02.</div></div>
+        <div class="card-dark p-12 relative"><h3 class="text-2xl font-bold mb-4" data-i18n="process.step3Title">Enjoy Driving</h3><p class="text-gray-400" data-i18n="process.step3Desc">Receive the key and enjoy your car. We treat all our cars with respect.</p><div class="mt-8 text-4xl font-bold text-white/5">03.</div></div>
       </div>
     </section>
 
     <section class="h-[60vh] relative flex flex-col items-center justify-center">
       <div class="absolute inset-0 z-0"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=2070" class="w-full h-full object-cover opacity-40" alt="Car Promo"></div>
       <div class="relative z-10 text-center">
-        <p class="text-gold tracking-[0.4em] uppercase text-xs mb-4">EXPLORE</p>
-        <h2 class="text-5xl font-bold mb-8">Car <span class="text-gold">Promo</span> Video</h2>
+        <p class="text-gold tracking-[0.4em] uppercase text-xs mb-4" data-i18n="promo.eyebrow">EXPLORE</p>
+        <h2 class="text-5xl font-bold mb-8" data-i18n-html="promo.title">Car <span class="text-gold">Promo</span> Video</h2>
         <div class="w-20 h-20 border border-gold rounded-full flex items-center justify-center cursor-pointer hover:bg-gold transition group mx-auto"><i class="fa-solid fa-play text-gold group-hover:text-black"></i></div>
       </div>
     </section>
 
     <section id="testimonials-section" aria-labelledby="testimonials-heading">
-      <div class="ts-inner"><p class="ts-eyebrow">Testimonials</p><h2 id="testimonials-heading" class="ts-title">What Clients Say</h2></div>
+      <div class="ts-inner"><p class="ts-eyebrow" data-i18n="testimonials.eyebrow">Testimonials</p><h2 id="testimonials-heading" class="ts-title" data-i18n="testimonials.title">What Clients Say</h2></div>
       <div class="ts-track-wrap"><div class="ts-track">
         <article class="ts-card"><div class="ts-stars">★★★★★</div><p class="ts-quote">Come in for walk-in inspection and oil change. Brown is delight to deal with. He took my car right in, and completed work in a short time. Highly recommend the shop.</p><div class="ts-user"><img class="ts-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200" alt="Emily Martin"><div class="ts-user-meta"><p class="ts-name">Emily Martin</p><p class="ts-role">Customer</p></div></div></article>
         <article class="ts-card"><div class="ts-stars">★★★★★</div><p class="ts-quote">From booking to return, everything was very smooth. The car was spotless, the pickup was on time, and customer support stayed responsive throughout our whole trip.</p><div class="ts-user"><img class="ts-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200" alt="Olivia Brown"><div class="ts-user-meta"><p class="ts-name">Olivia Brown</p><p class="ts-role">Customer</p></div></div></article>
@@ -899,19 +899,19 @@
           <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/MINI_logo.svg" alt="Mini">
         </div>
         <div class="mf-contact-grid">
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label">Write to us</p><p class="mf-contact-value">hello@jfz.my</p></div></div>
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label" data-i18n="footer.callUs">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label" data-i18n="footer.writeTo">Write to us</p><p class="mf-contact-value">hello@jfz.my</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label" data-i18n="footer.address">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
         </div>
         <div class="mf-main">
           <div>
             <h3 class="mf-logo">JF<span>Z</span></h3>
-            <p class="mf-text">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
+            <p class="mf-text" data-i18n="footer.desc">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
             <div class="mf-social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div>
           </div>
           <div>
             <h4 class="mf-heading" data-i18n="footer.quickLinks">Quick Links</h4>
-            <ul class="mf-links"><li><a href="#about-section">About</a></li><li><a href="#luxury-fleet">Cars</a></li><li><a href="#car-types-section">Car Types</a></li><li><a href="#rental-process">Process</a></li><li><a href="#main-footer">Contact</a></li></ul>
+            <ul class="mf-links"><li><a href="#about-section" data-i18n="nav.about">About</a></li><li><a href="#luxury-fleet" data-i18n="nav.cars">Cars</a></li><li><a href="#car-types-section" data-i18n="nav.carTypes">Car Types</a></li><li><a href="#rental-process" data-i18n="nav.process">Process</a></li><li><a href="#main-footer" data-i18n="nav.contact">Contact</a></li></ul>
           </div>
           <div>
             <h4 class="mf-heading" data-i18n="footer.subscribe">Subscribe</h4>
@@ -919,7 +919,7 @@
             <form class="mf-subscribe" action="#" method="post"><input id="footerEmailInput" type="email" placeholder="Your email address" aria-label="Email address"><button type="submit" aria-label="Submit"><i class="fa-solid fa-arrow-right"></i></button></form>
           </div>
         </div>
-        <p class="mf-bottom">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
+        <p class="mf-bottom" data-i18n="footer.copyright">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
       </div>
     </footer>
   </div><!-- /view-home -->
@@ -931,12 +931,12 @@
 
     <!-- Hero -->
     <div class="rnx-listing-hero">
-      <p class="rnx-hero-eyebrow">Rent A Car</p>
-      <h1 id="listingTitle" class="rnx-hero-title">Select Your Car</h1>
+      <p class="rnx-hero-eyebrow" data-i18n="listing.eyebrow">Rent A Car</p>
+      <h1 id="listingTitle" class="rnx-hero-title" data-i18n="listing.title">Select Your Car</h1>
       <!-- Search card overlapping hero -->
       <div class="rnx-search-card">
         <div class="rnx-search-inner">
-          <input id="listingSearchInput" type="text" placeholder="Search cars...">
+          <input id="listingSearchInput" type="text" placeholder="Search cars..." data-i18n-placeholder="listing.searchPlaceholder">
           <button id="listingSearchBtn" type="button" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
       </div>
@@ -950,21 +950,21 @@
 
         <!-- Categories -->
         <div class="rnx-sidebar-block">
-          <h3 class="rnx-sidebar-heading">Categories</h3>
+          <h3 class="rnx-sidebar-heading" data-i18n="listing.categories">Categories</h3>
           <ul class="rnx-sidebar-list">
-            <li><button type="button" class="rnx-cat-btn category-item is-active" data-category="all">All Cars</button></li>
-            <li><button type="button" class="rnx-cat-btn category-item" data-category="economy">Economy Cars</button></li>
-            <li><button type="button" class="rnx-cat-btn category-item" data-category="sedan">Sedan</button></li>
-            <li><button type="button" class="rnx-cat-btn category-item" data-category="mpv">MPV</button></li>
-            <li><button type="button" class="rnx-cat-btn category-item" data-category="van">Van</button></li>
-            <li><button type="button" class="rnx-cat-btn category-item" data-category="suv">SUV</button></li>
-            <li><button type="button" class="rnx-cat-btn category-item" data-category="luxury">Luxury</button></li>
+            <li><button type="button" class="rnx-cat-btn category-item is-active" data-category="all" data-i18n="listing.catAll">All Cars</button></li>
+            <li><button type="button" class="rnx-cat-btn category-item" data-category="economy" data-i18n="listing.catEconomy">Economy Cars</button></li>
+            <li><button type="button" class="rnx-cat-btn category-item" data-category="sedan" data-i18n="listing.catSedan">Sedan</button></li>
+            <li><button type="button" class="rnx-cat-btn category-item" data-category="mpv" data-i18n="listing.catMpv">MPV</button></li>
+            <li><button type="button" class="rnx-cat-btn category-item" data-category="van" data-i18n="listing.catVan">Van</button></li>
+            <li><button type="button" class="rnx-cat-btn category-item" data-category="suv" data-i18n="listing.catSuv">SUV</button></li>
+            <li><button type="button" class="rnx-cat-btn category-item" data-category="luxury" data-i18n="listing.catLuxury">Luxury</button></li>
           </ul>
         </div>
 
         <!-- Pickup Locations -->
         <div class="rnx-sidebar-block">
-          <h3 class="rnx-sidebar-heading">Pickup Locations</h3>
+          <h3 class="rnx-sidebar-heading" data-i18n="listing.pickupLoc">Pickup Locations</h3>
           <ul class="rnx-sidebar-list">
             <li><span class="rnx-loc-item">Alor Setar</span></li>
             <li><span class="rnx-loc-item">Kuala Kedah</span></li>
@@ -973,7 +973,7 @@
 
         <!-- Dropoff Locations -->
         <div class="rnx-sidebar-block">
-          <h3 class="rnx-sidebar-heading">Dropoff Locations</h3>
+          <h3 class="rnx-sidebar-heading" data-i18n="listing.dropoffLoc">Dropoff Locations</h3>
           <ul class="rnx-sidebar-list">
             <li><span class="rnx-loc-item">Alor Setar</span></li>
             <li><span class="rnx-loc-item">Kuala Kedah</span></li>
@@ -982,7 +982,7 @@
 
         <!-- Back link -->
         <a href="#luxury-fleet" class="inline-flex items-center gap-2 text-sm text-gold hover:text-white transition mt-2">
-          <i class="fa-solid fa-arrow-left text-xs"></i> Back to Home
+          <i class="fa-solid fa-arrow-left text-xs"></i> <span data-i18n="listing.backHome">Back to Home</span>
         </a>
       </aside>
 
@@ -990,11 +990,11 @@
       <main>
         <!-- Result bar -->
         <div class="rnx-result-bar">
-          <p id="rnxResultCount" class="rnx-result-count">Showing all results</p>
+          <p id="rnxResultCount" class="rnx-result-count" data-i18n="listing.showingAll">Showing all results</p>
           <select class="rnx-sort-select" aria-label="Sort">
-            <option>Default sorting</option>
-            <option>Price: Low to High</option>
-            <option>Price: High to Low</option>
+            <option data-i18n="listing.sortDefault">Default sorting</option>
+            <option data-i18n="listing.sortLowHigh">Price: Low to High</option>
+            <option data-i18n="listing.sortHighLow">Price: High to Low</option>
           </select>
         </div>
 
@@ -1007,14 +1007,14 @@
             <div class="rnx-card-body">
               <h3 class="rnx-card-name">Perodua Axia 1.0 Style 2020</h3>
               <ul class="rnx-specs">
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-door-open"></i>Doors</span><span class="rnx-spec-val">4</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i>Passengers</span><span class="rnx-spec-val">5</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i>Transmission</span><span class="rnx-spec-val">Auto</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i>Luggage</span><span class="rnx-spec-val">2 Bags</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-door-open"></i><span data-i18n="spec.doors">Doors</span></span><span class="rnx-spec-val">4</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i><span data-i18n="spec.passengers">Passengers</span></span><span class="rnx-spec-val">5</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i><span data-i18n="spec.transmission">Transmission</span></span><span class="rnx-spec-val">Auto</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i><span data-i18n="spec.luggage">Luggage</span></span><span class="rnx-spec-val">2 Bags</span></li>
               </ul>
               <div class="rnx-card-foot">
-                <p class="rnx-price">RM 90<span>/ day</span></p>
-                <a href="#car-axia-style" class="rnx-book-btn">Book</a>
+                <p class="rnx-price">RM 90<span data-i18n="listing.perDay">/ day</span></p>
+                <a href="#car-axia-style" class="rnx-book-btn" data-i18n="listing.book">Book</a>
               </div>
             </div>
           </article>
@@ -1025,14 +1025,14 @@
             <div class="rnx-card-body">
               <h3 class="rnx-card-name">Perodua Axia 1.0 SE 2023</h3>
               <ul class="rnx-specs">
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-door-open"></i>Doors</span><span class="rnx-spec-val">4</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i>Passengers</span><span class="rnx-spec-val">5</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i>Transmission</span><span class="rnx-spec-val">Auto</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i>Luggage</span><span class="rnx-spec-val">2 Bags</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-door-open"></i><span data-i18n="spec.doors">Doors</span></span><span class="rnx-spec-val">4</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i><span data-i18n="spec.passengers">Passengers</span></span><span class="rnx-spec-val">5</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i><span data-i18n="spec.transmission">Transmission</span></span><span class="rnx-spec-val">Auto</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i><span data-i18n="spec.luggage">Luggage</span></span><span class="rnx-spec-val">2 Bags</span></li>
               </ul>
               <div class="rnx-card-foot">
-                <p class="rnx-price">RM 100<span>/ day</span></p>
-                <a href="#car-axia-se" class="rnx-book-btn">Book</a>
+                <p class="rnx-price">RM 100<span data-i18n="listing.perDay">/ day</span></p>
+                <a href="#car-axia-se" class="rnx-book-btn" data-i18n="listing.book">Book</a>
               </div>
             </div>
           </article>
@@ -1043,14 +1043,14 @@
             <div class="rnx-card-body">
               <h3 class="rnx-card-name">Perodua Bezza 1.3X 2023</h3>
               <ul class="rnx-specs">
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-door-open"></i>Doors</span><span class="rnx-spec-val">4</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i>Passengers</span><span class="rnx-spec-val">5</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i>Transmission</span><span class="rnx-spec-val">Auto</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i>Luggage</span><span class="rnx-spec-val">2 Bags</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-door-open"></i><span data-i18n="spec.doors">Doors</span></span><span class="rnx-spec-val">4</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i><span data-i18n="spec.passengers">Passengers</span></span><span class="rnx-spec-val">5</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i><span data-i18n="spec.transmission">Transmission</span></span><span class="rnx-spec-val">Auto</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i><span data-i18n="spec.luggage">Luggage</span></span><span class="rnx-spec-val">2 Bags</span></li>
               </ul>
               <div class="rnx-card-foot">
-                <p class="rnx-price">RM 120<span>/ day</span></p>
-                <a href="#car-bezza" class="rnx-book-btn">Book</a>
+                <p class="rnx-price">RM 120<span data-i18n="listing.perDay">/ day</span></p>
+                <a href="#car-bezza" class="rnx-book-btn" data-i18n="listing.book">Book</a>
               </div>
             </div>
           </article>
@@ -1061,14 +1061,14 @@
             <div class="rnx-card-body">
               <h3 class="rnx-card-name">Toyota Veloz 1.5 2024</h3>
               <ul class="rnx-specs">
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-door-open"></i>Doors</span><span class="rnx-spec-val">4</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i>Passengers</span><span class="rnx-spec-val">7</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i>Transmission</span><span class="rnx-spec-val">Auto</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i>Luggage</span><span class="rnx-spec-val">3 Bags</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-door-open"></i><span data-i18n="spec.doors">Doors</span></span><span class="rnx-spec-val">4</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i><span data-i18n="spec.passengers">Passengers</span></span><span class="rnx-spec-val">7</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i><span data-i18n="spec.transmission">Transmission</span></span><span class="rnx-spec-val">Auto</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i><span data-i18n="spec.luggage">Luggage</span></span><span class="rnx-spec-val">3 Bags</span></li>
               </ul>
               <div class="rnx-card-foot">
-                <p class="rnx-price">RM 230<span>/ day</span></p>
-                <a href="#car-veloz" class="rnx-book-btn">Book</a>
+                <p class="rnx-price">RM 230<span data-i18n="listing.perDay">/ day</span></p>
+                <a href="#car-veloz" class="rnx-book-btn" data-i18n="listing.book">Book</a>
               </div>
             </div>
           </article>
@@ -1080,14 +1080,14 @@
             <div class="rnx-card-body">
               <h3 class="rnx-card-name">New Toyota Hiace 2.8 (A) 15 Seater</h3>
               <ul class="rnx-specs">
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-door-open"></i>Doors</span><span class="rnx-spec-val">4</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i>Passengers</span><span class="rnx-spec-val">15</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i>Transmission</span><span class="rnx-spec-val">Manual</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i>Luggage</span><span class="rnx-spec-val">Spacious</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-door-open"></i><span data-i18n="spec.doors">Doors</span></span><span class="rnx-spec-val">4</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i><span data-i18n="spec.passengers">Passengers</span></span><span class="rnx-spec-val">15</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i><span data-i18n="spec.transmission">Transmission</span></span><span class="rnx-spec-val">Manual</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i><span data-i18n="spec.luggage">Luggage</span></span><span class="rnx-spec-val">Spacious</span></li>
               </ul>
               <div class="rnx-card-foot">
-                <p class="rnx-price">RM 550–650<span>/ day</span></p>
-                <a href="#car-hiace" class="rnx-book-btn">Book</a>
+                <p class="rnx-price">RM 550–650<span data-i18n="listing.perDay">/ day</span></p>
+                <a href="#car-hiace" class="rnx-book-btn" data-i18n="listing.book">Book</a>
               </div>
             </div>
           </article>
@@ -1098,14 +1098,14 @@
             <div class="rnx-card-body">
               <h3 class="rnx-card-name">Mini Cooper S 2.0T Convertible 2023</h3>
               <ul class="rnx-specs">
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-door-open"></i>Doors</span><span class="rnx-spec-val">2</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i>Passengers</span><span class="rnx-spec-val">4</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i>Transmission</span><span class="rnx-spec-val">Auto</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i>Luggage</span><span class="rnx-spec-val">1 Bag</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-door-open"></i><span data-i18n="spec.doors">Doors</span></span><span class="rnx-spec-val">2</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i><span data-i18n="spec.passengers">Passengers</span></span><span class="rnx-spec-val">4</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i><span data-i18n="spec.transmission">Transmission</span></span><span class="rnx-spec-val">Auto</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i><span data-i18n="spec.luggage">Luggage</span></span><span class="rnx-spec-val">1 Bag</span></li>
               </ul>
               <div class="rnx-card-foot">
-                <p class="rnx-price">RM 650<span>/ day</span></p>
-                <a href="#car-mini" class="rnx-book-btn">Book</a>
+                <p class="rnx-price">RM 650<span data-i18n="listing.perDay">/ day</span></p>
+                <a href="#car-mini" class="rnx-book-btn" data-i18n="listing.book">Book</a>
               </div>
             </div>
           </article>
@@ -1116,14 +1116,14 @@
             <div class="rnx-card-body">
               <h3 class="rnx-card-name">Toyota Vellfire 2.5 Pilot Seat</h3>
               <ul class="rnx-specs">
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-door-open"></i>Doors</span><span class="rnx-spec-val">4</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i>Passengers</span><span class="rnx-spec-val">7</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i>Transmission</span><span class="rnx-spec-val">Auto</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i>Luggage</span><span class="rnx-spec-val">4 Bags</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-door-open"></i><span data-i18n="spec.doors">Doors</span></span><span class="rnx-spec-val">4</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i><span data-i18n="spec.passengers">Passengers</span></span><span class="rnx-spec-val">7</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i><span data-i18n="spec.transmission">Transmission</span></span><span class="rnx-spec-val">Auto</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i><span data-i18n="spec.luggage">Luggage</span></span><span class="rnx-spec-val">4 Bags</span></li>
               </ul>
               <div class="rnx-card-foot">
-                <p class="rnx-price">RM —<span>/ day</span></p>
-                <a href="#car-vellfire" class="rnx-book-btn">Book</a>
+                <p class="rnx-price">RM —<span data-i18n="listing.perDay">/ day</span></p>
+                <a href="#car-vellfire" class="rnx-book-btn" data-i18n="listing.book">Book</a>
               </div>
             </div>
           </article>
@@ -1134,14 +1134,14 @@
             <div class="rnx-card-body">
               <h3 class="rnx-card-name">Honda HRV 1.5 Hybrid 2022</h3>
               <ul class="rnx-specs">
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-bolt"></i>Engine</span><span class="rnx-spec-val">1.5 Hybrid</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i>Passengers</span><span class="rnx-spec-val">5</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i>Transmission</span><span class="rnx-spec-val">Auto</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i>Luggage</span><span class="rnx-spec-val">4 Bags</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-bolt"></i><span data-i18n="spec.engine">Engine</span></span><span class="rnx-spec-val">1.5 Hybrid</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i><span data-i18n="spec.passengers">Passengers</span></span><span class="rnx-spec-val">5</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i><span data-i18n="spec.transmission">Transmission</span></span><span class="rnx-spec-val">Auto</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i><span data-i18n="spec.luggage">Luggage</span></span><span class="rnx-spec-val">4 Bags</span></li>
               </ul>
               <div class="rnx-card-foot">
-                <p class="rnx-price">RM 250<span>/ day</span></p>
-                <a href="#car-hrv" class="rnx-book-btn">Book</a>
+                <p class="rnx-price">RM 250<span data-i18n="listing.perDay">/ day</span></p>
+                <a href="#car-hrv" class="rnx-book-btn" data-i18n="listing.book">Book</a>
               </div>
             </div>
           </article>
@@ -1152,14 +1152,14 @@
             <div class="rnx-card-body">
               <h3 class="rnx-card-name">Honda CRV 1.5 Turbo Black Edition 2022</h3>
               <ul class="rnx-specs">
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-bolt"></i>Engine</span><span class="rnx-spec-val">1.5 Turbo</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i>Passengers</span><span class="rnx-spec-val">5</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i>Transmission</span><span class="rnx-spec-val">Auto</span></li>
-                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i>Luggage</span><span class="rnx-spec-val">4 Bags</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-bolt"></i><span data-i18n="spec.engine">Engine</span></span><span class="rnx-spec-val">1.5 Turbo</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-user"></i><span data-i18n="spec.passengers">Passengers</span></span><span class="rnx-spec-val">5</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-gear"></i><span data-i18n="spec.transmission">Transmission</span></span><span class="rnx-spec-val">Auto</span></li>
+                <li class="rnx-spec-row"><span class="rnx-spec-label"><i class="fa-solid fa-suitcase"></i><span data-i18n="spec.luggage">Luggage</span></span><span class="rnx-spec-val">4 Bags</span></li>
               </ul>
               <div class="rnx-card-foot">
-                <p class="rnx-price">RM 300<span>/ day</span></p>
-                <a href="#car-crv" class="rnx-book-btn">Book</a>
+                <p class="rnx-price">RM 300<span data-i18n="listing.perDay">/ day</span></p>
+                <a href="#car-crv" class="rnx-book-btn" data-i18n="listing.book">Book</a>
               </div>
             </div>
           </article>
@@ -1177,19 +1177,19 @@
           <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/MINI_logo.svg" alt="Mini">
         </div>
         <div class="mf-contact-grid">
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label">Write to us</p><p class="mf-contact-value">hello@jfz.my</p></div></div>
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label" data-i18n="footer.callUs">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label" data-i18n="footer.writeTo">Write to us</p><p class="mf-contact-value">hello@jfz.my</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label" data-i18n="footer.address">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
         </div>
         <div class="mf-main">
           <div>
             <h3 class="mf-logo">JF<span>Z</span></h3>
-            <p class="mf-text">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
+            <p class="mf-text" data-i18n="footer.desc">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
             <div class="mf-social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div>
           </div>
           <div>
             <h4 class="mf-heading" data-i18n="footer.quickLinks">Quick Links</h4>
-            <ul class="mf-links"><li><a href="#about-section">About</a></li><li><a href="#luxury-fleet">Cars</a></li><li><a href="#car-types-section">Car Types</a></li><li><a href="#rental-process">Process</a></li><li><a href="#main-footer">Contact</a></li></ul>
+            <ul class="mf-links"><li><a href="#about-section" data-i18n="nav.about">About</a></li><li><a href="#luxury-fleet" data-i18n="nav.cars">Cars</a></li><li><a href="#car-types-section" data-i18n="nav.carTypes">Car Types</a></li><li><a href="#rental-process" data-i18n="nav.process">Process</a></li><li><a href="#main-footer" data-i18n="nav.contact">Contact</a></li></ul>
           </div>
           <div>
             <h4 class="mf-heading" data-i18n="footer.subscribe">Subscribe</h4>
@@ -1197,7 +1197,7 @@
             <form class="mf-subscribe" action="#" method="post"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit" aria-label="Submit"><i class="fa-solid fa-arrow-right"></i></button></form>
           </div>
         </div>
-        <p class="mf-bottom">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
+        <p class="mf-bottom" data-i18n="footer.copyright">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
       </div>
     </footer>
   </div><!-- /view-listing -->
@@ -1208,30 +1208,30 @@
   <div id="view-car-mini" style="display:none">
     <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">Luxury</p><h1 class="text-5xl md:text-6xl font-bold">Mini Cooper S 2.0 Turbo Convertible 2023</h1></div></section>
     <section class="relative px-8 lg:px-24 pb-24 bg-[#161616]"><div class="grid lg:grid-cols-[1.6fr_0.8fr] gap-10"><div class="pt-14">
-      <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold">General Information</h2><a href="#listing-luxury" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> Back</a></div>
+      <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold" data-i18n="detail.generalInfo">General Information</h2><a href="#listing-luxury" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> <span data-i18n="detail.back">Back</span></a></div>
       <p class="text-gray-400 leading-8 mb-8">The iconic Mini Cooper S 2.0 Turbo Convertible 2023 — a stylish, fun-to-drive convertible perfect for weekend getaways and special occasions around Kedah.</p>
-      <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Free cancellation & return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Pay on pickup available</p></div></div>
-      <h3 class="text-3xl font-bold mb-5">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/mini-cooper.png" class="h-56 w-full object-cover rounded-[20px]" alt="Mini Cooper exterior"><img src="assets/cars/mini-cooper-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Mini Cooper interior"></div>
+      <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet1">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet2">Free cancellation &amp; return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet3">Pay on pickup available</p></div></div>
+      <h3 class="text-3xl font-bold mb-5" data-i18n="detail.imageGallery">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/mini-cooper.png" class="h-56 w-full object-cover rounded-[20px]" alt="Mini Cooper exterior"><img src="assets/cars/mini-cooper-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Mini Cooper interior"></div>
     </div><div class="lg:-mt-24 pt-8">
-      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 650</p><p class="text-sm uppercase tracking-wider mt-1">/ rent per day</p></div>
+      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 650</p><p class="text-sm uppercase tracking-wider mt-1" data-i18n="detail.rentPerDay">/ rent per day</p></div>
       <div class="bg-[#1f1f1f] border border-white/5 rounded-b-[20px] p-7 space-y-5" id="bookingPanel-mini">
-        <div><label class="text-sm text-gray-300">Pick Up Location</label>
+        <div><label class="text-sm text-gray-300" data-i18n="booking.pickupLoc">Pick Up Location</label>
           <select id="pickup-mini" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
             <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
-        <div><label class="text-sm text-gray-300">Drop Off Location</label>
+        <div><label class="text-sm text-gray-300" data-i18n="booking.dropoffLoc">Drop Off Location</label>
           <select id="dropoff-mini" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
             <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
-        <div><label class="text-sm text-gray-300">Pick Up Date</label>
+        <div><label class="text-sm text-gray-300" data-i18n="booking.pickupDate">Pick Up Date</label>
           <input type="date" id="pickdate-mini" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
-        <div><label class="text-sm text-gray-300">Return Date</label>
+        <div><label class="text-sm text-gray-300" data-i18n="booking.returnDate">Return Date</label>
           <input type="date" id="retdate-mini" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
-        <button type="button" onclick="sendBookingWA('mini','Mini%20Cooper%20S%202.0%20Turbo%20Convertible%202023')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
+        <button type="button" onclick="sendBookingWA('mini','Mini%20Cooper%20S%202.0%20Turbo%20Convertible%202023')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center"><span data-i18n="booking.sendWA">Send to WhatsApp</span></button>
       </div>
     </div></div></section>
   <footer class="shared-footer" id="main-footer">
@@ -1243,19 +1243,19 @@
           <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/MINI_logo.svg" alt="Mini">
         </div>
         <div class="mf-contact-grid">
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label">Write to us</p><p class="mf-contact-value">hello@jfz.my</p></div></div>
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label" data-i18n="footer.callUs">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label" data-i18n="footer.writeTo">Write to us</p><p class="mf-contact-value">hello@jfz.my</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label" data-i18n="footer.address">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
         </div>
         <div class="mf-main">
           <div>
             <h3 class="mf-logo">JF<span>Z</span></h3>
-            <p class="mf-text">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
+            <p class="mf-text" data-i18n="footer.desc">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
             <div class="mf-social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div>
           </div>
           <div>
             <h4 class="mf-heading" data-i18n="footer.quickLinks">Quick Links</h4>
-            <ul class="mf-links"><li><a href="#about-section">About</a></li><li><a href="#luxury-fleet">Cars</a></li><li><a href="#car-types-section">Car Types</a></li><li><a href="#rental-process">Process</a></li><li><a href="#main-footer">Contact</a></li></ul>
+            <ul class="mf-links"><li><a href="#about-section" data-i18n="nav.about">About</a></li><li><a href="#luxury-fleet" data-i18n="nav.cars">Cars</a></li><li><a href="#car-types-section" data-i18n="nav.carTypes">Car Types</a></li><li><a href="#rental-process" data-i18n="nav.process">Process</a></li><li><a href="#main-footer" data-i18n="nav.contact">Contact</a></li></ul>
           </div>
           <div>
             <h4 class="mf-heading" data-i18n="footer.subscribe">Subscribe</h4>
@@ -1263,7 +1263,7 @@
             <form class="mf-subscribe" action="#" method="post"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit" aria-label="Submit"><i class="fa-solid fa-arrow-right"></i></button></form>
           </div>
         </div>
-        <p class="mf-bottom">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
+        <p class="mf-bottom" data-i18n="footer.copyright">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
       </div>
     </footer>
   </div><!-- /view-car-mini -->
@@ -1273,34 +1273,34 @@
   <div id="view-car-axia-style" style="display:none">
     <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">Economy Cars</p><h1 class="text-5xl md:text-6xl font-bold">Perodua Axia 1.0 Style 2020</h1></div></section>
     <section class="relative px-8 lg:px-24 pb-24 bg-[#161616]"><div class="grid lg:grid-cols-[1.6fr_0.8fr] gap-10"><div class="pt-14">
-      <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold">General Information</h2><a href="#luxury-fleet" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> Back</a></div>
+      <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold" data-i18n="detail.generalInfo">General Information</h2><a href="#luxury-fleet" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> <span data-i18n="detail.back">Back</span></a></div>
       <p class="text-gray-400 leading-8 mb-8">Perodua Perodua Axia 1.0 Style 2020 — a fuel-efficient economy pick perfect for daily drives around Kedah. Comfortable, easy to drive, and easy to park.</p>
-      <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Free cancellation & return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Pay on pickup available</p></div></div>
-      <h3 class="text-3xl font-bold mb-5">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/perodua-axia-style.png" class="h-56 w-full object-cover rounded-[20px]" alt="Axia exterior"><img src="assets/cars/perodua-axia-style-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Axia interior"></div>
+      <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet1">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet2">Free cancellation &amp; return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet3">Pay on pickup available</p></div></div>
+      <h3 class="text-3xl font-bold mb-5" data-i18n="detail.imageGallery">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/perodua-axia-style.png" class="h-56 w-full object-cover rounded-[20px]" alt="Axia exterior"><img src="assets/cars/perodua-axia-style-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Axia interior"></div>
     </div><div class="lg:-mt-24 pt-8">
-      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 90</p><p class="text-sm uppercase tracking-wider mt-1">/ rent per day</p></div>
+      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 90</p><p class="text-sm uppercase tracking-wider mt-1" data-i18n="detail.rentPerDay">/ rent per day</p></div>
       <div class="bg-[#1f1f1f] border border-white/5 rounded-b-[20px] p-7 space-y-5" id="bookingPanel-axia-style">
         <div>
-          <label class="text-sm text-gray-300">Pick Up Location</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.pickupLoc">Pick Up Location</label>
           <select id="pickup-axia-style" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
             <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
         <div>
-          <label class="text-sm text-gray-300">Drop Off Location</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.dropoffLoc">Drop Off Location</label>
           <select id="dropoff-axia-style" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
             <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
         <div>
-          <label class="text-sm text-gray-300">Pick Up Date</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.pickupDate">Pick Up Date</label>
           <input type="date" id="pickdate-axia-style" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
         <div>
-          <label class="text-sm text-gray-300">Return Date</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.returnDate">Return Date</label>
           <input type="date" id="retdate-axia-style" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
-        <button type="button" onclick="sendBookingWA('axia-style','Axia%20Style%202020')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
+        <button type="button" onclick="sendBookingWA('axia-style','Axia%20Style%202020')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center"><span data-i18n="booking.sendWA">Send to WhatsApp</span></button>
       </div>
     </div></div></section>
   <footer class="shared-footer" id="main-footer">
@@ -1312,19 +1312,19 @@
           <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/MINI_logo.svg" alt="Mini">
         </div>
         <div class="mf-contact-grid">
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label">Write to us</p><p class="mf-contact-value">hello@jfz.my</p></div></div>
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label" data-i18n="footer.callUs">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label" data-i18n="footer.writeTo">Write to us</p><p class="mf-contact-value">hello@jfz.my</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label" data-i18n="footer.address">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
         </div>
         <div class="mf-main">
           <div>
             <h3 class="mf-logo">JF<span>Z</span></h3>
-            <p class="mf-text">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
+            <p class="mf-text" data-i18n="footer.desc">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
             <div class="mf-social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div>
           </div>
           <div>
             <h4 class="mf-heading" data-i18n="footer.quickLinks">Quick Links</h4>
-            <ul class="mf-links"><li><a href="#about-section">About</a></li><li><a href="#luxury-fleet">Cars</a></li><li><a href="#car-types-section">Car Types</a></li><li><a href="#rental-process">Process</a></li><li><a href="#main-footer">Contact</a></li></ul>
+            <ul class="mf-links"><li><a href="#about-section" data-i18n="nav.about">About</a></li><li><a href="#luxury-fleet" data-i18n="nav.cars">Cars</a></li><li><a href="#car-types-section" data-i18n="nav.carTypes">Car Types</a></li><li><a href="#rental-process" data-i18n="nav.process">Process</a></li><li><a href="#main-footer" data-i18n="nav.contact">Contact</a></li></ul>
           </div>
           <div>
             <h4 class="mf-heading" data-i18n="footer.subscribe">Subscribe</h4>
@@ -1332,7 +1332,7 @@
             <form class="mf-subscribe" action="#" method="post"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit" aria-label="Submit"><i class="fa-solid fa-arrow-right"></i></button></form>
           </div>
         </div>
-        <p class="mf-bottom">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
+        <p class="mf-bottom" data-i18n="footer.copyright">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
       </div>
     </footer>
   </div><!-- /view-car-axia-style -->
@@ -1343,34 +1343,34 @@
   <div id="view-car-axia-se" style="display:none">
     <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">Economy Cars</p><h1 class="text-5xl md:text-6xl font-bold">Perodua Axia 1.0 SE 2023</h1></div></section>
     <section class="relative px-8 lg:px-24 pb-24 bg-[#161616]"><div class="grid lg:grid-cols-[1.6fr_0.8fr] gap-10"><div class="pt-14">
-      <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold">General Information</h2><a href="#luxury-fleet" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> Back</a></div>
+      <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold" data-i18n="detail.generalInfo">General Information</h2><a href="#luxury-fleet" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> <span data-i18n="detail.back">Back</span></a></div>
       <p class="text-gray-400 leading-8 mb-8">The latest generation New Perodua Axia SE — packed with updated safety features, a more efficient engine, and a modern interior. Great for both city drives and outstation trips.</p>
-      <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Free cancellation & return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Pay on pickup available</p></div></div>
-      <h3 class="text-3xl font-bold mb-5">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/perodua-axia-se.png" class="h-56 w-full object-cover rounded-[20px]" alt="Axia SE exterior"><img src="assets/cars/perodua-axia-se-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Axia SE interior"></div>
+      <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet1">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet2">Free cancellation &amp; return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet3">Pay on pickup available</p></div></div>
+      <h3 class="text-3xl font-bold mb-5" data-i18n="detail.imageGallery">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/perodua-axia-se.png" class="h-56 w-full object-cover rounded-[20px]" alt="Axia SE exterior"><img src="assets/cars/perodua-axia-se-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Axia SE interior"></div>
     </div><div class="lg:-mt-24 pt-8">
-      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 100</p><p class="text-sm uppercase tracking-wider mt-1">/ rent per day</p></div>
+      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 100</p><p class="text-sm uppercase tracking-wider mt-1" data-i18n="detail.rentPerDay">/ rent per day</p></div>
       <div class="bg-[#1f1f1f] border border-white/5 rounded-b-[20px] p-7 space-y-5" id="bookingPanel-axia-se">
         <div>
-          <label class="text-sm text-gray-300">Pick Up Location</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.pickupLoc">Pick Up Location</label>
           <select id="pickup-axia-se" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
             <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
         <div>
-          <label class="text-sm text-gray-300">Drop Off Location</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.dropoffLoc">Drop Off Location</label>
           <select id="dropoff-axia-se" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
             <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
         <div>
-          <label class="text-sm text-gray-300">Pick Up Date</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.pickupDate">Pick Up Date</label>
           <input type="date" id="pickdate-axia-se" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
         <div>
-          <label class="text-sm text-gray-300">Return Date</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.returnDate">Return Date</label>
           <input type="date" id="retdate-axia-se" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
-        <button type="button" onclick="sendBookingWA('axia-se','New%20Axia%20SE')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
+        <button type="button" onclick="sendBookingWA('axia-se','New%20Axia%20SE')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center"><span data-i18n="booking.sendWA">Send to WhatsApp</span></button>
       </div>
     </div></div></section>
   <footer class="shared-footer" id="main-footer">
@@ -1382,19 +1382,19 @@
           <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/MINI_logo.svg" alt="Mini">
         </div>
         <div class="mf-contact-grid">
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label">Write to us</p><p class="mf-contact-value">hello@jfz.my</p></div></div>
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label" data-i18n="footer.callUs">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label" data-i18n="footer.writeTo">Write to us</p><p class="mf-contact-value">hello@jfz.my</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label" data-i18n="footer.address">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
         </div>
         <div class="mf-main">
           <div>
             <h3 class="mf-logo">JF<span>Z</span></h3>
-            <p class="mf-text">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
+            <p class="mf-text" data-i18n="footer.desc">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
             <div class="mf-social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div>
           </div>
           <div>
             <h4 class="mf-heading" data-i18n="footer.quickLinks">Quick Links</h4>
-            <ul class="mf-links"><li><a href="#about-section">About</a></li><li><a href="#luxury-fleet">Cars</a></li><li><a href="#car-types-section">Car Types</a></li><li><a href="#rental-process">Process</a></li><li><a href="#main-footer">Contact</a></li></ul>
+            <ul class="mf-links"><li><a href="#about-section" data-i18n="nav.about">About</a></li><li><a href="#luxury-fleet" data-i18n="nav.cars">Cars</a></li><li><a href="#car-types-section" data-i18n="nav.carTypes">Car Types</a></li><li><a href="#rental-process" data-i18n="nav.process">Process</a></li><li><a href="#main-footer" data-i18n="nav.contact">Contact</a></li></ul>
           </div>
           <div>
             <h4 class="mf-heading" data-i18n="footer.subscribe">Subscribe</h4>
@@ -1402,7 +1402,7 @@
             <form class="mf-subscribe" action="#" method="post"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit" aria-label="Submit"><i class="fa-solid fa-arrow-right"></i></button></form>
           </div>
         </div>
-        <p class="mf-bottom">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
+        <p class="mf-bottom" data-i18n="footer.copyright">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
       </div>
     </footer>
   </div><!-- /view-car-axia-se -->
@@ -1413,34 +1413,34 @@
   <div id="view-car-bezza" style="display:none">
     <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">Economy Sedan</p><h1 class="text-5xl md:text-6xl font-bold">Perodua Bezza 1.3X 2023</h1></div></section>
     <section class="relative px-8 lg:px-24 pb-24 bg-[#161616]"><div class="grid lg:grid-cols-[1.6fr_0.8fr] gap-10"><div class="pt-14">
-      <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold">General Information</h2><a href="#luxury-fleet" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> Back</a></div>
+      <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold" data-i18n="detail.generalInfo">General Information</h2><a href="#luxury-fleet" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> <span data-i18n="detail.back">Back</span></a></div>
       <p class="text-gray-400 leading-8 mb-8">New Perodua Bezza X — a stylish compact sedan with a more powerful 1.3L engine. Spacious boot and a modern infotainment system make it a top choice for family trips around Kedah.</p>
-      <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Free cancellation & return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Pay on pickup available</p></div></div>
-      <h3 class="text-3xl font-bold mb-5">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/perodua-bezza.png" class="h-56 w-full object-cover rounded-[20px]" alt="Bezza exterior"><img src="assets/cars/perodua-bezza-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Bezza interior"></div>
+      <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet1">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet2">Free cancellation &amp; return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet3">Pay on pickup available</p></div></div>
+      <h3 class="text-3xl font-bold mb-5" data-i18n="detail.imageGallery">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/perodua-bezza.png" class="h-56 w-full object-cover rounded-[20px]" alt="Bezza exterior"><img src="assets/cars/perodua-bezza-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Bezza interior"></div>
     </div><div class="lg:-mt-24 pt-8">
-      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 120</p><p class="text-sm uppercase tracking-wider mt-1">/ rent per day</p></div>
+      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 120</p><p class="text-sm uppercase tracking-wider mt-1" data-i18n="detail.rentPerDay">/ rent per day</p></div>
       <div class="bg-[#1f1f1f] border border-white/5 rounded-b-[20px] p-7 space-y-5" id="bookingPanel-bezza">
         <div>
-          <label class="text-sm text-gray-300">Pick Up Location</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.pickupLoc">Pick Up Location</label>
           <select id="pickup-bezza" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
             <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
         <div>
-          <label class="text-sm text-gray-300">Drop Off Location</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.dropoffLoc">Drop Off Location</label>
           <select id="dropoff-bezza" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
             <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
         <div>
-          <label class="text-sm text-gray-300">Pick Up Date</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.pickupDate">Pick Up Date</label>
           <input type="date" id="pickdate-bezza" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
         <div>
-          <label class="text-sm text-gray-300">Return Date</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.returnDate">Return Date</label>
           <input type="date" id="retdate-bezza" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
-        <button type="button" onclick="sendBookingWA('bezza','New%20Bezza%20X')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
+        <button type="button" onclick="sendBookingWA('bezza','New%20Bezza%20X')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center"><span data-i18n="booking.sendWA">Send to WhatsApp</span></button>
       </div>
     </div></div></section>
   <footer class="shared-footer" id="main-footer">
@@ -1452,19 +1452,19 @@
           <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/MINI_logo.svg" alt="Mini">
         </div>
         <div class="mf-contact-grid">
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label">Write to us</p><p class="mf-contact-value">hello@jfz.my</p></div></div>
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label" data-i18n="footer.callUs">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label" data-i18n="footer.writeTo">Write to us</p><p class="mf-contact-value">hello@jfz.my</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label" data-i18n="footer.address">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
         </div>
         <div class="mf-main">
           <div>
             <h3 class="mf-logo">JF<span>Z</span></h3>
-            <p class="mf-text">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
+            <p class="mf-text" data-i18n="footer.desc">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
             <div class="mf-social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div>
           </div>
           <div>
             <h4 class="mf-heading" data-i18n="footer.quickLinks">Quick Links</h4>
-            <ul class="mf-links"><li><a href="#about-section">About</a></li><li><a href="#luxury-fleet">Cars</a></li><li><a href="#car-types-section">Car Types</a></li><li><a href="#rental-process">Process</a></li><li><a href="#main-footer">Contact</a></li></ul>
+            <ul class="mf-links"><li><a href="#about-section" data-i18n="nav.about">About</a></li><li><a href="#luxury-fleet" data-i18n="nav.cars">Cars</a></li><li><a href="#car-types-section" data-i18n="nav.carTypes">Car Types</a></li><li><a href="#rental-process" data-i18n="nav.process">Process</a></li><li><a href="#main-footer" data-i18n="nav.contact">Contact</a></li></ul>
           </div>
           <div>
             <h4 class="mf-heading" data-i18n="footer.subscribe">Subscribe</h4>
@@ -1472,7 +1472,7 @@
             <form class="mf-subscribe" action="#" method="post"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit" aria-label="Submit"><i class="fa-solid fa-arrow-right"></i></button></form>
           </div>
         </div>
-        <p class="mf-bottom">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
+        <p class="mf-bottom" data-i18n="footer.copyright">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
       </div>
     </footer>
   </div><!-- /view-car-bezza -->
@@ -1483,34 +1483,34 @@
   <div id="view-car-veloz" style="display:none">
     <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">MPV</p><h1 class="text-5xl md:text-6xl font-bold">Toyota Veloz 1.5 2024</h1></div></section>
     <section class="relative px-8 lg:px-24 pb-24 bg-[#161616]"><div class="grid lg:grid-cols-[1.6fr_0.8fr] gap-10"><div class="pt-14">
-      <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold">General Information</h2><a href="#luxury-fleet" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> Back</a></div>
+      <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold" data-i18n="detail.generalInfo">General Information</h2><a href="#luxury-fleet" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> <span data-i18n="detail.back">Back</span></a></div>
       <p class="text-gray-400 leading-8 mb-8">Toyota Veloz 1.5 2024 — a stylish 7-seater crossover MPV. Perfect for family outings, road trips to Langkawi, or business needs across Kedah. Smooth 1.5L CVT engine for a relaxed ride.</p>
-      <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Free cancellation & return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Pay on pickup available</p></div></div>
-      <h3 class="text-3xl font-bold mb-5">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/toyota-veloz.png" class="h-56 w-full object-cover rounded-[20px]" alt="Veloz exterior"><img src="assets/cars/toyota-veloz-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Veloz interior"></div>
+      <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet1">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet2">Free cancellation &amp; return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet3">Pay on pickup available</p></div></div>
+      <h3 class="text-3xl font-bold mb-5" data-i18n="detail.imageGallery">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/toyota-veloz.png" class="h-56 w-full object-cover rounded-[20px]" alt="Veloz exterior"><img src="assets/cars/toyota-veloz-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Veloz interior"></div>
     </div><div class="lg:-mt-24 pt-8">
-      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 230</p><p class="text-sm uppercase tracking-wider mt-1">/ rent per day</p></div>
+      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 230</p><p class="text-sm uppercase tracking-wider mt-1" data-i18n="detail.rentPerDay">/ rent per day</p></div>
       <div class="bg-[#1f1f1f] border border-white/5 rounded-b-[20px] p-7 space-y-5" id="bookingPanel-veloz">
         <div>
-          <label class="text-sm text-gray-300">Pick Up Location</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.pickupLoc">Pick Up Location</label>
           <select id="pickup-veloz" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
             <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
         <div>
-          <label class="text-sm text-gray-300">Drop Off Location</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.dropoffLoc">Drop Off Location</label>
           <select id="dropoff-veloz" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
             <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
         <div>
-          <label class="text-sm text-gray-300">Pick Up Date</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.pickupDate">Pick Up Date</label>
           <input type="date" id="pickdate-veloz" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
         <div>
-          <label class="text-sm text-gray-300">Return Date</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.returnDate">Return Date</label>
           <input type="date" id="retdate-veloz" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
-        <button type="button" onclick="sendBookingWA('veloz','Toyota%20Veloz%201.5%202024')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
+        <button type="button" onclick="sendBookingWA('veloz','Toyota%20Veloz%201.5%202024')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center"><span data-i18n="booking.sendWA">Send to WhatsApp</span></button>
       </div>
     </div></div></section>
   <footer class="shared-footer" id="main-footer">
@@ -1522,19 +1522,19 @@
           <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/MINI_logo.svg" alt="Mini">
         </div>
         <div class="mf-contact-grid">
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label">Write to us</p><p class="mf-contact-value">hello@jfz.my</p></div></div>
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label" data-i18n="footer.callUs">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label" data-i18n="footer.writeTo">Write to us</p><p class="mf-contact-value">hello@jfz.my</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label" data-i18n="footer.address">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
         </div>
         <div class="mf-main">
           <div>
             <h3 class="mf-logo">JF<span>Z</span></h3>
-            <p class="mf-text">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
+            <p class="mf-text" data-i18n="footer.desc">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
             <div class="mf-social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div>
           </div>
           <div>
             <h4 class="mf-heading" data-i18n="footer.quickLinks">Quick Links</h4>
-            <ul class="mf-links"><li><a href="#about-section">About</a></li><li><a href="#luxury-fleet">Cars</a></li><li><a href="#car-types-section">Car Types</a></li><li><a href="#rental-process">Process</a></li><li><a href="#main-footer">Contact</a></li></ul>
+            <ul class="mf-links"><li><a href="#about-section" data-i18n="nav.about">About</a></li><li><a href="#luxury-fleet" data-i18n="nav.cars">Cars</a></li><li><a href="#car-types-section" data-i18n="nav.carTypes">Car Types</a></li><li><a href="#rental-process" data-i18n="nav.process">Process</a></li><li><a href="#main-footer" data-i18n="nav.contact">Contact</a></li></ul>
           </div>
           <div>
             <h4 class="mf-heading" data-i18n="footer.subscribe">Subscribe</h4>
@@ -1542,7 +1542,7 @@
             <form class="mf-subscribe" action="#" method="post"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit" aria-label="Submit"><i class="fa-solid fa-arrow-right"></i></button></form>
           </div>
         </div>
-        <p class="mf-bottom">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
+        <p class="mf-bottom" data-i18n="footer.copyright">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
       </div>
     </footer>
   </div><!-- /view-car-veloz -->
@@ -1553,30 +1553,30 @@
   <div id="view-car-hrv" style="display:none">
     <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">SUV</p><h1 class="text-5xl md:text-6xl font-bold">Honda HRV 1.5 Hybrid 2022</h1></div></section>
     <section class="relative px-8 lg:px-24 pb-24 bg-[#161616]"><div class="grid lg:grid-cols-[1.6fr_0.8fr] gap-10"><div class="pt-14">
-      <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold">General Information</h2><a href="#listing-suv" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> Back</a></div>
+      <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold" data-i18n="detail.generalInfo">General Information</h2><a href="#listing-suv" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> <span data-i18n="detail.back">Back</span></a></div>
       <p class="text-gray-400 leading-8 mb-8">Honda HRV 1.5 Hybrid 2022 — a stylish compact SUV with e:HEV hybrid efficiency. Ideal for city drives, weekend trips, and comfortable family travel across Kedah and beyond.</p>
-      <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Free cancellation &amp; return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Pay on pickup available</p></div></div>
-      <h3 class="text-3xl font-bold mb-5">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/honda-hrv.png" class="h-56 w-full object-cover rounded-[20px]" alt="Honda HRV exterior"><img src="assets/cars/honda-hrv-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Honda HRV interior"></div>
+      <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet1">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet2">Free cancellation &amp; return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet3">Pay on pickup available</p></div></div>
+      <h3 class="text-3xl font-bold mb-5" data-i18n="detail.imageGallery">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/honda-hrv.png" class="h-56 w-full object-cover rounded-[20px]" alt="Honda HRV exterior"><img src="assets/cars/honda-hrv-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Honda HRV interior"></div>
     </div><div class="lg:-mt-24 pt-8">
-      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 250</p><p class="text-sm uppercase tracking-wider mt-1">/ rent per day</p></div>
+      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 250</p><p class="text-sm uppercase tracking-wider mt-1" data-i18n="detail.rentPerDay">/ rent per day</p></div>
       <div class="bg-[#1f1f1f] border border-white/5 rounded-b-[20px] p-7 space-y-5" id="bookingPanel-hrv">
-        <div><label class="text-sm text-gray-300">Pick Up Location</label>
+        <div><label class="text-sm text-gray-300" data-i18n="booking.pickupLoc">Pick Up Location</label>
           <select id="pickup-hrv" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
             <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
-        <div><label class="text-sm text-gray-300">Drop Off Location</label>
+        <div><label class="text-sm text-gray-300" data-i18n="booking.dropoffLoc">Drop Off Location</label>
           <select id="dropoff-hrv" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
             <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
-        <div><label class="text-sm text-gray-300">Pick Up Date</label>
+        <div><label class="text-sm text-gray-300" data-i18n="booking.pickupDate">Pick Up Date</label>
           <input type="date" id="pickdate-hrv" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
-        <div><label class="text-sm text-gray-300">Return Date</label>
+        <div><label class="text-sm text-gray-300" data-i18n="booking.returnDate">Return Date</label>
           <input type="date" id="retdate-hrv" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
-        <button type="button" onclick="sendBookingWA('hrv','Honda%20HRV%201.5%20Hybrid%202022')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
+        <button type="button" onclick="sendBookingWA('hrv','Honda%20HRV%201.5%20Hybrid%202022')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center"><span data-i18n="booking.sendWA">Send to WhatsApp</span></button>
       </div>
     </div></div></section>
   <footer class="shared-footer" id="main-footer">
@@ -1588,19 +1588,19 @@
           <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/MINI_logo.svg" alt="Mini">
         </div>
         <div class="mf-contact-grid">
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label">Write to us</p><p class="mf-contact-value">hello@jfz.my</p></div></div>
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label" data-i18n="footer.callUs">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label" data-i18n="footer.writeTo">Write to us</p><p class="mf-contact-value">hello@jfz.my</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label" data-i18n="footer.address">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
         </div>
         <div class="mf-main">
           <div>
             <h3 class="mf-logo">JF<span>Z</span></h3>
-            <p class="mf-text">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
+            <p class="mf-text" data-i18n="footer.desc">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
             <div class="mf-social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div>
           </div>
           <div>
             <h4 class="mf-heading" data-i18n="footer.quickLinks">Quick Links</h4>
-            <ul class="mf-links"><li><a href="#about-section">About</a></li><li><a href="#luxury-fleet">Cars</a></li><li><a href="#car-types-section">Car Types</a></li><li><a href="#rental-process">Process</a></li><li><a href="#main-footer">Contact</a></li></ul>
+            <ul class="mf-links"><li><a href="#about-section" data-i18n="nav.about">About</a></li><li><a href="#luxury-fleet" data-i18n="nav.cars">Cars</a></li><li><a href="#car-types-section" data-i18n="nav.carTypes">Car Types</a></li><li><a href="#rental-process" data-i18n="nav.process">Process</a></li><li><a href="#main-footer" data-i18n="nav.contact">Contact</a></li></ul>
           </div>
           <div>
             <h4 class="mf-heading" data-i18n="footer.subscribe">Subscribe</h4>
@@ -1608,7 +1608,7 @@
             <form class="mf-subscribe" action="#" method="post"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit" aria-label="Submit"><i class="fa-solid fa-arrow-right"></i></button></form>
           </div>
         </div>
-        <p class="mf-bottom">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
+        <p class="mf-bottom" data-i18n="footer.copyright">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
       </div>
     </footer>
   </div><!-- /view-car-hrv -->
@@ -1619,30 +1619,30 @@
   <div id="view-car-crv" style="display:none">
     <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">SUV</p><h1 class="text-5xl md:text-6xl font-bold">Honda CRV 1.5 Turbo Black Edition 2022</h1></div></section>
     <section class="relative px-8 lg:px-24 pb-24 bg-[#161616]"><div class="grid lg:grid-cols-[1.6fr_0.8fr] gap-10"><div class="pt-14">
-      <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold">General Information</h2><a href="#listing-suv" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> Back</a></div>
+      <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold" data-i18n="detail.generalInfo">General Information</h2><a href="#listing-suv" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> <span data-i18n="detail.back">Back</span></a></div>
       <p class="text-gray-400 leading-8 mb-8">Honda CRV 1.5 Turbo Black Edition 2022 — a bold black SUV with VTEC turbo power and premium Black Edition styling. Spacious cabin for family trips and comfortable long drives across Kedah.</p>
-      <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Free cancellation &amp; return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Pay on pickup available</p></div></div>
-      <h3 class="text-3xl font-bold mb-5">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/honda-crv.png" class="h-56 w-full object-cover rounded-[20px]" alt="Honda CRV Black Edition exterior"><img src="assets/cars/honda-crv-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Honda CRV Black Edition interior"></div>
+      <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet1">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet2">Free cancellation &amp; return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet3">Pay on pickup available</p></div></div>
+      <h3 class="text-3xl font-bold mb-5" data-i18n="detail.imageGallery">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/honda-crv.png" class="h-56 w-full object-cover rounded-[20px]" alt="Honda CRV Black Edition exterior"><img src="assets/cars/honda-crv-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Honda CRV Black Edition interior"></div>
     </div><div class="lg:-mt-24 pt-8">
-      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 300</p><p class="text-sm uppercase tracking-wider mt-1">/ rent per day</p></div>
+      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 300</p><p class="text-sm uppercase tracking-wider mt-1" data-i18n="detail.rentPerDay">/ rent per day</p></div>
       <div class="bg-[#1f1f1f] border border-white/5 rounded-b-[20px] p-7 space-y-5" id="bookingPanel-crv">
-        <div><label class="text-sm text-gray-300">Pick Up Location</label>
+        <div><label class="text-sm text-gray-300" data-i18n="booking.pickupLoc">Pick Up Location</label>
           <select id="pickup-crv" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
             <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
-        <div><label class="text-sm text-gray-300">Drop Off Location</label>
+        <div><label class="text-sm text-gray-300" data-i18n="booking.dropoffLoc">Drop Off Location</label>
           <select id="dropoff-crv" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
             <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
-        <div><label class="text-sm text-gray-300">Pick Up Date</label>
+        <div><label class="text-sm text-gray-300" data-i18n="booking.pickupDate">Pick Up Date</label>
           <input type="date" id="pickdate-crv" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
-        <div><label class="text-sm text-gray-300">Return Date</label>
+        <div><label class="text-sm text-gray-300" data-i18n="booking.returnDate">Return Date</label>
           <input type="date" id="retdate-crv" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
-        <button type="button" onclick="sendBookingWA('crv','Honda%20CRV%201.5%20Turbo%20Black%20Edition%202022')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
+        <button type="button" onclick="sendBookingWA('crv','Honda%20CRV%201.5%20Turbo%20Black%20Edition%202022')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center"><span data-i18n="booking.sendWA">Send to WhatsApp</span></button>
       </div>
     </div></div></section>
   <footer class="shared-footer" id="main-footer">
@@ -1654,19 +1654,19 @@
           <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/MINI_logo.svg" alt="Mini">
         </div>
         <div class="mf-contact-grid">
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label">Write to us</p><p class="mf-contact-value">hello@jfz.my</p></div></div>
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label" data-i18n="footer.callUs">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label" data-i18n="footer.writeTo">Write to us</p><p class="mf-contact-value">hello@jfz.my</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label" data-i18n="footer.address">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
         </div>
         <div class="mf-main">
           <div>
             <h3 class="mf-logo">JF<span>Z</span></h3>
-            <p class="mf-text">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
+            <p class="mf-text" data-i18n="footer.desc">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
             <div class="mf-social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div>
           </div>
           <div>
             <h4 class="mf-heading" data-i18n="footer.quickLinks">Quick Links</h4>
-            <ul class="mf-links"><li><a href="#about-section">About</a></li><li><a href="#luxury-fleet">Cars</a></li><li><a href="#car-types-section">Car Types</a></li><li><a href="#rental-process">Process</a></li><li><a href="#main-footer">Contact</a></li></ul>
+            <ul class="mf-links"><li><a href="#about-section" data-i18n="nav.about">About</a></li><li><a href="#luxury-fleet" data-i18n="nav.cars">Cars</a></li><li><a href="#car-types-section" data-i18n="nav.carTypes">Car Types</a></li><li><a href="#rental-process" data-i18n="nav.process">Process</a></li><li><a href="#main-footer" data-i18n="nav.contact">Contact</a></li></ul>
           </div>
           <div>
             <h4 class="mf-heading" data-i18n="footer.subscribe">Subscribe</h4>
@@ -1674,7 +1674,7 @@
             <form class="mf-subscribe" action="#" method="post"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit" aria-label="Submit"><i class="fa-solid fa-arrow-right"></i></button></form>
           </div>
         </div>
-        <p class="mf-bottom">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
+        <p class="mf-bottom" data-i18n="footer.copyright">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
       </div>
     </footer>
   </div><!-- /view-car-crv -->
@@ -1685,34 +1685,34 @@
   <div id="view-car-hiace" style="display:none">
     <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">Van</p><h1 class="text-5xl md:text-6xl font-bold">New Toyota Hiace 2.8 (A) 15 Seater</h1></div></section>
     <section class="relative px-8 lg:px-24 pb-24 bg-[#161616]"><div class="grid lg:grid-cols-[1.6fr_0.8fr] gap-10"><div class="pt-14">
-      <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold">General Information</h2><a href="#luxury-fleet" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> Back</a></div>
+      <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold" data-i18n="detail.generalInfo">General Information</h2><a href="#luxury-fleet" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> <span data-i18n="detail.back">Back</span></a></div>
       <p class="text-gray-400 leading-8 mb-8">The latest Toyota HiAce — a spacious and comfortable 12-passenger van. Ideal for group trips, tours, events, or staff transport. Large luggage space and powerful air conditioning throughout.</p>
-      <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Free cancellation & return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Pay on pickup available</p></div></div>
-      <h3 class="text-3xl font-bold mb-5">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/toyota-hiace.png" class="h-56 w-full object-cover rounded-[20px]" alt="HiAce exterior"><img src="assets/cars/toyota-hiace-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="HiAce interior"></div>
+      <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet1">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet2">Free cancellation &amp; return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet3">Pay on pickup available</p></div></div>
+      <h3 class="text-3xl font-bold mb-5" data-i18n="detail.imageGallery">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/toyota-hiace.png" class="h-56 w-full object-cover rounded-[20px]" alt="HiAce exterior"><img src="assets/cars/toyota-hiace-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="HiAce interior"></div>
     </div><div class="lg:-mt-24 pt-8">
-      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 550-650</p><p class="text-sm uppercase tracking-wider mt-1">/ rent per day</p></div>
+      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM 550-650</p><p class="text-sm uppercase tracking-wider mt-1" data-i18n="detail.rentPerDay">/ rent per day</p></div>
       <div class="bg-[#1f1f1f] border border-white/5 rounded-b-[20px] p-7 space-y-5" id="bookingPanel-hiace">
         <div>
-          <label class="text-sm text-gray-300">Pick Up Location</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.pickupLoc">Pick Up Location</label>
           <select id="pickup-hiace" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
             <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
         <div>
-          <label class="text-sm text-gray-300">Drop Off Location</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.dropoffLoc">Drop Off Location</label>
           <select id="dropoff-hiace" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
             <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
         <div>
-          <label class="text-sm text-gray-300">Pick Up Date</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.pickupDate">Pick Up Date</label>
           <input type="date" id="pickdate-hiace" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
         <div>
-          <label class="text-sm text-gray-300">Return Date</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.returnDate">Return Date</label>
           <input type="date" id="retdate-hiace" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
-        <button type="button" onclick="sendBookingWA('hiace','New%20Toyota%20Hiace%202.8%20(A)%2015%20Seater')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
+        <button type="button" onclick="sendBookingWA('hiace','New%20Toyota%20Hiace%202.8%20(A)%2015%20Seater')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center"><span data-i18n="booking.sendWA">Send to WhatsApp</span></button>
       </div>
     </div></div></section>
   <footer class="shared-footer" id="main-footer">
@@ -1724,19 +1724,19 @@
           <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/MINI_logo.svg" alt="Mini">
         </div>
         <div class="mf-contact-grid">
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label">Write to us</p><p class="mf-contact-value">hello@jfz.my</p></div></div>
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label" data-i18n="footer.callUs">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label" data-i18n="footer.writeTo">Write to us</p><p class="mf-contact-value">hello@jfz.my</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label" data-i18n="footer.address">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
         </div>
         <div class="mf-main">
           <div>
             <h3 class="mf-logo">JF<span>Z</span></h3>
-            <p class="mf-text">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
+            <p class="mf-text" data-i18n="footer.desc">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
             <div class="mf-social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div>
           </div>
           <div>
             <h4 class="mf-heading" data-i18n="footer.quickLinks">Quick Links</h4>
-            <ul class="mf-links"><li><a href="#about-section">About</a></li><li><a href="#luxury-fleet">Cars</a></li><li><a href="#car-types-section">Car Types</a></li><li><a href="#rental-process">Process</a></li><li><a href="#main-footer">Contact</a></li></ul>
+            <ul class="mf-links"><li><a href="#about-section" data-i18n="nav.about">About</a></li><li><a href="#luxury-fleet" data-i18n="nav.cars">Cars</a></li><li><a href="#car-types-section" data-i18n="nav.carTypes">Car Types</a></li><li><a href="#rental-process" data-i18n="nav.process">Process</a></li><li><a href="#main-footer" data-i18n="nav.contact">Contact</a></li></ul>
           </div>
           <div>
             <h4 class="mf-heading" data-i18n="footer.subscribe">Subscribe</h4>
@@ -1744,7 +1744,7 @@
             <form class="mf-subscribe" action="#" method="post"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit" aria-label="Submit"><i class="fa-solid fa-arrow-right"></i></button></form>
           </div>
         </div>
-        <p class="mf-bottom">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
+        <p class="mf-bottom" data-i18n="footer.copyright">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
       </div>
     </footer>
   </div><!-- /view-car-hiace -->
@@ -1755,34 +1755,34 @@
   <div id="view-car-vellfire" style="display:none">
     <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">Premium MPV</p><h1 class="text-5xl md:text-6xl font-bold">Toyota Vellfire 2.5 Pilot Seat</h1></div></section>
     <section class="relative px-8 lg:px-24 pb-24 bg-[#161616]"><div class="grid lg:grid-cols-[1.6fr_0.8fr] gap-10"><div class="pt-14">
-      <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold">General Information</h2><a href="#luxury-fleet" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> Back</a></div>
+      <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold" data-i18n="detail.generalInfo">General Information</h2><a href="#luxury-fleet" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> <span data-i18n="detail.back">Back</span></a></div>
       <p class="text-gray-400 leading-8 mb-8">The Toyota Vellfire 2.5 with premium pilot seats — the ultimate luxury van for VIP travel, family trips, or corporate transfers across Kedah. Spacious, quiet cabin with first-class seating for 7 passengers.</p>
-      <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Free cancellation &amp; return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Pay on pickup available</p></div></div>
-      <h3 class="text-3xl font-bold mb-5">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/toyota-vellfire.png" class="h-56 w-full object-cover rounded-[20px]" alt="Toyota Vellfire 2.5 Pilot Seat exterior"><img src="assets/cars/toyota-vellfire-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Toyota Vellfire 2.5 Pilot Seat interior"></div>
+      <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet1">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet2">Free cancellation &amp; return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet3">Pay on pickup available</p></div></div>
+      <h3 class="text-3xl font-bold mb-5" data-i18n="detail.imageGallery">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/toyota-vellfire.png" class="h-56 w-full object-cover rounded-[20px]" alt="Toyota Vellfire 2.5 Pilot Seat exterior"><img src="assets/cars/toyota-vellfire-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Toyota Vellfire 2.5 Pilot Seat interior"></div>
     </div><div class="lg:-mt-24 pt-8">
-      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM —</p><p class="text-sm uppercase tracking-wider mt-1">/ rent per day</p></div>
+      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM —</p><p class="text-sm uppercase tracking-wider mt-1" data-i18n="detail.rentPerDay">/ rent per day</p></div>
       <div class="bg-[#1f1f1f] border border-white/5 rounded-b-[20px] p-7 space-y-5" id="bookingPanel-vellfire">
         <div>
-          <label class="text-sm text-gray-300">Pick Up Location</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.pickupLoc">Pick Up Location</label>
           <select id="pickup-vellfire" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
             <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
         <div>
-          <label class="text-sm text-gray-300">Drop Off Location</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.dropoffLoc">Drop Off Location</label>
           <select id="dropoff-vellfire" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
             <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
         <div>
-          <label class="text-sm text-gray-300">Pick Up Date</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.pickupDate">Pick Up Date</label>
           <input type="date" id="pickdate-vellfire" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
         <div>
-          <label class="text-sm text-gray-300">Return Date</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.returnDate">Return Date</label>
           <input type="date" id="retdate-vellfire" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
-        <button type="button" onclick="sendBookingWA('vellfire','Toyota%20Vellfire%202.5%20Pilot%20Seat')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
+        <button type="button" onclick="sendBookingWA('vellfire','Toyota%20Vellfire%202.5%20Pilot%20Seat')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center"><span data-i18n="booking.sendWA">Send to WhatsApp</span></button>
       </div>
     </div></div></section>
   <footer class="shared-footer" id="main-footer">
@@ -1794,19 +1794,19 @@
           <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/MINI_logo.svg" alt="Mini">
         </div>
         <div class="mf-contact-grid">
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label">Write to us</p><p class="mf-contact-value">hello@jfz.my</p></div></div>
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label" data-i18n="footer.callUs">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label" data-i18n="footer.writeTo">Write to us</p><p class="mf-contact-value">hello@jfz.my</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label" data-i18n="footer.address">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
         </div>
         <div class="mf-main">
           <div>
             <h3 class="mf-logo">JF<span>Z</span></h3>
-            <p class="mf-text">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
+            <p class="mf-text" data-i18n="footer.desc">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
             <div class="mf-social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div>
           </div>
           <div>
             <h4 class="mf-heading" data-i18n="footer.quickLinks">Quick Links</h4>
-            <ul class="mf-links"><li><a href="#about-section">About</a></li><li><a href="#luxury-fleet">Cars</a></li><li><a href="#car-types-section">Car Types</a></li><li><a href="#rental-process">Process</a></li><li><a href="#main-footer">Contact</a></li></ul>
+            <ul class="mf-links"><li><a href="#about-section" data-i18n="nav.about">About</a></li><li><a href="#luxury-fleet" data-i18n="nav.cars">Cars</a></li><li><a href="#car-types-section" data-i18n="nav.carTypes">Car Types</a></li><li><a href="#rental-process" data-i18n="nav.process">Process</a></li><li><a href="#main-footer" data-i18n="nav.contact">Contact</a></li></ul>
           </div>
           <div>
             <h4 class="mf-heading" data-i18n="footer.subscribe">Subscribe</h4>
@@ -1814,7 +1814,7 @@
             <form class="mf-subscribe" action="#" method="post"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit" aria-label="Submit"><i class="fa-solid fa-arrow-right"></i></button></form>
           </div>
         </div>
-        <p class="mf-bottom">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
+        <p class="mf-bottom" data-i18n="footer.copyright">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
       </div>
     </footer>
   </div><!-- /view-car-vellfire -->
@@ -1825,34 +1825,34 @@
   <div id="view-car-staria" style="display:none">
     <section class="detail-hero-img h-[72vh] pt-32 px-8 lg:px-24 flex items-center"><div><p class="text-gold tracking-[0.35em] uppercase text-xs mb-3">Van / Premium MPV</p><h1 class="text-5xl md:text-6xl font-bold">Hyundai Staria 2.2T 10 Seater</h1></div></section>
     <section class="relative px-8 lg:px-24 pb-24 bg-[#161616]"><div class="grid lg:grid-cols-[1.6fr_0.8fr] gap-10"><div class="pt-14">
-      <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold">General Information</h2><a href="#luxury-fleet" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> Back</a></div>
+      <div class="flex items-center justify-between gap-4 mb-6"><h2 class="text-4xl font-bold" data-i18n="detail.generalInfo">General Information</h2><a href="#luxury-fleet" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition"><i class="fa-solid fa-arrow-left text-xs"></i> <span data-i18n="detail.back">Back</span></a></div>
       <p class="text-gray-400 leading-8 mb-8">The Hyundai Staria 2.2T — a bold, futuristic 10-seater luxury van. Ideal for group travel, corporate events, or family gatherings. Powerful diesel engine, ultra-modern interior, and premium ride comfort throughout.</p>
-      <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Free cancellation &amp; return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300">Pay on pickup available</p></div></div>
-      <h3 class="text-3xl font-bold mb-5">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/toyota-hiace.png" class="h-56 w-full object-cover rounded-[20px]" alt="Staria exterior"><img src="assets/cars/toyota-hiace-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Staria interior"></div>
+      <div class="space-y-4 mb-12"><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet1">24/7 roadside assistance in Kedah</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet2">Free cancellation &amp; return support</p></div><div class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-white/5 grid place-items-center"><i class="fa-solid fa-check text-gold text-xs"></i></span><p class="text-gray-300" data-i18n="detail.bullet3">Pay on pickup available</p></div></div>
+      <h3 class="text-3xl font-bold mb-5" data-i18n="detail.imageGallery">Image Gallery</h3><div class="grid sm:grid-cols-2 gap-4"><img src="assets/cars/toyota-hiace.png" class="h-56 w-full object-cover rounded-[20px]" alt="Staria exterior"><img src="assets/cars/toyota-hiace-interior.png" class="h-56 w-full object-cover rounded-[20px]" alt="Staria interior"></div>
     </div><div class="lg:-mt-24 pt-8">
-      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM —</p><p class="text-sm uppercase tracking-wider mt-1">/ rent per day</p></div>
+      <div class="bg-gold text-black rounded-t-[18px] px-8 py-8"><p class="text-5xl font-bold">RM —</p><p class="text-sm uppercase tracking-wider mt-1" data-i18n="detail.rentPerDay">/ rent per day</p></div>
       <div class="bg-[#1f1f1f] border border-white/5 rounded-b-[20px] p-7 space-y-5" id="bookingPanel-staria">
         <div>
-          <label class="text-sm text-gray-300">Pick Up Location</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.pickupLoc">Pick Up Location</label>
           <select id="pickup-staria" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
             <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
         <div>
-          <label class="text-sm text-gray-300">Drop Off Location</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.dropoffLoc">Drop Off Location</label>
           <select id="dropoff-staria" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none cursor-pointer appearance-none" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e4a15a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 16px center;padding-right:40px">
             <option value="Alor Setar" selected>Alor Setar</option><option value="Kuala Kedah">Kuala Kedah</option>
           </select>
         </div>
         <div>
-          <label class="text-sm text-gray-300">Pick Up Date</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.pickupDate">Pick Up Date</label>
           <input type="date" id="pickdate-staria" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
         <div>
-          <label class="text-sm text-gray-300">Return Date</label>
+          <label class="text-sm text-gray-300" data-i18n="booking.returnDate">Return Date</label>
           <input type="date" id="retdate-staria" class="mt-2 w-full bg-transparent border border-white/10 rounded-full px-4 h-12 text-gray-300 outline-none" style="color-scheme:dark">
         </div>
-        <button type="button" onclick="sendBookingWA('staria','Hyundai%20Staria%202.2T%2010%20Seater')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center">Send to WhatsApp</button>
+        <button type="button" onclick="sendBookingWA('staria','Hyundai%20Staria%202.2T%2010%20Seater')" class="w-full h-12 rounded-full bg-gold text-black font-semibold hover:bg-white transition inline-flex items-center justify-center"><span data-i18n="booking.sendWA">Send to WhatsApp</span></button>
       </div>
     </div></div></section>
   <footer class="shared-footer" id="main-footer">
@@ -1864,19 +1864,19 @@
           <img class="mf-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/MINI_logo.svg" alt="Mini">
         </div>
         <div class="mf-contact-grid">
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label">Write to us</p><p class="mf-contact-value">hello@jfz.my</p></div></div>
-          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-phone"></i></div><div><p class="mf-contact-label" data-i18n="footer.callUs">Call us</p><p class="mf-contact-value">0108118968</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-envelope"></i></div><div><p class="mf-contact-label" data-i18n="footer.writeTo">Write to us</p><p class="mf-contact-value">hello@jfz.my</p></div></div>
+          <div class="mf-contact-card"><div class="mf-contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="mf-contact-label" data-i18n="footer.address">Address</p><p class="mf-contact-value">Alor Setar, Kedah, Malaysia</p></div></div>
         </div>
         <div class="mf-main">
           <div>
             <h3 class="mf-logo">JF<span>Z</span></h3>
-            <p class="mf-text">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
+            <p class="mf-text" data-i18n="footer.desc">JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.</p>
             <div class="mf-social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div>
           </div>
           <div>
             <h4 class="mf-heading" data-i18n="footer.quickLinks">Quick Links</h4>
-            <ul class="mf-links"><li><a href="#about-section">About</a></li><li><a href="#luxury-fleet">Cars</a></li><li><a href="#car-types-section">Car Types</a></li><li><a href="#rental-process">Process</a></li><li><a href="#main-footer">Contact</a></li></ul>
+            <ul class="mf-links"><li><a href="#about-section" data-i18n="nav.about">About</a></li><li><a href="#luxury-fleet" data-i18n="nav.cars">Cars</a></li><li><a href="#car-types-section" data-i18n="nav.carTypes">Car Types</a></li><li><a href="#rental-process" data-i18n="nav.process">Process</a></li><li><a href="#main-footer" data-i18n="nav.contact">Contact</a></li></ul>
           </div>
           <div>
             <h4 class="mf-heading" data-i18n="footer.subscribe">Subscribe</h4>
@@ -1884,7 +1884,7 @@
             <form class="mf-subscribe" action="#" method="post"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit" aria-label="Submit"><i class="fa-solid fa-arrow-right"></i></button></form>
           </div>
         </div>
-        <p class="mf-bottom">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
+        <p class="mf-bottom" data-i18n="footer.copyright">©2026 JFZ Car Rental Kedah. All rights reserved.</p>
       </div>
     </footer>
   </div><!-- /view-car-staria -->
@@ -1973,25 +1973,106 @@
     var heroPriceUnit = document.getElementById('heroPriceUnit');
     var footerEmailInput = document.getElementById('footerEmailInput');
     var translations = {
-      en: { 'nav.home':'Home','nav.about':'About','nav.cars':'Cars','nav.carTypes':'Car Types','nav.process':'Process','nav.blog':'Blog','nav.contact':'Contact','common.callUs':'Call us','hero.title':'Kedah Car Rental','hero.priceUnit':'/ DAY','about.title':'We Are More Than <br><span class="text-gold">A Kedah Car Rental Company</span>','about.desc':'JFZ provides trusted car rental services across Kedah, including daily rentals, airport transfers, and chauffeur options. We focus on clean vehicles, fair pricing, and fast support to make every trip smooth.','about.point1':'Sports and Luxury Cars','about.point2':'Economy Cars','footer.quickLinks':'Quick Links','footer.subscribe':'Subscribe','footer.subscribeDesc':'Want to be notified about our services. Just sign up and we will send you a notification by email.','footer.emailPlaceholder':'Your email address','toggle.label':'BM' },
-      ms: { 'nav.home':'Utama','nav.about':'Tentang','nav.cars':'Kereta','nav.carTypes':'Jenis Kereta','nav.process':'Proses','nav.blog':'Blog','nav.contact':'Hubungi','common.callUs':'Hubungi kami','hero.title':'Sewa Kereta Kedah','hero.priceUnit':'/ HARI','about.title':'Kami Lebih Daripada <br><span class="text-gold">Syarikat Sewa Kereta Kedah</span>','about.desc':'JFZ menyediakan perkhidmatan sewa kereta yang dipercayai di seluruh Kedah, termasuk sewaan harian, pemindahan lapangan terbang dan pilihan pemandu.','about.point1':'Kereta Sukan dan Mewah','about.point2':'Kereta Ekonomi','footer.quickLinks':'Pautan Pantas','footer.subscribe':'Langgan','footer.subscribeDesc':'Nak dapatkan makluman tentang servis kami? Daftar sekarang dan kami akan hantar notifikasi melalui emel.','footer.emailPlaceholder':'Alamat emel anda','toggle.label':'EN' }
-    };
+      en: {
+        'nav.home':'Home','nav.about':'About','nav.cars':'Cars','nav.carTypes':'Car Types','nav.process':'Process','nav.blog':'Blog','nav.contact':'Contact',
+        'nav.needHelp':'Need help?','nav.language':'Language',
+        'common.callUs':'Call us',
+        'hero.title':'Kedah Car Rental','hero.priceUnit':'/ DAY',
+        'about.title':'We Are More Than <br><span class=\"text-gold\">A Kedah Car Rental Company</span>',
+        'about.desc':'JFZ provides trusted car rental services across Kedah, including daily rentals, airport transfers, and chauffeur options. We focus on clean vehicles, fair pricing, and fast support to make every trip smooth.',
+        'about.point1':'Sports and Luxury Cars','about.point2':'Economy Cars',
+        'svc.eyebrow':'What We Do','svc.title':'Our <em>Services</em>',
+        'svc.corporate':'Corporate Car Rental','svc.driver':'Car Rental with Driver','svc.airport':'Airport Transfer',
+        'cs.title':'Coming <span>Soon</span>','cs.desc':"We\'re working hard to bring you this service. Stay tuned — it\'ll be worth the wait!",'cs.close':'Got it',
+        'fleet.eyebrow':'SELECT YOUR CAR','fleet.title':'Our <span class=\"fleet-gold\">Car Fleet</span>','fleet.details':'Details',
+        'carTypes.eyebrow':'Categories','carTypes.title':'Rental <em>Car Types</em>',
+        'carTypes.economy':'Economy Cars','carTypes.mpv':'MPV','carTypes.van':'Van','carTypes.suv':'SUV','carTypes.luxury':'Luxury',
+        'process.eyebrow':'STEPS','process.title':'Car Rental <span class=\"text-gold\">Process</span>',
+        'process.step1Title':'Choose A Car','process.step1Desc':'View our range of cars, find your perfect car for the coming days.',
+        'process.step2Title':'Come In Contact','process.step2Desc':'Our advisor team is ready to help you with the booking process.',
+        'process.step3Title':'Enjoy Driving','process.step3Desc':'Receive the key and enjoy your car. We treat all our cars with respect.',
+        'promo.eyebrow':'EXPLORE','promo.title':'Car <span class=\"text-gold\">Promo</span> Video',
+        'testimonials.eyebrow':'Testimonials','testimonials.title':'What Clients Say',
+        'footer.callUs':'Call us','footer.writeTo':'Write to us','footer.address':'Address',
+        'footer.desc':'JFZ is a local car rental company in Kedah, offering reliable vehicles for city rides, business travel, and family trips.',
+        'footer.quickLinks':'Quick Links','footer.subscribe':'Subscribe',
+        'footer.subscribeDesc':'Want to be notified about our services. Just sign up and we will send you a notification by email.',
+        'footer.emailPlaceholder':'Your email address','footer.copyright':'©2026 JFZ Car Rental Kedah. All rights reserved.',
+        'listing.eyebrow':'Rent A Car','listing.title':'Select Your Car','listing.searchPlaceholder':'Search cars...',
+        'listing.categories':'Categories','listing.catAll':'All Cars','listing.catEconomy':'Economy Cars','listing.catSedan':'Sedan',
+        'listing.catMpv':'MPV','listing.catVan':'Van','listing.catSuv':'SUV','listing.catLuxury':'Luxury',
+        'listing.pickupLoc':'Pickup Locations','listing.dropoffLoc':'Dropoff Locations',
+        'listing.backHome':'Back to Home','listing.showingAll':'Showing all results',
+        'listing.sortDefault':'Default sorting','listing.sortLowHigh':'Price: Low to High','listing.sortHighLow':'Price: High to Low',
+        'listing.book':'Book','listing.perDay':'/ day',
+        'spec.doors':'Doors','spec.passengers':'Passengers','spec.transmission':'Transmission','spec.luggage':'Luggage','spec.engine':'Engine',
+        'detail.generalInfo':'General Information','detail.back':'Back',
+        'detail.bullet1':'24/7 roadside assistance in Kedah','detail.bullet2':'Free cancellation & return support','detail.bullet3':'Pay on pickup available',
+        'detail.imageGallery':'Image Gallery','detail.rentPerDay':'/ rent per day',
+        'booking.pickupLoc':'Pick Up Location','booking.dropoffLoc':'Drop Off Location',
+        'booking.pickupDate':'Pick Up Date','booking.returnDate':'Return Date',
+        'booking.sendWA':'Send to WhatsApp','booking.alertDates':'Please select both Pick Up Date and Return Date before continuing.',
+        'toggle.label':'BM'
+      },
+      ms: {
+        'nav.home':'Utama','nav.about':'Tentang','nav.cars':'Kereta','nav.carTypes':'Jenis Kereta','nav.process':'Proses','nav.blog':'Blog','nav.contact':'Hubungi',
+        'nav.needHelp':'Perlukan bantuan?','nav.language':'Bahasa',
+        'common.callUs':'Hubungi kami',
+        'hero.title':'Sewa Kereta Kedah','hero.priceUnit':'/ HARI',
+        'about.title':'Kami Lebih Daripada <br><span class=\"text-gold\">Syarikat Sewa Kereta Kedah</span>',
+        'about.desc':'JFZ menyediakan perkhidmatan sewa kereta yang dipercayai di seluruh Kedah, termasuk sewaan harian, pemindahan lapangan terbang dan pilihan pemandu. Kami fokus pada kenderaan bersih, harga berpatutan dan sokongan pantas untuk setiap perjalanan.',
+        'about.point1':'Kereta Sukan dan Mewah','about.point2':'Kereta Ekonomi',
+        'svc.eyebrow':'Apa Yang Kami Buat','svc.title':'Perkhidmatan <em>Kami</em>',
+        'svc.corporate':'Sewa Kereta Korporat','svc.driver':'Sewa Kereta dengan Pemandu','svc.airport':'Pemindahan Lapangan Terbang',
+        'cs.title':'Akan <span>Datang</span>','cs.desc':"Kami sedang berusaha keras untuk membawa perkhidmatan ini. Nantikan — ia akan berbaloi!",'cs.close':'Faham',
+        'fleet.eyebrow':'PILIH KERETA ANDA','fleet.title':'Koleksi <span class=\"fleet-gold\">Kereta Kami</span>','fleet.details':'Butiran',
+        'carTypes.eyebrow':'Kategori','carTypes.title':'Jenis <em>Kereta Sewa</em>',
+        'carTypes.economy':'Kereta Ekonomi','carTypes.mpv':'MPV','carTypes.van':'Van','carTypes.suv':'SUV','carTypes.luxury':'Mewah',
+        'process.eyebrow':'LANGKAH','process.title':'Proses <span class=\"text-gold\">Sewa Kereta</span>',
+        'process.step1Title':'Pilih Kereta','process.step1Desc':'Lihat pilihan kereta kami dan cari kereta yang sesuai untuk perjalanan anda.',
+        'process.step2Title':'Hubungi Kami','process.step2Desc':'Pasukan penasihat kami sedia membantu anda dengan proses tempahan.',
+        'process.step3Title':'Nikmati Pemanduan','process.step3Desc':'Terima kunci dan nikmati kereta anda. Kami menjaga semua kereta kami dengan baik.',
+        'promo.eyebrow':'TEROKAI','promo.title':'Video <span class=\"text-gold\">Promosi</span> Kereta',
+        'testimonials.eyebrow':'Testimoni','testimonials.title':'Kata-Kata Pelanggan',
+        'footer.callUs':'Hubungi kami','footer.writeTo':'Hantar emel','footer.address':'Alamat',
+        'footer.desc':'JFZ adalah syarikat sewa kereta tempatan di Kedah, menawarkan kenderaan yang boleh dipercayai untuk perjalanan bandar, perniagaan dan keluarga.',
+        'footer.quickLinks':'Pautan Pantas','footer.subscribe':'Langgan',
+        'footer.subscribeDesc':'Nak dapatkan makluman tentang servis kami? Daftar sekarang dan kami akan hantar notifikasi melalui emel.',
+        'footer.emailPlaceholder':'Alamat emel anda','footer.copyright':'©2026 JFZ Sewa Kereta Kedah. Hak cipta terpelihara.',
+        'listing.eyebrow':'Sewa Kereta','listing.title':'Pilih Kereta Anda','listing.searchPlaceholder':'Cari kereta...',
+        'listing.categories':'Kategori','listing.catAll':'Semua Kereta','listing.catEconomy':'Kereta Ekonomi','listing.catSedan':'Sedan',
+        'listing.catMpv':'MPV','listing.catVan':'Van','listing.catSuv':'SUV','listing.catLuxury':'Mewah',
+        'listing.pickupLoc':'Lokasi Ambil','listing.dropoffLoc':'Lokasi Hantar',
+        'listing.backHome':'Kembali ke Utama','listing.showingAll':'Menunjukkan semua keputusan',
+        'listing.sortDefault':'Susun lalai','listing.sortLowHigh':'Harga: Rendah ke Tinggi','listing.sortHighLow':'Harga: Tinggi ke Rendah',
+        'listing.book':'Tempah','listing.perDay':'/ hari',
+        'spec.doors':'Pintu','spec.passengers':'Penumpang','spec.transmission':'Transmisi','spec.luggage':'Bagasi','spec.engine':'Enjin',
+        'detail.generalInfo':'Maklumat Am','detail.back':'Kembali',
+        'detail.bullet1':'Bantuan 24/7 di tepi jalan di Kedah','detail.bullet2':'Pembatalan percuma & sokongan pemulangan','detail.bullet3':'Bayar semasa ambil tersedia',
+        'detail.imageGallery':'Galeri Gambar','detail.rentPerDay':'/ sewa sehari',
+        'booking.pickupLoc':'Lokasi Ambil','booking.dropoffLoc':'Lokasi Hantar',
+        'booking.pickupDate':'Tarikh Ambil','booking.returnDate':'Tarikh Pulang',
+        'booking.sendWA':'Hantar ke WhatsApp','booking.alertDates':'Sila pilih Tarikh Ambil dan Tarikh Pulang sebelum meneruskan.',
+        'toggle.label':'EN'
+      }    };
     var setLanguage = function (lang) {
       var dict = translations[lang] || translations.en;
       root.setAttribute('lang', lang === 'ms' ? 'ms' : 'en');
       document.querySelectorAll('[data-i18n]').forEach(function (el) { var k = el.getAttribute('data-i18n'); if (dict[k]) el.textContent = dict[k]; });
       document.querySelectorAll('[data-i18n-html]').forEach(function (el) { var k = el.getAttribute('data-i18n-html'); if (dict[k]) el.innerHTML = dict[k]; });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) { var k = el.getAttribute('data-i18n-placeholder'); if (dict[k]) el.placeholder = dict[k]; });
+      window._i18nDict = dict;
       if (heroPriceUnit) heroPriceUnit.textContent = dict['hero.priceUnit'] || '/ DAY';
       if (footerEmailInput) footerEmailInput.placeholder = dict['footer.emailPlaceholder'] || 'Your email address';
       if (languageToggle) languageToggle.textContent = dict['toggle.label'] || 'BM';
-      if (languageToggleMobile) { languageToggleMobile.textContent = dict['toggle.label'] || 'BM'; languageToggleMobile.classList.toggle('is-bm', (window.localStorage.getItem(storageKey) || 'en') === 'ms'); }
+      if (languageToggleMobile) { languageToggleMobile.textContent = dict['toggle.label'] || 'BM'; languageToggleMobile.classList.toggle('is-bm', (window.localStorage.getItem(storageKey) || 'ms') === 'ms'); }
       window.localStorage.setItem(storageKey, lang);
     };
     var initialLang = window.localStorage.getItem(storageKey);
     if (initialLang !== 'ms' && initialLang !== 'en') initialLang = 'ms';
     setLanguage(initialLang);
-    if (languageToggle) languageToggle.addEventListener('click', function () { setLanguage((window.localStorage.getItem(storageKey) || 'en') === 'en' ? 'ms' : 'en'); });
-    if (languageToggleMobile) languageToggleMobile.addEventListener('click', function () { setLanguage((window.localStorage.getItem(storageKey) || 'en') === 'en' ? 'ms' : 'en'); });
+    if (languageToggle) languageToggle.addEventListener('click', function () { setLanguage((window.localStorage.getItem(storageKey) || 'ms') === 'ms' ? 'en' : 'ms'); });
+    if (languageToggleMobile) languageToggleMobile.addEventListener('click', function () { setLanguage((window.localStorage.getItem(storageKey) || 'ms') === 'ms' ? 'en' : 'ms'); });
   })();
 
   // ─────────────────────────────────────────────
@@ -2132,7 +2213,8 @@
     var retdateVal  = retdate  ? retdate.value   : '';
 
     if (!pickdateVal || !retdateVal) {
-      alert('Please select both Pick Up Date and Return Date before continuing.');
+      var alertMsg = (window._i18nDict && window._i18nDict['booking.alertDates']) || 'Please select both Pick Up Date and Return Date before continuing.';
+      alert(alertMsg);
       return;
     }
 
